@@ -42,124 +42,147 @@ onMounted(() => {
 
 
 <template>
-  <div class="index-brandConcept bigPageCon">
-    <div class="brandConcept-left pageCon">
-      <div class="pageCon">
-        <div class="index_title brandConceptTitle">{{$t('pages.brand.title')}}</div>
-      </div>
-      <div class="brandConcept-title">
-        <span>{{$t('components.brandConcept.title.span_1')}}</span>
-        <span>{{$t('components.brandConcept.title.span_2')}}</span>
-      </div>
-      <div class="brandConceptBg">
-        <img class="mbBox" src="https://static.cmereye.com/imgs/2023/04/d4c1df365750c9c6.jpg" alt="">
-      </div>
-      <div class="content brandConceptContent">
-        {{$t('components.brandConcept.content')}}
+  <div class="index-brandConcept">
+    <div class="index-brandConcept-t"></div>
+    <div class="index-brandConcept-c">
+      <div class="index-brandConcept-c-in">
+        <div class="context">
+          <div>{{$t('pages.brand.title')}}</div>
+          <div>
+            <span>{{$t('components.brandConcept.title.span_1')}}</span>
+            <span>{{$t('components.brandConcept.title.span_2')}}</span>
+          </div>
+          <div>{{$t('components.brandConcept.content')}}</div>
+        </div>
+        <div class="image">
+          <img src="https://static.cmereye.com/imgs/2023/07/4d7c6dabd0bcfc14.png" alt="">
+        </div>
       </div>
     </div>
-    <div class="brandConcept-right">
-    </div>
+    <div class="index-brandConcept-b"></div>
   </div>
 </template>
 
 
 <style lang="scss" scoped>
 .index-brandConcept {
-  width: 100%;
-  min-height: 760px;
-  // margin: 50px 0 0;
-  margin-top: 143px;
-  box-sizing: border-box;
-  position: relative;
-  .brandConcept-left {
-    padding-top: 5%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1;
-    position: relative;
-    .brandConcept-title {
-      font-style: normal;
-      font-weight: 700;
-      // font-size: 28px;
-      font-size: 1.75rem;
-      line-height: 160%;
-      color: #666666;
-      margin-top: 100px;
-      span {
-        display: block;
-      }
-    }
-    .brandConceptBg{
+  margin-top: 192px;
+  &-t{
+    background: url(https://static.cmereye.com/imgs/2023/07/ad0e9ea982d66127.png);
+    background-size: auto 100%;
+    height: 60px;
+    width: 100%;
+  }
+  &-c{
+    background: #FECB02;
+    margin: -3px 0;
+    width: 100%;
+    &-in{
       width: 100%;
-      display: none;
-      img{
-        width: 100%;
+      max-width:1465px;
+      margin: 0 auto;
+      display: flex;
+      padding: 100px 0;
+      align-items: center;
+      .context{
+        flex: 1;
+        margin-right: 136px;
+        &>div{
+          color: #FFF;
+          &:nth-of-type(1){
+            color: #FFF;
+            font-family: 'Yuanti TC';
+            font-size: 31.766px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 50.826px */
+            letter-spacing: 7.942px;
+            position: relative;
+            padding-bottom: 10px;
+            &::after{
+              content: '';
+              background: #fff;
+              height: 5px;
+              width: 40px;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              border-radius: 3px;
+            }
+          }
+          &:nth-of-type(2){
+            margin-top: 38px;
+            span{
+              display: inline-block;
+              color: var(--topic-text-color);
+              font-family: 'Yuanti TC';
+              font-size: 33.934px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: 4.751px;
+              background: #fff;
+              padding: 5px 20px;
+              transform: skewY(-5deg);
+              border: 2px solid var(--topic-text-color);
+              &:first-child{
+                position: relative;
+                z-index: 2;
+                &::after{
+                  content: '';
+                  position: absolute;
+                  bottom: -3px;
+                  right: 0;
+                  height: 6px;
+                  width: calc(100% - 60px);
+                  background: #fff;
+                }
+              }
+              &:last-child{
+                position: relative;
+                z-index: 1;
+                margin-top: -10px;
+                margin-left: 60px;
+              }
+            }
+          }
+          &:nth-of-type(3){
+            margin-top: 50px;
+            text-align: justify;
+            font-family: 'Yuanti TC';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 181%; /* 28.96px */
+            letter-spacing: 4.8px;
+          }
+        }
+      }
+      .image{
+        // flex: 1;
+        width: 820px;
+        // margin-left: 136px;
       }
     }
-    .content {
-      width: 30%;
-      font-style: normal;
-      font-weight: 500;
-      // font-size: 20px;
-      font-size: 1.25rem;
-      line-height: 160%;
-      color: #666666;
-      margin-top: 70px;
-    }
   }
-  .brandConcept-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70%;
-    height: 100%;
-    background: url(https://static.cmereye.com/imgs/2023/05/c8173ec71c34ec89.jpg) no-repeat left center;
-    background-size: cover;
-    z-index: 0;
-  }
+  &-b{
+    background: url(https://static.cmereye.com/imgs/2023/07/ad0e9ea982d66127.png);
+      background-size: auto 100%;
+      height: 60px;
+      width: 100%;
+      transform: rotate(180deg);
+  }   
 }
 
 @media (min-width: 768px) and (max-width: 1452px) {
   .index-brandConcept {
-    margin-top: 110px;
-    .brandConcept-left {
-      .content {
-        width: 40%;
-      }
-    }
+    
   }
 }
 
 @media screen and (max-width: 768px) {
   .index-brandConcept {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    margin-top: 90px;
-    .brandConcept-left{
-      padding-top: 0;
-      .brandConcept-title {
-        display: none;
-      }
-      .brandConceptBg{
-        width: 100%;
-        margin-top: 34px;
-        display: block;
-      }
-      .content{
-        width: 100%;
-        padding: 0 30px;
-        margin-top: 0px;
-        box-sizing: border-box;
-        font-size: 1rem;
-      }
-    }
-    .brandConcept-right{
-      display: none;
-    }
+    
   }
 
 }

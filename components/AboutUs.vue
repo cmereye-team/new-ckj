@@ -10,15 +10,13 @@ const aboutUsLists = [
     title: 'components.aboutUs.item_1.title',
     text: 'components.aboutUs.item_1.text',
     context: 'components.aboutUs.item_1.context',
-    mbImg: 'https://static.cmereye.com/imgs/2023/04/312ab3f184b7daf5.jpg',
-    pcImg: 'https://static.cmereye.com/imgs/2023/05/77e7c4e4a2376aa8.jpg'
+    img: 'https://static.cmereye.com/imgs/2023/04/312ab3f184b7daf5.jpg',
   },
   {
     title: 'components.aboutUs.item_2.title',
-    text: '',
+    text: 'components.aboutUs.item_2.text',
     context: 'components.aboutUs.item_2.context',
-    mbImg: 'https://static.cmereye.com/imgs/2023/05/57398ce56ec905ad.jpg',
-    pcImg: 'https://static.cmereye.com/imgs/2023/05/d847d149cd3aef7d.jpg'
+    img: 'https://static.cmereye.com/imgs/2023/05/57398ce56ec905ad.jpg',
   }
 ]
 
@@ -36,172 +34,155 @@ const handleLineCur = (_value:number) =>{
 
 <template>
   <div class="index-aboutUs">
-        <div class="pageCon">
-          <div class="index_title">{{$t('components.aboutUs.title')}}</div>
-        </div>
-        <Swiper
-          class="swiperBox pageCon"
-          :loop="true"
-          :autoplay="{
-            disableOnInteraction: true,
-          }"
-          @swiper="setAboutUsSwiperRef"
-          @slideChange="onSlideAboutUsSwiperChange"
-        >
-          <SwiperSlide v-for="(item,index) in aboutUsLists" :key="index" >
-            <div class="index-aboutUs-in ">
-              <div class="index-aboutUs-in-l">
-                <img class="pcBox" :src="item.pcImg" alt="">
-                <img class="mbBox" :src="item.mbImg" alt="">
-              </div>
-              <div class="index-aboutUs-in-r">
-                <!-- 科技護航，安全放心 -->
-                <div>{{$t(item.title)}}</div>
-                <!-- 優質的診療服務，在於醫生的專業素養， -->
+        <div class="index-aboutUs-t"></div>
+        <div class="index-aboutUs-c">
+          <div class="title">{{$t('components.aboutUs.title')}}</div>
+          <div class="content">
+            <div v-for="(item,index) in aboutUsLists" :key="index">
+              <div><img :src="item.img" alt=""></div>
+              <div>
+                <span>{{$t(item.title)}}</span>
                 <span>{{$t(item.text)}}</span>
-                <!-- 以及匹配的醫療設備的先進程度。愛康健從口腔檢查到臨床手術，全程採購主流牙科設備，與時俱進開展醫生職業技能培訓。我們信奉技術，加進口設備，才能有好的診療功效。 -->
-                <span>{{$t(item.context)}}</span>
               </div>
+              <div>{{$t(item.context)}}</div>
             </div>
-          </SwiperSlide>  
-          <div class="aboutUs-lineBox">
-            <PageSwiperPointLine :latestNewsNum="aboutUsLists.length" :latestNewsCurrent="aboutUsCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
           </div>
-        </Swiper>
+        </div>
+        <div class="index-aboutUs-b"></div>
     </div>
 </template>
 <style lang="scss" scoped>
   
 //關於我們
 .index-aboutUs{
-  margin-top: 140px;
-  &-in{
-    display: flex;
-    margin-top: 45px;
-    &-l{
-      width: 55%;
-      img{
-        width: 100%;
-        height: 100%;
+  margin-top: 190px;
+  &-t{
+    background: url(https://static.cmereye.com/imgs/2023/07/c19dfcc03bbba56d.png);
+    background-size: auto 100%;
+    height: 60px;
+    width: 100%;
+  }
+  &-c{
+    background: #089CFE;
+    width: 100%;
+    margin: -3px 0;
+    padding: 100px 0 40px;
+    .title{
+      color: #FFF;
+      font-family: 'Yuanti TC';
+      font-size: 31.766px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 50.826px */
+      letter-spacing: 7.942px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 20px;
+      &::after{
+        content: '';
+        background: #fff;
+        height: 5px;
+        width: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
       }
     }
-    &-r{
-      flex: 1;
+    .content{
+      width: 100%;
+      max-width: 1166px;
+      margin: 70px auto 0;
       display: flex;
-      flex-direction: column;
-      // justify-content: center;
-      box-sizing: border-box;
-      padding-left: 100px;
-      div{
-        font-weight: 700;
-        font-size: 28px;
-        line-height: 160%;
-        color: #FFA09E;
-        margin-bottom: 70px;
-        margin-top: 100px;
-      }
-      span{
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 160%;
-        color: #666666;
+      &>div{
+        flex: 1;
+        padding: 0 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &>div{
+          &:nth-of-type(1){
+            img{
+              border-radius: 19px;
+              box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.25);
+            }
+          }
+          &:nth-of-type(2){
+            margin-top: 38px;
+            display: flex;
+            flex-direction: column;
+            span{
+              width: max-content;
+              display: inline-block;
+              color: var(--topic-text-color);
+              font-family: 'Yuanti TC';
+              font-size: 38px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: 6.08px;
+              background: #fff;
+              padding: 5px 20px;
+              transform: skewY(-5deg);
+              border: 2px solid var(--topic-text-color);
+              &:first-child{
+                position: relative;
+                z-index: 2;
+                // margin-right: 30px;
+                &::after{
+                  content: '';
+                  position: absolute;
+                  bottom: -3px;
+                  right: 0;
+                  height: 6px;
+                  width: calc(100% - 60px);
+                  background: #fff;
+                }
+              }
+              &:last-child{
+                position: relative;
+                z-index: 1;
+                margin-top: -8px;
+                margin-left: 60px;
+              }
+            }
+          }
+          &:nth-of-type(3){
+            margin-top: 30px;
+            color: #FFF;
+            text-align: justify;
+            font-family: 'Yuanti TC';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 170%; /* 27.2px */
+            letter-spacing: 4.8px;
+          }
+        }
       }
     }
   }
-  .swiperBox{
-    position: relative;
-    cursor: pointer;
-    .aboutUs-lineBox{
-      position: absolute;
-      left: calc(55% + 100px);
-      bottom: 100px;
-      // width: 324px;
-      width: 10%;
-      z-index: 100;
-    }
-  }
+  &-b{
+    background: url(https://static.cmereye.com/imgs/2023/07/c19dfcc03bbba56d.png);
+    background-size: auto 100%;
+    height: 60px;
+    width: 100%;
+    transform: rotate(180deg);
+  }   
 }
 @media (min-width: 768px) and (max-width: 1452px) {
-  .index-aboutUs{
-    &-in{
-      &-r{
-        padding-left: 50px;
-        div{
-          font-size: 1.5rem;
-          margin-bottom: 50px;
-          margin-top: 70px;
-        }
-        span{
-          font-size: 1rem;
-        }
-      }
-    }
-    .swiperBox{
-      .aboutUs-lineBox{
-        left: calc(55% + 50px);
-        // width: 20%;
-        bottom: 10%;
-      }
-    }
-  }
+  .index-aboutUs{}
 }
 @media (min-width: 768px) and (max-width: 1000px) {
   .index-aboutUs{
-    margin-top: 110px;
-    &-in{
-      &-r{
-        padding-left: 30px;
-        div{
-          margin-bottom: 10px;
-          margin-top: 30px;
-        }
-      }
-    }
-    .swiperBox{
-      .aboutUs-lineBox{
-        left: calc(55% + 30px);
-        bottom: 5%;
-      }
-    }
+   
   }
 }
 @media screen and (max-width: 768px) {
 //關於我們
   .index-aboutUs{
-    margin-top: 90px;
-    &-in{
-      flex-direction: column;
-      margin-bottom: 50px;
-      &-l{
-        width: 100%;
-      }
-      &-r{
-        padding: 10px 30px;
-        align-items: center;
-        div{
-          margin-bottom: 0;
-          font-weight: 600;
-          font-size: 1.125rem;
-          margin-top: 0px;
-        }
-        span{
-          text-align: center;
-          font-size: 1rem;
-        }
-      }
-    }
-    .swiperBox{
-      position: relative;
-      .aboutUs-lineBox{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        // width: 200px;
-        width: 100px;
-        bottom: 30px;
-        z-index: 100;
-      }
-    }
+   
   }
 }
 

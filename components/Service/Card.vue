@@ -36,28 +36,50 @@ const servicesCardPageData = {
 
 <template>
   <div :class="{'index-dentalServices':true,'isMenu': isMenu}">
-    <div :class="['index-dentalServices-in', 'pageCon', {'isIndexShow': !isIndexShow,'isMenu': isMenu}]">
-      <div class="titile">
-        <!-- 牙科服務 -->
-        <div class="index_title" v-if="isIndexShow">{{$t(servicesCardPageData.title)}}</div>
-      </div>
-      <div class="dentistryServices-title" v-if="!isIndexShow && !isMenu">
-        <!-- 牙科服務 -->
-        <div class="dentistryServices-title-in bb">{{$t(servicesCardPageData.dentalServicesTitleIn)}}</div>
-      </div>
-      <div class="context" v-if="!isMenu">
-        <!-- 中心提供基本牙科、美容牙科及高階牙科服務，從一般口腔檢查、洗牙、補牙，到牙齒美白、全口修復及各種牙科治療，幫助客人回復自信笑容。 -->
-        <div class="context-in">{{$t(servicesCardPageData.contextIn)}}</div>
-      </div>
-      <div :class="{'servicesCard':true,'isMenu': isMenu}">
-        <div class="servicesCard-in" v-for="(item,index) in servicesCardLists" :key="index">
-          <nuxt-link :to="item.link">
-            <div class="servicesCard-in-image">
-              <img :src="item.imgUrl" alt="">
-            </div>
-            <div class="servicesCard-in-name">{{$t(item.name)}}</div>
-          </nuxt-link>
+    <div :class="['index-dentalServices-in', {'isIndexShow': !isIndexShow,'isMenu': isMenu}]">
+      <!-- {{$t(servicesCardPageData.dentalServicesTitleIn)}} -->
+      <div class="index-dentalServices-in-t">
+        <div class="title" v-if="isIndexShow">{{$t(servicesCardPageData.title)}}</div>
+        <div class="context" v-if="!isMenu">
+          <div class="context-in">{{$t(servicesCardPageData.contextIn)}}</div>
         </div>
+      </div>
+      
+      <div :class="{'servicesCard':true,'isMenu': isMenu}">
+        <div>
+          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(0,5)" :key="index">
+            <nuxt-link :to="item.link">
+              <div class="servicesCard-in-image">
+                <img :src="item.imgUrl" alt="">
+                <div class="servicesCard-in-name">{{$t(item.name)}}</div>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+        <div>
+          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(5,10)" :key="index">
+            <nuxt-link :to="item.link">
+              <div class="servicesCard-in-image">
+                <img :src="item.imgUrl" alt="">
+                <div class="servicesCard-in-name">{{$t(item.name)}}</div>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+        <div>
+          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(10,15)" :key="index">
+            <nuxt-link :to="item.link">
+              <div class="servicesCard-in-image">
+                <img :src="item.imgUrl" alt="">
+                <div class="servicesCard-in-name">{{$t(item.name)}}</div>
+              </div>
+            </nuxt-link>
+          </div>
+          <div class="servicesCard-mascot">
+            <img src="https://static.cmereye.com/imgs/2023/07/19208b63eaa5ed13.png" alt="">
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -72,70 +94,119 @@ const servicesCardPageData = {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    .context{
-      margin-top: 35px;
-      &-in{
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1000px;
+    &-t{
+      display: flex;
+      align-items: center;
+      .title{
+        border-right: 3px solid #089CFE;
+        padding-right: 55px;
+        color: var(--topic-text-color);
+        font-family: 'Yuanti TC';
+        font-size: 31.766px;
         font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        color: #666666;
-        text-align: center;
+        font-weight: 400;
+        line-height: 120%; /* 50.826px */
+        letter-spacing: 7.942px;
+      }
+      .context{
+        margin-left: 60px;
+        &-in{
+          margin: 0 auto;
+          width: 100%;
+          max-width: 724px;
+          font-family: 'Yuanti TC';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 25.6px */
+          letter-spacing: 4.8px;
+        }
       }
     }
+    
     .servicesCard{
       display: flex;
       flex-wrap: wrap;
-      margin: 46px auto 0;
+      margin: 86px auto 0;
       width: 100%;
-      max-width: 1090px;
+      max-width: 1640px;
+      &>div{
+        width: 100%;
+        margin-bottom: 60px;
+        display: flex;
+        &:nth-of-type(2){
+          justify-content: flex-end;
+        }
+      }
+      &-mascot{
+        cursor: pointer;
+        width: 18%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       &-in{
         cursor: pointer;
-        width: 25%;
+        width: 18%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0 45px;
         box-sizing: border-box;
         a{
           width: 100%;
           height: 100%;
         }
         &-image{
-          width: 100%;
-          height: 0;
-          padding-top: 100%;
+          width: 240px;
+          height: 240px;
+          // padding-top: 100%;
           position: relative;
-          background: #FFF1F0;
+          background: #F5F4F4;
           border-radius: 10px;
+          transition: all .5s;
+          border-radius: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          padding: 0 0 45px;
           img{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-            max-width: 90%;
-            max-height: 90%;
+            // position: absolute;
+            // left: 50%;
+            // top: 50%;
+            // transform: translate(-50%,-50%);
+            max-width: 60%;
+            max-height: 60%;
           }
           &:hover{
-            background: #FFCECB;
+            background: #fff;
+            box-shadow: 0 0 64px rgba(4, 9, 21, 0.13);
           }
         }
         &-name{
-          height: 64px;
-          line-height: 64px;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 20px;
-          color: #666666;
+          color: var(--topic-text-color);
           text-align: center;
-          white-space: nowrap;
+          font-family: 'Yuanti TC';
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 27.2px */
+          letter-spacing: 4.25px;
+          margin-top: 14px;
+          position: relative;
+          &::after{
+            content: '>';
+            color: var(--topic-color);
+            font-family: '黑体';
+            font-size: 20px;
+            position: absolute;
+            font-weight: bold;
+            top: 1px;
+          }
         }
         &>.router-link-exact-active{
           .servicesCard-in-image{
-            background: #FFCECB;
+            background: #F5F4F4;
           }
         }
       }

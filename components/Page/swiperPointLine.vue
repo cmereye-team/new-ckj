@@ -40,12 +40,10 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div class="point" :style="{width: (isAutoWidth?`calc(${lineWidth}px * ${latestNewsNum}`: '100%')}">
-    <div class="boxLine" v-show="latestNewsNum !== 1"></div>
-    <div class="boxLine-current" v-show="latestNewsNum !== 1" :style="{width:`${ (latestNewsCurrent-1) * 100/(latestNewsNum-1) }%`}"></div>
+  <div class="point">
     <div class="boxRound">
       <div class="boxRound-in" v-for="boxRoundIndex in latestNewsNum" :key="boxRoundIndex" @click="handleSwiperItem(boxRoundIndex)">
-        <div v-show="boxRoundIndex <= latestNewsCurrent" class="current"></div>
+        <div v-show="boxRoundIndex === latestNewsCurrent" class="current"></div>
       </div>
     </div>
   </div>
@@ -53,38 +51,20 @@ onMounted(()=>{
 <style lang="scss" scoped>
   .point{
     position: relative;
-    width: 100%;
-    .boxLine{
-      width: 100%;
-      height: 4px;
-      background: #FFF1F0;
-    }
-    .boxLine-current{
-      height: 4px;
-      background: #FFCECB;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      transition: all .5s;
-    }
     .boxRound{
-      position: absolute;
-      top: -10px;
-      left: 0;
-      width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       cursor: pointer;
       &-in{
-        width: 24px;
-        height: 24px;
-        background: #FFF1F0;
-        border-radius: 50%;
+        width: 18px;
+        height: 20px;
+        background: url(https://static.cmereye.com/imgs/2023/07/be9cf2097b6cd6e3.png);
+        background-size: 100% 100%;
+        margin-left: 28.5px;
         .current{
           width: 100%;
           height: 100%;
-          background: #FFCECB;
+          background: url(https://static.cmereye.com/imgs/2023/07/8027480ec64df903.png);
           border-radius: 50%;
           transition: all .5s;
         }
@@ -93,16 +73,9 @@ onMounted(()=>{
   }
 @media (min-width: 1000px) and (max-width: 1452px) {
   .point{
-    .boxLine{
-      height: 3px;
-    }
-    .boxLine-current{
-      height: 3px;
-    }
     .boxRound{
-      top: -8px;
       &-in{
-        width: 20px;
+        width: 18px;
         height: 20px;
       } 
     }
@@ -110,16 +83,9 @@ onMounted(()=>{
 }
 @media screen and (max-width: 1000px) {
   .point{
-    .boxLine{
-      height: 2px;
-    }
-    .boxLine-current{
-      height: 2px;
-    }
     .boxRound{
-      top: -7px;
       &-in{
-        width: 16px;
+        width: 14.4px;
         height: 16px;
       }
     }

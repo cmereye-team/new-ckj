@@ -1,8 +1,10 @@
 // $IndexColor: #FFCECB;
 //使用 var(font_family)
-// :root{
-//   --IndexColor: #FFCECB;
-// }
+:root{
+  --topic-color: #FC1682;
+  --topic-text-color: #6B6B6B;
+  --max-width: 1920px;
+}
 
 //Noto Serif HK
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@300;400;500;600;700&display=swap');
@@ -15,6 +17,7 @@
 body,div,span,h1,h2,h3,h4,h5,h6,p,li{
   font-family: 'Noto Serif HK',Serif;
 }
+
 
 
 // components
@@ -48,13 +51,6 @@ html.dark {
     background-color: theme('colors.slate.400');
   }
 }
-// html{
-  // font-size: 16px;
-  // -moz-text-size-adjust: 100%;
-  // -webkit-text-size-adjust: 100%;
-  // -ms-text-size-adjust: 100%;
-  // text-size-adjust: 100%;
-// }
 body{
   &::-webkit-scrollbar{
     width: 5px;
@@ -95,14 +91,13 @@ body{
   font-style: normal;
   position: relative;
   font-weight: 600;
-  // font-size: 30px;
+  font-size: 30px;
   font-size: 24px;
   line-height: 150%;
   text-indent: 55px;
   color: #666666;
   background: url(@/assets/images/indexTitle_bg.png) no-repeat;
   background-size: auto 100%;
-  // background-position: 0px 5px;
   padding-bottom: 5px;
 }
 .dentistryServices{

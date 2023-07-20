@@ -33,15 +33,8 @@ const navLists = [
 </script>
 
 <template>
-  <footer class="bgColor">
+  <footer class="footerPage">
     <div class="footer-content bigPageCon">
-      <div class="footer-content-nav">
-        <div v-for="(navItem, navIndex) in navLists" :key="navIndex">
-          <nuxt-link :to="navItem.link">
-            {{ $t(navItem.name) }}
-          </nuxt-link>
-        </div>
-      </div>
       <div class="footer-content-logo_one">
         <nuxt-link :to="'/'">
           <img src="@/assets/images/logo_2.png" alt="" />
@@ -49,6 +42,13 @@ const navLists = [
       </div>
       <div class="footer-content-text">
         {{$t('components.footer.text1')}} {{'\n'}}{{$t('components.footer.text2')}}
+      </div>
+      <div class="footer-content-nav">
+        <div v-for="(navItem, navIndex) in navLists" :key="navIndex">
+          <nuxt-link :to="navItem.link">
+            {{ $t(navItem.name) }}
+          </nuxt-link>
+        </div>
       </div>
       <div class="footer-content-icon">
         <div class="footer-content-icon-in">
@@ -66,17 +66,20 @@ const navLists = [
             <img src="@/assets/images/icon_3.png" />
           </nuxt-link>
         </div>
+        <div class="footer-content-icon-in">
+          <nuxt-link to="https://www.youtube.com/channel/UCKYINBITo-8P37-SQDRSr_g" target="_blank">
+            <img src="@/assets/images/xiaohonshu.png" />
+          </nuxt-link>
+        </div>
       </div>
-      <!-- <div class="w-30 md:absolute md:right-20 md:bottom-10">
-        <nuxt-link :to="'/'">
-          <img class="w-full" src="https://static.cmereye.com/imgs/2023/05/5e148b7d20c0be51.png" alt="" />
-        </nuxt-link>
-      </div> -->
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
+.footerPage{
+  background: #FF6096;
+}
 .footer-content {
   display: flex;
   flex-direction: column;

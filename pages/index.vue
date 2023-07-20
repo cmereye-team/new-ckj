@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useAppState } from '~/stores/appState'
 import doctorLists_cs from '~/assets/js/doctor'
+import { Autoplay,EffectFade } from 'swiper';
 const appState = useAppState()
 const { t } = useLang()
 useHead({
@@ -113,21 +114,46 @@ watch(
   }
 );
 
+const bannerLists = [
+  {
+    title: '歐美種植牙 即減￥2000元/顆',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/d627f37ff1b2a3a2.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/06/0507b7e68c818758.jpg',
+    link: '/dental-service/implant'
+  },
+  {
+    title: '隱形牙箍  即減￥5000元',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/820313020a5249c7.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/06/e682138cf0372fea.jpg',
+    link: '/dental-service/invisalign'
+  },
+  {
+    title: '金屬矯正牙箍 即減￥2000元',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/d627f37ff1b2a3a2.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/06/7f53da7aac0a0ac6.jpg',
+    link: '/dental-service/orthodontics'
+  }
+]
 
-// const async posts = ({ $content }) => {
-//     const posts = await $content("blog").fetch();
+let bannerCurrent = ref(1)
 
-//     return {
-//       posts,
-//     };
-//   },
-// const posts = ({$content}) => useAsyncData('count', () => {
-//   return $content("blog").fetch();
-// })
-// asyncData
-// const { posts } = await this.$content('blog').fetch()
-// const posts = await queryContent('blog')
-// console.log(posts)
+//走马灯事件
+const onSlideChange = (swiper:any) => {
+  bannerCurrent.value = swiper.realIndex + 1
+  console.log(swiper)
+}
+const handleBannerMascot = (_idx:number) =>{
+  bannerCurrent.value = _idx
+  console.log(_idx)
+  bannerSwiperRef.slideToLoop(_idx - 1)
+}
+let bannerSwiperRef ={
+  slideToLoop: (a)=>{}
+}
+const setBannerSwiperRef = (swiper:any) => {
+  
+  bannerSwiperRef = swiper;
+}
 </script>
 
 <template>
@@ -135,6 +161,41 @@ watch(
   <!-- <div class="bigPageCon"> -->
     <PageHeader /> 
     <div class="indexPage">
+      <div class="index-banner">
+        <div class="index-banner-t">
+          <swiper
+            class="bannerSwiper"
+            :loop="true"
+            :modules="[Autoplay,EffectFade]"
+            :effect="'fade'"
+            :autoplay="{
+              delay: 2500,
+            }"
+            @swiper="setBannerSwiperRef"
+            @slideChange="onSlideChange"
+          >
+            <swiper-slide class="bannerSwiper-slide" v-for="(bannerItem,bannerIndex) in bannerLists" :key="bannerIndex">
+              <div class="bannerSwiper-in" >
+                <!-- <nuxt-link :to="bannerItem.link"> -->
+                  <img class="bannerSwiper-in-image bigPageCon" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
+                <!-- </nuxt-link> -->
+                <div class="bannerSwiper-in-bg" :style="{'background-image': `url(${bannerItem.imgUrl})`}"></div>
+              </div>
+            </swiper-slide>
+          </Swiper>
+        </div>
+        <div class="index-banner-b">
+          <div :class="{'cur': bannerCurrent===1}" @click="handleBannerMascot(1)">
+            <img v-show="bannerCurrent===1" src="https://static.cmereye.com/imgs/2023/07/f0cf6f4a2ed12566.png" alt="">
+          </div>
+          <div :class="{'cur': bannerCurrent===2}" @click="handleBannerMascot(2)">
+            <img v-show="bannerCurrent===2" src="https://static.cmereye.com/imgs/2023/07/bddd5d9b334f8f0a.png" alt="">
+          </div>
+          <div :class="{'cur': bannerCurrent===3}" @click="handleBannerMascot(3)">
+            <img v-show="bannerCurrent===3" src="https://static.cmereye.com/imgs/2023/07/f0cf6f4a2ed12566.png" alt="">
+          </div>
+        </div>
+      </div>
       <!-- <div>
         <li v-for="post of posts" :key="post.slug">
           <NuxtLink :to="post.slug">{{ post.title }}</NuxtLink>
@@ -218,6 +279,75 @@ svg:hover path{
   width: 100%;
   background: #fff;
   padding-bottom: 140px;
+}
+.index-banner{
+  // background: #f2f2f2;
+  height: auto;
+  margin-top: -30px;
+  position: relative;
+  z-index: 1;
+  .index-banner-t{
+    width: 100%;
+    // min-height: 1000px;
+    max-height: 1000px;
+    overflow: hidden;
+  }
+  .index-banner-b{
+    height: 200px;
+    margin-top: -85px;
+    display: flex;
+    justify-content: center;
+    &>div{
+      width: 149px;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+      img{
+        position: relative;
+        z-index: 3;
+      }
+      &::after{
+        content: '';
+        width: 79px;
+        height: 38px;
+        border-radius: 50%;
+        background: #DCF3FF;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &.cur{
+        &::after{
+          background: #089CFE;
+        }
+      }
+    }
+  }
+  .bannerSwiper{
+    width: 100%;
+    &-in{
+      width: 100%;
+      position: relative;
+      img{
+        position: relative;
+        z-index: 2;
+      }
+      &-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        filter: blur(30px);
+      }
+    }
+  }
 }
 //醫生團隊
 .index-doctorTeam{
