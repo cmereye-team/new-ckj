@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useAppState } from '~/stores/appState'
 import doctorLists_cs from '~/assets/js/doctor'
-import { Autoplay,EffectFade } from 'swiper';
+import { Autoplay,EffectFade,Navigation } from 'swiper';
 const appState = useAppState()
 const { t } = useLang()
 useHead({
@@ -22,20 +22,71 @@ useHead({
   ],
 })
 
+// const caseSharingLists = [
+//   {
+//     name: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.name',
+//     skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.skill',
+//     text: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.text',
+//     context: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.context',
+//     imgUrl: 'https://static.cmereye.com/imgs/2023/06/72a1864e2021e804.jpg'
+//   },
+//   {
+//     name: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.name',
+//     skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.skill',
+//     text: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.text',
+//     context: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.context',
+//     imgUrl: 'https://static.cmereye.com/imgs/2023/06/f1fab4a43cdea943.jpg'
+//   },
+// ]
+
 const caseSharingLists = [
   {
-    name: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.name',
-    skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.skill',
-    text: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.text',
-    context: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.context',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/06/72a1864e2021e804.jpg'
+    name: '陳先生',
+    type: '上班族',
+    skill: '根管治療(杜牙根)療程',
+    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
+    context: '安心、舒服、無痛',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
   },
   {
-    name: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.name',
-    skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.skill',
-    text: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.text',
-    context: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.context',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/06/f1fab4a43cdea943.jpg'
+    name: '陳先生',
+    type: '上班族',
+    skill: '根管治療(杜牙根)療程',
+    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
+    context: '安心、舒服、無痛',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+  },
+  {
+    name: '陳先生',
+    type: '上班族',
+    skill: '根管治療(杜牙根)療程',
+    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
+    context: '安心、舒服、無痛',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+  },
+  {
+    name: '陳先生',
+    type: '上班族',
+    skill: '根管治療(杜牙根)療程',
+    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
+    context: '安心、舒服、無痛',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+  },
+  {
+    name: '陳先生',
+    type: '上班族',
+    skill: '根管治療(杜牙根)療程',
+    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
+    context: '安心、舒服、無痛',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+  },
+  {
+    name: '陳先生',
+    type: '上班族',
+    skill: '根管治療(杜牙根)療程',
+    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
+    context: '安心、舒服、無痛',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
   },
 ]
 
@@ -49,36 +100,6 @@ const caseSharingTopData = {
 }
 
 onMounted(() => {
-  // gsap.registerPlugin(ScrollTrigger);
-  // const animRightIn = (name: string) => {
-  //   return gsap.from(name, {
-  //     opacity: 0, 
-  //     x: 100, 
-  //     duration: 3
-  //   })
-  // }
-  // const animBottomIn = (name: string) => {
-  //   return gsap.from(name, {
-  //     opacity: 0, 
-  //     y: 100, 
-  //     duration: 3
-  //   })
-  // }
-  // ScrollTrigger.create({
-  //   trigger: ".index_title_1",
-  //   animation: animRightIn(".index_title_1"),
-  //   start: "bottom bottom",
-  // })
-  // ScrollTrigger.create({
-  //   trigger: ".index_title_2",
-  //   animation: animRightIn(".index_title_2"),
-  //   start: "bottom bottom",
-  // })
-  // ScrollTrigger.create({
-  //   trigger: ".dentalServices-box-in",
-  //   animation: animBottomIn(".dentalServices-box-in"),
-  //   start: "bottom bottom",
-  // })
 });
 
 //医生模块轮播图事件
@@ -140,11 +161,9 @@ let bannerCurrent = ref(1)
 //走马灯事件
 const onSlideChange = (swiper:any) => {
   bannerCurrent.value = swiper.realIndex + 1
-  console.log(swiper)
 }
 const handleBannerMascot = (_idx:number) =>{
   bannerCurrent.value = _idx
-  console.log(_idx)
   bannerSwiperRef.slideToLoop(_idx - 1)
 }
 let bannerSwiperRef ={
@@ -154,6 +173,19 @@ const setBannerSwiperRef = (swiper:any) => {
   
   bannerSwiperRef = swiper;
 }
+
+let swiperRef ={
+  slidePrev: ()=>{},
+  slideNext: ()=>{}
+}
+const setSwiperRef = (swiper:any) => {
+  swiperRef = swiper;
+};
+const handleProcessBtn = (_type: string) => {
+  swiperRef[_type]();
+}
+
+
 </script>
 
 <template>
@@ -246,20 +278,52 @@ const setBannerSwiperRef = (swiper:any) => {
       <!-- 個案分享 -->
       <div class="index-caseSharing">
         <div class="index-caseSharing-title">
-          <div class="index_title">{{$t('pages.index.caseSharing.title')}}</div>
+          <div class="title">{{$t('pages.index.caseSharing.title')}}</div>
         </div>
         <div class="index-caseSharing-in">
-          <div class="in-top">
-            <CaseSharingVideoItem :caseSharingData="caseSharingTopData" />
+          <div>
+            <div class="name">朱咪咪 Mimi</div>
+            <div class="skill">種植牙齒療程</div>
+            <div class="wujiao">
+              <div v-for="icon in 5" :key="icon" >
+                <img src="https://static.cmereye.com/imgs/2023/07/303f6a1ba3ba2321.png" alt="">
+              </div>
+            </div>
+            <div class="text">咁多年來我只會揀愛康健，原因是他們專業細心！而家植牙嘅技術真係非常之好，簡直同真牙一樣擁有正常嘅咀嚼能力，真係食乜都得啊！</div>
           </div>
-          <div class="in-cen">
-            <div class="in-cen-box" v-for="(caseSharingItem,caseSharingIndex) in caseSharingLists" :key="caseSharingIndex">
-              <CaseSharingImageItem :userInfo="caseSharingItem" :userIndex="caseSharingIndex" />
+          <div>
+            <img class="userImage" src="https://static.cmereye.com/imgs/2023/07/51186aabaa797595.jpg" alt="">
+            <div class="ya">
+              <div>星級{{'\n'}}客戶</div>
             </div>
           </div>
-          <!-- <div class="in-bottom">
-            <span>了解更多</span>
-          </div> -->
+        </div>
+        <div class="index-caseSharing-swiper">
+          <swiper
+            class="caseSharingSwiper"
+            :loop="true"
+            :slidesPerView="3"
+            @swiper="setSwiperRef"
+          >
+            <swiper-slide v-for="(caseItem,caseIndex) in caseSharingLists" :key="caseIndex">
+              <div class="centerBox">
+                <div class="caseSharingSwiper-in">
+                  <div class="context">安心、舒服、無痛</div>
+                  <div class="userImage"><img :src="caseItem.imgUrl" alt=""></div>
+                  <div class="name">{{caseItem.name}}<span>{{caseItem.type}}</span></div>
+                  <div class="skill">{{caseItem.skill}}</div>
+                  <div class="wujiao">
+                    <div v-for="icon in 5" :key="icon" >
+                      <img src="https://static.cmereye.com/imgs/2023/07/303f6a1ba3ba2321.png" alt="">
+                    </div>
+                  </div>
+                  <div class="text">{{caseItem.text}}</div>
+                </div>
+              </div>
+            </swiper-slide>
+          </Swiper>
+          <div class="swiper-next" @click="handleProcessBtn('slidePrev')">{{'<'}}</div>
+          <div class="swiper-prev" @click="handleProcessBtn('slideNext')">{{'>'}}</div>
         </div>
       </div>
       <!-- 聯絡我們 -->
@@ -278,7 +342,7 @@ svg:hover path{
 .indexPage {
   width: 100%;
   background: #fff;
-  padding-bottom: 140px;
+  padding-bottom: 190px;
 }
 .index-banner{
   // background: #f2f2f2;
@@ -396,45 +460,294 @@ svg:hover path{
 }
 //個案分享
 .index-caseSharing{
-  padding: 35px 0;
-  background: linear-gradient(180deg,rgba(255, 241, 240, 0) 0%,#FFF1F0 100%);
   &-title{
     display: flex;
     justify-content: center;
+    .title{
+      color: var(--topic-text-color);
+      font-family: 'Yuanti TC';
+      font-size: 31.766px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 50.826px */
+      letter-spacing: 7.942px;
+      position: relative;
+      padding-bottom: 20px;
+      &::after{
+        content: '';
+        background: var(--topic-color);
+        height: 5px;
+        width: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
+      }
+    }
   }
   &-in{
     width: 100%;
-    max-width: 1046px;
-    margin: 45px auto 0;
-    .in-top{
-      display: flex;
-    }
-    .in-cen{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 120px;
-      &-box{
-        width: calc(50% - 8px);
+    max-width: 1500px;
+    margin: 130px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &>div{
+      .name{
+        color: #6B6B6B;
+        font-family: 'Yuanti TC';
+        font-size: 60.157px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 96.252px */
+        letter-spacing: 15.039px;
+        white-space: nowrap;
+      }
+      .skill{
+        color: var(--topic-text-color);
+        font-family: 'Yuanti TC';
+        font-size: 34.864px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 55.782px */
+        letter-spacing: 8.716px;
+      }
+      .wujiao{
+        margin-top: 10px;
+        display: flex;
+        &>div{
+          padding: 0 10px;
+        }
+      }
+      .text{
+        width: 100%;
+        max-width: 440px;
+        padding: 20px 47px;
+        border-radius: 20px;
+        border: 3px solid var(--topic-color);
+        box-sizing: border-box;
+        margin-top: 27px;
+        color: #FC1682;
+        text-align: justify;
+        font-family: 'Yuanti TC';
+        font-size: 19.755px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 31.608px */
+        letter-spacing: 4.939px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          right: -17px;
+          width: 30px;
+          height: 30px;
+          border: 3px solid var(--topic-color);
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+          border-left: transparent;
+          border-bottom: transparent;
+          background: #fff;
+        }
+      }
+      .userImage{ 
+        width: 100%;
+        max-width: 530px;
+      }
+      .ya{
+        width: 140px;
+        height: 160px;
+        position: absolute;
+        bottom: -20px;
+        right: -30px;
+        background: url(https://static.cmereye.com/imgs/2023/07/3b49416894156c3e.png);
+        background-size: 100% 100%;
+        color: #FFF;
+        font-family: 'Yuanti TC';
+        font-size: 35.368px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 115%; /* 40.673px */
+        letter-spacing: 5.305px;
+        white-space: pre-wrap;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        padding-top: 30px;
+      }
+      &:last-child{
+        margin-left: 42px;
+        position: relative;
+        
       }
     }
-    .in-bottom{
+  }
+  &-swiper{
+    width: 100%;
+    max-width: 1500px;
+    margin: 100px auto 0;
+    position: relative;
+    :deep(.swiper-button-next){
+      width: 20px;
+      height: 40px;
+      color: var(--topic-color);
+    }
+    :deep(.swiper-button-prev){
+       width: 20px;
+      height: 40px;
+      color: var(--topic-color);
+    }
+    .swiper-next,.swiper-prev{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: '黑体';
+      color: var(--topic-color);
+      font-size: 65px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .swiper-prev{
+      left: auto;
+      right: 0;
+    }
+    .caseSharingSwiper{
       width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 35px;
-      span{
-        cursor: pointer;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 2rem;
-        line-height: 160%;
-        text-align: center;
-        display: inline-block;
-        padding: 10px 70px;
-        background: #FFFFFF;
-        color: #666666;
-        box-shadow: 1px 1px 4px rgba(255, 163, 158, 0.45);
+      max-width: 1200px;
+      margin: 0 auto;
+      // padding: 0 100px;
+      .centerBox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &-in{
+        padding: 0 30px;
+        .context{
+          padding: 13px 27px;
+          border-radius: 20px;
+          border: 3px solid var(--topic-color);
+          box-sizing: border-box;
+          margin-left: 52px;
+          color: var(--topic-color);
+          font-family: 'Yuanti TC';
+          font-size: 21.964px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 35.143px */
+          letter-spacing: 5.491px;
+          position: relative;
+          z-index: 2;
+          background: #fff;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--topic-color);
+            left: 70px;
+            transform: rotate(135deg);
+            border-left: transparent;
+            border-bottom: transparent;
+            background: #fff;
+          }
+        }
+        .name{
+          color: var(--topic-text-color);
+          font-family: 'Yuanti TC';
+          font-size: 25.666px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 96.252px */
+          letter-spacing: 6.417px;
+          white-space: nowrap;
+          margin-top: 20px;
+          span{
+            font-size: 19.203px;
+            letter-spacing: 4.801px;
+          }
+        }
+        .skill{
+          color: var(--topic-text-color);
+          font-family: 'Yuanti TC';
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 24px */
+          letter-spacing: 3.75px;
+        }
+        .wujiao{
+          margin-top: 10px;
+          display: flex;
+          &>div{
+            padding: 0 5px;
+            width: 40px;
+            img{
+              width: 100%;
+            }
+          }
+        }
+        .text{
+          width: 100%;
+          max-width: 360px;
+          padding: 45px 35px;
+          border-radius: 20px;
+          border: 3px solid var(--topic-color);
+          box-sizing: border-box;
+          margin-top: 27px;
+          color: #FC1682;
+          text-align: justify;
+          font-family: 'Yuanti TC';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 31.608px */
+          letter-spacing: 4px;
+          position: relative;
+          &::after{
+            content: '';
+            position: absolute;
+            top: -17px;
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--topic-color);
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            border-left: transparent;
+            border-bottom: transparent;
+            background: #fff;
+          }
+        }
+        .userImage{ 
+          width: 100%;
+          max-width: 259px;
+          margin-top: -10px;
+          position: relative;
+          z-index: 1;
+        }
+        .ya{
+          width: 140px;
+          height: 160px;
+          position: absolute;
+          bottom: -20px;
+          right: -30px;
+          background: url(https://static.cmereye.com/imgs/2023/07/3b49416894156c3e.png);
+          background-size: 100% 100%;
+          color: #FFF;
+          font-family: 'Yuanti TC';
+          font-size: 35.368px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 115%; /* 40.673px */
+          letter-spacing: 5.305px;
+          white-space: pre-wrap;
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+        }
       }
     }
   }

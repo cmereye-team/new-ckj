@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import { useAppState } from '~/stores/appState'
 defineProps({
   str:{
     type: String,
@@ -7,6 +8,7 @@ defineProps({
   }
 })
 
+const appState = useAppState()
 const menuLists = [
   {
     name: 'components.header.menuLists.menu_index.name',
@@ -17,7 +19,7 @@ const menuLists = [
   {
     name: 'components.header.menuLists.menu_brand.name',
     enName: 'PROMISES',
-    link: `/brand`,
+    link: `/brand/${appState.brand}`,
     child: [
       {
         name: 'components.header.menuLists.menu_brand.course',
@@ -274,6 +276,7 @@ const menuLists = [
                 z-index: 1;
                 border-radius: 50% 50% 0 0;
                 width: 0;
+                height: 0;
               }
               &:hover{
                 color: var(--topic-color);

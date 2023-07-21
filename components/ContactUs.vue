@@ -208,34 +208,61 @@ const onSlideContactUsSwiperChange = (swiper:any) => {
 // --------------------------------------------------
 
 const handleAddress = (_idx: string) => {
-  console.log(_idx)
-  if(currentAddress.value === _idx){
-    currentAddress.value = '0'
-    return
-  }
+  // if(currentAddress.value === _idx){
+  //   currentAddress.value = '0'
+  //   return
+  // }
   currentAddress.value = _idx
-  // contactUsSwiperRef.slideTo(currentAddress.value, 0);
+}
+const closeAddress = () => {
+  currentAddress.value = '0'
 }
 
-// const handleLeftBtn = () => {
-//   // console.log('left',currentAddress.value)
-//   if(currentAddress.value > 0){
-//     currentAddress.value--
-//   }else{
-//     currentAddress.value = allAddressLists[appState.areaTabCurNum].length-1
-//   }
-//   contactUsSwiperRef.slideTo(currentAddress.value, 0);
-// }
+const dateLists=[
+  {
+    name: 'MON',
+    key: '1'
+  },
+  {
+    name: 'TUE',
+    key: '2'
+  },
+  {
+    name: 'WED',
+    key: '3'
+  },
+  {
+    name: 'THU',
+    key: '4'
+  },
+  {
+    name: 'FRI',
+    key: '5'
+  },
+  {
+    name: 'SAT',
+    key: '6'
+  },
+  {
+    name: 'SUN',
+    key: '7'
+  },
+  {
+    name: 'HOLIDAY',
+    key: '8'
+  }
+]
 
-// const handleRightBtn = () => {
-//   // console.log('right',currentAddress.value)
-//   if(currentAddress.value >= 0 && currentAddress.value < allAddressLists[appState.areaTabCurNum].length-1){
-//     currentAddress.value++
-//   }else{
-//     currentAddress.value = 0
-//   }
-//   contactUsSwiperRef.slideTo(currentAddress.value, 0);
-// }
+
+const getColor = (_idx?: number) => {
+  let _color = '#FF6096'
+  if(_idx === 0){
+    _color = '#089CFE'
+  }else if(_idx === 1){
+    _color = '#FECB02'
+  }
+  return _color
+}
 
 </script>
 
@@ -244,12 +271,111 @@ const handleAddress = (_idx: string) => {
   <div class="index-contactUs">
       <!-- <div class="index_title">聯絡我們</div> -->
       <div class="index-contactUs-t pageCon">
-        <div class="index_title">{{$t('contactUs.title')}}</div>
-        <div>
+        <div class="title">
+          <div>
+            {{$t('contactUs.title')}}
+          </div>
+        </div>
+        <div class="date">
+          <div class="date-lists">
+            <div>
+              <div>營業時間</div>
+              <div>9:00-18:00</div>
+            </div>
+            <div v-for="dateItem in dateLists" :key="dateItem.key">
+              <div>{{dateItem.name}}</div>
+              <div>·</div>
+            </div>
+          </div>
+          <div class="date-masker">
+            <span class="spanColor">恆潔口腔門診部（羅湖）</span>
+            <span>營運至17:30；</span>
+            <span class="spanColor">康輝口腔門診部（羅湖）</span>
+            <span>營運至20:30</span>
+          </div>
+        </div>
+        <div class="area">
           <AreaTab />
         </div>
       </div>
       <div class="address">
+        <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
+          <div class="addressBox">
+            <div class="addressBox-t">
+              <img :src="addressItem.addressUrl" alt="">
+            </div>
+            <div class="addressBox-b">
+              <div>
+                <div class="addressBox-b-address">
+                  <div>{{$t('contactUs.hospital_address')}}</div>
+                  <div>{{$t(addressItem.address)}}</div>
+                </div>
+                <div class="addressBox-b-phone">
+                  <div>{{$t('contactUs.check_the_phone')}}</div>
+                  <div>{{addressItem.phone}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="addressBox-c">{{$t(addressItem.name)}}</div>
+            <div :class="['addressBox-bus',{'cur': currentAddress === addressItem.id}]" :style="{background: currentAddress === addressItem.id?'#fff':'transparent',
+              width: currentAddress === addressItem.id?'150%':'69px',
+              height: currentAddress === addressItem.id?'100%':'69px',
+              left: currentAddress === addressItem.id?'50%':'20px',
+              transform: currentAddress === addressItem.id?'translate(-50%,-50%)':'none',
+              top: currentAddress === addressItem.id?'50%':(addressIndex>1?'246px':'446px'),
+              'border-radius': currentAddress === addressItem.id?'0':'50%',
+            }">
+              <div class="bus-image" @click="handleAddress(addressItem.id)">
+                <img src="https://static.cmereye.com/imgs/2023/07/075ccbc4b3a80af6.png" alt="" >
+              </div>
+              <div class="bus-in" :style="{
+                  opacity: currentAddress === addressItem.id?'1':'0',
+                  width: currentAddress === addressItem.id?'500px':'0',
+                  height: currentAddress === addressItem.id?'700px':'0',
+                  padding: currentAddress === addressItem.id?'0 70px':'0',
+                }">
+                <div class="bus-in-btn" @click="closeAddress">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                    <path d="M31.2188 2.14209L2.12404 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M2.12305 2.14209L31.2178 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="bus-in-name">{{$t(addressItem.name)}}</div>
+                <div class="bus-in-title">{{$t('contactUs.traffic_route')}}</div>
+                <div class="bus-in-content">
+                  <div><SvgBus :color="getColor(addressIndex)" /></div>
+                  <div>
+                    <p>{{$t('contactUs.bus_route')}}</p>
+                    <p>{{$t(addressItem.busRoutes)}}</p>
+                  </div>
+                </div>
+                <div class="bus-in-railway">
+                  <div><SvgRailway :color="getColor(addressIndex)" /></div>
+                  <div>
+                    <p>{{$t('contactUs.metro_lines')}}</p>
+                    <p>{{$t(addressItem.metroRoutes)}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="address-in-leftBox" v-if="addressIndex === 0">
+            <div>
+              <p>{{$t(addressItem.name)}}</p>
+              <p>營運至17:30</p>
+            </div>
+            <img src="https://static.cmereye.com/imgs/2023/07/3a40fcfc57e3b381.png" alt="">
+          </div>
+          <div class="address-in-rightBox" v-if="addressIndex === 1">
+            <div>
+              <p>{{$t(addressItem.name)}}</p>
+              <p>營運至20:30</p>
+            </div>
+            <img src="https://static.cmereye.com/imgs/2023/07/96e33002c7340b68.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- <div class="address">
         <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
           <h3>{{$t(addressItem.name)}}</h3>
           <div class="content">
@@ -265,15 +391,12 @@ const handleAddress = (_idx: string) => {
             <span>{{$t(addressItem.metroRoutes)}}</span>
           </div>
           <div class="mapBtn">
-            <!-- <a :href="addressItem.googleMap" target="_blank">
-            <div class="mapBtn-in">{{$t('contactUs.google_map')}}</div>
-            </a> -->
             <a :href="addressItem.baiduMap" target="_blank">
               <div class="mapBtn-in">{{$t('contactUs.baidu_map')}}</div>
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 </template>
 
@@ -284,92 +407,451 @@ const handleAddress = (_idx: string) => {
   max-width: 1550px; 
   margin: 0 auto;
   &-t{
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    
+    // justify-content: space-between;
+    .title{
+      text-align: center;
+      &>div{
+        color: #6B6B6B;
+        font-family: 'Yuanti TC';
+        font-size: 31.766px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 50.826px */
+        letter-spacing: 7.942px;
+        padding-bottom: 20px;
+        position: relative;
+        &::after{
+          content: '';
+          background: var(--topic-color);
+          height: 5px;
+          width: 40px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 3px;
+        }
+      }
+      
+    }
+    .date{
+      width: 100%;
+      max-width: 900px;
+      margin: 123px auto 0;
+      &-lists{
+        display: flex;
+        justify-content: center;
+        &>div{
+          width: 100%;
+          &:first-child{
+            min-width: 130px;
+          }
+          &>div{
+            border-bottom: 2px solid #F5F4F4;
+            line-height: 54px;
+            height: 54px;
+            font-style: normal;
+            font-weight: 400;
+            font-family: 'Yuanti TC';
+            color: var(--topic-text-color);
+            text-align: center;
+            font-size: 17px;
+            &:first-child{
+              letter-spacing: 4.25px;
+            }
+            &:last-child{
+              letter-spacing: 1.7px;
+            }
+          }
+          &:first-child{
+            &>div{
+              &:first-child{
+                &::after{
+                  content: '#';
+                  color: var(--topic-color);
+                  font-family: 'Yuanti TC';
+                  font-size: 17px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 180%; /* 30.6px */
+                  letter-spacing: 1.7px;
+                  margin-top: -18px;
+                  vertical-align: middle;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+          &:not(:first-child){
+            &>div{
+              &:first-child{
+                font-family: '.SF NS Rounded';
+                font-weight: 700;
+                letter-spacing: 2.04px;
+              }
+              &:last-child{
+                font-size: 100px;
+                line-height: 43px;
+                color: var(--topic-color);
+              }
+            }
+          }
+        }
+      }
+      &-masker{
+        margin-top: 24px;
+        &::before{
+          content: '#';
+          font-family: 'Yuanti TC';
+          font-size: 20.564px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 180%; /* 37.015px */
+          letter-spacing: 2.056px;
+          margin-top: -18px;
+          vertical-align: middle;
+          display: inline-block;
+          color: var(--topic-color);
+        }
+        span{
+          color: var(--topic-text-color);
+          font-family: 'Yuanti TC';
+          font-size: 20.564px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 180%;
+          letter-spacing: 2.056px;
+          &.spanColor{
+            color: var(--topic-color);
+          }
+        }
+      }
+    }
+    .area{
+      margin-top: 62px;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
   .address{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 79px;
+    margin-top: 60px;
+    justify-content: center;
     &-in{
       width: 33.33%;
-      padding: 0 50px 100px;
-      h3{
-        font-weight: 500;
-        font-size: 1.25rem;
-        line-height: 160%;
-        color: #FFA09E;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      &:nth-of-type(1){
+        width: 50%;
+        padding-right: 23px;
+        justify-content: flex-end;
+        margin-bottom: 45px;
+        .addressBox{
+          display: flex;
+          flex-direction: column;
+          border: 3px solid #089CFE;
+          border-radius: 250px 250px 0 0;
+          &-t{
+            border-radius: 250px 250px 0 0;
+            background: #089CFE;
+            padding-bottom: 85px;
+            padding-top: 30px;
+          }
+          &-b{
+            &>div{
+              &>div{
+                &>div{
+                  color: #089CFE;
+                }
+              }
+            }
+          }
+          &-c{
+            border: 3px solid #089CFE;
+            color: #089CFE;
+            top: auto;
+            bottom: 168px;
+          }
+          &-bus{
+            top: 446px;
+            .bus-in{
+              color: #089CFE;
+              &-btn{
+                border: 3px solid #089CFE;
+                order: 0;
+                margin: 0 auto 40px;
+              }
+            }
+          }
+        }
+      }
+      &:nth-of-type(2){
+        width: 50%;
+        justify-content: flex-start;
+        margin-bottom: 45px;
+        padding-left: 23px;
+        .addressBox{
+          border: 3px solid #FECB02;
+          display: flex;
+          flex-direction: column;
+          border-radius: 250px 250px 0 0;
+          &-t{
+            border-radius: 250px 250px 0 0;
+            background: #FECB02;
+            padding-bottom: 85px;
+            padding-top: 30px;
+          }
+          &-b{
+            &>div{
+              &>div{
+                &>div{
+                  color: #FECB02;
+                }
+              }
+            }
+          }
+          &-c{
+            border: 3px solid #FECB02;
+            color: #FECB02;
+            top: auto;
+            bottom: 168px;
+          }
+          &-bus{
+            top: 446px;
+            .bus-in{
+              color: #FECB02;
+              order: 0;
+              &-btn{
+                border: 3px solid #FECB02;
+                order: 0;
+                margin: 0 auto 40px;
+              }
+            }
+          }
+        }
+      }
+      .addressBox{
+        width: 500px;
+        box-sizing: border-box;
         position: relative;
-        display: inline-block;
-        cursor: pointer;
-        padding-bottom: 10px;
-      }
-      span{
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 160%;
-        color: #666666;
-        display: block;
-      }
-      .content{
-        min-height: 160px;
-      }
-      .route{
-        span{
-          &:nth-of-type(1){
-            margin-top: 18px;
-          }
-          &:nth-of-type(3){
-            margin-top: 18px;
-          }
-        }
-      }
-      .showIcon{
-        cursor: pointer;
-      }
-      .showIcon::after{
-        content: '';
-        width: 0px;
-        height: 0px;
-        border: 7px solid;
-        border-color: #666666 transparent transparent transparent;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 5px;
-        margin-top: 5px;
-      }
-      .mapBtn{
-        width: 100%;
-        margin-top: 22px;
+        overflow: hidden;
         display: flex;
-        justify-content: space-between;
-        a{
-          // flex: 1;
-          width: 50%;
-          &:first-child{
-            margin-right: 22px;
+        flex-direction: column-reverse;
+        border: 3px solid #FF6096;
+        border-radius: 0 0 250px 250px;
+        &-t{
+          padding-top: 85px;
+          border-radius: 0 0 250px 250px;
+          padding-bottom: 30px;
+          background: #FF6096;
+          img{
+            width: 440px;
+            height: 440px;
+            margin: auto;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .3s;
+            &:hover{
+              transform: scale(1.1);
+            }
           }
         }
-        &-in{
-          width: 100%;
-          background: #FFFFFF;
-          box-shadow: 1px 1px 4px #FFA09E;
-          border-radius: 40px;
-          font-family: 'Arial';
+        &-b{
+          height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 0 30px;
+          &>div{
+            &>div{
+              display: flex;
+              &>div{
+                color: #FF6096;
+                font-family: 'Yuanti TC';
+                font-size: 17px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 180%; /* 30.6px */
+                letter-spacing: 1.7px;
+                &:first-child{
+                  margin-right: 66px;
+                  min-width: 90px;
+                }
+              }
+            }
+          }
+        }
+        &-c{
+          color: #FF6096;
+          border: 3px solid #FF6096;
+          text-align: center;
+          font-family: 'Yuanti TC';
+          font-style: normal;
+          position: absolute;
+          text-align: center;
+          width: 380px;
+          height: 64px;
+          line-height: 58px;
+          font-size: 20.483px;
+          font-weight: 400;
+          letter-spacing: 5.121px;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 168px;
+          border-radius: 32px;
+          background: #fff;
+        }
+        &-bus{
+          position: absolute;
+          left: 20px;
+          top: 246px;
+          width: 69px;
+          height: 69px;
+          border-radius: 50%;
+          background: transparent;
+          cursor: pointer;
+          transition: all 1s;
+          transform: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .bus-image{
+            width: 100%;
+            height: 100%;
+            border: 3px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            &>img{
+              width: 60%;
+            }
+          }
+          .bus-in{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: #FF6096;
+            // padding: 0 70px;
+            box-sizing: border-box;
+            transition: all 2s;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &-btn{
+              font-family: '圆幼';
+              border-radius: 50%;
+              border: 3px solid #FF6096;
+              width: 78px;
+              height: 78px;
+              font-size: 50px;
+              // font-weight: bold;
+              margin: 40px auto 0;
+              text-align: center;
+              line-height: 60px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              order: 5;
+            }
+            &-name{
+              text-align: center;
+              font-family: 'Yuanti TC';
+              font-size: 17px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 180%; /* 30.6px */
+              letter-spacing: 1.7px;
+            }
+            &-title{
+              font-family: 'Yuanti TC';
+              font-size: 17px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 180%; /* 30.6px */
+              letter-spacing: 1.7px;
+              margin-bottom: 25px;
+            }
+            &-content,&-railway{
+              display: flex;
+              &>div{
+                text-align: left;
+                &:first-child{
+                  margin-right: 15px;
+                }
+                p{
+                  font-family: 'Yuanti TC';
+                  font-size: 17px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 180%; /* 30.6px */
+                  letter-spacing: 1.7px;
+                }
+              }
+            }
+            &-content{
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      &-leftBox{
+        position: absolute;
+        left: -80px;
+        top: -30px;
+        &>div{
+          color: #089CFE;
+          text-align: center;
+          font-family: 'Yuanti TC';
+          font-size: 27px;
           font-style: normal;
           font-weight: 400;
-          font-size: 2rem;
-          line-height: 160%;
+          line-height: 160%; /* 43.824px */
+          letter-spacing: 6px;
+          transform: rotate(-15deg)
+        }
+        img{
+          position: absolute;
+          // width: 100%;
+          left: 0;
+          top: -90px;
+          transform: scale(1.3);
+        }
+      }
+      &-rightBox{
+        position: absolute;
+        right: -160px;
+        bottom: 100px;
+        &>div{
+          color: #FECB02;
           text-align: center;
-          color: #FFA09E;
-          display: inline-block;
-          padding: 13px 0;
-          cursor: pointer;
-          transition: all .5s;
-          &:hover{
-            color: #FFFFFF;
-            background: #FFA09E;
-          }
+          font-family: 'Yuanti TC';
+          font-size: 27px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%; /* 43.824px */
+          letter-spacing: 6px;
+          position: relative;
+          z-index: 2;
+          transform: rotate(15deg);
+        }
+        img{
+          position: absolute;
+          width: 100%;
+          left: -20px;
+          top: -70px;
+          transform: scale(1.2);
         }
       }
     }
