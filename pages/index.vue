@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+ <script lang="ts" setup>
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useAppState } from '~/stores/appState'
@@ -104,9 +104,9 @@ onMounted(() => {
 
 //医生模块轮播图事件
 let doctorTeamCurrent = ref(1)
-const onSlideDoctorTeamSwiperChange = (swiper:any) => {
-  doctorTeamCurrent.value = swiper.realIndex + 1
-}
+// const onSlideDoctorTeamSwiperChange = (swiper:any) => {
+//   doctorTeamCurrent.value = swiper.realIndex + 1
+// }
 
 let areaTabCurNum = computed(()=>{
   return appState.areaTabCurNum
@@ -114,21 +114,35 @@ let areaTabCurNum = computed(()=>{
 
 let doctorTeamSwiperRef = {
   slideTo: (a,b)=>{},
-  slideToLoop: (a)=>{}
+  slideToLoop: (a)=>{},
+  autoplay: {
+    start: () =>{}
+  }
 }
 const setDoctorTeamSwiperRef = (swiper:any) => {
   doctorTeamSwiperRef = swiper;
 }
 
-const handleLineCur = (_value:number) =>{
-  // console.log(_value)
-  doctorTeamSwiperRef.slideToLoop(_value-1)
+
+let doctorTeamSwiperRef44 = {
+  slideTo: (a,b)=>{},
+  slideToLoop: (a)=>{},
+  autoplay: {
+    start: () =>{}
+  }
+}
+const setDoctorTeamSwiperRef44 = (swiper:any) =>{
+  doctorTeamSwiperRef44 = swiper
 }
 
 watch(
   areaTabCurNum, (newValue, oldValue) => {
-    // console.log(newValue, oldValue);
     doctorTeamSwiperRef.slideTo(0, 0);
+    doctorTeamSwiperRef.autoplay.start()
+    if(newValue === 0){
+      doctorTeamSwiperRef44.slideTo(0, 44);
+      doctorTeamSwiperRef44.autoplay.start()
+    }
   },
   {
     deep: true,
@@ -245,37 +259,75 @@ const handleProcessBtn = (_type: string) => {
       <!-- 醫生團隊 -->
       <div class="index-doctorTeam">
         <div class="index-doctorTeam-t pageCon">
-          <div class="index_title index_title_2">醫生團隊</div>
-          <AreaTab />
+          <div class="title">醫生團隊</div>
+          <div class="area">
+            <AreaTab />
+          </div>
         </div>
-        <div class="index-doctorTeam-c pageCon">
-            <Swiper
-              class="swiperBox"
-              :loop="true"
-              :autoplay="{
-                disableOnInteraction: true,
-              }"
-              @swiper="setDoctorTeamSwiperRef"
-              @slideChange="onSlideDoctorTeamSwiperChange"
-            >
-              <SwiperSlide v-for="(swiperPage,swiperPageIndex) in Math.ceil( doctorLists_cs[appState.areaTabCurNum].length / 12 )" :key="swiperPageIndex" >
-                <div class="doctorTeamPage">
-                  <div class="doctorItem" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(swiperPageIndex*12,(swiperPageIndex+1)*12)" :key="doctorIndex">
+        <div class="index-doctorTeam-c">
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 10">
+            <div class="c-in-22">
+              <Swiper
+                class="doctorTeamSwiperBox"
+                :modules="[Autoplay]"
+                :autoplay="{
+                  disableOnInteraction: true,
+                  stopOnLastSlide: true,
+                  delay: 0
+                }"
+                speed="3000"
+                :slidesPerView="8.5"
+                @swiper="setDoctorTeamSwiperRef"
+              >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(0,22)" :key="doctorIndex" >
+                  <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
                     </nuxt-link>
                   </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+            <div class="c-in-44" v-if="doctorLists_cs[appState.areaTabCurNum].length > 22">
+              <Swiper
+                class="doctorTeamSwiperBox"
+                :modules="[Autoplay]"
+                :initialSlide="43"
+                :autoplay="{
+                  disableOnInteraction: true,
+                  reverseDirection: true,
+                  stopOnLastSlide: true,
+                  delay: 0
+                }"
+                speed="3000"
+                :slidesPerView="8.5"
+                @swiper="setDoctorTeamSwiperRef44"
+              >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(22,44)" :key="doctorIndex" >
+                  <div class="doctorTeamPage">
+                    <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
+                      <img :src="doctorItem.mbImg || ''" alt="">
+                    </nuxt-link>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+          <div class="c-in" v-else>
+            <div class="c-in-16">
+              <div v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum]" :key="doctorIndex">
+                <div class="doctorTeamPage">
+                  <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
+                    <img :src="doctorItem.mbImg || ''" alt="">
+                  </nuxt-link>
                 </div>
-              </SwiperSlide>
-            </Swiper>
-        </div>
-        <div class="index-doctorTeam-b pageCon">
-          <div class="index-doctorTeam-b-in">
-            <PageSwiperPointLine :latestNewsNum="Math.ceil( doctorLists_cs[appState.areaTabCurNum].length / 12 )" :latestNewsCurrent="doctorTeamCurrent" :isAutoWidth="true" @changeLineCur="handleLineCur"></PageSwiperPointLine>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <!-- 個案分享 -->
+      <RippleLine :type="'5'" :isBottom="true" />
       <div class="index-caseSharing">
         <div class="index-caseSharing-title">
           <div class="title">{{$t('pages.index.caseSharing.title')}}</div>
@@ -325,7 +377,13 @@ const handleProcessBtn = (_type: string) => {
           <div class="swiper-next" @click="handleProcessBtn('slidePrev')">{{'<'}}</div>
           <div class="swiper-prev" @click="handleProcessBtn('slideNext')">{{'>'}}</div>
         </div>
+        <img class="bgIcon bgIcon_1" src="https://static.cmereye.com/imgs/2023/07/db112a8f7e94d783.png" alt="">
+        <img class="bgIcon bgIcon_2" src="https://static.cmereye.com/imgs/2023/07/4755f119a5fecfd5.png" alt="">
+        <img class="bgIcon bgIcon_3" src="https://static.cmereye.com/imgs/2023/07/8fe74d7997ee58b5.png" alt="">
+        <img class="bgIcon bgIcon_4" src="https://static.cmereye.com/imgs/2023/07/85f08b84d0d26e06.png" alt="">
+        <img class="bgIcon bgIcon_5" src="https://static.cmereye.com/imgs/2023/07/55693cf22c9a5e8e.png" alt="">
       </div>
+      <RippleLine :type="'4'" />
       <!-- 聯絡我們 -->
       <ContactUs />
     </div>
@@ -415,39 +473,84 @@ svg:hover path{
 }
 //醫生團隊
 .index-doctorTeam{
-  margin: 140px 0;
+  padding: 140px 0 100px;
+  background: #FF6096;
+  margin: -50px 0 -10px;
+  :deep(.doctorTeamSwiperBox .swiper-wrapper) {
+    transition-timing-function: linear;
+  }
   &-t{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    position: relative;
+    .title{
+      text-align: center;
+      color: #FFF;
+      font-family: 'Yuanti TC';
+      font-size: 31.766px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 50.826px */
+      letter-spacing: 7.942px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+      &::after{
+        content: '';
+        background: #fff;
+        height: 5px;
+        width: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
+      }
+    }
+    .area{
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+    }
   }
   &-c{
-    margin-top: 45px;
+    margin-top: 85px;
     // box-shadow: 2px 0px 8px rgba(255, 163, 158, 0.25);
     .doctorTeamPage{
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      padding: 10px;
-      .doctorItem{
-        cursor: pointer;
-        flex: 1;
-        min-width: 16.55%;
-        max-width: 16.6%;
-        // mix-blend-mode: multiply;
-        // box-shadow: inset -1px -1px 0px #FFA39E;
-        border-right: 1px solid;
-        border-bottom: 1px solid;
-        border-color: #FFA39E;
-        transition: all .5s;
-        overflow: hidden;
-        box-shadow: 2px -2px 8px rgba(255, 163, 158, 0.25);
-        img{
-          width: calc(100% - 1px);
-          height: calc(100% - 1px);
-        }
-        &:hover{
-          background: #FFDDDA;
+      // padding: 10px;
+      border-radius: 50%;
+      border: 2px solid #089CFE;
+      background: #fff;
+      overflow: hidden;
+      margin: 15px;
+    }
+    .c-in{
+      width: 100%;
+      &-44{
+        margin-top: 60px;
+      }
+      &-16{
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        &>div{
+          width: calc(20% - 12px);
+          margin-bottom: 25px;
+          &:nth-of-type(5){
+            margin-right: 60px;
+          }
+          &:nth-of-type(6){
+            margin-left: 60px;
+          }
+          &:nth-of-type(n+6){
+            margin-bottom: 0px;
+          }
+          .doctorTeamPage{
+            margin: 15px 30px;
+          }
         }
       }
     }
@@ -460,6 +563,10 @@ svg:hover path{
 }
 //個案分享
 .index-caseSharing{
+  padding-top: 137px;
+  padding-bottom: 176px;
+  margin: -20px 0;
+  position: relative;
   &-title{
     display: flex;
     justify-content: center;
@@ -749,6 +856,33 @@ svg:hover path{
           padding-top: 30px;
         }
       }
+    }
+  }
+  .bgIcon{
+    position: absolute;
+    &.bgIcon_1{
+      right: 0;
+      bottom: 370px;
+    }
+    &.bgIcon_2{
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+    &.bgIcon_3{
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+    &.bgIcon_4{
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+    &.bgIcon_5{
+      left: 0;
+      bottom: 0;
+      z-index: 1;
     }
   }
 }
