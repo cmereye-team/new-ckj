@@ -132,18 +132,58 @@ const setLatestNewsSwiperRef = (swiper:any) => {
       <div class="index-latestNews-line">
         <PageSwiperPointLine :latestNewsNum="newsLists.length" :latestNewsCurrent="latestNewsCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
       </div>
+      <div class="latestNews-bg"></div>
+      <div class="latestNews-bg-1"></div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+@keyframes bgIcon {
+  0%{
+    transform: translate(100%,-100%);
+  }
+  100%{
+    transform: translate(-150%,400%);
+  }
+}
   //最新消息
 .index-latestNews {
-  padding: 90px 0 0;
-  max-width: 1590px;
+  padding: 90px 0 192px;
+  // max-width: 1590px;
+  width: 100%;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  .latestNews-bg{
+    content: '';
+    width: 1198px;
+    height: 225px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    z-index: 1;
+    // transition: all 5s;
+    animation: bgIcon 10s linear infinite;
+    pointer-events: none;
+    background: url(https://static.cmereye.com/imgs/2023/07/3b51f256a1908378.png) no-repeat;
+  }
+  .latestNews-bg-1{
+    content: '';
+    width: 1198px;
+    height: 225px;
+    position: absolute;
+    top: 100px;
+    right: -100px;
+    z-index: 1;
+    // transition: all 5s;
+    animation: bgIcon 10s linear infinite 5s;
+    pointer-events: none;
+    background: url(https://static.cmereye.com/imgs/2023/07/3b51f256a1908378.png) no-repeat;
+  }
   .swiperBox{
     width: 100%;
+    max-width: 1590px;
     margin-top: 68px;
     overflow: hidden;
     border-radius: 20px;

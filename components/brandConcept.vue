@@ -66,7 +66,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .index-brandConcept {
-  margin-top: 192px;
+  // margin-top: 192px;
   &-t{
     background: url(https://static.cmereye.com/imgs/2023/07/ad0e9ea982d66127.png);
     background-size: auto 100%;
