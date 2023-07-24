@@ -29,11 +29,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_101.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_101.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/476419e0bd27692f.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/c139bb6c9b8127ac.jpg',
       googleMap: 'https://goo.gl/maps/yuWB8353yF3u4EJS6?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/b3/j3Yu',
       color_1: '#FECB02',
       color_3: '#089CFE',
+      top: '160px',
+      left: '150px'
     },
     {
       id: '102',
@@ -43,11 +45,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_102.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_102.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/faf033fd50b18824.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/f3f2f73ce1582235.jpg',
       googleMap: 'https://goo.gl/maps/HQsN5jNMTeZNbxuf7?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/a5/GtH',
       color_1: '#089CFE',
       color_3: '#FECB02',
+      top: '110px',
+      left: '200px'
     },
     {
       id: '103',
@@ -57,11 +61,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_103.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_103.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/b741f54f1b105876.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/fd4e197874107cf6.jpg',
       googleMap: 'https://goo.gl/maps/JMK7Huhaf9k88nbf8?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/24/Rxk',
       color_1: '#FECB02',
       color_3: '#FF6096',
+      top: '310px',
+      left: '100px'
     },
     {
       id: '104',
@@ -71,11 +77,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_104.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_104.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/fe00a2ba47a161b5.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/6e9e6397eabb7da0.jpg',
       googleMap: 'https://goo.gl/maps/nSmd9ZL66E4Yizp67?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/a9/Xgch',
       color_1: '#FECB02',
       color_3: '#FF6096',
+      top: '180px',
+      left: '100px'
     },
     {
       id: '105',
@@ -85,11 +93,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_105.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_105.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/5f6257f23815c0b8.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/acd7d51a3762a6ed.jpg',
       googleMap: 'https://goo.gl/maps/HefFWPuSqmdHbyBo9?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/d3/Awch',
       color_1: '#FECB02',
       color_3: '#FF6096',
+      top: '330px',
+      left: '210px'
     }
   ],
   // 福田區
@@ -107,6 +117,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/ea/Yhh',
       color_1: '#FECB02',
       color_3: '#089CFE',
+      top: '50%',
+      left: '50%'
     },
     {
       id: '202',
@@ -121,6 +133,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/1f/kY0',
       color_1: '#089CFE',
       color_3: '#FECB02',
+      top: '50%',
+      left: '50%'
     },
   ],
   // 南山区
@@ -138,6 +152,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/2e/Pmif',
       color_1: '#FECB02',
       color_3: '#089CFE',
+      top: '50%',
+      left: '50%'
     },
     {
       id: '302',
@@ -152,6 +168,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/36/4FH',
       color_1: '#089CFE',
       color_3: '#FECB02',
+      top: '50%',
+      left: '50%'
     },
     {
       id: '303',
@@ -166,6 +184,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/b8/Mzj',
       color_1: '#FECB02',
       color_3: '#FF6096',
+      top: '50%',
+      left: '50%'
     },
   ],
   // 寶安區
@@ -183,6 +203,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/89/2LD',
       color_1: '#FECB02',
       color_3: '#089CFE',
+      top: '50%',
+      left: '50%'
     },
   ],
   // 龍華區
@@ -200,6 +222,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/3a/nbch',
       color_1: '#FECB02',
       color_3: '#089CFE',
+      top: '50%',
+      left: '50%'
     },
     {
       id: '502',
@@ -214,6 +238,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/c5/AZ4c',
       color_1: '#089CFE',
       color_3: '#FECB02',
+      top: '50%',
+      left: '50%'
     },
   ]
 ]
@@ -329,7 +355,7 @@ const getColor = (_idx?: number) => {
           <div class="addressBox">
             <div class="addressBox-t">
               <img class="addressImg" :src="addressItem.addressUrl" alt="">
-              <div class="addressIcon">
+              <div class="addressIcon" :style="{top: addressItem.top,left: addressItem.left}">
                 <a :href="addressItem.baiduMap" target="_blank">
                   <SvgAddressHouse :color_1="addressItem.color_1" :color_3="addressItem.color_3" />
                 </a>

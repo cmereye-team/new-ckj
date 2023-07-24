@@ -261,7 +261,7 @@ const handleProcessBtn = (_type: string) => {
         <div class="index-doctorTeam-t pageCon">
           <div class="title">醫生團隊</div>
           <div class="area">
-            <AreaTab />
+            <AreaTab :type="'1'" />
           </div>
         </div>
         <div class="index-doctorTeam-c">
