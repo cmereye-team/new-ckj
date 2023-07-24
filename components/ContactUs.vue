@@ -31,7 +31,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_101.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/476419e0bd27692f.png',
       googleMap: 'https://goo.gl/maps/yuWB8353yF3u4EJS6?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/b3/j3Yu'
+      baiduMap: 'https://j.map.baidu.com/b3/j3Yu',
+      color_1: '#FECB02',
+      color_3: '#089CFE',
     },
     {
       id: '102',
@@ -43,7 +45,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_102.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/faf033fd50b18824.png',
       googleMap: 'https://goo.gl/maps/HQsN5jNMTeZNbxuf7?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/a5/GtH'
+      baiduMap: 'https://j.map.baidu.com/a5/GtH',
+      color_1: '#089CFE',
+      color_3: '#FECB02',
     },
     {
       id: '103',
@@ -55,7 +59,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_103.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/b741f54f1b105876.png',
       googleMap: 'https://goo.gl/maps/JMK7Huhaf9k88nbf8?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/24/Rxk'
+      baiduMap: 'https://j.map.baidu.com/24/Rxk',
+      color_1: '#FECB02',
+      color_3: '#FF6096',
     },
     {
       id: '104',
@@ -67,7 +73,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_104.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/fe00a2ba47a161b5.png',
       googleMap: 'https://goo.gl/maps/nSmd9ZL66E4Yizp67?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/a9/Xgch'
+      baiduMap: 'https://j.map.baidu.com/a9/Xgch',
+      color_1: '#FECB02',
+      color_3: '#FF6096',
     },
     {
       id: '105',
@@ -79,7 +87,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_105.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/5f6257f23815c0b8.png',
       googleMap: 'https://goo.gl/maps/HefFWPuSqmdHbyBo9?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/d3/Awch'
+      baiduMap: 'https://j.map.baidu.com/d3/Awch',
+      color_1: '#FECB02',
+      color_3: '#FF6096',
     }
   ],
   // 福田區
@@ -94,7 +104,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_201.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/f75bb70e48d1a50e.png',
       googleMap: 'https://goo.gl/maps/evH9Z41S1o4fH3HR6?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/ea/Yhh'
+      baiduMap: 'https://j.map.baidu.com/ea/Yhh',
+      color_1: '#FECB02',
+      color_3: '#089CFE',
     },
     {
       id: '202',
@@ -106,7 +118,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_202.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/63dbe40ee13b53e9.png',
       googleMap: 'https://goo.gl/maps/mQgJXrTxvaaLB9Y1A?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/1f/kY0'
+      baiduMap: 'https://j.map.baidu.com/1f/kY0',
+      color_1: '#089CFE',
+      color_3: '#FECB02',
     },
   ],
   // 南山区
@@ -121,7 +135,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_301.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/4783ff2e8f17beff.png',
       googleMap: 'https://goo.gl/maps/nK2iuEusGFcbqE216?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/2e/Pmif'
+      baiduMap: 'https://j.map.baidu.com/2e/Pmif',
+      color_1: '#FECB02',
+      color_3: '#089CFE',
     },
     {
       id: '302',
@@ -133,7 +149,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_302.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/d6c09b604319be78.png',
       googleMap: 'https://goo.gl/maps/WkeuvYNKWeLNhSzE7?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/36/4FH'
+      baiduMap: 'https://j.map.baidu.com/36/4FH',
+      color_1: '#089CFE',
+      color_3: '#FECB02',
     },
     {
       id: '303',
@@ -145,7 +163,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_303.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/47efa458657fb4a5.png',
       googleMap: 'https://goo.gl/maps/ud217ArM8ZGDJ8DJ8?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/b8/Mzj'
+      baiduMap: 'https://j.map.baidu.com/b8/Mzj',
+      color_1: '#FECB02',
+      color_3: '#FF6096',
     },
   ],
   // 寶安區
@@ -160,7 +180,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_401.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/009aa648694461bb.png',
       googleMap: 'https://goo.gl/maps/ntfTf49VNaY9D9VL6?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/89/2LD'
+      baiduMap: 'https://j.map.baidu.com/89/2LD',
+      color_1: '#FECB02',
+      color_3: '#089CFE',
     },
   ],
   // 龍華區
@@ -175,7 +197,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_501.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/547f7fa32b8a7154.png',
       googleMap: 'https://goo.gl/maps/jtcrLmft7h8s3xfX6?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/3a/nbch'
+      baiduMap: 'https://j.map.baidu.com/3a/nbch',
+      color_1: '#FECB02',
+      color_3: '#089CFE',
     },
     {
       id: '502',
@@ -187,7 +211,9 @@ const allAddressLists = [
       metroRoutes: 'contactUs.addressLists.address_502.metroRoutes',
       addressUrl: 'https://static.cmereye.com/imgs/2023/05/2d4f2be9d307d63a.png',
       googleMap: 'https://goo.gl/maps/VKT1orRbiS8mAiN39?coh=178572&entry=tt門診門',
-      baiduMap: 'https://j.map.baidu.com/c5/AZ4c'
+      baiduMap: 'https://j.map.baidu.com/c5/AZ4c',
+      color_1: '#089CFE',
+      color_3: '#FECB02',
     },
   ]
 ]
@@ -302,7 +328,12 @@ const getColor = (_idx?: number) => {
         <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
           <div class="addressBox">
             <div class="addressBox-t">
-              <img :src="addressItem.addressUrl" alt="">
+              <img class="addressImg" :src="addressItem.addressUrl" alt="">
+              <div class="addressIcon">
+                <a :href="addressItem.baiduMap" target="_blank">
+                  <SvgAddressHouse :color_1="addressItem.color_1" :color_3="addressItem.color_3" />
+                </a>
+              </div>
             </div>
             <div class="addressBox-b">
               <div>
@@ -648,11 +679,19 @@ const getColor = (_idx?: number) => {
           border-radius: 0 0 250px 250px;
           padding-bottom: 30px;
           background: #FF6096;
-          img{
+          position: relative;
+          .addressImg{
             width: 440px;
             height: 440px;
             margin: auto;
             border-radius: 50%;
+            cursor: pointer;
+            transition: all .3s;
+          }
+          .addressIcon{
+            position: absolute;
+            top: 50%;
+            left: 50%;
             cursor: pointer;
             transition: all .3s;
             &:hover{
@@ -696,7 +735,7 @@ const getColor = (_idx?: number) => {
           text-align: center;
           width: 380px;
           height: 64px;
-          line-height: 58px;
+          line-height: 56px;
           font-size: 20.483px;
           font-weight: 400;
           letter-spacing: 5.121px;

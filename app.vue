@@ -57,3 +57,8 @@ onMounted(()=>{
     </Body>
   </Html>
 </template>
+
+
+<style lang="scss" scoped>
+  
+</style>

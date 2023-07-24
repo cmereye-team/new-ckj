@@ -163,14 +163,28 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     }
   }
   :deep(.swiper-button-next){
-    width: 20px;
-    height: 40px;
+    width: 25px;
+    height: 47px;
     color: var(--topic-color);
+    &::after{
+      content: '';
+      background: url(https://static.cmereye.com/imgs/2023/07/5331fed4a9f0f487.png) no-repeat;
+      background-size: 100% auto;
+      width: 25px;
+      height: 47px;
+    }
   }
   :deep(.swiper-button-prev){
-     width: 20px;
-    height: 40px;
+    width: 25px;
+    height: 47px;
     color: var(--topic-color);
+    &::after{
+      content: '';
+      background: url(https://static.cmereye.com/imgs/2023/07/638d8106c1f85272.png) no-repeat;
+      background-size: 100% auto;
+      width: 25px;
+      height: 47px;
+    }
   }
   &-in{
     cursor: pointer;
