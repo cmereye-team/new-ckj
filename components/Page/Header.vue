@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 import { useAppState } from '~/stores/appState'
+import serviceLists from '~/assets/js/service'
 defineProps({
   str:{
     type: String,
@@ -128,6 +129,8 @@ const menuLists = [
     child: [],
   },
 ]
+
+const servicesCardLists = serviceLists
 </script>
 
 <template>
@@ -146,6 +149,25 @@ const menuLists = [
             <div v-for="(item,index) in menuLists" :key="index">
               <div class="enName">{{item.enName}}</div>
               <div class="name">{{$t(item.name)}}</div>
+              <div class="menu-child" v-if="item.child.length && !item.link.includes('/dental-service')">
+                <div class="menu-child-border">
+                  <div class="menu-child-in" v-for="(childItem,childIndex) in item.child" :key="childIndex">
+                    <div>{{$t(childItem.name)}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-child" v-if="item.link.includes('/dental-service')">
+                <div class="menu-child-border">
+                  <div class="serviceCard">
+                    <div class="serviceCard-in" v-for="(service,serviceIndex) in servicesCardLists" :key="serviceIndex">
+                      <div class="serviceBox">
+                        <img :src="service.imgUrl" alt="">
+                        <div>{{$t(service.name)}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="booking">
@@ -160,9 +182,7 @@ const menuLists = [
           </div>
         </div>
       </div>
-      <div class="headerPage-in-b">
-
-      </div>
+      <div class="headerPage-in-b"></div>
     </div>
   </div>
 </template>
@@ -214,6 +234,7 @@ const menuLists = [
             font-style: normal;
             font-weight: 400;
             cursor: pointer;
+            position: relative;
             &:not(:last-child){
               border-right: 2px solid #FECB02;
             }
@@ -231,6 +252,115 @@ const menuLists = [
               font-size: 18px;
               line-height: 1; /* 50.22px */
               letter-spacing: 4.5px;
+            }
+            .menu-child{
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+              width: max-content;
+              height: 0;
+              overflow: hidden;
+              transition: all .3s;
+              z-index: 5;
+              padding-top: 0;
+              &-border{
+                border-radius: 10px;
+                position: relative;
+                &::before{
+                  content: '';
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  opacity: 0.699999988079071;
+                  background: #FFF;
+                  border-radius: 10px;
+                }
+                .serviceCard{
+                  max-width: 335px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  padding: 20px 10px 0;
+                  position: relative;
+                  z-index: 5;
+                  &-in{
+                    width: 33.333%;
+                    display: flex;
+                    justify-content: center;
+                    .serviceBox{
+                      margin-bottom: 20px;
+                      width: 87px;
+                      height: 87px;
+                      border-radius: 50%;
+                      background: #F5F4F4;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: flex-end;
+                      align-items: center;
+                      img{
+                        width: 60%;
+                      }
+                      div{
+                        color: var(--topic-text-color);
+                        text-align: center;
+                        font-family: 'Yuanti TC';
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 160%; /* 19.2px */
+                        letter-spacing: 3px;
+                        margin: 4px 0 15px;
+                        white-space: nowrap;
+                        &::after{
+                          content: '>';
+                          font-family: '黑体';
+                          display: inline-block;
+                          color: var(--topic-color);
+                          transform: scale(.8);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &-in{
+                &>div{
+                  padding: 0 14px;
+                  color: #6B6B6B;
+                  font-family: 'Yuanti TC';
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 279%; /* 50.22px */
+                  letter-spacing: 4.5px;
+                  position: relative;
+                }
+                &:not(:last-child){
+                  &>div{
+                    &::after{
+                      content: '';
+                      position: absolute;
+                      bottom: 0;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 56px;
+                      height: 2px;
+                      background: var(--topic-color);
+                    }
+                  }
+                }
+              }
+            }
+            &:hover{
+              .menu-child{
+                padding-top: 20px;
+                height: auto;
+                &-border{
+                  border: 1.5px dashed var(--topic-color);
+                }
+              }
             }
           }
         }

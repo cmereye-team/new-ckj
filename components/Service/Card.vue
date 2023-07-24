@@ -135,23 +135,26 @@ const servicesCardPageData = {
         margin-bottom: 60px;
         display: flex;
         &:nth-of-type(2){
-          justify-content: flex-end;
+          // justify-content: flex-end;
+          margin-left: 150px;
         }
       }
       &-mascot{
         cursor: pointer;
         width: 18%;
+        max-width: 240px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       &-in{
         cursor: pointer;
-        width: 18%;
+        // width: 18%;
         display: flex;
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
+        margin-right: 73px;
         a{
           width: 100%;
           height: 100%;
