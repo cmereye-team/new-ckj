@@ -121,7 +121,24 @@ const navLists = [
   ]
 ]
 
+let toTopType = ref(false)
 
+const toPageTop = () =>{
+  toTopType.value = true
+  setTimeout(()=>{
+    let top = document.documentElement.scrollTop || document.body.scrollTop;
+    // 实现滚动效果 
+    const timeTop = setInterval(() => {
+        document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
+        if (top <= 0) {
+            clearInterval(timeTop);
+        }
+    }, 10);
+    setTimeout(()=>{
+      toTopType.value = false
+    },2000)
+  },500)
+}
 </script>
 
 <template>
@@ -188,18 +205,88 @@ const navLists = [
         </div>
       </div>
     </div>
+    <div class="toTop" @click="toPageTop">
+      <div class="arrowTop" :style="{display: toTopType?'none':'block'}"></div>
+      <img class="ya" :style="{top:toTopType?'40%':'50%'}" src="https://static.cmereye.com/imgs/2023/07/892481994eb017a0.png" alt="">
+      <div class="toTopline">
+        <span :style="{height: toTopType?'10px':'0px'}"></span>
+        <span :style="{height: toTopType?'20px':'0px'}"></span>
+        <span :style="{height: toTopType?'15px':'0px'}"></span>
+      </div>
+      <img class="pageTop" src="https://static.cmereye.com/imgs/2023/07/ad1a9b08f00ef155.png" alt="">
+    </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footerPage{
-  
+  position: relative;
   &-bgTop{
     background: url(https://static.cmereye.com/imgs/2023/07/12b3f8a89e2db3a4.png);
     background-size: auto 100%;
     height: 60px;
     width: 100%;
     // transform: rotate(180deg);
+  }
+  .toTop{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    .arrowTop{
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      border: 2px solid #fff;
+      border-right: none;
+      border-bottom: none;
+      transform: translateX(-50%) rotate(45deg);
+      transform-origin: center center;
+      transition: all .7s;
+    }
+    .ya{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      transition: all .7s;
+    }
+    .toTopline{
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 15px;
+      span{
+        width: 3px;
+        height: 0;
+        background: #fff;
+        transition: all .7s;
+        display: block;
+      }
+    }
+    .pageTop{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: toTopRoto 5s linear infinite;
+    }
+  }
+}
+@keyframes toTopRoto {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }
 .footer-content {

@@ -275,7 +275,7 @@ const handleProcessBtn = (_type: string) => {
                   stopOnLastSlide: true,
                   delay: 0
                 }"
-                speed="3000"
+                :speed="3000"
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef"
               >
@@ -299,7 +299,7 @@ const handleProcessBtn = (_type: string) => {
                   stopOnLastSlide: true,
                   delay: 0
                 }"
-                speed="3000"
+                :speed="3000"
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef44"
               >
