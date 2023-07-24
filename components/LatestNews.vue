@@ -164,7 +164,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     right: 0;
     z-index: 1;
     // transition: all 5s;
-    animation: bgIcon 10s linear infinite;
+    animation: bgIcon 20s linear infinite;
     pointer-events: none;
     background: url(https://static.cmereye.com/imgs/2023/07/3b51f256a1908378.png) no-repeat;
   }
@@ -177,7 +177,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     right: -100px;
     z-index: 1;
     // transition: all 5s;
-    animation: bgIcon 10s linear infinite 5s;
+    animation: bgIcon 20s linear infinite 10s;
     pointer-events: none;
     background: url(https://static.cmereye.com/imgs/2023/07/3b51f256a1908378.png) no-repeat;
   }
