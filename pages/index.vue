@@ -258,6 +258,7 @@ const handleProcessBtn = (_type: string) => {
       <AboutUs />
       <!-- 醫生團隊 -->
       <div class="index-doctorTeam">
+        <StarModule />
         <div class="index-doctorTeam-t pageCon">
           <div class="title">醫生團隊</div>
           <div class="area">
@@ -329,6 +330,7 @@ const handleProcessBtn = (_type: string) => {
       <!-- 個案分享 -->
       <RippleLine :type="'5'" :isBottom="true" />
       <div class="index-caseSharing">
+        <StarModule />
         <div class="index-caseSharing-title">
           <div class="title">{{$t('pages.index.caseSharing.title')}}</div>
         </div>
@@ -401,6 +403,7 @@ svg:hover path{
   width: 100%;
   background: #fff;
   padding-bottom: 190px;
+  position: relative;
 }
 .index-banner{
   // background: #f2f2f2;
@@ -476,6 +479,7 @@ svg:hover path{
   padding: 140px 0 100px;
   background: #FF6096;
   margin: -50px 0 -10px;
+  position: relative;
   :deep(.doctorTeamSwiperBox .swiper-wrapper) {
     transition-timing-function: linear;
   }

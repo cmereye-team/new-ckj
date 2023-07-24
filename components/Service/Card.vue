@@ -36,6 +36,7 @@ const servicesCardPageData = {
 
 <template>
   <div :class="{'index-dentalServices':true,'isMenu': isMenu}">
+    <StarModule />
     <div :class="['index-dentalServices-in', {'isIndexShow': !isIndexShow,'isMenu': isMenu}]">
       <!-- {{$t(servicesCardPageData.dentalServicesTitleIn)}} -->
       <div class="index-dentalServices-in-t">
@@ -88,7 +89,8 @@ const servicesCardPageData = {
 <style lang="scss" scoped>
 
 .index-dentalServices{
-  padding: 189px 0 0;
+  padding: 189px 0 190px;
+  position: relative;
   &-in{
     display: flex;
     justify-content: center;

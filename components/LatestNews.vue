@@ -107,6 +107,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
 
 <template>
   <div class="index-latestNews">
+    <StarModule />
       <div class="index-latestNews-t">
         <div>最新優惠</div>
       </div>
@@ -132,8 +133,8 @@ const setLatestNewsSwiperRef = (swiper:any) => {
       <div class="index-latestNews-line">
         <PageSwiperPointLine :latestNewsNum="newsLists.length" :latestNewsCurrent="latestNewsCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
       </div>
-      <div class="latestNews-bg"></div>
-      <div class="latestNews-bg-1"></div>
+      <!-- <div class="latestNews-bg"></div> -->
+      <!-- <div class="latestNews-bg-1"></div> -->
     </div>
 </template>
 

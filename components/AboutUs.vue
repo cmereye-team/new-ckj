@@ -34,28 +34,31 @@ const handleLineCur = (_value:number) =>{
 
 <template>
   <div class="index-aboutUs">
-        <div class="index-aboutUs-t"></div>
-        <div class="index-aboutUs-c">
-          <div class="title">{{$t('components.aboutUs.title')}}</div>
-          <div class="content">
-            <div v-for="(item,index) in aboutUsLists" :key="index">
-              <div><img :src="item.img" alt=""></div>
-              <div>
-                <span>{{$t(item.title)}}</span>
-                <span>{{$t(item.text)}}</span>
-              </div>
-              <div>{{$t(item.context)}}</div>
-            </div>
+    <StarModule />
+    <div class="index-aboutUs-t"></div>
+    <div class="index-aboutUs-c">
+      <div class="title">{{$t('components.aboutUs.title')}}</div>
+      <div class="content">
+        <div v-for="(item,index) in aboutUsLists" :key="index">
+          <div><img :src="item.img" alt=""></div>
+          <div>
+            <span>{{$t(item.title)}}</span>
+            <span>{{$t(item.text)}}</span>
           </div>
+          <div>{{$t(item.context)}}</div>
         </div>
-        <div class="index-aboutUs-b"></div>
+      </div>
     </div>
+    <div class="index-aboutUs-b"></div>
+  </div>
 </template>
 <style lang="scss" scoped>
   
 //關於我們
 .index-aboutUs{
-  margin-top: 190px;
+  // margin-top: 190px;
+  position: relative;
+  width: 100%;
   &-t{
     background: url(https://static.cmereye.com/imgs/2023/07/c19dfcc03bbba56d.png);
     background-size: auto 100%;
