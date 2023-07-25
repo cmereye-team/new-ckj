@@ -53,7 +53,7 @@
           color: #FFF;
           &:nth-of-type(1){
             color: #FFF;
-            font-family: 'Yuanti TC';
+            font-family: 'cwTeXYen';
             font-size: 31.766px;
             font-style: normal;
             font-weight: 400;
@@ -77,7 +77,7 @@
             span{
               display: inline-block;
               color: var(--topic-text-color);
-              font-family: 'Yuanti TC';
+              font-family: 'cwTeXYen';
               font-size: 33.934px;
               font-style: normal;
               font-weight: 400;
@@ -111,7 +111,7 @@
           &:nth-of-type(3){
             margin-top: 50px;
             text-align: justify;
-            font-family: 'Yuanti TC';
+            font-family: 'cwTeXYen';
             font-size: 16px;
             font-style: normal;
             font-weight: 400;

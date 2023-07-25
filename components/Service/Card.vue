@@ -31,6 +31,9 @@ const servicesCardPageData = {
 //   // console.log(windowWidth)
 // }
 
+const openServiceCar = ref(false)
+
+
 </script>
 
 
@@ -44,9 +47,9 @@ const servicesCardPageData = {
         <div class="context" v-if="!isMenu">
           <div class="context-in">{{$t(servicesCardPageData.contextIn)}}</div>
         </div>
-      </div>
-      
-      <div :class="{'servicesCard':true,'isMenu': isMenu}">
+      </div>    
+
+      <div :class="{'servicesCard':true,'isMenu': isMenu,'pcServices':true}">
         <div>
           <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(0,5)" :key="index">
             <nuxt-link :to="item.link">
@@ -77,10 +80,23 @@ const servicesCardPageData = {
             </nuxt-link>
           </div>
           <div class="servicesCard-mascot">
-            <img src="https://static.cmereye.com/imgs/2023/07/19208b63eaa5ed13.png" alt="">
+              <img src="https://static.cmereye.com/imgs/2023/07/19208b63eaa5ed13.png" alt="">
+            </div>
           </div>
+          
+      </div>
+      <div class="mbServices">
+        <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(0,openServiceCar?15:4)" :key="index">
+          <nuxt-link :to="item.link">
+            <div class="servicesCard-in-image">
+              <img :src="item.imgUrl" alt="">
+              <div class="servicesCard-in-name">{{$t(item.name)}}</div>
+            </div>
+          </nuxt-link>
         </div>
-        
+        <div class="mbServices-b" :style="{transform: (openServiceCar ? 'translateX(-50%) rotate(180deg)': 'translateX(-50%)')}" @click="openServiceCar = !openServiceCar">
+          <img src="https://static.cmereye.com/imgs/2023/07/1b165f5750433684.png" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -103,7 +119,7 @@ const servicesCardPageData = {
         border-right: 3px solid #089CFE;
         padding-right: 55px;
         color: var(--topic-text-color);
-        font-family: 'Yuanti TC';
+        font-family: 'cwTeXYen';
         font-size: 31.766px;
         font-style: normal;
         font-weight: 400;
@@ -116,7 +132,7 @@ const servicesCardPageData = {
           margin: 0 auto;
           width: 100%;
           max-width: 724px;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
@@ -131,7 +147,7 @@ const servicesCardPageData = {
       flex-wrap: wrap;
       margin: 86px auto 0;
       width: 100%;
-      max-width: 1640px;
+      max-width: 1650px;
       &>div{
         width: 100%;
         margin-bottom: 60px;
@@ -191,7 +207,7 @@ const servicesCardPageData = {
         &-name{
           color: var(--topic-text-color);
           text-align: center;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 17px;
           font-style: normal;
           font-weight: 400;
@@ -230,6 +246,12 @@ const servicesCardPageData = {
         }
       }
     }
+    .pcServices{
+      display: flex;
+    }
+    .mbServices{
+      display: none;
+    }
   }
   &.isMenu{
     padding: 0px;
@@ -262,49 +284,107 @@ const servicesCardPageData = {
 }
 @media screen and (max-width: 768px) {
   .index-dentalServices{
-    padding: 100px 0 0;
+    padding: 40px 0 62px;
     &-in{
       align-items: flex-start;
-      &.isIndexShow{
-        align-items: center;
-      }
-      .context{
-        margin-top: 30px;
-        padding: 0 30px;
-        box-sizing: border-box;
-        &-in{
-          font-weight: 500;
-          font-size: 16px;
-          text-align: left;
-          
+      &-t{
+        flex-direction: column;
+        .title{
+          padding-right: 0;
+          border-right: none;
+          position: relative;
+          padding-bottom: 20px;
+          font-size: 20px;
+          letter-spacing: 5px;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: #089CFE;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+        .context{
+          margin-left: 0;
+          margin-top: 35px;
+          padding: 0 67px;
+          &-in{
+            font-size: 15px;
+            letter-spacing: 4.5px;
+          }
         }
       }
       .servicesCard{
-        padding: 0 21.5px;
+        margin: 0;
+        padding: 40px;
         box-sizing: border-box;
         &>div{
-          flex-wrap: wrap;
-          &:nth-of-type(2){
-            margin-left: 0;
-          }
+          width: 100%;
+          // flex-wrap: wrap;
+          margin-bottom: 0;
+          // justify-content: space-between;
+          // display: inline-block;
+          // &:nth-of-type(2){
+            // margin-left: 0;
+          // }
+        }
+        &-mascot{
+          display: none;
         }
         &-in{
-          width: 50%;
-          padding: 0 8.5px;
+          width: calc(50% - 20px);
+          // padding: 0 8.5px;
+          width: max-content;
+          margin-right: 0;
+          justify-content: space-between;
+          margin-bottom: 27px;
           &-image{
+            width: 130px;
+            height: 130px;
+            padding: 0 0 20px;
             img{
               max-width: 70%;
               max-height: 70%;
             }
           }
           &-name{
-            font-size: 15px;
-            height: 56px;
-            line-height: 56px;
+            margin-top: 7px;
+            font-size: 12px;
+            height: auto;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            &::after{
+              font-size: 12px;
+              padding-left: 10px;
+            }
           }
         }
       }
+      .pcServices{
+        display: none;
+      }
+      .mbServices{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 40px 45px 20px;
+        box-sizing: border-box;
+        position: relative;
+        transition: all .3s;
+        overflow: hidden;
+        &-b{
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all .3s;
+        }
+      }
     }
+    
   }
 }
 </style>

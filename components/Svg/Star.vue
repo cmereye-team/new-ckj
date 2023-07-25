@@ -30,6 +30,13 @@ defineProps({
 
 
 <style lang="scss" scoped>
+svg{
+  filter: drop-shadow(1px 1px 5px #ccc);
+}
 @media (min-width: 768px) and (max-width: 1452px) {}
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  svg{
+    filter: drop-shadow(1px 1px 3px #ccc);
+  }
+}
 </style>

@@ -149,11 +149,14 @@ const selectedPerson = ref(areaLists[0])
 }
 @media screen and (max-width: 768px) {
   .areaTab{
-      margin-top: 34px;
-      margin-left: 30px;
-      &>div{
-        font-size: 1rem;
-        padding: 4px 8.5px;
+      width: 150px;
+      height: 36px;
+      line-height: 32px;
+      &>button{
+        border: 2px solid var(--topic-color);
+        &.a{
+          border: 2px solid #fff;
+        }
       }
     }
   }

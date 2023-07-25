@@ -56,7 +56,6 @@ const handleLineCur = (_value:number) =>{
   
 //關於我們
 .index-aboutUs{
-  // margin-top: 190px;
   position: relative;
   width: 100%;
   &-t{
@@ -72,7 +71,7 @@ const handleLineCur = (_value:number) =>{
     padding: 100px 0 40px;
     .title{
       color: #FFF;
-      font-family: 'Yuanti TC';
+      font-family: 'cwTeXYen';
       font-size: 31.766px;
       font-style: normal;
       font-weight: 400;
@@ -119,7 +118,7 @@ const handleLineCur = (_value:number) =>{
               width: max-content;
               display: inline-block;
               color: var(--topic-text-color);
-              font-family: 'Yuanti TC';
+              font-family: 'cwTeXYen';
               font-size: 38px;
               font-style: normal;
               font-weight: 400;
@@ -155,7 +154,7 @@ const handleLineCur = (_value:number) =>{
             margin-top: 30px;
             color: #FFF;
             text-align: justify;
-            font-family: 'Yuanti TC';
+            font-family: 'cwTeXYen';
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
@@ -188,8 +187,32 @@ const handleLineCur = (_value:number) =>{
 //關於我們
   .index-aboutUs{
     &-c{
+      padding: 0 40px 20px;
+      .title{
+        font-size: 20px;
+        letter-spacing: 5px;
+        &::after{
+          height: 3px;
+        }
+      }
       .content{
         flex-direction: column;
+        &>div{
+          padding: 0;
+          &:first-child{
+            margin-bottom: 65px;
+          }
+          &>div{
+            &:nth-of-type(2){
+              font-size: 33.35px;
+              letter-spacing: 5.336px;
+            }
+            &:nth-of-type(3){
+              font-size: 15px;
+              letter-spacing: 4.5px;
+            }
+          }
+        }
       }
     }
   }

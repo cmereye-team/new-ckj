@@ -133,8 +133,6 @@ const setLatestNewsSwiperRef = (swiper:any) => {
       <div class="index-latestNews-line">
         <PageSwiperPointLine :latestNewsNum="newsLists.length" :latestNewsCurrent="latestNewsCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
       </div>
-      <!-- <div class="latestNews-bg"></div> -->
-      <!-- <div class="latestNews-bg-1"></div> -->
     </div>
 </template>
 
@@ -156,32 +154,6 @@ const setLatestNewsSwiperRef = (swiper:any) => {
   width: 100%;
   position: relative;
   overflow: hidden;
-  .latestNews-bg{
-    content: '';
-    width: 1198px;
-    height: 225px;
-    position: absolute;
-    top: 100px;
-    right: 0;
-    z-index: 1;
-    // transition: all 5s;
-    animation: bgIcon 20s linear infinite;
-    pointer-events: none;
-    background: url(https://static.cmereye.com/imgs/2023/07/3b51f256a1908378.png) no-repeat;
-  }
-  .latestNews-bg-1{
-    content: '';
-    width: 1198px;
-    height: 225px;
-    position: absolute;
-    top: 100px;
-    right: -100px;
-    z-index: 1;
-    // transition: all 5s;
-    animation: bgIcon 20s linear infinite 10s;
-    pointer-events: none;
-    background: url(https://static.cmereye.com/imgs/2023/07/3b51f256a1908378.png) no-repeat;
-  }
   .swiperBox{
     width: 100%;
     max-width: 1590px;
@@ -239,7 +211,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     justify-content: center;
     &>div{
       color: var(--topic-text-color);
-      font-family: 'Yuanti TC';
+      font-family: 'cwTeXYen';
       font-size: 31.766px;
       font-style: normal;
       font-weight: 400;
@@ -287,25 +259,9 @@ const setLatestNewsSwiperRef = (swiper:any) => {
   .index-latestNews {
     padding: 45px 0 56px;
     .swiperBox{
-      // width: calc(100% - 60px);
-      // margin-top: 35px;
-      // overflow: hidden;
-      // border-radius: 20px;
-      // .lineBox{
-      //   width: 200px;
-      //   bottom: 34px;
-      //   left: 50%;
-      //   transform: translateX(-50%);
-      // }
-    }
-    &-in{
-      // width: 100%;
-      // box-sizing: border-box;
-      // height: auto;
-      // flex-direction: column;
+      margin-top: 35px;
     }
     &-t{
-      // flex-direction: column;
       &>div{
         color: var(--topic-text-color);
         font-size: 20px;
@@ -315,10 +271,6 @@ const setLatestNewsSwiperRef = (swiper:any) => {
           height: 3px;
         }
       }
-    }
-    &-line{
-      // width: 216px;
-      // margin: 26px auto 0;
     }
   }
 }

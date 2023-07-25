@@ -471,7 +471,7 @@ const getColor = (_idx?: number) => {
       text-align: center;
       &>div{
         color: #6B6B6B;
-        font-family: 'Yuanti TC';
+        font-family: 'cwTeXYen';
         font-size: 31.766px;
         font-style: normal;
         font-weight: 400;
@@ -511,7 +511,7 @@ const getColor = (_idx?: number) => {
             height: 54px;
             font-style: normal;
             font-weight: 400;
-            font-family: 'Yuanti TC';
+            font-family: 'cwTeXYen';
             color: var(--topic-text-color);
             text-align: center;
             font-size: 17px;
@@ -528,7 +528,7 @@ const getColor = (_idx?: number) => {
                 &::after{
                   content: '#';
                   color: var(--topic-color);
-                  font-family: 'Yuanti TC';
+                  font-family: 'cwTeXYen';
                   font-size: 17px;
                   font-style: normal;
                   font-weight: 400;
@@ -561,7 +561,7 @@ const getColor = (_idx?: number) => {
         margin-top: 24px;
         &::before{
           content: '#';
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 20.564px;
           font-style: normal;
           font-weight: 400;
@@ -574,7 +574,7 @@ const getColor = (_idx?: number) => {
         }
         span{
           color: var(--topic-text-color);
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 20.564px;
           font-style: normal;
           font-weight: 400;
@@ -737,7 +737,7 @@ const getColor = (_idx?: number) => {
               display: flex;
               &>div{
                 color: #FF6096;
-                font-family: 'Yuanti TC';
+                font-family: 'cwTeXYen';
                 font-size: 17px;
                 font-style: normal;
                 font-weight: 400;
@@ -755,7 +755,7 @@ const getColor = (_idx?: number) => {
           color: #FF6096;
           border: 3px solid #FF6096;
           text-align: center;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-style: normal;
           position: absolute;
           text-align: center;
@@ -832,7 +832,7 @@ const getColor = (_idx?: number) => {
             }
             &-name{
               text-align: center;
-              font-family: 'Yuanti TC';
+              font-family: 'cwTeXYen';
               font-size: 17px;
               font-style: normal;
               font-weight: 400;
@@ -840,7 +840,7 @@ const getColor = (_idx?: number) => {
               letter-spacing: 1.7px;
             }
             &-title{
-              font-family: 'Yuanti TC';
+              font-family: 'cwTeXYen';
               font-size: 17px;
               font-style: normal;
               font-weight: 400;
@@ -856,7 +856,7 @@ const getColor = (_idx?: number) => {
                   margin-right: 15px;
                 }
                 p{
-                  font-family: 'Yuanti TC';
+                  font-family: 'cwTeXYen';
                   font-size: 17px;
                   font-style: normal;
                   font-weight: 400;
@@ -878,7 +878,7 @@ const getColor = (_idx?: number) => {
         &>div{
           color: #089CFE;
           text-align: center;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 27px;
           font-style: normal;
           font-weight: 400;
@@ -901,7 +901,7 @@ const getColor = (_idx?: number) => {
         &>div{
           color: #FECB02;
           text-align: center;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 27px;
           font-style: normal;
           font-weight: 400;

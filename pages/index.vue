@@ -199,6 +199,17 @@ const handleProcessBtn = (_type: string) => {
   swiperRef[_type]();
 }
 
+let windowWidth = ref(1920)
+
+const getWindowWidth = () => {
+  windowWidth.value = window.innerWidth
+}
+
+onMounted(()=>{
+  // getNewsLists()
+  getWindowWidth()
+  window.addEventListener('resize',getWindowWidth)
+})
 
 </script>
 
@@ -242,11 +253,6 @@ const handleProcessBtn = (_type: string) => {
           </div>
         </div>
       </div>
-      <!-- <div>
-        <li v-for="post of posts" :key="post.slug">
-          <NuxtLink :to="post.slug">{{ post.title }}</NuxtLink>
-        </li>
-      </div> -->
       <!-- 最新消息 -->
       <LatestNews />
       <!-- 品牌理念 -->
@@ -265,7 +271,7 @@ const handleProcessBtn = (_type: string) => {
             <AreaTab :type="'1'" />
           </div>
         </div>
-        <div class="index-doctorTeam-c">
+        <div class="index-doctorTeam-c pcDoctorTeam">
           <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 10">
             <div class="c-in-22">
               <Swiper
@@ -326,6 +332,82 @@ const handleProcessBtn = (_type: string) => {
             </div>
           </div>
         </div>
+        <div class="index-doctorTeam-c mbDoctorTeam">
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length">
+            <div>
+              <Swiper
+                class="doctorTeamSwiperBox"
+                :modules="[Autoplay]"
+                :autoplay="{
+                  disableOnInteraction: true,
+                  stopOnLastSlide: true,
+                  delay: 0
+                }"
+                :speed="3000"
+                :slidesPerView="3"
+                @swiper="setDoctorTeamSwiperRef"
+              >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(0,14)" :key="doctorIndex" >
+                  <div class="doctorTeamPage">
+                    <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
+                      <img :src="doctorItem.mbImg || ''" alt="">
+                    </nuxt-link>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 14">
+            <div>
+              <Swiper
+                class="doctorTeamSwiperBox"
+                :modules="[Autoplay]"
+                :initialSlide="30"
+                :autoplay="{
+                  disableOnInteraction: true,
+                  reverseDirection: true,
+                  stopOnLastSlide: true,
+                  delay: 0
+                }"
+                :speed="3000"
+                :slidesPerView="3"
+                @swiper="setDoctorTeamSwiperRef44"
+              >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(14,30)" :key="doctorIndex" >
+                  <div class="doctorTeamPage">
+                    <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
+                      <img :src="doctorItem.mbImg || ''" alt="">
+                    </nuxt-link>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 30">
+            <div>
+              <Swiper
+                class="doctorTeamSwiperBox"
+                :modules="[Autoplay]"
+                :autoplay="{
+                  disableOnInteraction: true,
+                  stopOnLastSlide: true,
+                  delay: 0
+                }"
+                :speed="3000"
+                :slidesPerView="3"
+                @swiper="setDoctorTeamSwiperRef"
+              >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(30,44)" :key="doctorIndex" >
+                  <div class="doctorTeamPage">
+                    <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
+                      <img :src="doctorItem.mbImg || ''" alt="">
+                    </nuxt-link>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- 個案分享 -->
       <RippleLine :type="'5'" :isBottom="true" />
@@ -356,7 +438,8 @@ const handleProcessBtn = (_type: string) => {
           <swiper
             class="caseSharingSwiper"
             :loop="true"
-            :slidesPerView="3"
+            :centeredSlides="true"
+            :slidesPerView="windowWidth>768?3:1.5"
             @swiper="setSwiperRef"
           >
             <swiper-slide v-for="(caseItem,caseIndex) in caseSharingLists" :key="caseIndex">
@@ -489,14 +572,15 @@ svg:hover path{
     .title{
       text-align: center;
       color: #FFF;
-      font-family: 'Yuanti TC';
+      font-family: 'cwTeXYen';
       font-size: 31.766px;
       font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 50.826px */
+      font-weight: 500;
+      line-height: 160%;
       letter-spacing: 7.942px;
       margin: 0 auto;
       padding-bottom: 20px;
+      position: relative;
       &::after{
         content: '';
         background: #fff;
@@ -517,14 +601,11 @@ svg:hover path{
   }
   &-c{
     width: 100%;
-    // max-width: 1920px;
     margin: 85px auto 0;
-    // box-shadow: 2px 0px 8px rgba(255, 163, 158, 0.25);
     .doctorTeamPage{
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      // padding: 10px;
       border-radius: 50%;
       border: 2px solid #089CFE;
       background: #fff;
@@ -567,8 +648,11 @@ svg:hover path{
     display: flex;
     justify-content: center;
   }
+  .mbDoctorTeam{
+    display: none;
+  }
 }
-//個案分享
+
 .index-caseSharing{
   padding-top: 137px;
   padding-bottom: 176px;
@@ -579,10 +663,10 @@ svg:hover path{
     justify-content: center;
     .title{
       color: var(--topic-text-color);
-      font-family: 'Yuanti TC';
-      font-size: 31.766px;
+      font-family: 'cwTeXYen';
+      font-size: 20px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 160%; /* 50.826px */
       letter-spacing: 7.942px;
       position: relative;
@@ -610,20 +694,20 @@ svg:hover path{
     &>div{
       .name{
         color: #6B6B6B;
-        font-family: 'Yuanti TC';
+        font-family: 'cwTeXYen';
         font-size: 60.157px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 160%; /* 96.252px */
         letter-spacing: 15.039px;
         white-space: nowrap;
       }
       .skill{
         color: var(--topic-text-color);
-        font-family: 'Yuanti TC';
+        font-family: 'cwTeXYen';
         font-size: 34.864px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 160%; /* 55.782px */
         letter-spacing: 8.716px;
       }
@@ -644,10 +728,10 @@ svg:hover path{
         margin-top: 27px;
         color: #FC1682;
         text-align: justify;
-        font-family: 'Yuanti TC';
+        font-family: 'cwTeXYen';
         font-size: 19.755px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 160%; /* 31.608px */
         letter-spacing: 4.939px;
         position: relative;
@@ -678,10 +762,10 @@ svg:hover path{
         background: url(https://static.cmereye.com/imgs/2023/07/3b49416894156c3e.png);
         background-size: 100% 100%;
         color: #FFF;
-        font-family: 'Yuanti TC';
+        font-family: 'cwTeXYen';
         font-size: 35.368px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 115%; /* 40.673px */
         letter-spacing: 5.305px;
         white-space: pre-wrap;
@@ -702,16 +786,6 @@ svg:hover path{
     max-width: 1500px;
     margin: 100px auto 0;
     position: relative;
-    :deep(.swiper-button-next){
-      width: 20px;
-      height: 40px;
-      color: var(--topic-color);
-    }
-    :deep(.swiper-button-prev){
-       width: 20px;
-      height: 40px;
-      color: var(--topic-color);
-    }
     .swiper-next,.swiper-prev{
       position: absolute;
       left: 0;
@@ -731,7 +805,6 @@ svg:hover path{
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      // padding: 0 100px;
       .centerBox{
         display: flex;
         flex-direction: column;
@@ -746,7 +819,7 @@ svg:hover path{
           box-sizing: border-box;
           margin-left: 52px;
           color: var(--topic-color);
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 21.964px;
           font-style: normal;
           font-weight: 400;
@@ -771,10 +844,10 @@ svg:hover path{
         }
         .name{
           color: var(--topic-text-color);
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 25.666px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 160%; /* 96.252px */
           letter-spacing: 6.417px;
           white-space: nowrap;
@@ -786,10 +859,10 @@ svg:hover path{
         }
         .skill{
           color: var(--topic-text-color);
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 15px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 160%; /* 24px */
           letter-spacing: 3.75px;
         }
@@ -814,10 +887,10 @@ svg:hover path{
           margin-top: 27px;
           color: #FC1682;
           text-align: justify;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 16px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 160%; /* 31.608px */
           letter-spacing: 4px;
           position: relative;
@@ -851,7 +924,7 @@ svg:hover path{
           background: url(https://static.cmereye.com/imgs/2023/07/3b49416894156c3e.png);
           background-size: 100% 100%;
           color: #FFF;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 35.368px;
           font-style: normal;
           font-weight: 400;
@@ -903,61 +976,211 @@ svg:hover path{
     background: #fff;
     padding: 0 0 90px;
   }
-  //醫生團隊
-  .index-doctorTeam{
-    margin: 90px 0;
-    &-t{
-      flex-direction: column;
-      align-items: flex-start;
-      box-sizing: border-box;
-    }
-    &-c{
-      margin-top: 20px;
-      .doctorTeamPage{
-        .doctorItem{
-          // width: 33.33%;
-          min-width: 33.33%;
-          max-width: 33.34%;
+  .index-banner{
+    .index-banner-b{
+      height: 60px;
+      margin-top: -26px;
+      &>div{
+        width: 46px;
+        &:not(:last-child){
+          margin-right: 13px;
+        }
+        &::after{
+          width: 20px;
+          height: 10px;
         }
       }
     }
   }
-  //個案分享
-  .index-caseSharing{
-    padding: 0;
-    background:none;
-    &-in{
-      margin: 35px auto 0;
-      .in-cen{
-        margin-top: 34px;
-        flex-direction: column;
-        &-box{
-          width: 100%;
+  //醫生團隊
+  .index-doctorTeam{
+    padding: 120px 0 20px;
+    &-t{
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      .title{
+        font-size: 18px;
+        letter-spacing: 4px;
+        &::after{
+          height: 3px;
         }
       }
-      .in-bottom{
-        width: 100%;
-        background: linear-gradient(0deg, rgba(255, 241, 240, 0.7) 41.54%, rgba(255, 241, 240, 0) 137.31%);
-        padding: 20px 0;
-        margin-top: 0;
-        span{
-          width: 137px;
-          height: 40px;
-          font-weight: 500;
-          font-size: 1rem;
-          background: #FFFFFF;
-          line-height: 40px;
-          padding: 0;
-          box-shadow: 1px 1px 4px rgba(255, 163, 158, 0.45);
-          color: #666666;
-          transition: all .3s;
-          &:hover{
-            background: #FFDDDA;
-            color: #FFFFFF;
-            text-shadow: 0px 0px 8px rgba(255, 120, 117, 0.65);
+      .area{
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 37px;
+      }
+    }
+    &-c{
+      margin-top: 20px;
+      .doctorTeamPage{
+        margin: 8.6px 15px;
+        img{
+          width: 113px;
+          height: 113px;
+        }
+      }
+    }
+    .mbDoctorTeam{
+      display: block;
+
+    }
+    .pcDoctorTeam{
+      display: none;
+    }
+  }
+  //個案分享
+  .index-caseSharing{
+    padding: 80px 0 100px;
+    background:none;
+    &-title{
+      .title{
+        font-size: 22px;
+        letter-spacing: 5px;
+        padding-bottom: 10px;
+        &::after{
+          height: 3px;
+          border-radius: 1.5px;
+        }
+      }
+    }
+    &-in{
+      margin: 10px auto 0;
+      flex-direction: column;
+      position: relative;
+      &>div{
+        padding: 0 30px;
+        .name{
+          font-size: 18px;
+          letter-spacing: 4.5px;
+          line-height: 1;
+        }
+        .skill{
+          font-size: 14px;
+          letter-spacing: 3.5;
+        }
+        .wujiao{
+          margin-top: 0;
+          &>div{
+            padding: 0 3px;
+            width: 20px;
+          }
+        }
+        .text{
+          margin-top: 210px;
+          padding: 20px 24px;
+          border: 2px solid var(--topic-color);
+          border-radius: 10px;
+          font-size: 17px;
+          letter-spacing: 3.74px;
+          &::after{
+            width: 17px;
+            height: 17px;
+            border: 2px solid var(--topic-color);
+            border-left: transparent;
+            border-bottom: transparent;
+            top: -10px;
+            right: auto;
+            left: 30px;
+            transform: rotate(-45deg);
+          }
+        }
+        .userImage{
+          max-width: 190px;
+          border-radius: 50%;
+        }
+        .ya{
+          width: 67px;
+          height: 76px;
+          bottom: 0;
+          right: 10px;
+          font-size: 15px;
+          letter-spacing: 2.25px;
+          padding-top: 15px;
+        }
+        &:first-child{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        &:last-child{
+          margin-left: 0;
+          position: absolute;
+          top: 50px;
+          left: 50%;
+          width: max-content;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &-swiper{
+      margin: 68px auto 0;
+      .swiper-next,.swiper-prev{
+        display: none;
+      }
+      .caseSharingSwiper{
+        &-in{
+          .context{
+            padding: 2px 13px;
+            font-size: 15px;
+            letter-spacing: 3.75px;
+            border-radius: 10px;
+            margin-left: 0;
+            width: max-content;
+            border: 2px solid var(--topic-color);
+            margin: 0 auto;
+            &::after{
+              width: 10px;
+              height: 10px;
+              bottom: -7px;
+              left: 50px;
+              border: 2px solid var(--topic-color);
+              border-left: transparent;
+              border-bottom: transparent;
+            }
+          }
+          .name{
+            font-size: 13px;
+            span{
+              font-size: 15px;
+            }
+          }
+          .skill{
+            font-size: 12px;
+          }
+          .wujiao{
+            margin-top: 0;
+            &>div{
+              padding: 0 4px;
+              width: 26px;
+            }
+          }
+          .text{
+            padding: 16px 17px;
+            border: 2px solid var(--topic-color);
+            letter-spacing: 3.75px;
+            font-weight: 600;
+            font-size: 15px;
+            &::after{
+              border: 2px solid var(--topic-color);
+              width: 12px;
+              height: 12px;
+              top: -7px;
+              border-left: transparent;
+              border-bottom: transparent;
+            }
+          }
+          .userImage{
+            max-width: 200px;
           }
         }
       }
+    }
+    .bgIcon{
+      display: none;
     }
   }
 }

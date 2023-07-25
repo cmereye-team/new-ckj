@@ -25,13 +25,13 @@ const navLists = [
     },
   ],[
     {
-      name: 'components.footer.nav_medical_team',
-      link: `/medical-team`,
+      name: 'components.footer.nav_contactUs',
+      link: '/contactUs',
       child: []
     },
     {
-      name: 'components.footer.nav_contactUs',
-      link: '/contactUs',
+      name: 'components.footer.nav_medical_team',
+      link: `/medical-team`,
       child: [
         {
           name: 'components.areaTabs.luohu',
@@ -139,6 +139,20 @@ const toPageTop = () =>{
     },2000)
   },500)
 }
+
+
+let _arr:any = ref([])
+const handleMenu = (item:any,index:any) => {
+  console.log(index)
+  console.log(_arr.value)
+  if(_arr.value.indexOf(index) === -1){
+    _arr.value.push(index)
+  }else{
+    _arr.value.splice(_arr.value.indexOf(index),1)
+  }
+  console.log(_arr.value)
+}
+
 </script>
 
 <template>
@@ -155,14 +169,11 @@ const toPageTop = () =>{
       </div>
       <div class="footer-content-nav">
         <div class="nav-list" v-for="(navItem, navIndex) in navLists" :key="navIndex">
-          <!-- <nuxt-link :to="navItem.link">
-            {{ $t(navItem.name) }}
-          </nuxt-link> -->
           <div class="nav-list-in" v-for="(menuItem,menuIndex) in navItem" :key="menuIndex">
-            <div class="nav-list-in-name">
+            <div :class="{'nav-list-in-name':true,'isOpen':_arr.includes(`${navIndex}-${menuIndex}`),'haveChild': menuItem.child.length>0}" @click="handleMenu(menuItem,`${navIndex}-${menuIndex}`)">
               {{$t(menuItem.name)}}
             </div>
-            <div class="nav-list-in-child">
+            <div class="nav-list-in-child pcChild">
               <div>
                 <div v-for="(menuChild,childIndex) in menuItem.child.slice(0,6)" :key="childIndex">
                   {{$t(menuChild.name)}}
@@ -175,6 +186,18 @@ const toPageTop = () =>{
               </div>
               <div v-if="menuItem.child.length > 12">
                 <div v-for="(menuChild,childIndex) in menuItem.child.slice(12,14)" :key="childIndex">
+                  {{$t(menuChild.name)}}
+                </div>
+              </div>
+            </div>
+            <div class="nav-list-in-child mbChild" v-show="_arr.includes(`${navIndex}-${menuIndex}`)">
+              <div>
+                <div v-for="(menuChild,childIndex) in menuItem.child.slice(0,7)" :key="childIndex">
+                  {{$t(menuChild.name)}}
+                </div>
+              </div>
+              <div v-if="menuItem.child.length > 6">
+                <div v-for="(menuChild,childIndex) in menuItem.child.slice(7,14)" :key="childIndex">
                   {{$t(menuChild.name)}}
                 </div>
               </div>
@@ -312,13 +335,19 @@ const toPageTop = () =>{
         margin-bottom: 15px;
         &-name{
           color: #FFF;
-          font-family: 'Yuanti TC';
+          font-family: 'cwTeXYen';
           font-size: 18px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 500;
           line-height: 160%; /* 28.8px */
           letter-spacing: 4.5px;
           cursor: pointer;
+        }
+        .pcChild{
+          display: flex;
+        }
+        .mbChild{
+          display: none;
         }
         &-child{
           display: flex;
@@ -329,10 +358,10 @@ const toPageTop = () =>{
             &>div{
               cursor: pointer;
               color: #FFF;
-              font-family: 'Yuanti TC';
+              font-family: 'cwTeXYen';
               font-size: 15px;
               font-style: normal;
-              font-weight: 400;
+              font-weight: 500;
               line-height: 160%; /* 24px */
               letter-spacing: 3.75px;
               margin-top: 11px;
@@ -355,6 +384,7 @@ const toPageTop = () =>{
   &-text {
     color: #fff;
     font-size: 22px;
+    font-weight: 500;
     text-align: center;
     line-height: 160%;
     text-shadow: 0px 0px 4px rgba(255, 120, 117, 0.45);
@@ -375,18 +405,104 @@ const toPageTop = () =>{
   }
 }
 @media screen and (max-width: 768px) {
+  .footerPage{
+    .toTop{
+      right: 20px;
+      bottom: 80px;
+      width: 64px;
+      height: 64px;
+      .arrowTop{
+        top: 14px;
+        width: 6px;
+        height: 6px;
+      }
+      .ya{
+        width: 20px;
+      }
+      .toTopline{
+        width: 10px;
+        span{
+          width: 2px;
+        }
+      }
+    }
+  }
   .footer-content {
-    padding: 50px 30px 170px;
-    &-nav {
-      flex-direction: column;
-      text-align: center;
-      font-size: 18px;
+    padding: 10px 70px 80px;
+    &-logo_one {
+      padding: 0;
+      &>img{
+        width: 133px;
+      }
     }
     &-text {
       margin-top: 20px;
+      font-size: 12px;
+      letter-spacing: 2.7px;
+    }
+    &-nav {
+      margin-top: 40px;
+      flex-direction: column;
+      justify-content: flex-start;
+      .nav-list{
+        &-in{
+          margin-bottom: 15px;
+          &-name{
+            font-size: 13px;
+            letter-spacing: 2.822px;
+            position: relative;
+            &.haveChild{
+               &::before{
+                content: '';
+                font-family: 'swiper-icons';
+                color: #fff;
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border: 1px solid #fff;
+                border-right: none;
+                border-bottom: none;
+                top: 50%;
+                left: 0;
+                transform: translate(-200%,-65%) rotate(135deg);
+                transform-origin: center center;
+                transition: all .7s;
+              }
+            }
+            &.isOpen{
+              &::before{
+                transform: translate(-200%,-75%) rotate(225deg);
+              }
+            }
+          }
+          .pcChild{
+            display: none;
+          }
+          .mbChild{
+            display: flex;
+          }
+          &-child{
+            &>div{
+              width: 100%;
+              justify-content: space-between;
+              &:not(:last-child){
+                margin-right: 0;
+              }
+              &>div{
+                font-size: 12px;
+                letter-spacing: 2.5px;
+                margin-top: 8px;
+              }
+            }
+          }
+        }
+      }
     }
     &-icon {
-      margin: 30px 0;
+      margin: 30px 0 0;
+      &-in {
+        padding: 0 7px;
+      }
     }
   }
 }

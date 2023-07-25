@@ -196,7 +196,7 @@ const servicesCardLists = serviceLists
     z-index: 20;
     &-t{
       color: #FFF;
-      font-family: 'Yuanti TC';
+      font-family: 'cwTeXYen';
       font-size: 13px;
       font-style: normal;
       font-weight: 400;
@@ -248,7 +248,7 @@ const servicesCardLists = serviceLists
             }
             .name{
               color: var(--topic-text-color);
-              font-family: 'Yuanti TC';
+              font-family: 'cwTeXYen';
               font-size: 18px;
               line-height: 1; /* 50.22px */
               letter-spacing: 4.5px;
@@ -305,7 +305,7 @@ const servicesCardLists = serviceLists
                       div{
                         color: var(--topic-text-color);
                         text-align: center;
-                        font-family: 'Yuanti TC';
+                        font-family: 'cwTeXYen';
                         font-size: 12px;
                         font-style: normal;
                         font-weight: 400;
@@ -329,7 +329,7 @@ const servicesCardLists = serviceLists
                 &>div{
                   padding: 0 14px;
                   color: #6B6B6B;
-                  font-family: 'Yuanti TC';
+                  font-family: 'cwTeXYen';
                   font-size: 18px;
                   font-style: normal;
                   font-weight: 400;
