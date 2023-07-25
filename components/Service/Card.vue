@@ -276,11 +276,18 @@ const servicesCardPageData = {
           font-weight: 500;
           font-size: 16px;
           text-align: left;
+          
         }
       }
       .servicesCard{
         padding: 0 21.5px;
         box-sizing: border-box;
+        &>div{
+          flex-wrap: wrap;
+          &:nth-of-type(2){
+            margin-left: 0;
+          }
+        }
         &-in{
           width: 50%;
           padding: 0 8.5px;

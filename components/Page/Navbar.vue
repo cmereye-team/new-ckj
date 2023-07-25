@@ -232,6 +232,7 @@ let mbQDCodeBool = ref(false)
     background: #FFDDDA;
     box-shadow: 0px -1.5px 0px rgba(255, 204, 199, 0.25);
     z-index: 20;
+    display: none;
     &-in{
       position: absolute;
       right: 30px;

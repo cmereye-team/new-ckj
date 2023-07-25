@@ -172,6 +172,8 @@ const handleLineCur = (_value:number) =>{
     height: 60px;
     width: 100%;
     transform: rotate(180deg);
+    position: relative;
+    z-index: 1;
   }   
 }
 @media (min-width: 768px) and (max-width: 1452px) {
@@ -185,7 +187,11 @@ const handleLineCur = (_value:number) =>{
 @media screen and (max-width: 768px) {
 //關於我們
   .index-aboutUs{
-   
+    &-c{
+      .content{
+        flex-direction: column;
+      }
+    }
   }
 }
 

@@ -516,7 +516,9 @@ svg:hover path{
     }
   }
   &-c{
-    margin-top: 85px;
+    width: 100%;
+    // max-width: 1920px;
+    margin: 85px auto 0;
     // box-shadow: 2px 0px 8px rgba(255, 163, 158, 0.25);
     .doctorTeamPage{
       display: flex;
@@ -528,6 +530,7 @@ svg:hover path{
       background: #fff;
       overflow: hidden;
       margin: 15px;
+      width: max-content;
     }
     .c-in{
       width: 100%;

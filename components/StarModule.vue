@@ -15,25 +15,41 @@ const colorLists = [
 ]
 const starLists:any = ref([])
 
-let starNum = 14
-while(starNum>0){
-    // console.log(starNum)
-    let _size = Math.random()*10+5
-    let _top = `${Math.floor(Math.random()*60)}%`
-    let _delay = `${Math.floor(Math.random()*20)}s`
-    let _color = colorLists[Math.floor((Math.random()*5) === 5 ? 4: Math.random()*5)]
-    let _name = `starTo_${Math.floor(Math.random()*10)}`
-    let obj = {
-        size: _size,
-        color: _color,
-        delay: _delay,
-        top: _top,
-        name: _name
+let starNum = ref(14)
+
+
+const setStar = () =>{
+    while(starNum.value>0){
+        let _size = window.innerWidth > 768 ? Math.random()*10+5 : Math.random()*4+3
+        let _top = `${Math.floor(Math.random()*60)}%`
+        let _delay = `${Math.floor(Math.random()*20)}s`
+        let _color = colorLists[Math.floor((Math.random()*5) === 5 ? 4: Math.random()*5)]
+        let _name = `starTo_${Math.floor(Math.random()*10)}`
+        let obj = {
+            size: _size,
+            color: _color,
+            delay: _delay,
+            top: _top,
+            name: _name
+        }
+        starLists.value.push(obj)
+        starNum.value--
     }
-    starLists.value.push(obj)
-    starNum--
 }
 
+const getWindowResize = () => {
+  if(window.innerWidth > 768){
+    starNum.value = 14
+    setStar()
+  }else{
+    starNum.value = 10
+    setStar()
+  }
+}
+
+onMounted(()=>{
+    getWindowResize()
+})
 
 </script>
 

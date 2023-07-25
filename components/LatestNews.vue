@@ -55,25 +55,25 @@ let newsLists = [
   {
     title: '歐美種植牙 即減￥2000元/顆',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/0507b7e68c818758.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service/implant'
   },
   {
     title: '隱形牙箍  即減￥5000元',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/e682138cf0372fea.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service/invisalign'
   },
   {
     title: '金屬矯正牙箍 即減￥2000元',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/7f53da7aac0a0ac6.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service/orthodontics'
   },
   {
     title: '成功種牙或矯齒，免費贈送專業潔牙1次',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/35eddc3953f766d6.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service'
   }
 ]
@@ -114,7 +114,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
       <swiper
         class="swiperBox"
         :loop="true"
-        :navigation="true"
+        :navigation="windowWidth>768"
         :modules="[Autoplay,Navigation]"
         :autoplay="{
           delay: 2500,
@@ -285,31 +285,40 @@ const setLatestNewsSwiperRef = (swiper:any) => {
 @media screen and (max-width: 768px) {
 //最新消息
   .index-latestNews {
-    padding: 90px 0 0;
+    padding: 45px 0 56px;
     .swiperBox{
-      width: calc(100% - 60px);
-      margin-top: 35px;
-      overflow: hidden;
-      border-radius: 20px;
-      .lineBox{
-        width: 200px;
-        bottom: 34px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+      // width: calc(100% - 60px);
+      // margin-top: 35px;
+      // overflow: hidden;
+      // border-radius: 20px;
+      // .lineBox{
+      //   width: 200px;
+      //   bottom: 34px;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      // }
     }
     &-in{
-      width: 100%;
-      box-sizing: border-box;
-      height: auto;
-      flex-direction: column;
+      // width: 100%;
+      // box-sizing: border-box;
+      // height: auto;
+      // flex-direction: column;
     }
     &-t{
-      flex-direction: column;
+      // flex-direction: column;
+      &>div{
+        color: var(--topic-text-color);
+        font-size: 20px;
+        letter-spacing: 5px;
+        padding-bottom: 14px;
+        &::after{
+          height: 3px;
+        }
+      }
     }
     &-line{
-      width: 216px;
-      margin: 26px auto 0;
+      // width: 216px;
+      // margin: 26px auto 0;
     }
   }
 }

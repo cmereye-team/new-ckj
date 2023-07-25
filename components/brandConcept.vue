@@ -1,43 +1,5 @@
 <script lang="ts" setup>
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-onMounted(() => {
-  // gsap.registerPlugin(ScrollTrigger);
-  // const animRightIn = (name: string) => {
-  //   return gsap.from(name, {
-  //     opacity: 0, 
-  //     x: 100, 
-  //     duration: 2
-  //   })
-  // }
-  // const animBottomIn = (name: string) => {
-  //   return gsap.from(name, {
-  //     opacity: 0, 
-  //     y: 100, 
-  //     duration: 2
-  //   })
-  // }
-  // ScrollTrigger.create({
-  //   trigger: ".brandConcept-right",
-  //   animation: animRightIn(".brandConcept-right"),
-  //   start: "bottom bottom",
-  // })
-  // ScrollTrigger.create({
-  //   trigger: ".brandConceptTitle",
-  //   animation: animBottomIn(".brandConceptTitle"),
-  //   start: "bottom bottom",
-  // })
-  // ScrollTrigger.create({
-  //   trigger: ".brandConcept-title",
-  //   animation: animBottomIn(".brandConcept-title"),
-  //   start: "bottom bottom",
-  // })
-  // ScrollTrigger.create({
-  //   trigger: ".brandConceptContent",
-  //   animation: animBottomIn(".brandConceptContent"),
-  //   start: "bottom bottom",
-  // })
-});
+
 </script>
 
 
@@ -182,8 +144,54 @@ onMounted(() => {
 
 @media screen and (max-width: 768px) {
   .index-brandConcept {
-    
+    &-c{
+      &-in{
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 0 40px;
+        padding-top: 90px;
+        position: relative;
+        .context{
+          width: 100%;
+          margin-right: 0;
+          &>div{
+            &:nth-of-type(1){
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              text-align: center;
+              font-size: 20px;
+              letter-spacing: 5px;
+              padding-bottom: 15px;
+              &::after{
+                height: 3px;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+            }
+            &:nth-of-type(2){
+              margin-top: 30px;
+              span{
+                padding: 5px 8px;
+                font-size: 18.798px;
+                letter-spacing: 2.632px;
+                border: 1px solid var(--topic-text-color);
+              }
+            }
+            &:nth-of-type(3){
+              width: calc(100% - 40px);
+              margin: 20px auto 0;
+              font-size: 15px;
+              letter-spacing: 4.5px;
+            }
+          }
+        }
+        .image{
+          width: 100%;
+        }
+      }
+    }
   }
-
 }
 </style>

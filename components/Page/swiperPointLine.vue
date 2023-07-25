@@ -60,7 +60,9 @@ onMounted(()=>{
         height: 20px;
         background: url(https://static.cmereye.com/imgs/2023/07/be9cf2097b6cd6e3.png);
         background-size: 100% 100%;
-        margin-left: 28.5px;
+        &:not(:first-child){
+          margin-left: 28.5px;
+        }
         .current{
           width: 100%;
           height: 100%;

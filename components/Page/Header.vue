@@ -432,5 +432,9 @@ const servicesCardLists = serviceLists
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {}
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .headerPage{
+    display: none;
+  }
+}
 </style>
