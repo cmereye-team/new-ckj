@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import { useAppState } from '~/stores/appState'
+import { Autoplay,Navigation } from 'swiper';
 const appState = useAppState()
 const mapConShow = ref(true)
+
 
 onMounted(()=>{
   getWindowResize()
@@ -34,8 +36,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/b3/j3Yu',
       color_1: '#FECB02',
       color_3: '#089CFE',
-      top: '160px',
-      left: '150px'
+      right: '48%',
+      bottom: '45%'
     },
     {
       id: '102',
@@ -50,8 +52,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/a5/GtH',
       color_1: '#089CFE',
       color_3: '#FECB02',
-      top: '110px',
-      left: '200px'
+      right: '37%',
+      bottom: '58%'
     },
     {
       id: '103',
@@ -66,8 +68,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/24/Rxk',
       color_1: '#FECB02',
       color_3: '#FF6096',
-      top: '310px',
-      left: '100px'
+      right: '59%',
+      bottom: '23%'
     },
     {
       id: '104',
@@ -82,8 +84,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/a9/Xgch',
       color_1: '#FECB02',
       color_3: '#FF6096',
-      top: '180px',
-      left: '100px'
+      right: '59%',
+      bottom: '54%'
     },
     {
       id: '105',
@@ -98,8 +100,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/d3/Awch',
       color_1: '#FECB02',
       color_3: '#FF6096',
-      top: '330px',
-      left: '210px'
+      right: '33%',
+      bottom: '19%'
     }
   ],
   // 福田區
@@ -117,8 +119,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/ea/Yhh',
       color_1: '#FECB02',
       color_3: '#089CFE',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
     {
       id: '202',
@@ -133,8 +135,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/1f/kY0',
       color_1: '#089CFE',
       color_3: '#FECB02',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
   ],
   // 南山区
@@ -152,8 +154,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/2e/Pmif',
       color_1: '#FECB02',
       color_3: '#089CFE',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
     {
       id: '302',
@@ -168,8 +170,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/36/4FH',
       color_1: '#089CFE',
       color_3: '#FECB02',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
     {
       id: '303',
@@ -184,8 +186,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/b8/Mzj',
       color_1: '#FECB02',
       color_3: '#FF6096',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
   ],
   // 寶安區
@@ -203,8 +205,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/89/2LD',
       color_1: '#FECB02',
       color_3: '#089CFE',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
   ],
   // 龍華區
@@ -222,8 +224,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/3a/nbch',
       color_1: '#FECB02',
       color_3: '#089CFE',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
     {
       id: '502',
@@ -238,8 +240,8 @@ const allAddressLists = [
       baiduMap: 'https://j.map.baidu.com/c5/AZ4c',
       color_1: '#089CFE',
       color_3: '#FECB02',
-      top: '50%',
-      left: '50%'
+      right: '29%',
+      bottom: '30%'
     },
   ]
 ]
@@ -305,7 +307,6 @@ const dateLists=[
   }
 ]
 
-
 const getColor = (_idx?: number) => {
   let _color = '#FF6096'
   if(_idx === 0){
@@ -316,6 +317,23 @@ const getColor = (_idx?: number) => {
   return _color
 }
 
+let addressCurrent = ref(1)
+
+const handleLineCur = (_value:number) =>{
+  // console.log(_value)
+  addressSwiperRef.slideToLoop(_value-1)
+}
+
+let addressSwiperRef = {
+  slideToLoop: (a)=>{}
+}
+const setAddressSwiperRef = (swiper:any) => {
+  addressSwiperRef = swiper;
+}
+
+const onSlideChange = (swiper:any) => {
+  addressCurrent.value = swiper.realIndex + 1
+}
 </script>
 
 
@@ -354,11 +372,13 @@ const getColor = (_idx?: number) => {
         <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
           <div class="addressBox">
             <div class="addressBox-t">
-              <img class="addressImg" :src="addressItem.addressUrl" alt="">
-              <div class="addressIcon" :style="{top: addressItem.top,left: addressItem.left}">
-                <a :href="addressItem.baiduMap" target="_blank">
-                  <SvgAddressHouse :color_1="addressItem.color_1" :color_3="addressItem.color_3" />
-                </a>
+              <div class="addressImg">
+                <img class="addressImg-in" :src="addressItem.addressUrl" alt="">
+                <div class="addressIcon" :style="{right: addressItem.right,bottom: addressItem.bottom}">
+                  <a :href="addressItem.baiduMap" target="_blank">
+                    <SvgAddressHouse :color_1="addressItem.color_1" :color_3="addressItem.color_3" />
+                  </a>
+                </div>
               </div>
             </div>
             <div class="addressBox-b">
@@ -432,6 +452,77 @@ const getColor = (_idx?: number) => {
           </div>
         </div>
       </div>
+      <div class="address-swiper">
+        <swiper
+          class="swiperBox"
+          :loop="true"
+          :navigation="true"
+          :modules="[Navigation]"
+          @swiper="setAddressSwiperRef"
+          @slideChange="onSlideChange"
+        >
+          <swiper-slide class="addressSlide" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
+            <div :class="{'addressBox': true,'firstBox': addressIndex===0,'twoBox': addressIndex===1}">
+              <div class="addressBox-t">
+                <div class="addressImg">
+                  <img class="addressImg-in" :src="addressItem.addressUrl" alt="">
+                  <div class="addressIcon" :style="{right: addressItem.right,bottom: addressItem.bottom}">
+                    <a :href="addressItem.baiduMap" target="_blank">
+                      <SvgAddressHouse :color_1="addressItem.color_1" :color_3="addressItem.color_3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="addressBox-b">
+                <div>
+                  <div class="addressBox-b-address">
+                    <div>{{$t('contactUs.hospital_address')}}</div>
+                    <div>{{$t(addressItem.address)}}</div>
+                  </div>
+                  <div class="addressBox-b-phone">
+                    <div>{{$t('contactUs.check_the_phone')}}</div>
+                    <div>{{addressItem.phone}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="addressBox-c">{{$t(addressItem.name)}}</div>
+              <div :class="['addressBox-bus',{'cur': currentAddress === addressItem.id,'bbb':currentAddress !== addressItem.id}]">
+                <div class="bus-image" @click="handleAddress(addressItem.id)">
+                  <img src="https://static.cmereye.com/imgs/2023/07/075ccbc4b3a80af6.png" alt="" >
+                </div>
+                <div :class="['bus-in',{'ccur':currentAddress === addressItem.id}]" :style="{
+                }">
+                <div class="bus-in-btn" @click="closeAddress">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                    <path d="M31.2188 2.14209L2.12404 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M2.12305 2.14209L31.2178 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="bus-in-name">{{$t(addressItem.name)}}</div>
+                <div class="bus-in-title">{{$t('contactUs.traffic_route')}}</div>
+                <div class="bus-in-content">
+                  <div><SvgBus :color="getColor(addressIndex)" /></div>
+                  <div>
+                    <p>{{$t('contactUs.bus_route')}}</p>
+                    <p>{{$t(addressItem.busRoutes)}}</p>
+                  </div>
+                </div>
+                <div class="bus-in-railway">
+                  <div><SvgRailway :color="getColor(addressIndex)" /></div>
+                  <div>
+                    <p>{{$t('contactUs.metro_lines')}}</p>
+                    <p>{{$t(addressItem.metroRoutes)}}</p>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </Swiper>
+        <div class="address-swiper-line">
+          <PageSwiperPointLine :latestNewsNum="allAddressLists[appState.areaTabCurNum].length" :latestNewsCurrent="addressCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
+        </div>
+      </div>
       <!-- <div class="address">
         <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
           <h3>{{$t(addressItem.name)}}</h3>
@@ -463,10 +554,9 @@ const getColor = (_idx?: number) => {
   padding: 140px 0 0;
   max-width: 1550px; 
   margin: 0 auto;
+  position: relative;
+  // overflow: hidden;
   &-t{
-    // display: flex;
-    
-    // justify-content: space-between;
     .title{
       text-align: center;
       &>div{
@@ -474,7 +564,7 @@ const getColor = (_idx?: number) => {
         font-family: 'cwTeXYen';
         font-size: 31.766px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 160%; /* 50.826px */
         letter-spacing: 7.942px;
         padding-bottom: 20px;
@@ -502,15 +592,12 @@ const getColor = (_idx?: number) => {
         justify-content: center;
         &>div{
           width: 100%;
-          &:first-child{
-            min-width: 130px;
-          }
           &>div{
             border-bottom: 2px solid #F5F4F4;
             line-height: 54px;
             height: 54px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 600;
             font-family: 'cwTeXYen';
             color: var(--topic-text-color);
             text-align: center;
@@ -523,6 +610,7 @@ const getColor = (_idx?: number) => {
             }
           }
           &:first-child{
+            min-width: 130px;
             &>div{
               &:first-child{
                 &::after{
@@ -531,7 +619,7 @@ const getColor = (_idx?: number) => {
                   font-family: 'cwTeXYen';
                   font-size: 17px;
                   font-style: normal;
-                  font-weight: 400;
+                  font-weight: 600;
                   line-height: 180%; /* 30.6px */
                   letter-spacing: 1.7px;
                   margin-top: -18px;
@@ -549,8 +637,8 @@ const getColor = (_idx?: number) => {
                 letter-spacing: 2.04px;
               }
               &:last-child{
-                font-size: 100px;
-                line-height: 43px;
+                font-size: 50px;
+                line-height: 55px;
                 color: var(--topic-color);
               }
             }
@@ -564,7 +652,7 @@ const getColor = (_idx?: number) => {
           font-family: 'cwTeXYen';
           font-size: 20.564px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 180%; /* 37.015px */
           letter-spacing: 2.056px;
           margin-top: -18px;
@@ -577,7 +665,7 @@ const getColor = (_idx?: number) => {
           font-family: 'cwTeXYen';
           font-size: 20.564px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 180%;
           letter-spacing: 2.056px;
           &.spanColor{
@@ -713,11 +801,15 @@ const getColor = (_idx?: number) => {
             border-radius: 50%;
             cursor: pointer;
             transition: all .3s;
+            position: relative;
+            overflow: hidden;
+            &-in{
+              width: 100%;
+              height: 100%;
+            }
           }
           .addressIcon{
             position: absolute;
-            top: 50%;
-            left: 50%;
             cursor: pointer;
             transition: all .3s;
             &:hover{
@@ -881,7 +973,7 @@ const getColor = (_idx?: number) => {
           font-family: 'cwTeXYen';
           font-size: 27px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 160%; /* 43.824px */
           letter-spacing: 6px;
           transform: rotate(-15deg)
@@ -904,7 +996,7 @@ const getColor = (_idx?: number) => {
           font-family: 'cwTeXYen';
           font-size: 27px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 160%; /* 43.824px */
           letter-spacing: 6px;
           position: relative;
@@ -920,6 +1012,9 @@ const getColor = (_idx?: number) => {
         }
       }
     }
+  }
+  .address-swiper{
+    display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {
@@ -972,46 +1067,440 @@ const getColor = (_idx?: number) => {
 }
 @media screen and (max-width: 768px) {
   .index-contactUs{
-    padding: 90px 0 0;
+    padding: 0;
     &-t{
       flex-direction: column;
-    }
-    .address{
-      margin-top: 24px;
-      &-in{
-        width: 100%;
-        padding: 0 30px 45px;
-        h3{
-          font-size: 18px;
-        }
-        span{
-          font-size: 16px;
-        }
-        .content{
-          min-height: 120px;
-        }
-        .route{
-          span{
-            &:nth-of-type(1){
-              margin-top: 10px;
-            }
-            &:nth-of-type(3){
-              margin-top: 10px;
-            }
-          }
-        }
-        .mapBtn{
-          &-in{
-            font-weight: 400;
-            font-size: 20.0245px;
-            padding: 8px 0;
-            &:first-child{
-              margin-right: 17px;
-            }
+      .title{
+        &>div{
+          font-size: 20px;
+          letter-spacing: 5px;
+          padding-bottom: 10px;
+          &::after{
+            height: 3px;
+            border-radius: 2px;
           }
         }
       }
+      .date{
+        margin: 40px auto 0;
+        &-lists{
+          overflow: hidden;
+          overflow-x: scroll;
+          padding: 0;
+          justify-content: flex-start;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+          &>div{
+            &>div{
+              // min-width: 60px;
+              line-height: 1;
+              font-size: 15px;
+              height: 63px;
+              line-height: 63px;
+              padding: 0 11px;
+            }
+            &:first-child{
+              min-width: 60px;
+              &>div{
+                line-height: 1;
+                padding-top: 15px;
+                position: relative;
+                &:first-child{
+                  &::after{
+                    font-size: 15px;
+                    position: absolute;
+                    margin-top: -25px;
+                  }
+                }
+              }
+            }
+            &:not(:first-child){
+              &>div{
+                &:first-child{
+                }
+                &:last-child{
+                  font-size: 30px;
+                  line-height: 65px;
+                }
+              }
+            }
+          }
+        }
+        &-masker{
+          margin: 13px 28px 0;
+          &::before{
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            margin-top: -5px;
+          }
+          span{
+            display: inline-block;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+          }
+        }
+      }
+      .area{
+        margin-right: 23px;
+        margin-top: 47px;
+      }
     }
+    .address{
+      display: none;
+    }
+    .address-swiper{
+      display: block;
+      margin-top: 54px;
+      .addressSlide{
+        display: flex;
+        justify-content: center;
+      }
+      :deep(.swiper-button-prev::after){
+        color: var(--topic-color);
+        font-size: 20px;
+        font-weight: bold;
+      }
+      :deep(.swiper-button-next::after){
+        color: var(--topic-color);
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .addressBox{
+        width: 300px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #FF6096;
+        border-radius: 150px 150px 0 0;
+        &-t{
+          padding-top: 25px;
+          border-radius: 150px 150px 0 0;
+          padding-bottom: 60px;
+          background: #FF6096;
+          position: relative;
+          .addressImg{
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden;
+            &-in{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .addressIcon{
+            position: absolute;
+            cursor: pointer;
+            transition: all .3s;
+            transform: translate(20%,20%) scale(0.57);
+            &:hover{
+              transform: scale(0.8);
+            }
+          }
+        }
+        &-b{
+          height: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 20px 22px 0;
+          &>div{
+            &>div{
+              display: flex;
+              &>div{
+                color: #FF6096;
+                font-family: 'cwTeXYen';
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 160%; /* 30.6px */
+                letter-spacing: 1.5px;
+                &:first-child{
+                  margin-right: 0;
+                  min-width: 70px;
+                }
+              }
+            }
+          }
+        }
+        &-c{
+          color: #FF6096;
+          border: 2px solid #FF6096;
+          text-align: center;
+          font-family: 'cwTeXYen';
+          font-style: normal;
+          position: absolute;
+          text-align: center;
+          width: max-content;
+          padding: 0 10px;
+          min-width: 230px;
+          height: 39px;
+          line-height: 35px;
+          font-size: 15px;
+          font-weight: 600;
+          letter-spacing: 3.75px;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 317px;
+          border-radius: 32px;
+          background: #fff;
+        }
+        &-bus{
+          position: absolute;
+          left: 20px;
+          bottom: 180px;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: transparent;
+          cursor: pointer;
+          transform: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: busAnim 4s ease-in infinite;
+          -webkit-animation-delay: 3s;
+          &.cur{
+            animation: busAnim2 1s linear;
+            animation-fill-mode: forwards;
+          }
+          .bus-image{
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+            &>img{
+              width: 60%;
+            }
+          }
+          .bus-in{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: #FF6096;
+            padding: 0;
+            box-sizing: border-box;
+            // transition: all 2s;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            opacity: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
+            &.ccur{
+              animation: busAnim3 1s linear 1s;
+              animation-fill-mode: forwards;
+              // display: flex;
+            }
+            &-btn{
+              font-family: '圆幼';
+              border-radius: 50%;
+              border: 2px solid #FF6096;
+              width: 50px;
+              height: 50px;
+              // font-size: 24px;
+              // font-weight: bold;
+              margin: 0px auto 20px;
+              text-align: center;
+              line-height: 60px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              svg{
+                transform: scale(.6);
+              }
+            }
+            &-name{
+              text-align: center;
+              font-family: 'cwTeXYen';
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 160%; /* 30.6px */
+              letter-spacing: 1px;
+            }
+            &-title{
+              font-family: 'cwTeXYen';
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 160%; /* 30.6px */
+              letter-spacing: 1px;
+              margin-bottom: 15px;
+            }
+            &-content,&-railway{
+              display: flex;
+              align-items: flex-start;
+              width: 100%;
+              &>div{
+                text-align: left;
+                &:first-child{
+                  width: 30px;
+                  margin-right: 10px;
+                  transform: scale(.6) translateY(-10px);
+                }
+                &:last-child{
+                  flex: 1;
+                }
+                p{
+                  font-family: 'cwTeXYen';
+                  font-size: 13px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 160%; /* 30.6px */
+                  letter-spacing: 1px;
+                }
+              }
+            }
+            &-content{
+              margin-bottom:10px;
+            }
+          }
+        }
+        &.firstBox{
+          border: 2px solid #089CFE;
+          .addressBox-t{
+            background: #089CFE;
+          }
+          .addressBox-b{
+            &>div{
+              &>div{
+                &>div{
+                  color: #089CFE;
+                }
+              }
+            }
+          }
+          .addressBox-c{
+            color: #089CFE;
+            border: 2px solid #089CFE;
+          }
+        }
+        &.twoBox{
+          border: 2px solid #FECB02;
+          .addressBox-t{
+            background: #FECB02;
+          }
+          .addressBox-b{
+            &>div{
+              &>div{
+                &>div{
+                  color: #FECB02;
+                }
+              }
+            }
+          }
+          .addressBox-c{
+            color: #FECB02;
+            border: 2px solid #FECB02;
+          }
+        }
+      }
+      &-line{
+        margin-top: 44px;
+      }
+    }
+  }
+}
+@keyframes busAnim {
+  0%{
+    transform: scale(1);
+  }
+  90%{
+    transform: scale(1);
+  }
+  94%{
+    transform: scale(1.5);
+  }
+  96%{
+    transform: scale(1);
+  }
+  98%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes busAnim2 {
+  0%{
+    width: 42px;
+    height: 42px;
+    left: 20px;
+    bottom: 180px;
+    border-radius: 50%;
+    background: transparent;
+  }
+  25%{
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    left: 20px;
+    bottom: 180px;
+    border-radius: 50%;
+  }
+  50%{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 10px;
+    bottom: 150px;
+    background: #fff;
+  }
+  75%{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    bottom: 100px;
+  }
+  90%{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+  }
+  100%{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+    background: #fff;
+  }
+}
+@keyframes busAnim3 {
+  0%{
+    // display: none;
+    // width: 0;
+    // height: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 0;
+  } 
+  100%{
+    // display: flex;
+    // width: 100%;
+    // height: 100%;
+    padding: 20px;
+    opacity: 1;
+    z-index: 2;
   }
 }
 </style>

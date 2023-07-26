@@ -67,6 +67,7 @@ onMounted(()=>{
           width: 100%;
           height: 100%;
           background: url(https://static.cmereye.com/imgs/2023/07/8027480ec64df903.png);
+          background-size: 100% 100%;
           border-radius: 50%;
           transition: all .5s;
         }
@@ -89,6 +90,9 @@ onMounted(()=>{
       &-in{
         width: 14.4px;
         height: 16px;
+        &:not(:first-child){
+          margin-left: 18.37px;
+        }
       }
     }
   }  

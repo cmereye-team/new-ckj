@@ -137,8 +137,10 @@ const servicesCardLists = serviceLists
   <div class="headerPage">
     <div class="headerPage-in">
       <div class="headerPage-in-t">
-        <span>7.06~ 成功種牙或矯齒即送專業洗牙服務1次!（※名額有限）</span>
-        <span>7.06~ 金屬矯正牙箍即減￥2000!!</span>  
+        <div>
+          <span>7.06~ 成功種牙或矯齒即送專業洗牙服務1次!（※名額有限）</span>
+          <span>7.06~ 金屬矯正牙箍即減￥2000!!</span>  
+        </div>
       </div>
       <div class="headerPage-in-c">
         <div>
@@ -180,10 +182,14 @@ const servicesCardLists = serviceLists
               </div>
             </div>
           </div>
+          <div class="openMenu"></div>
         </div>
       </div>
       <div class="headerPage-in-b"></div>
     </div>
+    <!-- <div class="headerPage-mb">
+      
+    </div> -->
   </div>
 </template>
 
@@ -420,6 +426,9 @@ const servicesCardLists = serviceLists
             }
           }
         }
+        .openMenu{
+          display: none;
+        }
       }
     }
     &-b{
@@ -430,11 +439,68 @@ const servicesCardLists = serviceLists
       transform: rotate(180deg);
     }
   }
+  // &-mb{
+  //   display: none;    
+  // }
 }
 @media (min-width: 768px) and (max-width: 1452px) {}
 @media screen and (max-width: 768px) {
   .headerPage{
-    display: none;
+    // position: sticky;
+    // top: 0;
+    // z-index: 999;
+    &-in{
+      // display: none;
+      &-t{
+        width: 100%;
+        overflow: hidden;
+        div{
+          width: max-content;
+          animation: topAnim 10s linear infinite;
+        }
+      }
+      &-c{
+        height: auto;
+        &>div{
+          justify-content: center;
+          padding-top: 18px;
+          position: relative;
+          .menu{
+            display: none;
+          }
+          .booking{
+            display: none;
+          }
+          .openMenu{
+            display: block;
+            position: fixed;
+            z-index: 50;
+            right: 25px;
+            top: 48px;
+            width: 31px;
+            height: 31px;
+            border: 2px solid var(--topic-color);
+            background: url(https://static.cmereye.com/imgs/2023/07/eca2a691410ded61.png) no-repeat;
+            background-position: center center;
+          }
+        }
+
+      }
+      &-b{
+        height: 30px;
+      }
+    }
+    // &-mb{
+
+    // }
+  }
+}
+@keyframes topAnim {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
   }
 }
 </style>

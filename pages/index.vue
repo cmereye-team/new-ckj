@@ -432,6 +432,9 @@ onMounted(()=>{
             <div class="ya">
               <div>星級{{'\n'}}客戶</div>
             </div>
+            <div class="ya_2">
+              <div>星級{{'\n'}}客戶</div>
+            </div>
           </div>
         </div>
         <div class="index-caseSharing-swiper">
@@ -664,7 +667,7 @@ svg:hover path{
     .title{
       color: var(--topic-text-color);
       font-family: 'cwTeXYen';
-      font-size: 20px;
+      font-size: 31px;
       font-style: normal;
       font-weight: 600;
       line-height: 160%; /* 50.826px */
@@ -759,6 +762,30 @@ svg:hover path{
         position: absolute;
         bottom: -20px;
         right: -30px;
+        background: url(https://static.cmereye.com/imgs/2023/07/00201cd3d3a117cd.png);
+        background-size: 100% 100%;
+        color: var(--topic-color);
+        font-family: 'cwTeXYen';
+        font-size: 35.368px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 115%; /* 40.673px */
+        letter-spacing: 5.305px;
+        white-space: pre-wrap;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        padding-top: 30px;
+        z-index: 2;
+        // clip-path: polygon(0 80%, 80% 0, 100% 0 ,0 100%);
+        animation: yaAnim 3s linear infinite;
+      }
+      .ya_2{
+        width: 140px;
+        height: 160px;
+        position: absolute;
+        bottom: -20px;
+        right: -30px;
         background: url(https://static.cmereye.com/imgs/2023/07/3b49416894156c3e.png);
         background-size: 100% 100%;
         color: #FFF;
@@ -773,11 +800,12 @@ svg:hover path{
         justify-content: center;
         // align-items: center;
         padding-top: 30px;
+        z-index: 1;
+        
       }
       &:last-child{
         margin-left: 42px;
         position: relative;
-        
       }
     }
   }
@@ -966,7 +994,20 @@ svg:hover path{
     }
   }
 }
-
+@keyframes yaAnim {
+  0%{
+    clip-path: polygon(0 0, 0 0,0 0,0 0);
+  }
+  33%{
+    clip-path: polygon(0 80%, 80% 0, 100% 0 ,0 100%);
+  }
+  66%{
+    clip-path: polygon(0 100%, 100% 0, 100% 20% ,20% 100%);
+  }
+  100%{
+    clip-path: polygon(100% 100%,100% 100%,100% 100%,100% 100%);
+  }
+}
 @media (min-width: 768px) and (max-width: 1452px) {
 }
 
@@ -1092,6 +1133,15 @@ svg:hover path{
           border-radius: 50%;
         }
         .ya{
+          width: 67px;
+          height: 76px;
+          bottom: 0;
+          right: 10px;
+          font-size: 15px;
+          letter-spacing: 2.25px;
+          padding-top: 15px;
+        }
+        .ya_2{
           width: 67px;
           height: 76px;
           bottom: 0;

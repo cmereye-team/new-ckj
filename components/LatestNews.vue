@@ -114,6 +114,8 @@ const setLatestNewsSwiperRef = (swiper:any) => {
       <swiper
         class="swiperBox"
         :loop="true"
+        :slidesPerView="windowWidth>768?1:1.4"
+        :centeredSlides="true"
         :navigation="windowWidth>768"
         :modules="[Autoplay,Navigation]"
         :autoplay="{
@@ -260,6 +262,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     padding: 45px 0 56px;
     .swiperBox{
       margin-top: 35px;
+      border-radius: 0;
     }
     &-t{
       &>div{
@@ -271,6 +274,9 @@ const setLatestNewsSwiperRef = (swiper:any) => {
           height: 3px;
         }
       }
+    }
+    &-in{
+      padding: 0 10px;
     }
   }
 }
