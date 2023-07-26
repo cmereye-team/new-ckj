@@ -407,6 +407,7 @@ const handleMenu = (item:any,index:any) => {
 @media screen and (max-width: 768px) {
   .footerPage{
     .toTop{
+      display: none;
       right: 20px;
       bottom: 80px;
       width: 64px;

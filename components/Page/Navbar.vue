@@ -3,16 +3,33 @@ import { useAppState } from '~/stores/appState'
 const appState = useAppState()
 const navbarLists = []
 let navLiBoxBool = ref(false)
+// const toPageTop = () =>{
+//   // window.scrollTo(0,0);
+//   let top = document.documentElement.scrollTop || document.body.scrollTop;
+//   // 实现滚动效果 
+//   const timeTop = setInterval(() => {
+//       document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
+//       if (top <= 0) {
+//           clearInterval(timeTop);
+//       }
+//   }, 10);
+// }
+let toTopType = ref(false)
 const toPageTop = () =>{
-  // window.scrollTo(0,0);
-  let top = document.documentElement.scrollTop || document.body.scrollTop;
-  // 实现滚动效果 
-  const timeTop = setInterval(() => {
-      document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
-      if (top <= 0) {
-          clearInterval(timeTop);
-      }
-  }, 10);
+  toTopType.value = true
+  setTimeout(()=>{
+    let top = document.documentElement.scrollTop || document.body.scrollTop;
+    // 实现滚动效果 
+    const timeTop = setInterval(() => {
+        document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
+        if (top <= 0) {
+            clearInterval(timeTop);
+        }
+    }, 10);
+    setTimeout(()=>{
+      toTopType.value = false
+    },2000)
+  },500)
 }
 let navFormBool = ref(false)
 const handleNavFormNav = () =>{
@@ -57,35 +74,6 @@ let mbQDCodeBool = ref(false)
     </div>
     <nuxt-link class="navbar-content-in" id="navPcFaceBook" to="https://www.facebook.com/ckjdental.hk/" target="_blank">
     </nuxt-link>
-    <!-- <div class="navbar-content-in" id="navPcContactForm" @click="toContactUs">
-    </div>
-    <div class="navbar-content-in" @click="toPageTop">
-      <img src="@/assets/images/navIcon_4.png" alt="" />
-    </div> -->
-    <div class="navbar-content-mb" v-if="false">
-      <div id="navMbTel">
-        <img src="@/assets/images/icon_8.png">6912 2011
-      </div>
-      <div>
-        <div class="navBtn" @click="navLiBoxBool = !navLiBoxBool">立即預約</div>
-        <div class="navLiBox" :style="{bottom: (navLiBoxBool ? '100%' : '-350%')}">
-        </div>
-      </div>
-    </div>
-    <div class="navbar-content-mb02">
-      <div id="navMbWeChat" @click="mbQDCodeBool = true">WeChat</div>
-      <div>
-        <nuxt-link id="navMbWhatsapp" :to="'https://api.whatsapp.com/send/?phone=85269122011'" target="_blank">Whatsapp</nuxt-link>
-      </div>
-    </div>
-    <div class="navbar-content-mb">
-      <div><nuxt-link id="navMbFacebook" to="https://www.facebook.com/ckjdental.hk/" target="_blank">Facebook預約</nuxt-link></div>
-      <div id="navMbContactFormBtn" @click="handleNavFormNav">填寫表格</div>
-    </div>
-    <div class="navbar-content-mb" v-if="false">
-      <div><nuxt-link id="navMbFacebook" to="https://www.facebook.com/ckjdental.hk/" target="_blank">Facebook預約</nuxt-link></div>
-      <div>填寫表格</div>
-    </div>
     <div class="navForm" :style="{bottom: (appState.isShowForm ? '0' : '-150%')}">
       <ContactForm />
       <div class="navForm-icon" @click="navFormClose">
@@ -100,13 +88,48 @@ let mbQDCodeBool = ref(false)
         <img src="@/assets/images/icon_7.png" alt="">
       </div>
     </div>
+    <div class="reservation">
+      <div class="reservation-in">
+        <div><img src="https://static.cmereye.com/imgs/2023/07/04ad2f53c65e2fb5.png" alt=""></div>
+        <div>RESERVATION</div>
+        <div>馬上預約</div>
+      </div>
+    </div>
+    <div class="navbar-content-mb">
+      <nuxt-link  id="navMbTel" :to="'tel: 6912 2011'" class="mb-in mb-in-1">
+
+      </nuxt-link>
+      <nuxt-link id="navMbWhatsapp" :to="'https://api.whatsapp.com/send/?phone=85269122011'" target="_blank" class="mb-in mb-in-2">
+
+      </nuxt-link>
+      <div class="mb-in mb-in-3">
+        <img src="https://static.cmereye.com/imgs/2023/07/04ad2f53c65e2fb5.png" alt="">
+        <span>馬上預約</span>
+      </div>
+      <div id="navMbWeChat" class="mb-in mb-in-4" @click="mbQDCodeBool = true">
+
+      </div>
+      <nuxt-link id="navMbFacebook" to="https://www.facebook.com/ckjdental.hk/"  target="_blank" class="mb-in mb-in-5">
+
+      </nuxt-link>
+      <div class="toTop" @click="toPageTop">
+        <div class="arrowTop" :style="{display: toTopType?'none':'block'}"></div>
+        <img class="ya" :style="{top:toTopType?'40%':'50%'}" src="https://static.cmereye.com/imgs/2023/07/be9cf2097b6cd6e3.png" alt="">
+        <div class="toTopline">
+          <span :style="{height: toTopType?'10px':'0px'}"></span>
+          <span :style="{height: toTopType?'20px':'0px'}"></span>
+          <span :style="{height: toTopType?'15px':'0px'}"></span>
+        </div>
+        <img class="pageTop" src="https://static.cmereye.com/imgs/2023/07/11de1e762ca04a51.png" alt="">
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .navbar-content {
   width: 66px;
   position: fixed;
-  right: 3vw;
+  right: 1vw;
   top: 30vh;
   z-index: 50;
   &-in {
@@ -189,12 +212,6 @@ let mbQDCodeBool = ref(false)
     background-repeat: no-repeat;
     background-position: 50%;
   }
-  &-mb{
-    display: none;
-  }
-  &-mb02{
-    display: none;
-  }
   .navForm{
     width: 100vw;
     height: 100vh;
@@ -221,116 +238,194 @@ let mbQDCodeBool = ref(false)
       height: 100%;
     }
   }
+  .reservation{
+    position: absolute;
+    bottom: -300px;
+    right: -1vw;
+    width: 141px;
+    height: 121.733px;
+    transition: all .3s;
+    border-radius: 5.088px 0 0 5.088px;
+    background: #FFF;
+    box-shadow: 2.035137891769409px 2.035137891769409px 25.43922233581543px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 23px;
+    &-in{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      &>div{
+        &:nth-of-type(1){
+          margin-bottom: 10px;
+        }
+        &:nth-of-type(2){
+          color: var(--topic-color);
+          text-align: center;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 160%; /* 43.273px */
+          letter-spacing: 2.844px;
+        }
+        &:nth-of-type(3){
+          color: var(--topic-text-color);
+          text-align: center;
+          font-size: 15.51px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 160%; /* 43.273px */
+          letter-spacing: 3.878px;
+        }
+      }
+    }
+    &:hover{
+      width: 160px;
+    }
+  }
+  &-mb{
+    display: none;
+  }
 }
 @media screen and (max-width: 768px) {
   .navbar-content {
-    top: auto;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 124px;
-    background: #FFDDDA;
-    box-shadow: 0px -1.5px 0px rgba(255, 204, 199, 0.25);
-    z-index: 20;
-    display: none;
+  
     &-in{
-      position: absolute;
-      right: 30px;
-      top: -64px;
-      width: 34px;
-      height: 34px;
-      background: #FFDDDA;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img{
-        width: 24px;
-      }
+     display: none;
     }
     &-in::not(:last-child){
       display: none;
     }
-    &-mb{
-      display: flex;
-      height: 100%;
-      &>div{
-        height: 100%;
-        line-height: 62px;
-        text-align: center;
-        flex: 1;
-        font-weight: 400;
-        font-size: 1.25rem;
-        color: #FFFFFF;
-        text-shadow: 0px 0px 8px rgba(255, 120, 117, 0.65);
-        position: relative;
-        img{
-          display: inline-block;
-          margin-top: -5px;
-        }
-        &:first-child{
-          border-right: 1px solid #fff;
-        }
-        .navBtn{
-          width: 100%;
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          z-index: 90;
-          background: #FFDDDA;
-        }
-        .navLiBox{
-          width: 100%;
-          height: 248px;
-          line-height: 62px;
-          position: absolute;
-          left: 0;
-          transition: all .3s;
-          z-index: 19;
-          &>div{
-            background: #FFF1F0;
-            color: #FFA09E;
-            text-shadow: none;
-            &:hover{
-              background: #FFDDDA;
-              color: #FFF1F0;
-            }
-            &:first-child{
-              border-radius: 10px 10px 0px 0px;
-              box-shadow: 0px -1.5px 0px rgba(255, 204, 199, 0.25);
-            }
-            &:not(:last-child){
-              border-bottom: 1px solid #fff;
-            }
-          }
-        }
-      }
-    }
-    &-mb02{
-      display: flex;
-      height: 62px;
-      &>div{
-        height: 100%;
-        line-height: 62px;
-        text-align: center;
-        flex: 1;
-        font-weight: 400;
-        font-size: 20px;
-        position: relative;
-        background: #FFF1F0;
-        color: #FFA09E;
-        img{
-          display: inline-block;
-          margin-top: -5px;
-        }
-        &:first-child{
-          border-right: 1px solid #fff;
-        }
-      }
-    }
     .navForm{
       display: flex;
     }
+    .reservation{
+      display: none;
+    }
+    &-mb{
+      display: block;
+      width: 100%;
+      height: 60px;
+      background: #FFF;
+      box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.25);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      padding: 0 10px;
+      .mb-in{
+        flex: 1;
+        height: 100%;
+        &-1{
+          background: url(https://static.cmereye.com/imgs/2023/07/ac801f63f6e35840.png) no-repeat;
+          background-position: center center;
+        }
+        &-2{
+          background: url(https://static.cmereye.com/imgs/2023/07/c631714e6eab7b74.png) no-repeat;
+          background-position: center center;
+        }
+        &-3{
+          width: 103px;
+          height: 103px;
+          min-width: 103px;
+          background: #fff;
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin: -30px 10px -10px;
+          img{
+            width: 28px;
+            margin-bottom: 5px;
+          }
+          span{
+            color: var(--topic-text-color);
+            text-align: center;
+            font-size: 12.376px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.6; /* 34.53px */
+            letter-spacing: 3.094px;
+          }
+        }
+        &-4{
+          background: url(https://static.cmereye.com/imgs/2023/07/d1ec7e5ab5a240b6.png) no-repeat;
+          background-position: center center;
+        }
+        &-5{
+          background: url(https://static.cmereye.com/imgs/2023/07/d067e48cd2a6f7a4.png) no-repeat;
+          background-position: center center;
+        }
+      }
+      .toTop{
+        position: absolute;
+        right: 11px;
+        bottom: 74px;
+        width: 64px;
+        height: 64px;
+        cursor: pointer;
+        filter: drop-shadow(0 0 4px #fff);
+        .arrowTop{
+          position: absolute;
+          left: 50%;
+          top: 14px;
+          width: 6px;
+          height: 6px;
+          border: 1px solid var(--topic-color);
+          border-right: none;
+          border-bottom: none;
+          transform: translateX(-50%) rotate(45deg);
+          transform-origin: center center;
+          transition: all .7s;
+        }
+        .ya{
+          width: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          transition: all .7s;
+        }
+        .toTopline{
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          justify-content: space-between;
+          width: 10px;
+          span{
+            width: 2px;
+            height: 0;
+            background: var(--topic-color);
+            transition: all .7s;
+            display: block;
+          }
+        }
+        .pageTop{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          animation: toTopRoto 5s linear infinite;
+        }
+      }
+    }
+  }
+}
+@keyframes toTopRoto {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }
 </style>
