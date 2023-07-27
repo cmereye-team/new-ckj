@@ -34,7 +34,6 @@ const handleLineCur = (_value:number) =>{
 
 <template>
   <div class="index-aboutUs">
-    <StarModule />
     <div class="index-aboutUs-t"></div>
     <div class="index-aboutUs-c">
       <div class="title">{{$t('components.aboutUs.title')}}</div>
@@ -97,6 +96,7 @@ const handleLineCur = (_value:number) =>{
       max-width: 1166px;
       margin: 70px auto 0;
       display: flex;
+      position: relative;
       &>div{
         flex: 1;
         padding: 0 100px;
@@ -163,6 +163,28 @@ const handleLineCur = (_value:number) =>{
           }
         }
       }
+      &::before{
+        content: '';
+        position: absolute;
+        left: -100px;
+        top: -200px;
+        background: url(https://static.cmereye.com/imgs/2023/07/c45b38d563edf8f6.png) no-repeat;
+        background-size: 100% auto;
+        width: 178px;
+        height: 150%;
+        z-index: 2;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        right: -100px;
+        top: -200px;
+        background: url(https://static.cmereye.com/imgs/2023/07/8e0d12dcfe0a04fc.png) no-repeat;
+        background-size: 100% auto;
+        width: 220px;
+        height: 150%;
+        z-index: 2;
+      }
     }
   }
   &-b{
@@ -212,6 +234,12 @@ const handleLineCur = (_value:number) =>{
               letter-spacing: 4.5px;
             }
           }
+        }
+        &::before{
+          display: none;
+        }
+        &::after{
+          display: none;
         }
       }
     }

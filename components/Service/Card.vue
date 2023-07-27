@@ -39,7 +39,6 @@ const openServiceCar = ref(false)
 
 <template>
   <div :class="{'index-dentalServices':true,'isMenu': isMenu}">
-    <StarModule />
     <div :class="['index-dentalServices-in', {'isIndexShow': !isIndexShow,'isMenu': isMenu}]">
       <!-- {{$t(servicesCardPageData.dentalServicesTitleIn)}} -->
       <div class="index-dentalServices-in-t">
@@ -115,6 +114,7 @@ const openServiceCar = ref(false)
     &-t{
       display: flex;
       align-items: center;
+      position: relative;
       .title{
         border-right: 3px solid #089CFE;
         padding-right: 55px;
@@ -140,6 +140,22 @@ const openServiceCar = ref(false)
           letter-spacing: 4.8px;
         }
       }
+      &::before{
+        content: '';
+        position: absolute;
+        left: -200px;
+        background: url(https://static.cmereye.com/imgs/2023/07/2142b5e26918c181.png) no-repeat;
+        width: 120px;
+        height: 120px;
+      }
+      &:after{
+        content: '';
+        background: url(https://static.cmereye.com/imgs/2023/07/e2ded86c01ed3723.png) no-repeat;
+        position: absolute;
+        right: -200px;
+        width: 120px;
+        height: 120px;
+      }
     }
     
     .servicesCard{
@@ -148,6 +164,7 @@ const openServiceCar = ref(false)
       margin: 86px auto 0;
       width: 100%;
       max-width: 1650px;
+      position: relative;
       &>div{
         width: 100%;
         margin-bottom: 60px;
@@ -245,6 +262,17 @@ const openServiceCar = ref(false)
           }
         }
       }
+      &::after{
+        content: '';    
+        position: absolute;
+        background: url(https://static.cmereye.com/imgs/2023/07/a6bc776c3b9206ef.png) no-repeat;
+        background-size: 100% auto;
+        bottom: -100px;
+        right: -100px;
+        width: 50%;
+        height: 50%;
+
+      }
     }
     .pcServices{
       display: flex;
@@ -316,6 +344,12 @@ const openServiceCar = ref(false)
             letter-spacing: 4.5px;
           }
         }
+        &::before{
+          display: none;
+        }
+        &::after{
+          display: none;
+        }
       }
       .servicesCard{
         margin: 0;
@@ -361,6 +395,9 @@ const openServiceCar = ref(false)
               padding-left: 10px;
             }
           }
+        }
+        &::after{
+          display: none;
         }
       }
       .pcServices{

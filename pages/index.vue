@@ -264,7 +264,6 @@ onMounted(()=>{
       <AboutUs />
       <!-- 醫生團隊 -->
       <div class="index-doctorTeam">
-        <StarModule />
         <div class="index-doctorTeam-t pageCon">
           <div class="title">醫生團隊</div>
           <div class="area">
@@ -412,7 +411,6 @@ onMounted(()=>{
       <!-- 個案分享 -->
       <RippleLine :type="'5'" :isBottom="true" />
       <div class="index-caseSharing">
-        <StarModule />
         <div class="index-caseSharing-title">
           <div class="title">{{$t('pages.index.caseSharing.title')}}</div>
         </div>
@@ -470,6 +468,9 @@ onMounted(()=>{
         <img class="bgIcon bgIcon_3" src="https://static.cmereye.com/imgs/2023/07/8fe74d7997ee58b5.png" alt="">
         <img class="bgIcon bgIcon_4" src="https://static.cmereye.com/imgs/2023/07/85f08b84d0d26e06.png" alt="">
         <img class="bgIcon bgIcon_5" src="https://static.cmereye.com/imgs/2023/07/55693cf22c9a5e8e.png" alt="">
+        <img class="bgIcon bgstar_1" src="https://static.cmereye.com/imgs/2023/07/d4752d78d1563917.png" alt="">
+        <img class="bgIcon bgstar_2" src="https://static.cmereye.com/imgs/2023/07/3f4a115fbf8ca9f2.png" alt="">
+        <img class="bgIcon bgstar_3" src="https://static.cmereye.com/imgs/2023/07/8730b0cdedc3e396.png" alt="">
       </div>
       <RippleLine :type="'4'" />
       <!-- 聯絡我們 -->
@@ -601,6 +602,22 @@ svg:hover path{
       right: 0;
       bottom: 10px;
     }
+    &::before{
+      content: '';
+      position: absolute;
+      background: url(https://static.cmereye.com/imgs/2023/07/05652c3c60088f99.png) no-repeat;
+      left: 50px;
+      width: 434px;
+      height: 100px;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      background: url(https://static.cmereye.com/imgs/2023/07/6016ba854dc4f4e3.png) no-repeat;
+      right: 300px;
+      width: 279px;
+      height: 149px;
+    }
   }
   &-c{
     width: 100%;
@@ -664,6 +681,7 @@ svg:hover path{
   &-title{
     display: flex;
     justify-content: center;
+    position: relative;
     .title{
       color: var(--topic-text-color);
       font-family: 'cwTeXYen';
@@ -685,6 +703,22 @@ svg:hover path{
         transform: translateX(-50%);
         border-radius: 3px;
       }
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      left: 35%;
+      background: url(https://static.cmereye.com/imgs/2023/07/2142b5e26918c181.png) no-repeat;
+      width: 120px;
+      height: 120px;
+    }
+    &:after{
+      content: '';
+      background: url(https://static.cmereye.com/imgs/2023/07/e2ded86c01ed3723.png) no-repeat;
+      position: absolute;
+      right: 35%;
+      width: 120px;
+      height: 120px;
     }
   }
   &-in{
@@ -806,6 +840,15 @@ svg:hover path{
       &:last-child{
         margin-left: 42px;
         position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          background: url(https://static.cmereye.com/imgs/2023/07/d5103a059fa9dc8e.png) no-repeat;
+          right: -110px;
+          bottom: 50px;
+          width: 92px;
+          height: 132px;
+        }
       }
     }
   }
@@ -814,6 +857,7 @@ svg:hover path{
     max-width: 1500px;
     margin: 100px auto 0;
     position: relative;
+    z-index: 4;
     .swiper-next,.swiper-prev{
       position: absolute;
       left: 0;
@@ -992,6 +1036,21 @@ svg:hover path{
       bottom: 0;
       z-index: 1;
     }
+    &.bgstar_1{
+      left: 5%;
+      bottom: 10%;
+      z-index: 1;
+    }
+    &.bgstar_2{
+      right: 60px;
+      bottom: 600px;
+      z-index: 1;
+    }
+    &.bgstar_3{
+      top: 10%;
+      right: 5%;
+      z-index: 1;
+    }
   }
 }
 @keyframes yaAnim {
@@ -1053,6 +1112,12 @@ svg:hover path{
         bottom: auto;
         margin-top: 37px;
       }
+      &::before{
+        display: none;
+      }
+      &::after{
+        display: none;
+      }
     }
     &-c{
       margin-top: 20px;
@@ -1085,6 +1150,12 @@ svg:hover path{
           height: 3px;
           border-radius: 1.5px;
         }
+      }
+      &::before{
+        display: none;
+      }
+      &::after{
+        display: none;
       }
     }
     &-in{
@@ -1163,6 +1234,9 @@ svg:hover path{
           left: 50%;
           width: max-content;
           transform: translateX(-50%);
+          &::after{
+            display: none;
+          }
         }
       }
     }
