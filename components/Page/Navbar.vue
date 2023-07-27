@@ -50,7 +50,7 @@ let mbQDCodeBool = ref(false)
 </script>
 
 <template>
-  <div class="navbar-content" :style="{'z-index': appState.isShowForm ? 100 : 50}">
+  <div class="navbar-content" :style="{'z-index': mbQDCodeBool || appState.isShowForm ? 100 : 50}">
     <div class="navbar-content-in" id="navPcTel">
       <div class="navbarBox">
         <div class="navbarBox-in">
@@ -102,7 +102,7 @@ let mbQDCodeBool = ref(false)
       <nuxt-link id="navMbWhatsapp" :to="'https://api.whatsapp.com/send/?phone=85269122011'" target="_blank" class="mb-in mb-in-2">
 
       </nuxt-link>
-      <div class="mb-in mb-in-3">
+      <div class="mb-in mb-in-3" @click="handleNavFormNav">
         <img src="https://static.cmereye.com/imgs/2023/07/04ad2f53c65e2fb5.png" alt="">
         <span>馬上預約</span>
       </div>
@@ -323,10 +323,12 @@ let mbQDCodeBool = ref(false)
         &-1{
           background: url(https://static.cmereye.com/imgs/2023/07/ac801f63f6e35840.png) no-repeat;
           background-position: center center;
+          animation: fromRight 1s none;
         }
         &-2{
           background: url(https://static.cmereye.com/imgs/2023/07/c631714e6eab7b74.png) no-repeat;
           background-position: center center;
+          animation: fromRight 1s none;
         }
         &-3{
           width: 103px;
@@ -340,6 +342,9 @@ let mbQDCodeBool = ref(false)
           align-items: center;
           flex-direction: column;
           margin: -30px 10px -10px;
+          animation: mbIn3Anim 1s 1s none;
+          opacity: 0;
+          animation-fill-mode: forwards;
           img{
             width: 28px;
             margin-bottom: 5px;
@@ -357,10 +362,12 @@ let mbQDCodeBool = ref(false)
         &-4{
           background: url(https://static.cmereye.com/imgs/2023/07/d1ec7e5ab5a240b6.png) no-repeat;
           background-position: center center;
+          animation: fromLeft 1s none;
         }
         &-5{
           background: url(https://static.cmereye.com/imgs/2023/07/d067e48cd2a6f7a4.png) no-repeat;
           background-position: center center;
+          animation: fromLeft 1s none;
         }
       }
       .toTop{
@@ -418,6 +425,48 @@ let mbQDCodeBool = ref(false)
         }
       }
     }
+  }
+}
+@keyframes mbIn3Anim {
+  0%{
+    opacity: 0;
+    transform: translateY(100%) scale(1);
+  }
+  30%{
+    transform: translateY(-30px) scale(1.3);
+    opacity: 1;
+  }
+  60%{
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+  80%{
+    transform: translateY(-5px) scale(1.07);
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes fromRight {
+  from{
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fromLeft {
+  from{
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 @keyframes toTopRoto {

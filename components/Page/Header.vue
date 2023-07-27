@@ -131,6 +131,8 @@ const menuLists = [
 ]
 
 const servicesCardLists = serviceLists
+
+let menuIsOpen = ref(false)
 </script>
 
 <template>
@@ -142,7 +144,7 @@ const servicesCardLists = serviceLists
           <span>7.06~ 金屬矯正牙箍即減￥2000!!</span>  
         </div>
       </div>
-      <div class="headerPage-in-c">
+      <div class="headerPage-in-c" :class="{openMenu: menuIsOpen}">
         <div>
           <div class="logo">
             <img src="https://static.cmereye.com/imgs/2023/07/b79d00b40c36feef.jpg" alt="爱康健">
@@ -182,7 +184,7 @@ const servicesCardLists = serviceLists
               </div>
             </div>
           </div>
-          <div class="openMenu"></div>
+          <div class="openMenu" @click="menuIsOpen = !menuIsOpen"></div>
         </div>
       </div>
       <div class="headerPage-in-b"></div>
@@ -238,7 +240,7 @@ const servicesCardLists = serviceLists
           &>div{
             padding: 0 70px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 600;
             cursor: pointer;
             position: relative;
             &:not(:last-child){
@@ -338,7 +340,7 @@ const servicesCardLists = serviceLists
                   font-family: 'cwTeXYen';
                   font-size: 18px;
                   font-style: normal;
-                  font-weight: 400;
+                  font-weight: 600;
                   line-height: 279%; /* 50.22px */
                   letter-spacing: 4.5px;
                   position: relative;
@@ -380,7 +382,7 @@ const servicesCardLists = serviceLists
             font-family: 'MYuen HK';
             font-size: 14px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 160%; /* 22.4px */
             letter-spacing: 3.5px;
             white-space: pre-wrap;
@@ -439,18 +441,13 @@ const servicesCardLists = serviceLists
       transform: rotate(180deg);
     }
   }
-  // &-mb{
-  //   display: none;    
-  // }
 }
 @media (min-width: 768px) and (max-width: 1452px) {}
 @media screen and (max-width: 768px) {
   .headerPage{
-    // position: sticky;
-    // top: 0;
-    // z-index: 999;
+    position: relative;
+    z-index: 90;
     &-in{
-      // display: none;
       &-t{
         width: 100%;
         overflow: hidden;
@@ -461,10 +458,168 @@ const servicesCardLists = serviceLists
       }
       &-c{
         height: auto;
+        transition: all .3s;
+        &.openMenu{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 120;
+          padding: 23px 17px;
+          &>div{
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 40px 32px 29px;
+            border: 3px solid var(--topic-color);
+            border-radius: 10px;
+            overflow: hidden;
+            overflow-y: auto;
+            box-sizing: border-box;
+            &::-webkit-scrollbar{
+              display: none;
+            }
+            .menu{
+              display: flex;
+              flex-wrap: wrap;
+              margin-top: 34px;
+              width: 100%;
+              justify-content: space-between;
+              &>div{
+                width: 100%;
+                border-top: 2px solid #FECB02;
+                padding: 10px 0 15px;
+                &:nth-of-type(2){
+                  border-top: none;
+                  .enName{
+                    display: none;
+                  }
+                  .name{
+                    display: none;
+                  }
+                  .menu-child{
+                    width: 100%;
+                    &-border{
+                      width: 100%;
+                      display: flex;
+                      justify-content: space-between;
+                      &::before{
+                        background: none;
+                      }
+                    }
+                    &-in{
+                      width: calc(50% - 9px);
+                      text-align: center;
+                      border-top: 2px solid #FECB02;
+                      &>div{
+                        padding-top: 35px;
+                        line-height: 1.6;
+                        &::after{
+                          content: 'PROMISES';
+                          top: 15px;
+                          height: auto;
+                          width: 100%;
+                          background: none;
+                          color: var(--topic-color);
+                          text-align: center;
+                          font-family: '.SF NS Rounded';
+                          font-size: 11px;
+                          line-height: 1.6; /* 30.69px */
+                          letter-spacing: 3.3px;
+                          position: absolute;
+                          left: 50%;
+                          transform: translateX(-50%);
+                        }
+                      }
+                      &:not(:last-child){
+                        &>div{
+                          &::after{
+                            content: 'PROMISES';
+                            top: 15px;
+                            height: auto;
+                            width: 100%;
+                            background: none;
+                            color: var(--topic-color);
+                            text-align: center;
+                            font-family: '.SF NS Rounded';
+                            font-size: 11px;
+                            line-height: 1.6; /* 30.69px */
+                            letter-spacing: 3.3px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &:nth-of-type(4){
+                  width: calc(50% - 9px);
+                  .menu-child{
+                    display: none;
+                  }
+                }
+                &:nth-of-type(5){
+                  width: calc(50% - 9px);
+                }
+                &:not(:last-child){
+                  border-right: none;
+                }
+                .name{
+                  text-align: center;
+                }
+                .menu-child{
+                  position: relative;
+                  top: 0;
+                  left: 0;
+                  height: auto;
+                  transform: none;
+                  padding-top: 0;
+                  width: 100%;
+                  &-border{
+                    border: none;
+                    .serviceCard{
+                      width: 100%;
+                      padding: 20px 0 10px;
+                      &-in{
+                        .serviceBox{
+                          box-shadow: 0 2px 2px 2px #ccc;
+                        }
+                      }
+                    }
+                  }
+                }
+                &:hover{
+                  .menu-child{
+                    padding-top: 0;
+                    &-border{
+                      border: none;
+                    }
+                  }
+                }
+              }
+            }
+            .booking{
+              width: 100%;
+              display: block;
+              &>div{
+                white-space: nowrap;
+                &:last-child{
+                  padding: 0 20px;
+                  width: max-content;
+                  margin: 8px auto 0;
+                }
+              }
+            }
+            .openMenu{
+              top: 45px;
+              right: 36px;
+              background: url(https://static.cmereye.com/imgs/2023/07/7de65ac9af35e33f.png) no-repeat;
+              background-position: center center;
+            }
+          }
+        }
         &>div{
           justify-content: center;
           padding-top: 18px;
-          position: relative;
           .menu{
             display: none;
           }
@@ -479,6 +634,7 @@ const servicesCardLists = serviceLists
             top: 48px;
             width: 31px;
             height: 31px;
+            transition: all .3s;
             border: 2px solid var(--topic-color);
             background: url(https://static.cmereye.com/imgs/2023/07/eca2a691410ded61.png) no-repeat;
             background-position: center center;
@@ -490,9 +646,6 @@ const servicesCardLists = serviceLists
         height: 30px;
       }
     }
-    // &-mb{
-
-    // }
   }
 }
 @keyframes topAnim {

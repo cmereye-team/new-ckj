@@ -429,7 +429,7 @@ const handleMenu = (item:any,index:any) => {
     }
   }
   .footer-content {
-    padding: 10px 70px 80px;
+    padding: 10px 70px 100px;
     &-logo_one {
       padding: 0;
       &>img{
