@@ -680,6 +680,7 @@ const onSlideChange = (swiper:any) => {
       justify-content: flex-end;
     }
   }
+  //这里一开始时间着急设计可能有些问题(没时间设计)，所以颜色设计写的复杂了，加油看
   .address{
     display: flex;
     flex-wrap: wrap;
@@ -1093,7 +1094,6 @@ const onSlideChange = (swiper:any) => {
           }
           &>div{
             &>div{
-              // min-width: 60px;
               line-height: 1;
               font-size: 15px;
               height: 63px;
@@ -1393,6 +1393,14 @@ const onSlideChange = (swiper:any) => {
             color: #089CFE;
             border: 2px solid #089CFE;
           }
+          .addressBox-bus{
+            .bus-in{
+              color: #089CFE;
+              &-btn{
+                border: 2px solid #089CFE;
+              }
+            }
+          }
         }
         &.twoBox{
           border: 2px solid #FECB02;
@@ -1411,6 +1419,14 @@ const onSlideChange = (swiper:any) => {
           .addressBox-c{
             color: #FECB02;
             border: 2px solid #FECB02;
+          }
+          .addressBox-bus{
+            .bus-in{
+              color: #FECB02;
+              &-btn{
+                border: 2px solid #FECB02;
+              }
+            }
           }
         }
       }
@@ -1487,17 +1503,11 @@ const onSlideChange = (swiper:any) => {
 }
 @keyframes busAnim3 {
   0%{
-    // display: none;
-    // width: 0;
-    // height: 0;
     padding: 0;
     opacity: 0;
     z-index: 0;
   } 
   100%{
-    // display: flex;
-    // width: 100%;
-    // height: 100%;
     padding: 20px;
     opacity: 1;
     z-index: 2;

@@ -214,9 +214,9 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     &>div{
       color: var(--topic-text-color);
       font-family: 'cwTeXYen';
-      font-size: 31.766px;
+      font-size: 35px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 160%; /* 50.826px */
       letter-spacing: 7.942px;
       position: relative;

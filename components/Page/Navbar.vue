@@ -24,11 +24,9 @@ const toPageTop = () =>{
         document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
         if (top <= 0) {
             clearInterval(timeTop);
+            toTopType.value = false
         }
     }, 10);
-    setTimeout(()=>{
-      toTopType.value = false
-    },2000)
   },500)
 }
 let navFormBool = ref(false)
@@ -240,7 +238,7 @@ let mbQDCodeBool = ref(false)
   }
   .reservation{
     position: absolute;
-    bottom: -300px;
+    bottom: -250px;
     right: -1vw;
     width: 141px;
     height: 121.733px;

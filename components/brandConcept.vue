@@ -54,9 +54,9 @@
           &:nth-of-type(1){
             color: #FFF;
             font-family: 'cwTeXYen';
-            font-size: 31.766px;
+            font-size: 36px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 160%; /* 50.826px */
             letter-spacing: 7.942px;
             position: relative;
@@ -78,9 +78,9 @@
               display: inline-block;
               color: var(--topic-text-color);
               font-family: 'cwTeXYen';
-              font-size: 33.934px;
+              font-size: 35px;
               font-style: normal;
-              font-weight: 400;
+              font-weight: 600;
               line-height: normal;
               letter-spacing: 4.751px;
               background: #fff;
@@ -112,9 +112,9 @@
             margin-top: 50px;
             text-align: justify;
             font-family: 'cwTeXYen';
-            font-size: 16px;
+            font-size: 18px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 181%; /* 28.96px */
             letter-spacing: 4.8px;
           }

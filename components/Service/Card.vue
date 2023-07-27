@@ -120,7 +120,7 @@ const openServiceCar = ref(false)
         padding-right: 55px;
         color: var(--topic-text-color);
         font-family: 'cwTeXYen';
-        font-size: 31.766px;
+        font-size: 35px;
         font-style: normal;
         font-weight: 400;
         line-height: 120%; /* 50.826px */
@@ -133,7 +133,7 @@ const openServiceCar = ref(false)
           width: 100%;
           max-width: 724px;
           font-family: 'cwTeXYen';
-          font-size: 16px;
+          font-size: 17px;
           font-style: normal;
           font-weight: 400;
           line-height: 160%; /* 25.6px */
@@ -225,9 +225,9 @@ const openServiceCar = ref(false)
           color: var(--topic-text-color);
           text-align: center;
           font-family: 'cwTeXYen';
-          font-size: 17px;
+          font-size: 20px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 500;
           line-height: 160%; /* 27.2px */
           letter-spacing: 4.25px;
           margin-top: 14px;

@@ -46,47 +46,47 @@ const caseSharingLists = [
     skill: '根管治療(杜牙根)療程',
     text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
     context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
   },
   {
-    name: '陳先生',
-    type: '上班族',
-    skill: '根管治療(杜牙根)療程',
-    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
-    context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+    name: 'Jenny',
+    type: '大學生',
+    skill: '矯齒(箍牙)療程',
+    text: '從前唔整齊嘅牙齒令到我冇自信，經過兩年既箍牙歷程，真係令成個面容改變咗好多！最重要係牙醫手勢非常專業，價錢亦都好合理！',
+    context: '唔再怕同人合照喇!',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
   },
   {
-    name: '陳先生',
-    type: '上班族',
-    skill: '根管治療(杜牙根)療程',
-    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
-    context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+    name: '黃太太',
+    type: '家庭主婦',
+    skill: '局部牙托療程',
+    text: '年紀大脫落咗幾隻牙齒，食野既時候好唔方便。朋友介紹嚟咗愛康健做局部牙托，調整咗整個牙齒咬合！同埋佢哋對老人家好有耐心，而家定期都會返去檢查清潔排靚牙！',
+    context: '食野依家都唔洗就住啦！',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
   },
   {
-    name: '陳先生',
-    type: '上班族',
-    skill: '根管治療(杜牙根)療程',
-    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
-    context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+    name: '鄧小朋友',
+    type: '7歲小學生',
+    skill: '乳齒補牙療程',
+    text: '記得有次突然間牙痛，媽咪好快帶咗我去睇牙醫。醫生同護士姐姐幫我醫好咗牙痛，同埋話加咗保護層係我牙齒度！仲教我點樣刷牙可以再保護好啲牙齒添。',
+    context: '多謝醫生姑娘醫好咗我牙痛！',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
   },
   {
-    name: '陳先生',
-    type: '上班族',
-    skill: '根管治療(杜牙根)療程',
-    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
-    context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+    name: 'Jessica',
+    type: '網絡紅人',
+    skill: '瓷牙貼面療程',
+    text: '因為平時工作成日要影相出鏡同埋直播，一直都好想擁有好似明星般既笑容。最後揀愛康健做牙貼面，療程後仲會貼心跟進，非常專業同窩心，親民價格！信心推薦！',
+    context: '依家我都擁有明星白 一樣既牙齒！',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
   },
   {
-    name: '陳先生',
-    type: '上班族',
-    skill: '根管治療(杜牙根)療程',
-    text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
-    context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/30534190eb9ca32f.jpg'
+    name: 'Zed',
+    type: '金融從業員',
+    skill: '藍光美白療程',
+    text: '由同事介紹下嚟咗愛康健做藍光美白牙齒，醫生專業價錢親民，最緊要唔會Hard sell。而家上深圳都會去順便做埋轉美白。',
+    context: '美白效果好，價錢親民！',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
   },
 ]
 
@@ -205,10 +205,21 @@ const getWindowWidth = () => {
   windowWidth.value = window.innerWidth
 }
 
+let showYaAnim = ref(false)
+const getScrollTop = () => {
+  // console.log(window.scrollY)
+  let caseSharingHeight:any = document.getElementsByClassName('index-caseSharing')
+  if(window.scrollY>=caseSharingHeight[0].offsetTop+300){
+    showYaAnim.value = true
+  }
+}
+
 onMounted(()=>{
   // getNewsLists()
   getWindowWidth()
   window.addEventListener('resize',getWindowWidth)
+  getScrollTop
+  window.addEventListener('scroll',getScrollTop)
 })
 
 </script>
@@ -252,6 +263,18 @@ onMounted(()=>{
             <img v-show="bannerCurrent===3" src="https://static.cmereye.com/imgs/2023/07/f0cf6f4a2ed12566.png" alt="">
           </div>
         </div>
+        <div class="index-banner-c">
+          <div class="bannerText-1">
+            <span>#重拾自行笑容</span>
+            <span>
+              愛牙愛己 由你做起
+            </span>
+          </div>
+          <div class="bannerText-2">
+            <span>全程式預約一體化診療服務</span>
+            <span>讓每一位顧客享受<span class="topic">健康微笑之旅</span></span>
+          </div>
+        </div>
       </div>
       <!-- 最新消息 -->
       <LatestNews />
@@ -285,7 +308,7 @@ onMounted(()=>{
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef"
               >
-                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(0,22)" :key="doctorIndex" >
+                <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(0,22)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
@@ -309,7 +332,7 @@ onMounted(()=>{
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef44"
               >
-                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(22,44)" :key="doctorIndex" >
+                <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(22,44)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
@@ -427,10 +450,10 @@ onMounted(()=>{
           </div>
           <div>
             <img class="userImage" src="https://static.cmereye.com/imgs/2023/07/51186aabaa797595.jpg" alt="">
-            <div class="ya">
+            <div :class="{ya: true,showYaAnim: showYaAnim}">
               <div>星級{{'\n'}}客戶</div>
             </div>
-            <div class="ya_2">
+            <div :class="{ya_2: true,showYaAnim: showYaAnim}">
               <div>星級{{'\n'}}客戶</div>
             </div>
           </div>
@@ -446,7 +469,7 @@ onMounted(()=>{
             <swiper-slide v-for="(caseItem,caseIndex) in caseSharingLists" :key="caseIndex">
               <div class="centerBox">
                 <div class="caseSharingSwiper-in">
-                  <div class="context">安心、舒服、無痛</div>
+                  <div class="context">{{caseItem.context}}</div>
                   <div class="userImage"><img :src="caseItem.imgUrl" alt=""></div>
                   <div class="name">{{caseItem.name}}<span>{{caseItem.type}}</span></div>
                   <div class="skill">{{caseItem.skill}}</div>
@@ -536,6 +559,66 @@ svg:hover path{
       &.cur{
         &::after{
           background: #089CFE;
+        }
+      }
+    }
+  }
+  &-c{
+    position: absolute;
+    left: 10%;
+    bottom: 30%;
+    z-index: 5;
+    .bannerText-1{
+      display: flex;
+      flex-direction: column;
+      span{
+        display: inline-block;
+        color: var(--topic-text-color);
+        font-family: 'cwTeXYen';
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 4.751px;
+        background: #fff;
+        padding: 5px 20px;
+        transform: skewY(-5deg);
+        border: 2px solid var(--topic-text-color);
+        width: max-content;
+        &:first-child{
+          position: relative;
+          z-index: 2;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: 0;
+            height: 6px;
+            width: calc(100% - 60px);
+            background: #fff;
+          }
+        }
+        &:last-child{
+          position: relative;
+          z-index: 1;
+          margin-top: -10px;
+          margin-left: 60px;
+        }
+      }
+    }
+    .bannerText-2{
+      display: flex;
+      flex-direction: column;
+      margin-top: 36px;
+      span{
+        color: var(--topic-text-color);
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 171%; /* 37.62px */
+        letter-spacing: 5.83px;
+        &.topic{
+          color: var(--topic-color);
         }
       }
     }
@@ -631,7 +714,6 @@ svg:hover path{
       background: #fff;
       overflow: hidden;
       margin: 15px;
-      width: max-content;
     }
     .c-in{
       width: 100%;
@@ -660,6 +742,10 @@ svg:hover path{
             margin: 15px 30px;
           }
         }
+      }
+      .doctorTeamSwiperBox-slide{
+        display: flex;
+        justify-content: center;
       }
     }
   }
@@ -808,11 +894,14 @@ svg:hover path{
         white-space: pre-wrap;
         display: flex;
         justify-content: center;
-        // align-items: center;
         padding-top: 30px;
         z-index: 2;
-        // clip-path: polygon(0 80%, 80% 0, 100% 0 ,0 100%);
-        animation: yaAnim 3s linear infinite;
+        display: none;
+        &.showYaAnim{
+          display: flex;
+          animation: yaAnim 1s linear;
+          animation-fill-mode: forwards;
+        }
       }
       .ya_2{
         width: 140px;
@@ -832,10 +921,11 @@ svg:hover path{
         white-space: pre-wrap;
         display: flex;
         justify-content: center;
-        // align-items: center;
         padding-top: 30px;
         z-index: 1;
-        
+        &.showYaAnim{
+          animation: ya2Anim 1s linear;
+        }
       }
       &:last-child{
         margin-left: 42px;
@@ -883,7 +973,8 @@ svg:hover path{
         align-items: center;
       }
       &-in{
-        padding: 0 30px;
+        padding: 70px 30px 0;
+        position: relative;
         .context{
           padding: 13px 27px;
           border-radius: 20px;
@@ -894,10 +985,11 @@ svg:hover path{
           font-family: 'cwTeXYen';
           font-size: 21.964px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 600;
           line-height: 160%; /* 35.143px */
           letter-spacing: 5.491px;
-          position: relative;
+          position: absolute;
+          top: 0;
           z-index: 2;
           background: #fff;
           &::after{
@@ -982,10 +1074,16 @@ svg:hover path{
         }
         .userImage{ 
           width: 100%;
-          max-width: 259px;
+          width: 259px;
           margin-top: -10px;
           position: relative;
           z-index: 1;
+          border-radius: 50%;
+          border: 3px solid var(--topic-color);
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
         }
         .ya{
           width: 140px;
@@ -1053,21 +1151,42 @@ svg:hover path{
     }
   }
 }
-@keyframes yaAnim {
+@keyframes ya2Anim {
   0%{
-    clip-path: polygon(0 0, 0 0,0 0,0 0);
+    // clip-path: polygon(0 -20%,-20% 0,0 0,0 0);
+    transform: scale(1);
   }
-  33%{
-    clip-path: polygon(0 80%, 80% 0, 100% 0 ,0 100%);
-  }
-  66%{
-    clip-path: polygon(0 100%, 100% 0, 100% 20% ,20% 100%);
+  50%{
+    // clip-path: polygon(-10% 100%, 100% -10%, 110% 0,0 110%);
+    transform: scale(1.3);
   }
   100%{
-    clip-path: polygon(100% 100%,100% 100%,100% 100%,100% 100%);
+    // clip-path: polygon(100% 100%,100% 100%,120% 100%,120% 100%);
+    transform: scale(1);
+  }
+}
+@keyframes yaAnim {
+  0%{
+    clip-path: polygon(0 -20%,-20% 0,0 0,0 0);
+    transform: scale(1);
+  }
+  50%{
+    clip-path: polygon(-10% 100%, 100% -10%, 110% 0,0 110%);
+    transform: scale(1.3);
+  }
+  100%{
+    clip-path: polygon(100% 100%,100% 100%,120% 100%,120% 100%);
+    transform: scale(1);
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {
+}
+@media screen and (min-width: 1920px) {
+  .index-banner{
+    &-c{
+      left: calc((100% - 1920px)/2 + 192px);
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1088,6 +1207,23 @@ svg:hover path{
         &::after{
           width: 20px;
           height: 10px;
+        }
+      }
+    }
+    &-c{
+      bottom: 20%;
+      .bannerText-1{
+        span{
+          font-size: 20px;
+          letter-spacing: 1.95px;
+          padding: 0px 10px;
+        }
+      }
+      .bannerText-2{
+        margin-top: 10px;
+        span{
+          font-size: 12px;
+          letter-spacing: 2.65px;
         }
       }
     }
@@ -1124,8 +1260,8 @@ svg:hover path{
       .doctorTeamPage{
         margin: 8.6px 15px;
         img{
-          width: 113px;
-          height: 113px;
+          width: 100%;
+          height: auto;
         }
       }
     }
@@ -1247,13 +1383,17 @@ svg:hover path{
       }
       .caseSharingSwiper{
         &-in{
+          padding: 30px 30px 0;
           .context{
             padding: 2px 13px;
-            font-size: 15px;
+            font-size: 17px;
             letter-spacing: 3.75px;
             border-radius: 10px;
             margin-left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: max-content;
+            max-width: 100%;
             border: 2px solid var(--topic-color);
             margin: 0 auto;
             &::after{

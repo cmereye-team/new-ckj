@@ -234,6 +234,7 @@ let menuIsOpen = ref(false)
         padding-top: 30px;
         .logo{
           cursor: pointer;
+          min-width: 158px;
         }
         .menu{
           display: flex;
@@ -257,7 +258,7 @@ let menuIsOpen = ref(false)
             .name{
               color: var(--topic-text-color);
               font-family: 'cwTeXYen';
-              font-size: 18px;
+              font-size: 20px;
               line-height: 1; /* 50.22px */
               letter-spacing: 4.5px;
             }
@@ -308,13 +309,14 @@ let menuIsOpen = ref(false)
                       justify-content: flex-end;
                       align-items: center;
                       img{
-                        width: 60%;
+                        max-width: 60%;
+                        max-height: 40%;
                       }
                       div{
                         color: var(--topic-text-color);
                         text-align: center;
                         font-family: 'cwTeXYen';
-                        font-size: 12px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: 160%; /* 19.2px */
@@ -376,11 +378,12 @@ let menuIsOpen = ref(false)
           background: var(--topic-color);
           padding: 8px 40px 13px;
           border-radius: 10px;
+          min-width: 260px;
           &>div{
             color: #FFF;
             text-align: center;
             font-family: 'MYuen HK';
-            font-size: 14px;
+            font-size: 16px;
             font-style: normal;
             font-weight: 600;
             line-height: 160%; /* 22.4px */

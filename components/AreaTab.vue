@@ -71,6 +71,7 @@ const selectedPerson = ref(areaLists[0])
     border-radius: 27px;
     border: 3px solid var(--topic-color);
     color: var(--topic-color);
+    font-size: 20px;
     &::after{
       content: 'next';
       position: absolute;

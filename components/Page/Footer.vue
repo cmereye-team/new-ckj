@@ -132,11 +132,9 @@ const toPageTop = () =>{
         document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
         if (top <= 0) {
             clearInterval(timeTop);
+            toTopType.value = false
         }
     }, 10);
-    setTimeout(()=>{
-      toTopType.value = false
-    },2000)
   },500)
 }
 
