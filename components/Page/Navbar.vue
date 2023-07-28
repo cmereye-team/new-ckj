@@ -186,22 +186,22 @@ let mbQDCodeBool = ref(false)
     }
   }
   #navPcTel{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/8941baf2e6ae2c01.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/07/92e9fdb8c06a5060.png);
     background-repeat: no-repeat;
     background-position: 50%;
   }
   #navPcWeChat{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/97e8555acb4ace6f.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/07/e1da53373fc7b1cd.png);
     background-repeat: no-repeat;
     background-position: 50%;
   }
   #navPcWhatsapp{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/2f6d89a4cf4d1b61.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/07/c0e8096653e596d1.png);
     background-repeat: no-repeat;
     background-position: 50%;
   }
   #navPcFaceBook{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/e8c4bc6bfcc61eb7.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/07/463812236c23d9bd.png);
     background-repeat: no-repeat;
     background-position: 50%;
   }
@@ -238,7 +238,7 @@ let mbQDCodeBool = ref(false)
   }
   .reservation{
     position: absolute;
-    bottom: -250px;
+    bottom: -100px;
     right: -1vw;
     width: 141px;
     height: 121.733px;

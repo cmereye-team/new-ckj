@@ -701,6 +701,8 @@ const onSlideChange = (swiper:any) => {
     justify-content: center;
     &-in{
       width: 33.33%;
+      min-width: 516px;
+      margin-bottom: 45px;
       display: flex;
       justify-content: center;
       position: relative;

@@ -241,8 +241,8 @@ onMounted(()=>{
           >
             <swiper-slide class="bannerSwiper-slide" v-for="(bannerItem,bannerIndex) in bannerLists" :key="bannerIndex">
               <div class="bannerSwiper-in" >
-                  <img class="bannerSwiper-in-image bigPageCon" :srcset="`${bannerItem.mbUrl} 768w, ${bannerItem.imgUrl}`" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
-                <div class="bannerSwiper-in-bg" :style="{'background-image': `url(${bannerItem.imgUrl})`}"></div>
+                  <img class="bannerSwiper-in-image" :srcset="`${bannerItem.mbUrl} 768w, ${bannerItem.imgUrl}`" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
+                <!-- <div class="bannerSwiper-in-bg" :style="{'background-image': `url(${bannerItem.imgUrl})`}"></div> -->
               </div>
             </swiper-slide>
           </Swiper>
@@ -486,8 +486,12 @@ onMounted(()=>{
               </div>
             </swiper-slide>
           </Swiper>
-          <div class="swiper-next" @click="handleProcessBtn('slidePrev')">{{'<'}}</div>
-          <div class="swiper-prev" @click="handleProcessBtn('slideNext')">{{'>'}}</div>
+          <div class="swiper-next" @click="handleProcessBtn('slidePrev')">
+            <img src="https://static.cmereye.com/imgs/2023/07/638d8106c1f85272.png" alt="">
+          </div>
+          <div class="swiper-prev" @click="handleProcessBtn('slideNext')">
+            <img src="https://static.cmereye.com/imgs/2023/07/5331fed4a9f0f487.png" alt="">
+          </div>
         </div>
         <img class="bgIcon bgIcon_1" src="https://static.cmereye.com/imgs/2023/07/db112a8f7e94d783.png" alt="">
         <img class="bgIcon bgIcon_2" src="https://static.cmereye.com/imgs/2023/07/4755f119a5fecfd5.png" alt="">
@@ -527,7 +531,7 @@ svg:hover path{
   .index-banner-t{
     width: 100%;
     // min-height: 1000px;
-    max-height: 1000px;
+    // max-height: 1000px;
     // min-height: 1000px;
     overflow: hidden;
     // position: relative;
@@ -552,8 +556,8 @@ svg:hover path{
       }
       &::after{
         content: '';
-        width: 79px;
-        height: 38px;
+        width: 69px;
+        height: 32px;
         border-radius: 50%;
         background: #DCF3FF;
         position: absolute;
@@ -667,6 +671,7 @@ svg:hover path{
       img{
         position: relative;
         z-index: 2;
+        width: 100%;
       }
       &-bg{
         position: absolute;
@@ -760,6 +765,7 @@ svg:hover path{
   }
   &-c{
     width: 100%;
+    // max-width: 1920px;
     margin: 85px auto 0;
     .doctorTeamPage{
       display: flex;

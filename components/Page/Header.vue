@@ -410,22 +410,27 @@ let menuIsOpen = ref(false)
                 content: '';
                 background: #fff;
                 position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
+                // top: 100%;
+                // left: -200%;
                 transition: all 1s;
                 z-index: 1;
-                border-radius: 50% 50% 0 0;
+                border-radius: 50%;
+                // width: 200%;
+                // height: 200%;
                 width: 0;
                 height: 0;
+                left: -10px;
+                bottom: -10px;
               }
               &:hover{
                 color: var(--topic-color);
                 &::after{
-                  top: 0;
-                  border-radius: 15px 15px 0 0;
-                  width: 100%;
-                  height: 100%;
+                  // top: 50%;
+                  left: -50px;
+                  bottom: -100px;
+                  // border-radius: 30px 30px 0 0;
+                  width: 250px;
+                  height: 200px;
                 }
               }
             }
@@ -448,7 +453,9 @@ let menuIsOpen = ref(false)
 @media (min-width: 768px) and (max-width: 1452px) {}
 @media screen and (max-width: 768px) {
   .headerPage{
-    position: relative;
+    // position: relative;
+    position: sticky;
+    top: 0;
     z-index: 90;
     &-in{
       &-t{
