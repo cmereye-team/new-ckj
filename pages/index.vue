@@ -241,13 +241,19 @@ onMounted(()=>{
           >
             <swiper-slide class="bannerSwiper-slide" v-for="(bannerItem,bannerIndex) in bannerLists" :key="bannerIndex">
               <div class="bannerSwiper-in" >
-                <!-- <nuxt-link :to="bannerItem.link"> -->
                   <img class="bannerSwiper-in-image bigPageCon" :srcset="`${bannerItem.mbUrl} 768w, ${bannerItem.imgUrl}`" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
-                <!-- </nuxt-link> -->
                 <div class="bannerSwiper-in-bg" :style="{'background-image': `url(${bannerItem.imgUrl})`}"></div>
               </div>
             </swiper-slide>
           </Swiper>
+          <!-- <div class="bannerSwiper" :class="{act: bannerCurrent === bannerIndex + 1 }" v-for="(bannerItem,bannerIndex) in bannerLists" :key="bannerIndex">
+            <div class="bannerSwiper-in" >
+              <nuxt-link :to="bannerItem.link">
+                <img class="bannerSwiper-in-image bigPageCon" :srcset="`${bannerItem.mbUrl} 768w, ${bannerItem.imgUrl}`" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
+              </nuxt-link>
+              <div class="bannerSwiper-in-bg" :style="{'background-image': `url(${bannerItem.imgUrl})`}"></div>
+            </div>
+          </div> -->
         </div>
         <div class="index-banner-b">
           <div :class="{'cur': bannerCurrent===1}" @click="handleBannerMascot(1)">
@@ -522,7 +528,10 @@ svg:hover path{
     width: 100%;
     // min-height: 1000px;
     max-height: 1000px;
+    // min-height: 1000px;
     overflow: hidden;
+    // position: relative;
+    // perspective: 30px;
   }
   .index-banner-b{
     height: 200px;
@@ -622,6 +631,36 @@ svg:hover path{
   }
   .bannerSwiper{
     width: 100%;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // z-index: 1;
+    // opacity: 0;
+    // position: relative;
+    // overflow: hidden;
+    // -webkit-mask-image: radial-gradient( circle farthest-corner at 100% 50%, #000 60%, transparent 90% );
+    // -webkit-mask-repeat: no-repeat;
+    // -webkit-mask-size: 200% 100%;
+    // -webkit-mask-position: -100% 0;
+    // transition-property: -webkit-mask-position;
+    // transition-property: mask-position;
+    // transition-property: mask-position, -webkit-mask-position;
+    // transition-duration: 5s;
+    // transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
+    // transition: all 5s;
+    // &.act{
+      // animation: bannerAnim 3s;
+      // animation-fill-mode: both;
+      // z-index: 2;
+      // mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+      // opacity: 1;
+      // -webkit-mask-image: radial-gradient( circle farthest-corner at 50% 300%, #000 60%, transparent 90% );
+      // -webkit-mask-size: 100% 100%;
+      // -webkit-mask-position: 50% -100%;
+      // transition-property: mask-position, -webkit-mask-position;
+      // transition-duration: 5s;
+      // transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
+    // }
     &-in{
       width: 100%;
       position: relative;
@@ -639,6 +678,26 @@ svg:hover path{
         filter: blur(30px);
       }
     }
+  }
+}
+@keyframes bannerAnim {
+  0%{
+    // opacity: 0;
+    // z-index: 1;
+    // transform: translateZ(-5px);
+    -webkit-mask-image: radial-gradient( circle farthest-corner at 100% 0%, #000 60%, transparent 90% );
+    -webkit-mask-size: 200% 100%;
+    -webkit-mask-position: -100% 0;
+    transition-property: mask-position, -webkit-mask-position;
+    transition-duration: 5s;
+    transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
+  }
+  100%{
+    // opacity: 1;
+    // z-index: 2;
+    // mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
+    // transform: translateZ(0px);
+    -webkit-mask-image: radial-gradient( circle farthest-corner at 100% 0%, #000 60%, transparent 90% );
   }
 }
 //醫生團隊
