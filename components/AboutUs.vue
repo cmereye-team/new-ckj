@@ -10,13 +10,13 @@ const aboutUsLists = [
     title: 'components.aboutUs.item_1.title',
     text: 'components.aboutUs.item_1.text',
     context: 'components.aboutUs.item_1.context',
-    img: 'https://static.cmereye.com/imgs/2023/04/312ab3f184b7daf5.jpg',
+    img: 'https://static.cmereye.com/imgs/2023/07/ca2a6a44e338da34.jpg',
   },
   {
     title: 'components.aboutUs.item_2.title',
     text: 'components.aboutUs.item_2.text',
     context: 'components.aboutUs.item_2.context',
-    img: 'https://static.cmereye.com/imgs/2023/05/57398ce56ec905ad.jpg',
+    img: 'https://static.cmereye.com/imgs/2023/07/04f989001d1a1a9c.jpg',
   }
 ]
 

@@ -17,7 +17,7 @@
           <div>{{$t('components.brandConcept.content')}}</div>
         </div>
         <div class="image">
-          <img src="https://static.cmereye.com/imgs/2023/07/4d7c6dabd0bcfc14.png" alt="">
+          <img src="https://static.cmereye.com/imgs/2023/07/1d5820c78099839f.jpg" alt="">
         </div>
       </div>
     </div>
@@ -123,6 +123,11 @@
       .image{
         // flex: 1;
         width: 820px;
+        img{
+          width: 100%;
+          border-radius: 20px;
+          box-shadow: 10px 10px 10px -6px rgba(118, 71, 0, 0.25);
+        }
         // margin-left: 136px;
       }
     }

@@ -46,7 +46,7 @@ const caseSharingLists = [
     skill: '根管治療(杜牙根)療程',
     text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
     context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/6ab95a25307312f7.jpg'
   },
   {
     name: 'Jenny',
@@ -54,7 +54,7 @@ const caseSharingLists = [
     skill: '矯齒(箍牙)療程',
     text: '從前唔整齊嘅牙齒令到我冇自信，經過兩年既箍牙歷程，真係令成個面容改變咗好多！最重要係牙醫手勢非常專業，價錢亦都好合理！',
     context: '唔再怕同人合照喇!',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/63c72a9ef3f3b012.jpg'
   },
   {
     name: '黃太太',
@@ -62,7 +62,7 @@ const caseSharingLists = [
     skill: '局部牙托療程',
     text: '年紀大脫落咗幾隻牙齒，食野既時候好唔方便。朋友介紹嚟咗愛康健做局部牙托，調整咗整個牙齒咬合！同埋佢哋對老人家好有耐心，而家定期都會返去檢查清潔排靚牙！',
     context: '食野依家都唔洗就住啦！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/fe9b36a7c8630009.jpg'
   },
   {
     name: '鄧小朋友',
@@ -70,7 +70,7 @@ const caseSharingLists = [
     skill: '乳齒補牙療程',
     text: '記得有次突然間牙痛，媽咪好快帶咗我去睇牙醫。醫生同護士姐姐幫我醫好咗牙痛，同埋話加咗保護層係我牙齒度！仲教我點樣刷牙可以再保護好啲牙齒添。',
     context: '多謝醫生姑娘醫好咗我牙痛！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/c2f121d9716db4e0.jpg'
   },
   {
     name: 'Jessica',
@@ -78,7 +78,7 @@ const caseSharingLists = [
     skill: '瓷牙貼面療程',
     text: '因為平時工作成日要影相出鏡同埋直播，一直都好想擁有好似明星般既笑容。最後揀愛康健做牙貼面，療程後仲會貼心跟進，非常專業同窩心，親民價格！信心推薦！',
     context: '依家我都擁有明星白 一樣既牙齒！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/c42e077fb429391e.jpg'
   },
   {
     name: 'Zed',
@@ -86,7 +86,7 @@ const caseSharingLists = [
     skill: '藍光美白療程',
     text: '由同事介紹下嚟咗愛康健做藍光美白牙齒，醫生專業價錢親民，最緊要唔會Hard sell。而家上深圳都會去順便做埋轉美白。',
     context: '美白效果好，價錢親民！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/2bdb56e97e63cf43.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/a97eada0eb747a44.jpg'
   },
 ]
 
@@ -130,38 +130,38 @@ const setDoctorTeamSwiperRef44 = (swiper:any) =>{
   doctorTeamSwiperRef44 = swiper
 }
 
-watch(
-  appState, (newValue, oldValue) => {
-    if(newValue.areaTabAct !== oldValue.areaTabAct){
-      doctorTeamSwiperRef.slideTo(0, 0);
-      doctorTeamSwiperRef.autoplay.start()
-      if(newValue.areaTabAct === 0){
-        doctorTeamSwiperRef44.slideTo(0, 44);
-        doctorTeamSwiperRef44.autoplay.start()
-      }
-    }
-  },
-  {
-    deep: true,
-  }
-);
+// watch(
+//   appState, (newValue, oldValue) => {
+//     if(newValue.areaTabAct !== oldValue.areaTabAct){
+//       doctorTeamSwiperRef.slideTo(0, 0);
+//       doctorTeamSwiperRef.autoplay.start()
+//       if(newValue.areaTabAct === 0){
+//         doctorTeamSwiperRef44.slideTo(0, 44);
+//         doctorTeamSwiperRef44.autoplay.start()
+//       }
+//     }
+//   },
+//   {
+//     deep: true,
+//   }
+// );
 
 const bannerLists = [
   {
     title: '歐美種植牙 即減￥2000元/顆',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/d627f37ff1b2a3a2.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/implant'
   },
   {
     title: '隱形牙箍  即減￥5000元',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/820313020a5249c7.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/3439799808b32972.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/invisalign'
   },
   {
     title: '金屬矯正牙箍 即減￥2000元',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/d627f37ff1b2a3a2.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/da524eb65290c225.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/orthodontics'
   }
@@ -446,7 +446,7 @@ onMounted(()=>{
             <div class="text">咁多年來我只會揀愛康健，原因是他們專業細心！而家植牙嘅技術真係非常之好，簡直同真牙一樣擁有正常嘅咀嚼能力，真係食乜都得啊！</div>
           </div>
           <div>
-            <img class="userImage" src="https://static.cmereye.com/imgs/2023/07/51186aabaa797595.jpg" alt="">
+            <img class="userImage" src="https://static.cmereye.com/imgs/2023/07/ac4edebf6fd5fd55.jpg" alt="">
             <div :class="{ya: true,showYaAnim: showYaAnim}">
               <div>星級{{'\n'}}客戶</div>
             </div>
