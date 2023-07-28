@@ -27,29 +27,36 @@ const areaLists = appState.areaTabs.map((item,index)=>{
   }
 })
 
-const selectedPerson = ref(areaLists[appState.areaTabAct])
-
-const updateSelect = () =>{
-  appState.setareaTabAct(selectedPerson.value.id-1)
+const handleArea = (_data:any) =>{
+  appState.setareaTabAct(_data.id-1)
 }
-watch(selectedPerson, () => updateSelect())
 
 </script>
 
 <template>
   <div class="areaTab">
-    <Listbox v-model="selectedPerson">
+    <Listbox>
       <ListboxButton :class="{'a':type==='1'}">{{ $t(areaLists[appState.areaTabAct].name) }}</ListboxButton>
-      <ListboxOptions>
-        <ListboxOption
-          v-for="person in areaLists"
-          :key="person.id"
-          :value="person"
-          :class="{'a-a':type==='1'}"
-        >
-          {{ $t(person.name) }}
-        </ListboxOption>
-      </ListboxOptions>
+      <transition
+        enter-active-class="transition duration-1000 ease-out"
+        enter-from-class="transform scale-95 opacity-0"
+        enter-to-class="transform scale-100 opacity-100"
+        leave-active-class="transition duration-1000 ease-out"
+        leave-from-class="transform scale-100 opacity-100"
+        leave-to-class="transform scale-95 opacity-0"
+      >
+        <ListboxOptions>
+          <ListboxOption
+            v-for="person in areaLists"
+            :key="person.id"
+            :value="person"
+            :class="{'a-a':type==='1'}"
+            @click="handleArea(person)"
+          >
+            {{ $t(person.name) }}
+          </ListboxOption>
+        </ListboxOptions>
+      </transition>
     </Listbox>
   </div>
 </template>
@@ -98,10 +105,10 @@ watch(selectedPerson, () => updateSelect())
       border-radius: 27px;
       padding-left: 20px;
       cursor: pointer;
+      font-size: 20px;
       &.a-a{
         color: var(--topic-color);
         background: #fff;
-        font-size: 20px;
       }
       &:hover{
         background: #FECB02;
