@@ -517,8 +517,21 @@ const onSlideChange = (swiper:any) => {
                 </div>
               </div>
             </div>
+            <div class="address-swiper-leftBox" v-if="addressItem.id === '102'">
+              <div>
+                <p>營運至17:30</p>
+              </div>
+              <img src="https://static.cmereye.com/imgs/2023/07/3a40fcfc57e3b381.png" alt="">
+            </div>
+            <div class="address-swiper-leftBox leftBox103" v-if="addressItem.id === '103'">
+              <div>
+                <p>營運至20:30</p>
+              </div>
+              <img src="https://static.cmereye.com/imgs/2023/07/8bb7db9834831faa.png" alt="">
+            </div>
           </swiper-slide>
         </Swiper>
+        
         <div class="address-swiper-line">
           <PageSwiperPointLine :latestNewsNum="allAddressLists[appState.areaTabAct].length" :latestNewsCurrent="addressCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
         </div>
@@ -1213,10 +1226,15 @@ const onSlideChange = (swiper:any) => {
     }
     .address-swiper{
       display: block;
-      margin-top: 54px;
+      // margin-top: 54px;
+      position: relative;
       .addressSlide{
         display: flex;
         justify-content: center;
+        position: relative;
+      }
+      .swiperBox{
+        padding-top: 60px;
       }
       :deep(.swiper-button-prev::after){
         color: var(--topic-color);
@@ -1490,6 +1508,34 @@ const onSlideChange = (swiper:any) => {
               }
             }
           }
+        }
+      }
+      &-leftBox{
+        position: absolute;
+        top: -40px;
+        left: 30px;
+        &>div{
+          color: #089CFE;
+          text-align: center;
+          font-family: 'cwTeXYen';
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 160%; /* 43.824px */
+          letter-spacing: 2px;
+          transform: rotate(-15deg)
+        }
+        &.leftBox103{
+          &>div{
+            color: #FECB02;
+          }
+        }
+        img{
+          position: absolute;
+          // width: 100%;
+          left: 0;
+          top: -18px;
+          transform: scale(1.3);
         }
       }
       &-line{

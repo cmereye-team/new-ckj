@@ -111,7 +111,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       gtm: {
-        id: 'GTM-T27LCDR',
+        id: 'GTM-MGK54RQ7',
         defer: false,
         compatibility: false,
         enabled: true,
@@ -120,7 +120,7 @@ export default defineNuxtConfig({
         enableRouterSync: true,
         devtools: true,
       },
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://ckjhk.com',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://smile.ckjhk.com',
     }
   },
   nitro: {

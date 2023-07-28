@@ -1114,6 +1114,7 @@ svg:hover path{
           line-height: 160%; /* 31.608px */
           letter-spacing: 4px;
           position: relative;
+          background: #fff;
           &::after{
             content: '';
             position: absolute;
