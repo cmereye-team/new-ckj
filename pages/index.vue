@@ -153,19 +153,19 @@ const bannerLists = [
   {
     title: '歐美種植牙 即減￥2000元/顆',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/d627f37ff1b2a3a2.jpg',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/0507b7e68c818758.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/implant'
   },
   {
     title: '隱形牙箍  即減￥5000元',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/820313020a5249c7.jpg',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/e682138cf0372fea.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/invisalign'
   },
   {
     title: '金屬矯正牙箍 即減￥2000元',
     imgUrl: 'https://static.cmereye.com/imgs/2023/07/d627f37ff1b2a3a2.jpg',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/06/7f53da7aac0a0ac6.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/orthodontics'
   }
 ]
@@ -245,7 +245,7 @@ onMounted(()=>{
             <swiper-slide class="bannerSwiper-slide" v-for="(bannerItem,bannerIndex) in bannerLists" :key="bannerIndex">
               <div class="bannerSwiper-in" >
                 <!-- <nuxt-link :to="bannerItem.link"> -->
-                  <img class="bannerSwiper-in-image bigPageCon" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
+                  <img class="bannerSwiper-in-image bigPageCon" :srcset="`${bannerItem.mbUrl} 768w, ${bannerItem.imgUrl}`" :src="bannerItem.imgUrl" :alt="bannerItem.title" :title="bannerItem.title" />
                 <!-- </nuxt-link> -->
                 <div class="bannerSwiper-in-bg" :style="{'background-image': `url(${bannerItem.imgUrl})`}"></div>
               </div>

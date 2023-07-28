@@ -33,6 +33,8 @@ const handleAreaTab = (_idx: number) => {
 }
 
 const selectedPerson = ref(areaLists[0])
+
+
 </script>
 
 <template>

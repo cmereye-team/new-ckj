@@ -24,22 +24,6 @@ const allAddressLists = [
   // 罗湖区
   [
     {
-      id: '101',
-      name: 'contactUs.addressLists.address_101.name',
-      address: 'contactUs.addressLists.address_101.address',
-      time: 'contactUs.addressLists.address_101.time',
-      phone: '+852 69122011',
-      busRoutes: 'contactUs.addressLists.address_101.busRoutes',
-      metroRoutes: 'contactUs.addressLists.address_101.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/07/c139bb6c9b8127ac.jpg',
-      googleMap: 'https://goo.gl/maps/yuWB8353yF3u4EJS6?coh=178572&entry=tt',
-      baiduMap: 'https://j.map.baidu.com/b3/j3Yu',
-      color_1: '#FECB02',
-      color_3: '#089CFE',
-      right: '48%',
-      bottom: '45%'
-    },
-    {
       id: '102',
       name: 'contactUs.addressLists.address_102.name',
       address: 'contactUs.addressLists.address_102.address',
@@ -50,8 +34,8 @@ const allAddressLists = [
       addressUrl: 'https://static.cmereye.com/imgs/2023/07/f3f2f73ce1582235.jpg',
       googleMap: 'https://goo.gl/maps/HQsN5jNMTeZNbxuf7?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/a5/GtH',
-      color_1: '#089CFE',
-      color_3: '#FECB02',
+      color_1: '#FECB02',
+      color_3: '#089CFE',
       right: '37%',
       bottom: '58%'
     },
@@ -66,10 +50,26 @@ const allAddressLists = [
       addressUrl: 'https://static.cmereye.com/imgs/2023/07/fd4e197874107cf6.jpg',
       googleMap: 'https://goo.gl/maps/JMK7Huhaf9k88nbf8?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/24/Rxk',
-      color_1: '#FECB02',
-      color_3: '#FF6096',
+      color_1: '#089CFE',
+      color_3: '#FECB02',
       right: '59%',
       bottom: '23%'
+    },
+    {
+      id: '101',
+      name: 'contactUs.addressLists.address_101.name',
+      address: 'contactUs.addressLists.address_101.address',
+      time: 'contactUs.addressLists.address_101.time',
+      phone: '+852 69122011',
+      busRoutes: 'contactUs.addressLists.address_101.busRoutes',
+      metroRoutes: 'contactUs.addressLists.address_101.metroRoutes',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/c139bb6c9b8127ac.jpg',
+      googleMap: 'https://goo.gl/maps/yuWB8353yF3u4EJS6?coh=178572&entry=tt',
+      baiduMap: 'https://j.map.baidu.com/b3/j3Yu',
+      color_1: '#FECB02',
+      color_3: '#FF6096',
+      right: '48%',
+      bottom: '45%'
     },
     {
       id: '104',
@@ -369,7 +369,7 @@ const onSlideChange = (swiper:any) => {
         </div>
       </div>
       <div class="address">
-        <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
+        <div :class="{'address-in':true,'isA': addressItem.id === '102','isB': addressItem.id === '103'}" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
           <div class="addressBox">
             <div class="addressBox-t">
               <div class="addressImg">
@@ -691,21 +691,11 @@ const onSlideChange = (swiper:any) => {
       display: flex;
       justify-content: center;
       position: relative;
-      &:nth-of-type(1){
-        width: 50%;
-        padding-right: 23px;
-        justify-content: flex-end;
-        margin-bottom: 45px;
+      &.isA{
         .addressBox{
-          display: flex;
-          flex-direction: column;
           border: 3px solid #089CFE;
-          border-radius: 250px 250px 0 0;
           &-t{
-            border-radius: 250px 250px 0 0;
             background: #089CFE;
-            padding-bottom: 85px;
-            padding-top: 30px;
           }
           &-b{
             &>div{
@@ -719,37 +709,22 @@ const onSlideChange = (swiper:any) => {
           &-c{
             border: 3px solid #089CFE;
             color: #089CFE;
-            top: auto;
-            bottom: 168px;
           }
           &-bus{
-            top: 446px;
             .bus-in{
               color: #089CFE;
               &-btn{
                 border: 3px solid #089CFE;
-                order: 0;
-                margin: 0 auto 40px;
               }
             }
           }
         }
       }
-      &:nth-of-type(2){
-        width: 50%;
-        justify-content: flex-start;
-        margin-bottom: 45px;
-        padding-left: 23px;
+      &.isB{
         .addressBox{
           border: 3px solid #FECB02;
-          display: flex;
-          flex-direction: column;
-          border-radius: 250px 250px 0 0;
           &-t{
-            border-radius: 250px 250px 0 0;
             background: #FECB02;
-            padding-bottom: 85px;
-            padding-top: 30px;
           }
           &-b{
             &>div{
@@ -763,16 +738,101 @@ const onSlideChange = (swiper:any) => {
           &-c{
             border: 3px solid #FECB02;
             color: #FECB02;
+          }
+          &-bus{
+            .bus-in{
+              color: #FECB02;
+              &-btn{
+                border: 3px solid #FECB02;
+              }
+            }
+          }
+        }
+      }
+      &:nth-of-type(1){
+        width: 50%;
+        padding-right: 23px;
+        justify-content: flex-end;
+        margin-bottom: 45px;
+        .addressBox{
+          display: flex;
+          flex-direction: column;
+          // border: 3px solid #089CFE;
+          border-radius: 250px 250px 0 0;
+          &-t{
+            border-radius: 250px 250px 0 0;
+            // background: #089CFE;
+            padding-bottom: 85px;
+            padding-top: 30px;
+          }
+          &-b{
+            padding: 20px 30px 0;
+            &>div{
+              &>div{
+                &>div{
+                  // color: #089CFE;
+                }
+              }
+            }
+          }
+          &-c{
+            // border: 3px solid #089CFE;
+            // color: #089CFE;
             top: auto;
             bottom: 168px;
           }
           &-bus{
             top: 446px;
             .bus-in{
-              color: #FECB02;
+              // color: #089CFE;
+              &-btn{
+                // border: 3px solid #089CFE;
+                order: 0;
+                margin: 0 auto 40px;
+              }
+            }
+          }
+        }
+      }
+      &:nth-of-type(2){
+        width: 50%;
+        justify-content: flex-start;
+        margin-bottom: 45px;
+        padding-left: 23px;
+        .addressBox{
+          // border: 3px solid #FECB02;
+          display: flex;
+          flex-direction: column;
+          border-radius: 250px 250px 0 0;
+          &-t{
+            border-radius: 250px 250px 0 0;
+            // background: #FECB02;
+            padding-bottom: 85px;
+            padding-top: 30px;
+          }
+          &-b{
+            padding: 20px 30px 0;
+            &>div{
+              &>div{
+                &>div{
+                  // color: #FECB02;
+                }
+              }
+            }
+          }
+          &-c{
+            // border: 3px solid #FECB02;
+            // color: #FECB02;
+            top: auto;
+            bottom: 168px;
+          }
+          &-bus{
+            top: 446px;
+            .bus-in{
+              // color: #FECB02;
               order: 0;
               &-btn{
-                border: 3px solid #FECB02;
+                // border: 3px solid #FECB02;
                 order: 0;
                 margin: 0 auto 40px;
               }
@@ -806,7 +866,6 @@ const onSlideChange = (swiper:any) => {
             overflow: hidden;
             &-in{
               width: 100%;
-              height: 100%;
             }
           }
           .addressIcon{
@@ -824,14 +883,14 @@ const onSlideChange = (swiper:any) => {
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          padding: 0 30px;
+          padding: 0 30px 20px;
           &>div{
             &>div{
               display: flex;
               &>div{
                 color: #FF6096;
                 font-family: 'cwTeXYen';
-                font-size: 17px;
+                font-size: 20px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 180%; /* 30.6px */
@@ -966,8 +1025,8 @@ const onSlideChange = (swiper:any) => {
       }
       &-leftBox{
         position: absolute;
-        left: -80px;
-        top: -30px;
+        left: 0px;
+        top: -20px;
         &>div{
           color: #089CFE;
           text-align: center;
@@ -983,7 +1042,7 @@ const onSlideChange = (swiper:any) => {
           position: absolute;
           // width: 100%;
           left: 0;
-          top: -90px;
+          top: -60px;
           transform: scale(1.3);
         }
       }
@@ -1059,11 +1118,11 @@ const onSlideChange = (swiper:any) => {
 }
 @media (min-width: 768px) and (max-width: 1000px) {
   .index-contactUs{
-    .address{
-      &-in{
-        width: 50%;
-      }
-    }
+    // .address{
+    //   &-in{
+    //     width: 50%;
+    //   }
+    // }
   }
 }
 @media screen and (max-width: 768px) {
