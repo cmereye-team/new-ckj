@@ -114,13 +114,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_201.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_201.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/f75bb70e48d1a50e.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/89d386b92b090a74.jpg',
       googleMap: 'https://goo.gl/maps/evH9Z41S1o4fH3HR6?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/ea/Yhh',
       color_1: '#FECB02',
-      color_3: '#089CFE',
-      right: '29%',
-      bottom: '30%'
+      color_3: '#FF6096',
+      right: '45%',
+      bottom: '42%'
     },
     {
       id: '202',
@@ -130,13 +130,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_202.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_202.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/63dbe40ee13b53e9.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/25ae2044bd153dc5.jpg',
       googleMap: 'https://goo.gl/maps/mQgJXrTxvaaLB9Y1A?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/1f/kY0',
-      color_1: '#089CFE',
-      color_3: '#FECB02',
-      right: '29%',
-      bottom: '30%'
+      color_1: '#FECB02',
+      color_3: '#FF6096',
+      right: '42%',
+      bottom: '60%'
     },
   ],
   // 南山区
@@ -149,13 +149,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_301.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_301.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/4783ff2e8f17beff.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/2917eb1064f4fbca.jpg',
       googleMap: 'https://goo.gl/maps/nK2iuEusGFcbqE216?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/2e/Pmif',
       color_1: '#FECB02',
-      color_3: '#089CFE',
-      right: '29%',
-      bottom: '30%'
+      color_3: '#FF6096',
+      right: '58%',
+      bottom: '7%'
     },
     {
       id: '302',
@@ -165,13 +165,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_302.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_302.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/d6c09b604319be78.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/7eef5d6012b716e8.jpg',
       googleMap: 'https://goo.gl/maps/WkeuvYNKWeLNhSzE7?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/36/4FH',
-      color_1: '#089CFE',
-      color_3: '#FECB02',
-      right: '29%',
-      bottom: '30%'
+      color_1: '#FECB02',
+      color_3: '#FF6096',
+      right: '58%',
+      bottom: '71%'
     },
     {
       id: '303',
@@ -181,13 +181,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_303.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_303.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/47efa458657fb4a5.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/2f865de7ca6054d1.jpg',
       googleMap: 'https://goo.gl/maps/ud217ArM8ZGDJ8DJ8?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/b8/Mzj',
       color_1: '#FECB02',
       color_3: '#FF6096',
-      right: '29%',
-      bottom: '30%'
+      right: '62%',
+      bottom: '63%'
     },
   ],
   // 寶安區
@@ -200,13 +200,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_401.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_401.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/009aa648694461bb.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/19ba1e430f8a2246.jpg',
       googleMap: 'https://goo.gl/maps/ntfTf49VNaY9D9VL6?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/89/2LD',
       color_1: '#FECB02',
-      color_3: '#089CFE',
-      right: '29%',
-      bottom: '30%'
+      color_3: '#FF6096',
+      right: '62%',
+      bottom: '25%'
     },
   ],
   // 龍華區
@@ -219,13 +219,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_501.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_501.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/547f7fa32b8a7154.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/5618a96fe08038ec.jpg',
       googleMap: 'https://goo.gl/maps/jtcrLmft7h8s3xfX6?coh=178572&entry=tt',
       baiduMap: 'https://j.map.baidu.com/3a/nbch',
       color_1: '#FECB02',
-      color_3: '#089CFE',
-      right: '29%',
-      bottom: '30%'
+      color_3: '#FF6096',
+      right: '27%',
+      bottom: '38%'
     },
     {
       id: '502',
@@ -235,13 +235,13 @@ const allAddressLists = [
       phone: '+852 69122011',
       busRoutes: 'contactUs.addressLists.address_502.busRoutes',
       metroRoutes: 'contactUs.addressLists.address_502.metroRoutes',
-      addressUrl: 'https://static.cmereye.com/imgs/2023/05/2d4f2be9d307d63a.png',
+      addressUrl: 'https://static.cmereye.com/imgs/2023/07/4b2ac57ebf8c0f11.jpg',
       googleMap: 'https://goo.gl/maps/VKT1orRbiS8mAiN39?coh=178572&entry=tt門診門',
       baiduMap: 'https://j.map.baidu.com/c5/AZ4c',
-      color_1: '#089CFE',
-      color_3: '#FECB02',
-      right: '29%',
-      bottom: '30%'
+      color_1: '#FECB02',
+      color_3: '#FF6096',
+      right: '18%',
+      bottom: '17%'
     },
   ]
 ]
@@ -369,7 +369,7 @@ const onSlideChange = (swiper:any) => {
         </div>
       </div>
       <div class="address">
-        <div :class="{'address-in':true,'isA': addressItem.id === '102','isB': addressItem.id === '103'}" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
+        <div :class="{'address-in':true,'isA': addressItem.id === '102','isB': addressItem.id === '103',isOne: allAddressLists[appState.areaTabAct].length===1}" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabAct]" :key="addressIndex">
           <div class="addressBox">
             <div class="addressBox-t">
               <div class="addressImg">
@@ -436,14 +436,14 @@ const onSlideChange = (swiper:any) => {
               </div>
             </div>
           </div>
-          <div class="address-in-leftBox" v-if="addressIndex === 0">
+          <div class="address-in-leftBox" v-if="addressItem.id === '102'">
             <div>
               <p>{{$t(addressItem.name)}}</p>
               <p>營運至17:30</p>
             </div>
             <img src="https://static.cmereye.com/imgs/2023/07/3a40fcfc57e3b381.png" alt="">
           </div>
-          <div class="address-in-rightBox" v-if="addressIndex === 1">
+          <div class="address-in-rightBox" v-if="addressItem.id === '103'">
             <div>
               <p>{{$t(addressItem.name)}}</p>
               <p>營運至20:30</p>
@@ -461,8 +461,8 @@ const onSlideChange = (swiper:any) => {
           @swiper="setAddressSwiperRef"
           @slideChange="onSlideChange"
         >
-          <swiper-slide class="addressSlide" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
-            <div :class="{'addressBox': true,'firstBox': addressIndex===0,'twoBox': addressIndex===1}">
+          <swiper-slide class="addressSlide" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabAct]" :key="addressIndex">
+            <div :class="{'addressBox': true,'isA': addressItem.id === '102','isB': addressItem.id === '103'}">
               <div class="addressBox-t">
                 <div class="addressImg">
                   <img class="addressImg-in" :src="addressItem.addressUrl" alt="">
@@ -520,11 +520,11 @@ const onSlideChange = (swiper:any) => {
           </swiper-slide>
         </Swiper>
         <div class="address-swiper-line">
-          <PageSwiperPointLine :latestNewsNum="allAddressLists[appState.areaTabCurNum].length" :latestNewsCurrent="addressCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
+          <PageSwiperPointLine :latestNewsNum="allAddressLists[appState.areaTabAct].length" :latestNewsCurrent="addressCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
         </div>
       </div>
       <!-- <div class="address">
-        <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabCurNum]" :key="addressIndex">
+        <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabAct]" :key="addressIndex">
           <h3>{{$t(addressItem.name)}}</h3>
           <div class="content">
             <span>{{$t('contactUs.hospital_address')}}：{{$t(addressItem.address)}}</span>
@@ -754,6 +754,9 @@ const onSlideChange = (swiper:any) => {
         padding-right: 23px;
         justify-content: flex-end;
         margin-bottom: 45px;
+        &.isOne{
+          justify-content:center;
+        }
         .addressBox{
           display: flex;
           flex-direction: column;
@@ -1434,7 +1437,7 @@ const onSlideChange = (swiper:any) => {
             }
           }
         }
-        &.firstBox{
+        &.isA{
           border: 2px solid #089CFE;
           .addressBox-t{
             background: #089CFE;
@@ -1461,7 +1464,7 @@ const onSlideChange = (swiper:any) => {
             }
           }
         }
-        &.twoBox{
+        &.isB{
           border: 2px solid #FECB02;
           .addressBox-t{
             background: #FECB02;

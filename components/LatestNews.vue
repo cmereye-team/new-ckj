@@ -54,25 +54,25 @@ const filterBanner = () =>{
 let newsLists = [
   {
     title: '歐美種植牙 即減￥2000元/顆',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/637e61a798944524.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service/implant'
   },
   {
     title: '隱形牙箍  即減￥5000元',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/60453a7abfb2ede9.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service/invisalign'
   },
   {
     title: '金屬矯正牙箍 即減￥2000元',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/1c3ad3cd69cf67bd.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service/orthodontics'
   },
   {
     title: '成功種牙或矯齒，免費贈送專業潔牙1次',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/862df95d96ff6ab2.png',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/07/e34677d1bcfdd11d.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/307f85b6a2a98c02.png',
     link: '/dental-service'
   }
@@ -236,6 +236,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
   }
   .newsImg{
     width: 100%;
+    border-radius: 300px;
   }
   &-line{
     width: 324px;

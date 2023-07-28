@@ -99,18 +99,13 @@ const caseSharingTopData = {
   imgUrl: 'https://static.cmereye.com/imgs/2023/06/b6685121c74c93e0.png'
 }
 
-onMounted(() => {
-});
 
 //医生模块轮播图事件
 let doctorTeamCurrent = ref(1)
-// const onSlideDoctorTeamSwiperChange = (swiper:any) => {
-//   doctorTeamCurrent.value = swiper.realIndex + 1
-// }
 
-let areaTabCurNum = computed(()=>{
-  return appState.areaTabCurNum
-})
+// let _areaTabAct = computed(()=>{
+//   return appState.areaTabAct
+// })
 
 let doctorTeamSwiperRef = {
   slideTo: (a,b)=>{},
@@ -136,12 +131,14 @@ const setDoctorTeamSwiperRef44 = (swiper:any) =>{
 }
 
 watch(
-  areaTabCurNum, (newValue, oldValue) => {
-    doctorTeamSwiperRef.slideTo(0, 0);
-    doctorTeamSwiperRef.autoplay.start()
-    if(newValue === 0){
-      doctorTeamSwiperRef44.slideTo(0, 44);
-      doctorTeamSwiperRef44.autoplay.start()
+  appState, (newValue, oldValue) => {
+    if(newValue.areaTabAct !== oldValue.areaTabAct){
+      doctorTeamSwiperRef.slideTo(0, 0);
+      doctorTeamSwiperRef.autoplay.start()
+      if(newValue.areaTabAct === 0){
+        doctorTeamSwiperRef44.slideTo(0, 44);
+        doctorTeamSwiperRef44.autoplay.start()
+      }
     }
   },
   {
@@ -294,7 +291,7 @@ onMounted(()=>{
           </div>
         </div>
         <div class="index-doctorTeam-c pcDoctorTeam">
-          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 10">
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabAct].length > 10">
             <div class="c-in-22">
               <Swiper
                 class="doctorTeamSwiperBox"
@@ -308,7 +305,7 @@ onMounted(()=>{
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef"
               >
-                <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(0,22)" :key="doctorIndex" >
+                <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(0,22)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
@@ -317,7 +314,7 @@ onMounted(()=>{
                 </SwiperSlide>
               </Swiper>
             </div>
-            <div class="c-in-44" v-if="doctorLists_cs[appState.areaTabCurNum].length > 22">
+            <div class="c-in-44" v-if="doctorLists_cs[appState.areaTabAct].length > 22">
               <Swiper
                 class="doctorTeamSwiperBox"
                 :modules="[Autoplay]"
@@ -332,7 +329,7 @@ onMounted(()=>{
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef44"
               >
-                <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(22,44)" :key="doctorIndex" >
+                <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(22,44)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
@@ -344,7 +341,7 @@ onMounted(()=>{
           </div>
           <div class="c-in" v-else>
             <div class="c-in-16">
-              <div v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum]" :key="doctorIndex">
+              <div v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct]" :key="doctorIndex">
                 <div class="doctorTeamPage">
                   <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                     <img :src="doctorItem.mbImg || ''" alt="">
@@ -355,7 +352,7 @@ onMounted(()=>{
           </div>
         </div>
         <div class="index-doctorTeam-c mbDoctorTeam">
-          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length">
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabAct].length">
             <div>
               <Swiper
                 class="doctorTeamSwiperBox"
@@ -369,7 +366,7 @@ onMounted(()=>{
                 :slidesPerView="3"
                 @swiper="setDoctorTeamSwiperRef"
               >
-                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(0,14)" :key="doctorIndex" >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(0,14)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
@@ -379,7 +376,7 @@ onMounted(()=>{
               </Swiper>
             </div>
           </div>
-          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 14">
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabAct].length > 14">
             <div>
               <Swiper
                 class="doctorTeamSwiperBox"
@@ -395,7 +392,7 @@ onMounted(()=>{
                 :slidesPerView="3"
                 @swiper="setDoctorTeamSwiperRef44"
               >
-                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(14,30)" :key="doctorIndex" >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(14,30)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">
@@ -405,7 +402,7 @@ onMounted(()=>{
               </Swiper>
             </div>
           </div>
-          <div class="c-in" v-if="doctorLists_cs[appState.areaTabCurNum].length > 30">
+          <div class="c-in" v-if="doctorLists_cs[appState.areaTabAct].length > 30">
             <div>
               <Swiper
                 class="doctorTeamSwiperBox"
@@ -419,7 +416,7 @@ onMounted(()=>{
                 :slidesPerView="3"
                 @swiper="setDoctorTeamSwiperRef"
               >
-                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabCurNum].slice(30,44)" :key="doctorIndex" >
+                <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(30,44)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
                     <nuxt-link :to="`/medical-team?did=${doctorItem.id}`">
                       <img :src="doctorItem.mbImg || ''" alt="">

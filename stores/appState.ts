@@ -4,6 +4,7 @@ export interface appState {
   areaTabCurNum: number,
   dentistryService: string,
   brand: string,
+  areaTabAct:number,
   areaTabs: any,
   isShowForm: boolean
 }
@@ -13,6 +14,7 @@ export const useAppState = defineStore('appData', {
     areaTabCurNum: 0,
     dentistryService: 'implant',
     brand: 'course',
+    areaTabAct: 0,
     areaTabs: [
       'components.areaTabs.luohu',
       'components.areaTabs.futian',
@@ -26,7 +28,9 @@ export const useAppState = defineStore('appData', {
     setCurNum(curNum: number){
       // if(this.areaTabCurNum === curNum) return
       this.areaTabCurNum = curNum
-      
+    },
+    setareaTabAct(num: number){
+      this.areaTabAct = num
     },
     setDentistryService(serviceName: string){
       this.dentistryService = serviceName
@@ -41,4 +45,9 @@ export const useAppState = defineStore('appData', {
       // this.count = 0
     },
   },
+  getters: {
+    getareaTabAct():number{
+      return this.areaTabAct
+    }
+  }
 })

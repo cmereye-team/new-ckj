@@ -8,6 +8,7 @@ import {
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue'
+import { log } from 'console'
 
 defineProps({
   type:{
@@ -16,38 +17,34 @@ defineProps({
   }
 })
 
-const emits = defineEmits(['changeTabCur'])
-
+// const emits = defineEmits(['changeTabCur'])
+// emits('changeTabCur',_idx)
 const appState = useAppState()
 const areaLists = appState.areaTabs.map((item,index)=>{
   return{
     id: index+1,
     name: item,
-    unavailable: false
   }
 })
 
-const handleAreaTab = (_idx: number) => {
-  appState.setCurNum(_idx)
-  emits('changeTabCur',_idx)
+const selectedPerson = ref(areaLists[appState.areaTabAct])
+
+const updateSelect = () =>{
+  appState.setareaTabAct(selectedPerson.value.id-1)
 }
-
-const selectedPerson = ref(areaLists[0])
-
+watch(selectedPerson, () => updateSelect())
 
 </script>
 
 <template>
   <div class="areaTab">
-    <!-- <div :class="appState.areaTabCurNum === areaTabIndex ? 'isCur' : ''" v-for=" (item,areaTabIndex) in appState.areaTabs" :key="areaTabIndex" @click="handleAreaTab(areaTabIndex)">{{$t(item)}}</div> -->
     <Listbox v-model="selectedPerson">
-      <ListboxButton :class="{'a':type==='1'}">{{ $t(selectedPerson.name) }}</ListboxButton>
+      <ListboxButton :class="{'a':type==='1'}">{{ $t(areaLists[appState.areaTabAct].name) }}</ListboxButton>
       <ListboxOptions>
         <ListboxOption
           v-for="person in areaLists"
           :key="person.id"
           :value="person"
-          :disabled="person.unavailable"
           :class="{'a-a':type==='1'}"
         >
           {{ $t(person.name) }}
@@ -104,6 +101,7 @@ const selectedPerson = ref(areaLists[0])
       &.a-a{
         color: var(--topic-color);
         background: #fff;
+        font-size: 20px;
       }
       &:hover{
         background: #FECB02;

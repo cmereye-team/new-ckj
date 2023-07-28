@@ -271,7 +271,7 @@ const openServiceCar = ref(false)
         right: -100px;
         width: 50%;
         height: 50%;
-
+        pointer-events: none;
       }
     }
     .pcServices{
