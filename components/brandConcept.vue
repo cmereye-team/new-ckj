@@ -121,14 +121,12 @@
         }
       }
       .image{
-        // flex: 1;
         width: 820px;
         img{
           width: 100%;
           border-radius: 20px;
           box-shadow: 10px 10px 10px -6px rgba(118, 71, 0, 0.25);
         }
-        // margin-left: 136px;
       }
     }
   }
@@ -143,7 +141,16 @@
 
 @media (min-width: 768px) and (max-width: 1452px) {
   .index-brandConcept {
-    
+    &-c{
+      &-in{
+        .context{
+          margin-right: 50px;
+        }
+        .image{
+          width: 50%;
+        }
+      }
+    }
   }
 }
 

@@ -278,6 +278,19 @@ let menuIsOpen = ref(false)
               &-border{
                 border-radius: 10px;
                 position: relative;
+                &::after{
+                  content: '';
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  border-radius: 10px;
+                  border: 10px solid transparent;
+                  border-image: url(@/assets/images/headerBorder.png) 16% round;
+                  z-index: 2;
+                  display: none;
+                }
                 &::before{
                   content: '';
                   width: 100%;
@@ -287,7 +300,8 @@ let menuIsOpen = ref(false)
                   left: 0;
                   opacity: 0.699999988079071;
                   background: #FFF;
-                  border-radius: 10px;
+                  border-radius: 15px;
+                  z-index: 1;
                 }
                 .serviceCard{
                   max-width: 335px;
@@ -338,6 +352,8 @@ let menuIsOpen = ref(false)
                 }
               }
               &-in{
+                position: relative;
+                z-index: 5;
                 &>div{
                   padding: 0 14px;
                   color: #6B6B6B;
@@ -370,7 +386,13 @@ let menuIsOpen = ref(false)
                 padding-top: 20px;
                 height: auto;
                 &-border{
-                  border: 1.5px dashed var(--topic-color);
+                  &::after{
+                    display: block;
+                  }
+                  // border: 1.5px dashed var(--topic-color);
+                  // border: 10px solid transparent;
+                  // padding: 15px;
+                  // border-image: url(@/assets/images/headerBorder.png) 16% round;
                 }
               }
             }

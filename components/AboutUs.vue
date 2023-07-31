@@ -199,7 +199,15 @@ const handleLineCur = (_value:number) =>{
   }   
 }
 @media (min-width: 768px) and (max-width: 1452px) {
-  .index-aboutUs{}
+  .index-aboutUs{
+    &-c{
+      .content{
+        &>div{
+          padding: 0 50px;
+        }
+      }
+    }
+  }
 }
 @media (min-width: 768px) and (max-width: 1000px) {
   .index-aboutUs{
