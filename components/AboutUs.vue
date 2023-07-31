@@ -57,6 +57,7 @@ const handleLineCur = (_value:number) =>{
 .index-aboutUs{
   position: relative;
   width: 100%;
+  overflow: hidden;
   &-t{
     background: url(https://static.cmereye.com/imgs/2023/07/c19dfcc03bbba56d.png);
     background-size: auto 100%;

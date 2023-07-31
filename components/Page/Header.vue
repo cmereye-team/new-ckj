@@ -323,7 +323,7 @@ let menuIsOpen = ref(false)
                         font-weight: 400;
                         line-height: 160%; /* 19.2px */
                         letter-spacing: 3px;
-                        margin: 4px 0 15px;
+                        margin: 4px 0 7px;
                         white-space: nowrap;
                         &::after{
                           content: '>';
@@ -497,7 +497,9 @@ let menuIsOpen = ref(false)
               margin-top: 34px;
               width: 100%;
               justify-content: space-between;
+              flex: none;
               &>div{
+                flex: none;
                 width: 100%;
                 border-top: 2px solid #FECB02;
                 padding: 10px 0 15px;

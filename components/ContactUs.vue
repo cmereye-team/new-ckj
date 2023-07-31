@@ -565,7 +565,7 @@ const onSlideChange = (swiper:any) => {
 
 .index-contactUs{
   padding: 140px 0 0;
-  max-width: 1550px; 
+  max-width: 1650px; 
   margin: 0 auto;
   position: relative;
   // overflow: hidden;
@@ -890,8 +890,11 @@ const onSlideChange = (swiper:any) => {
             position: absolute;
             cursor: pointer;
             transition: all .3s;
+            // filter: drop-shadow(0 5px 5px rgba(0,0,0,.6));
             &:hover{
               transform: scale(1.1);
+              // transform: scale(1.1) translateY(-10px);
+              // filter: drop-shadow(0 7px 5px rgba(0,0,0,.5));
             }
           }
         }
@@ -1043,7 +1046,7 @@ const onSlideChange = (swiper:any) => {
       }
       &-leftBox{
         position: absolute;
-        left: 0px;
+        right: 430px;
         top: -20px;
         &>div{
           color: #089CFE;
@@ -1054,7 +1057,8 @@ const onSlideChange = (swiper:any) => {
           font-weight: 600;
           line-height: 160%; /* 43.824px */
           letter-spacing: 6px;
-          transform: rotate(-15deg)
+          transform: rotate(-15deg);
+          white-space: nowrap;
         }
         img{
           position: absolute;
@@ -1066,13 +1070,13 @@ const onSlideChange = (swiper:any) => {
       }
       &-rightBox{
         position: absolute;
-        right: -160px;
-        bottom: 100px;
+        left: 570px;
+        bottom: 80px;
         &>div{
           color: #FECB02;
           text-align: center;
           font-family: 'cwTeXYen';
-          font-size: 27px;
+          font-size: 24px;
           font-style: normal;
           font-weight: 600;
           line-height: 160%; /* 43.824px */
@@ -1080,12 +1084,13 @@ const onSlideChange = (swiper:any) => {
           position: relative;
           z-index: 2;
           transform: rotate(15deg);
+          white-space: nowrap;
         }
         img{
           position: absolute;
           width: 100%;
-          left: -20px;
-          top: -70px;
+          left: -10px;
+          bottom: -85px;
           transform: scale(1.2);
         }
       }
@@ -1095,54 +1100,51 @@ const onSlideChange = (swiper:any) => {
     display: none;
   }
 }
-@media (min-width: 768px) and (max-width: 1452px) {
+@media (min-width: 768px) and (max-width: 1920px) {
   .index-contactUs{
     padding: 110px 0 0;
     .address{
       margin-top: 50px;
       &-in{
-        padding: 0 30px 75px;
-        // padding-bottom: 75px;
-        // margin: 0 30px;
-        h3{
-          font-size: 19px;
+        padding: 0 23px 75px;
+        min-width: 545px;
+        &.isA{
+          width: 60%;
         }
-        span{
-          font-size: 18px;
-        }
-        .content{
-          min-height: 150px;
-        }
-        .route{
-          span{
-            &:nth-of-type(1){
-              margin-top: 14px;
-            }
-            &:nth-of-type(3){
-              margin-top: 14px;
-            }
-          }
-        }
-        .mapBtn{
-          &-in{
-            font-size: 26px;
-            padding: 10px 0;
-            &:first-child{
-              margin-right: 20px;
-            }
-          }
+        &.isB{
+          width: 60%;
+          margin-left: 20%;
         }
       }
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 1100px) and (max-width: 1300px) {
   .index-contactUs{
-    // .address{
-    //   &-in{
-    //     width: 50%;
-    //   }
-    // }
+    .address{
+      &-in{
+        &.isB{
+          width: 50%;
+          margin-left: 5%;
+          margin-right: 20%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .index-contactUs{
+    .address{
+      &-in{
+        &.isA{
+          margin-left: 30%;
+        }
+        &.isB{
+          margin-left: 0%;
+          margin-right: 40%;
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 768px) {

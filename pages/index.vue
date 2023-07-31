@@ -206,8 +206,14 @@ let showYaAnim = ref(false)
 const getScrollTop = () => {
   // console.log(window.scrollY)
   let caseSharingHeight:any = document.getElementsByClassName('index-caseSharing')
-  if(window.scrollY>=caseSharingHeight[0].offsetTop+300){
-    showYaAnim.value = true
+  if(windowWidth.value > 768){
+    if(window.scrollY>=caseSharingHeight[0].offsetTop+300){
+      showYaAnim.value = true
+    }
+  }else{
+    if(window.scrollY>=caseSharingHeight[0].offsetTop){
+      showYaAnim.value = true
+    }
   }
 }
 
@@ -826,6 +832,7 @@ svg:hover path{
   padding-bottom: 176px;
   margin: -20px 0;
   position: relative;
+  overflow: hidden;
   &-title{
     display: flex;
     justify-content: center;

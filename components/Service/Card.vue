@@ -108,6 +108,7 @@ const openServiceCar = ref(false)
 .index-dentalServices{
   padding: 189px 0 190px;
   position: relative;
+  overflow: hidden;
   &-in{
     display: flex;
     justify-content: center;
