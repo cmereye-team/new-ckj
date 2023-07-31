@@ -49,7 +49,7 @@ const openServiceCar = ref(false)
       </div>    
 
       <div :class="{'servicesCard':true,'isMenu': isMenu,'pcServices':true}">
-        <div>
+        <!-- <div>
           <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(0,5)" :key="index">
             <nuxt-link :to="item.link">
               <div class="servicesCard-in-image">
@@ -68,13 +68,15 @@ const openServiceCar = ref(false)
               </div>
             </nuxt-link>
           </div>
-        </div>
+        </div> -->
         <div>
-          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(10,15)" :key="index">
+          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists" :key="index">
             <nuxt-link :to="item.link">
-              <div class="servicesCard-in-image">
-                <img :src="item.imgUrl" alt="">
-                <div class="servicesCard-in-name">{{$t(item.name)}}</div>
+              <div class="servicesCard-in-roundBox">
+                <div>
+                  <img :src="item.imgUrl" alt="">
+                  <div class="servicesCard-in-name">{{$t(item.name)}}</div>
+                </div>
               </div>
             </nuxt-link>
           </div>
@@ -169,8 +171,8 @@ const openServiceCar = ref(false)
         width: 100%;
         margin-bottom: 60px;
         display: flex;
+        flex-wrap: wrap;
         &:nth-of-type(2){
-          // justify-content: flex-end;
           margin-left: 150px;
         }
       }
@@ -183,36 +185,45 @@ const openServiceCar = ref(false)
         justify-content: center;
       }
       &-in{
+        width: 15%;
         cursor: pointer;
-        // width: 18%;
         display: flex;
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
-        margin-right: 73px;
+        margin-right: 3.85%;
+        margin-bottom: 4%;
+        &:nth-of-type(6){
+          margin-left: 9.425%;
+        }
+        &:nth-of-type(10){
+          margin-right: 0;
+        }
         a{
           width: 100%;
           height: 100%;
         }
-        &-image{
-          width: 240px;
-          height: 240px;
-          // padding-top: 100%;
+        &-roundBox{
+          width: 100%;
+          height: 0;
+          padding-top: 100%;
           position: relative;
           background: #F5F4F4;
-          border-radius: 10px;
           transition: all .5s;
           border-radius: 50%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-end;
-          padding: 0 0 45px;
+          &>div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-bottom: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+          }
           img{
-            // position: absolute;
-            // left: 50%;
-            // top: 50%;
-            // transform: translate(-50%,-50%);
             max-width: 60%;
             max-height: 60%;
           }
@@ -285,27 +296,24 @@ const openServiceCar = ref(false)
     padding: 0px;
   }
 }
-@media (min-width: 768px) and (max-width: 1452px) {
+@media (min-width: 768px) and (max-width: 1000px) {
   .index-dentalServices{
     padding: 150px 0 0;
     &-in{
       .servicesCard{
         &-in{
-          padding: 0 3vw;
-           &-image{
-            img{
-              max-width: 80%;
-              max-height: 80%;
+            &-roundBox{
+              &>div{
+                padding-bottom: 10%;
+              }
             }
             &-name{
-              height: 60px;
-              line-height: 60px;
+              font-size: 16px;
+              margin-top: 10px;
+              // height: 60px;
+  //             line-height: 60px;
             }
-          }
         }
-      }
-      &.isMenu{
-        width: 100%;
       }
     }
   }
@@ -370,7 +378,6 @@ const openServiceCar = ref(false)
         }
         &-in{
           width: calc(50% - 20px);
-          // padding: 0 8.5px;
           width: max-content;
           margin-right: 0;
           justify-content: space-between;
@@ -379,6 +386,13 @@ const openServiceCar = ref(false)
             width: 130px;
             height: 130px;
             padding: 0 0 20px;
+            background: #F5F4F4;
+            transition: all .5s;
+            border-radius: 50%;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: center;
             img{
               max-width: 70%;
               max-height: 70%;

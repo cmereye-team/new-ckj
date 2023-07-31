@@ -64,8 +64,9 @@ let mbQDCodeBool = ref(false)
           <div class="weChat">
             <img src="https://static.cmereye.com/imgs/2023/07/f2d965855eb2a5ae.jpg" alt="二维码">
             <div>
-              掃描QR Code {{'\n'}}加我為朋友！
+              掃描QR Code
             </div>
+            <div>加我為朋友！</div>
           </div>
         </div>
       </div>
@@ -168,7 +169,7 @@ let mbQDCodeBool = ref(false)
         .weChat{
           width: 100%;
           text-align: center;
-          white-space: pre-wrap;
+          white-space: nowrap;
           img{
             width: 100%;
           }
@@ -332,6 +333,7 @@ let mbQDCodeBool = ref(false)
           width: 103px;
           height: 103px;
           min-width: 103px;
+          max-width: 103px;
           background: #fff;
           box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
           border-radius: 50%;

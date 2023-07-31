@@ -1102,6 +1102,8 @@ const onSlideChange = (swiper:any) => {
       margin-top: 50px;
       &-in{
         padding: 0 30px 75px;
+        // padding-bottom: 75px;
+        // margin: 0 30px;
         h3{
           font-size: 19px;
         }

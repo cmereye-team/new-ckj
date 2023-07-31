@@ -238,8 +238,9 @@ let menuIsOpen = ref(false)
         }
         .menu{
           display: flex;
+          flex: 1;
           &>div{
-            padding: 0 70px;
+            flex: 1;
             font-style: normal;
             font-weight: 600;
             cursor: pointer;
@@ -261,6 +262,7 @@ let menuIsOpen = ref(false)
               font-size: 20px;
               line-height: 1; /* 50.22px */
               letter-spacing: 4.5px;
+              text-align: center;
             }
             .menu-child{
               position: absolute;
@@ -450,7 +452,7 @@ let menuIsOpen = ref(false)
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1452px) {}
+@media (min-width: 768px) and (max-width: 1920px) {}
 @media screen and (max-width: 768px) {
   .headerPage{
     // position: relative;

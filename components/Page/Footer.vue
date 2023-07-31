@@ -407,6 +407,11 @@ const handleMenu = (item:any,index:any) => {
       img {
         width: 100%;
       }
+      &:last-child{
+        svg{
+          width: 70%;
+        }
+      }
     }
   }
 }

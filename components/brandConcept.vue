@@ -103,7 +103,7 @@
               &:last-child{
                 position: relative;
                 z-index: 1;
-                margin-top: -10px;
+                margin-top: -8px;
                 margin-left: 60px;
               }
             }
