@@ -1100,7 +1100,7 @@ const onSlideChange = (swiper:any) => {
     display: none;
   }
 }
-@media (min-width: 768px) and (max-width: 1920px) {
+@media (min-width: 768px) and (max-width: 1800px) {
   .index-contactUs{
     padding: 110px 0 0;
     .address{

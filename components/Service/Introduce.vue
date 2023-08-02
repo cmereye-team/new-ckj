@@ -13,28 +13,34 @@ defineProps({
         pageName: ''
       }
     }
+  },
+  reasonData:{
+    type: Object,
+    default(){
+      return {
+        title: '',
+        text: '',
+        imgUrl: '',
+        reasonLists:[
+          {
+            context: '',
+            pageName: '',
+            isSmallFS: false,
+            isMediumCW: false
+          }
+        ]
+      }
+    }
   }
 })
 </script>
 
 <template>
   <div class="introduce bigPageCon">
-    <div :class="['introduce-in',{'noTitle':!introduceData.title}]" :style="{
-      background: `url(${introduceData.pcImg}) no-repeat`,
-      backgroundPosition: 'right top',
-      backgroundSize: 'auto 100%'
-      }">
-      <div class="tabNav noTitle pageCon">
-        <nuxt-link :to="'/'"><span>{{$t('pages.index.title')}}</span></nuxt-link>
-        <nuxt-link :to="'/dental-service'"><span>{{$t('pages.dental-service.title')}}</span></nuxt-link>
-        <span>{{$t(introduceData.tabNavName)}}</span>
-      </div>
-      <div class="introduce-in-t mbBox">
-        <img :src="introduceData.mbImg" alt="">
-      </div>
-      <div class="introduce-in-l pageCon">
-        <div :class="['title',introduceData.pageName]">{{$t(introduceData.title)}}</div>
-        <div :class="['content',introduceData.pageName]">{{$t(introduceData.content)}}</div>
+    <div class="introduce-in">
+      <div class="introduce-in-title">{{$t(introduceData.title)}}</div>
+      <div class="introduce-in-content">
+        {{$t(introduceData.content)}}
       </div>
     </div>
   </div>
@@ -44,60 +50,38 @@ defineProps({
 <style lang="scss" scoped>
     .introduce{
       &-in{
-        margin-top: 45px;
-        height: 32.709vw;
+        margin-top: 96px;
         max-height: 628px;
-        &-l{
-          color: #666666;
-          padding-bottom: 90px;
-          .title{
-            font-weight: 700;
-            font-size: 30px;
-            margin-top: 150px;
-            &.teeth-whitening{
-              margin-top: 10%;
-            }
-          }
-          .content{
-            font-weight: 600;
-            font-size: 20px;
-            max-width: 650px;
-            width: 650px;
-            margin-top: 68px;
-            &.orthodontics{
-              width: 409px;
-            }
-            &.teeth-whitening{
-              white-space: pre-wrap;
-            }
+        &-title{
+          font-weight: 700;
+          font-size: 32px;
+          text-align: center;
+          position: relative;
+          padding-bottom: 10px;
+          color: var(--topic-text-color);
+          &::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 39px;
+            height: 5px;
+            border-radius: 2.5px;
+            background: var(--topic-color);
           }
         }
-      }
-    }
-    .tabNav{
-      font-weight: 400;
-      font-size: 1.25rem;
-      line-height: 160%;
-      color: #CBCBCB;
-      margin-top: 83px;
-      &.noTitle{
-        margin-top: 0;
-      }
-      a{
-        &:not(:last-child)::after{
-          content: '';
-          width: 20px;
-          height: 2px;
-          margin: 0 10px;
-          background: #CBCBCB;
-          display: inline-block;
-          vertical-align: middle;
-          margin-top: -4px;
+        &-content{
+          font-weight: 400;
+          font-size: 16px;
+          width: 100%;
+          max-width: 680px;
+          line-height: 160%; /* 25.6px */
+          letter-spacing: 4.8px;
+          margin: 70px auto 0;
+          text-align: center;
+
         }
-      }
-      &>span{
-        cursor: pointer;
-        color: #FFA09E;
       }
     }
     @media (min-width: 768px) and (max-width: 1452px) {

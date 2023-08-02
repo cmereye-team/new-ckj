@@ -125,7 +125,7 @@ const openServiceCar = ref(false)
         font-family: 'cwTeXYen';
         font-size: 35px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 800;
         line-height: 120%; /* 50.826px */
         letter-spacing: 7.942px;
       }
@@ -136,11 +136,11 @@ const openServiceCar = ref(false)
           width: 100%;
           max-width: 724px;
           font-family: 'cwTeXYen';
-          font-size: 17px;
+          font-size: 19px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 500;
           line-height: 160%; /* 25.6px */
-          letter-spacing: 4.8px;
+          letter-spacing: 3.8px;
         }
       }
       &::before{
@@ -239,19 +239,21 @@ const openServiceCar = ref(false)
           font-family: 'cwTeXYen';
           font-size: 20px;
           font-style: normal;
-          font-weight: 500;
+          font-weight: 600;
           line-height: 160%; /* 27.2px */
-          letter-spacing: 4.25px;
+          letter-spacing: 3.8px;
           margin-top: 14px;
           position: relative;
           &::after{
-            content: '>';
+            content: '';
             color: var(--topic-color);
-            font-family: '黑体';
-            font-size: 20px;
+            background: url(https://static.cmereye.com/imgs/2023/07/5331fed4a9f0f487.png) no-repeat;
+            width: 5px;
+            height: 10px;
+            background-size: 100% 100%;
             position: absolute;
             font-weight: bold;
-            top: 1px;
+            top: 30%;
           }
         }
         &>.router-link-exact-active{
@@ -366,13 +368,7 @@ const openServiceCar = ref(false)
         box-sizing: border-box;
         &>div{
           width: 100%;
-          // flex-wrap: wrap;
           margin-bottom: 0;
-          // justify-content: space-between;
-          // display: inline-block;
-          // &:nth-of-type(2){
-            // margin-left: 0;
-          // }
         }
         &-mascot{
           display: none;
@@ -406,8 +402,10 @@ const openServiceCar = ref(false)
             line-height: 1.3;
             letter-spacing: 1px;
             &::after{
-              font-size: 12px;
-              padding-left: 10px;
+              width: 4px;
+              height: 8px;
+              top: 20%;
+              margin-left: 5px;
             }
           }
         }

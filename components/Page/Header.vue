@@ -133,6 +133,12 @@ const menuLists = [
 const servicesCardLists = serviceLists
 
 let menuIsOpen = ref(false)
+
+const handleMenu = (_data:any) => {
+  if(_data.link){
+    location.href = _data.link
+  }
+}
 </script>
 
 <template>
@@ -146,7 +152,7 @@ let menuIsOpen = ref(false)
       </div>
       <div class="headerPage-in-c" :class="{openMenu: menuIsOpen}">
         <div>
-          <div class="logo">
+          <div class="logo" @click="handleMenu({link: '/'})">
             <img src="https://static.cmereye.com/imgs/2023/07/b79d00b40c36feef.jpg" alt="爱康健">
           </div>
           <div class="menu">
@@ -155,7 +161,7 @@ let menuIsOpen = ref(false)
               <div class="name">{{$t(item.name)}}</div>
               <div class="menu-child" v-if="item.child.length && !item.link.includes('/dental-service')">
                 <div class="menu-child-border">
-                  <div class="menu-child-in" v-for="(childItem,childIndex) in item.child" :key="childIndex">
+                  <div class="menu-child-in" v-for="(childItem,childIndex) in item.child" :key="childIndex" @click="handleMenu(childItem)">
                     <div>{{$t(childItem.name)}}</div>
                   </div>
                 </div>
@@ -163,7 +169,7 @@ let menuIsOpen = ref(false)
               <div class="menu-child" v-if="item.link.includes('/dental-service')">
                 <div class="menu-child-border">
                   <div class="serviceCard">
-                    <div class="serviceCard-in" v-for="(service,serviceIndex) in servicesCardLists" :key="serviceIndex">
+                    <div class="serviceCard-in" v-for="(service,serviceIndex) in servicesCardLists" :key="serviceIndex" @click="handleMenu(service)">
                       <div class="serviceBox">
                         <img :src="service.imgUrl" alt="">
                         <div>{{$t(service.name)}}</div>

@@ -1,0 +1,145 @@
+<script lang="ts" setup>
+import { defineProps } from "vue";
+defineProps({
+  bannerData:{
+    type: Object,
+    default(){
+        return {
+            img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+            gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+            text1: '#享受失而復得的喜悅',
+            text2: '重拾完整人生之旅',
+            tabNavName: '种植牙'
+        }
+    }
+  }
+})
+</script>
+
+<template>
+    <div class="banner">
+        <img class="banner-bg" :src="bannerData.img" alt="">
+        <div class="banner-in">
+          <div class="bannerText-1">
+            <span>{{bannerData.text1}}</span>
+            <span>
+              {{bannerData.text2}}
+            </span>
+          </div>
+          <div class="bannerText-2">
+            <span>全程式預約一體化診療服務</span>
+            <span>讓每一位顧客享受<span class="topic">健康微笑之旅</span></span>
+          </div>
+        </div>
+        <img class="banner-gif" :src="bannerData.gif" alt="">
+        <div class="banner-tabNav pageCon">
+            <nuxt-link :to="'/'"><span>{{$t('pages.index.title')}}</span></nuxt-link>
+            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
+                <path d="M1 1L5.17073 5.39024L1 10" stroke="#FC1682" stroke-width="1.09756" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <nuxt-link :to="'/dental-service'"><span>{{$t('pages.dental-service.title')}}</span></nuxt-link>
+            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
+                <path d="M1 1L5.17073 5.39024L1 10" stroke="#FC1682" stroke-width="1.09756" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{$t(bannerData.tabNavName)}}</span>
+        </div>
+    </div>
+</template>
+
+
+<style lang="scss" scoped>
+.banner{
+      position: relative;
+      z-index: 0;
+      &-bg{
+        width: 100%;
+      }
+      &-in{
+        position: absolute;
+        left: 10%;
+        bottom: 30%;
+        z-index: 0;
+        .bannerText-1{
+          display: flex;
+          flex-direction: column;
+          span{
+            display: inline-block;
+            color: var(--topic-text-color);
+            font-family: 'cwTeXYen';
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 4.751px;
+            background: #fff;
+            padding: 5px 20px;
+            transform: skewY(-5deg);
+            border: 2px solid var(--topic-text-color);
+            width: max-content;
+            min-width: 380px;
+            &:first-child{
+              position: relative;
+              z-index: 2;
+              &::after{
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                right: 0;
+                height: 6px;
+                width: calc(100% - 60px);
+                background: #fff;
+              }
+            }
+            &:last-child{
+              position: relative;
+              z-index: 1;
+              margin-top: -6px;
+              margin-left: 60px;
+            }
+          }
+        }
+        .bannerText-2{
+          display: flex;
+          flex-direction: column;
+          margin-top: 36px;
+          span{
+            color: var(--topic-text-color);
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 171%; /* 37.62px */
+            letter-spacing: 5.83px;
+            &.topic{
+              color: var(--topic-color);
+            }
+          }
+        }
+      }
+      &-gif{
+        width: 153px;
+        height: auto;
+        margin: -85px auto 0;
+      }
+      &-tabNav{
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 160%;
+            color: #6B6B6B;
+            margin-top: -40px;
+            a{
+                text-decoration: underline;
+            }
+            &>span{
+              cursor: pointer;
+              color: var(--topic-color)
+            }
+            &>svg{
+                display: inline-block;
+                margin: -3px 10px 0;
+                vertical-align: middle;
+            }
+        }
+    }
+@media (min-width: 768px) and (max-width: 1452px) {}
+@media screen and (max-width: 768px) {}
+</style>

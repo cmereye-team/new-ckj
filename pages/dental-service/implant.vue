@@ -293,13 +293,19 @@ const getWindowWidth = () => {
   windowWidth.value = window.innerWidth
 }
 
+// const bannerData = {
+//   img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+//   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+//   text1: '#享受失而復得的喜悅',
+//   text2: '重拾完整人生之旅'
+// }
+
 </script>
 
 <template>
   <div>
-    <PageHeader :headerConfig="headerConfig"/>
     <div class="dentistryServices">
-      <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
+      <ServiceBanner />
       <ServiceIntroduce :introduceData="introduceData" />
       <ServiceReason :reasonData="reasonData" />
       <div class="features">
@@ -403,15 +409,15 @@ const getWindowWidth = () => {
       <serviceCard />
       <ContactUs />
     </div>
-    <PageFooter />
-    <PageNavbar />
   </div>
 </template>
 
 <style lang="scss" scoped>
   .dentistryServices{
     background: #fff;
-    padding: 143px 0;
+    padding: 0 0 143px;
+    margin-top: -60px;
+    
     .features{
       margin-top: 90px;
       &-in{

@@ -230,7 +230,7 @@ onMounted(()=>{
 <template>
   <div>
   <!-- <div class="bigPageCon"> -->
-    <PageHeader /> 
+    <!-- <PageHeader />  -->
     <div class="indexPage">
       <div class="index-banner">
         <div class="index-banner-t">
@@ -512,8 +512,8 @@ onMounted(()=>{
       <!-- 聯絡我們 -->
       <ContactUs />
     </div>
-    <PageFooter />
-    <PageNavbar />
+    <!-- <PageFooter /> -->
+    <!-- <PageNavbar /> -->
   </div>
 </template>
 
