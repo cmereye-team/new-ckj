@@ -122,17 +122,17 @@ const handleLineCur = (_value:number) =>{
               font-family: 'cwTeXYen';
               font-size: 38px;
               font-style: normal;
-              font-weight: 400;
-              line-height: normal;
+              font-weight: 600;
+              height: 60px;
+              line-height: 60px;
               letter-spacing: 6.08px;
               background: #fff;
-              padding: 5px 20px;
+              padding: 0 20px;
               transform: skewY(-5deg);
               border: 2px solid var(--topic-text-color);
               &:first-child{
                 position: relative;
                 z-index: 2;
-                // margin-right: 30px;
                 &::after{
                   content: '';
                   position: absolute;
@@ -163,13 +163,25 @@ const handleLineCur = (_value:number) =>{
             letter-spacing: 4.8px;
           }
         }
+        &:nth-of-type(1){
+          &>div{
+            &:nth-of-type(2){
+              span{
+                 &:last-child{
+                   margin-top: -6px;
+                 }
+              }
+            }
+          }
+        }
       }
+      
       &::before{
         content: '';
         position: absolute;
         left: -100px;
         top: -200px;
-        background: url(https://static.cmereye.com/imgs/2023/07/c45b38d563edf8f6.png) no-repeat;
+        background: url(https://static.cmereye.com/imgs/2023/08/5e353540b6b2bb9f.png) no-repeat;
         background-size: 100% auto;
         width: 178px;
         height: 150%;

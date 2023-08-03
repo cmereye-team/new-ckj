@@ -669,7 +669,8 @@ const getWindowWidth = () => {
   }
   @media (min-width: 768px) and (max-width: 1452px) {
     .dentistryServices{
-      padding: 110px 0;
+      padding: 0 0 110px;
+      margin-top: -60px;
       .note{
         .noteCard{
           &-in{

@@ -187,24 +187,24 @@ let mbQDCodeBool = ref(false)
     }
   }
   #navPcTel{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/92e9fdb8c06a5060.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/6b3c0f968db06731.png);
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-size: 100% 100%;
   }
   #navPcWeChat{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/e1da53373fc7b1cd.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/f50b520dc325b7a1.png);
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-size: 100% 100%;
   }
   #navPcWhatsapp{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/c0e8096653e596d1.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/e07e1a304c5dfe73.png);
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-size: 100% 100%;
   }
   #navPcFaceBook{
-    background-image:url(https://static.cmereye.com/imgs/2023/07/463812236c23d9bd.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/3f549509d7a771e6.png);
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-size: 100% 100%;
   }
   #navPcContactForm{
     background-image:url(@/assets/images/navIcon_5.png);

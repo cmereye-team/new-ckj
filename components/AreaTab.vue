@@ -37,14 +37,14 @@ const handleArea = (_data:any) =>{
   <div class="areaTab">
     <Listbox>
       <ListboxButton :class="{'a':type==='1'}">{{ $t(areaLists[appState.areaTabAct].name) }}</ListboxButton>
-      <transition
+      <!-- <transition
         enter-active-class="transition duration-1000 ease-out"
         enter-from-class="transform scale-95 opacity-0"
         enter-to-class="transform scale-100 opacity-100"
         leave-active-class="transition duration-1000 ease-out"
         leave-from-class="transform scale-100 opacity-100"
         leave-to-class="transform scale-95 opacity-0"
-      >
+      > -->
         <ListboxOptions>
           <ListboxOption
             v-for="person in areaLists"
@@ -56,7 +56,7 @@ const handleArea = (_data:any) =>{
             {{ $t(person.name) }}
           </ListboxOption>
         </ListboxOptions>
-      </transition>
+      <!-- </transition> -->
     </Listbox>
   </div>
 </template>
@@ -93,6 +93,8 @@ const handleArea = (_data:any) =>{
       color: #fff;
       border: 3px solid #fff;
       border-radius: 27px;
+      position: relative;
+      z-index: 6;
       &::after{
         color: #fff;
       }
@@ -106,6 +108,28 @@ const handleArea = (_data:any) =>{
       padding-left: 20px;
       cursor: pointer;
       font-size: 20px;
+      opacity: 0;
+      transform: translateY(-100%);
+      animation: liAnim .4s;
+      animation-fill-mode: forwards;
+      position: relative;
+      z-index: 5;
+      &:nth-of-type(2){
+        animation-delay: .2s;
+        z-index: 4;
+      }
+      &:nth-of-type(3){
+        animation-delay: .4s;
+        z-index: 3;
+      }
+      &:nth-of-type(4){
+        animation-delay: .6s;
+        z-index: 2;
+      }
+      &:nth-of-type(5){
+        animation-delay: 0.8s;
+        z-index: 1;
+      }
       &.a-a{
         color: var(--topic-color);
         background: #fff;
@@ -114,6 +138,12 @@ const handleArea = (_data:any) =>{
         background: #FECB02;
       }
     }
+  }
+}
+@keyframes liAnim {
+  to{
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 // .areaTab{
