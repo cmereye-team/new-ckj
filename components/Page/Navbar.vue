@@ -15,18 +15,26 @@ let navLiBoxBool = ref(false)
 //   }, 10);
 // }
 let toTopType = ref(false)
+let lineHeight = ref(0.6)
+let _num = ref(1)
 const toPageTop = () =>{
   toTopType.value = true
   setTimeout(()=>{
     let top = document.documentElement.scrollTop || document.body.scrollTop;
     // 实现滚动效果 
     const timeTop = setInterval(() => {
-        document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
+        document.body.scrollTop = document.documentElement.scrollTop = top -= 10;
+        if(Math.floor(_num.value % 100) === 0){
+          if( lineHeight.value === 0.2) lineHeight.value = 1 
+          else lineHeight.value = 0.2
+        }
+        _num.value++ 
         if (top <= 0) {
             clearInterval(timeTop);
             toTopType.value = false
+            _num.value = 1
         }
-    }, 10);
+    }, 1);
   },500)
 }
 let navFormBool = ref(false)
@@ -113,11 +121,11 @@ let mbQDCodeBool = ref(false)
       </nuxt-link>
       <div class="toTop" @click="toPageTop">
         <div class="arrowTop" :style="{display: toTopType?'none':'block'}"></div>
-        <img class="ya" :style="{top:toTopType?'40%':'50%'}" src="https://static.cmereye.com/imgs/2023/07/be9cf2097b6cd6e3.png" alt="">
+        <img class="ya" :style="{top:toTopType?'20%':'40%'}" src="https://static.cmereye.com/imgs/2023/07/be9cf2097b6cd6e3.png" alt="">
         <div class="toTopline">
-          <span :style="{height: toTopType?'10px':'0px'}"></span>
-          <span :style="{height: toTopType?'20px':'0px'}"></span>
-          <span :style="{height: toTopType?'15px':'0px'}"></span>
+          <span :style="{height: toTopType?`${lineHeight * 10}px`:'0px'}"></span>
+          <span :style="{height: toTopType?`${lineHeight * 20}px`:'0px'}"></span>
+          <span :style="{height: toTopType?`${lineHeight * 15}px`:'0px'}"></span>
         </div>
         <img class="pageTop" src="https://static.cmereye.com/imgs/2023/07/11de1e762ca04a51.png" alt="">
       </div>
@@ -381,7 +389,7 @@ let mbQDCodeBool = ref(false)
         .arrowTop{
           position: absolute;
           left: 50%;
-          top: 14px;
+          top: 18px;
           width: 6px;
           height: 6px;
           border: 1px solid var(--topic-color);
@@ -390,18 +398,20 @@ let mbQDCodeBool = ref(false)
           transform: translateX(-50%) rotate(45deg);
           transform-origin: center center;
           transition: all .7s;
+          // background: url(https://static.cmereye.com/imgs/2023/08/4749f8811345d2a6.png);
+          // background-size: 100% 100%;
         }
         .ya{
           width: 20px;
           position: absolute;
-          top: 50%;
+          top: 30%;
           left: 50%;
-          transform: translate(-50%,-50%);
+          transform: translateX(-50%);
           transition: all .7s;
         }
         .toTopline{
           position: absolute;
-          top: 65%;
+          top: 60%;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
@@ -413,6 +423,7 @@ let mbQDCodeBool = ref(false)
             background: var(--topic-color);
             transition: all .7s;
             display: block;
+            border-radius: 1px;
           }
         }
         .pageTop{
@@ -421,7 +432,7 @@ let mbQDCodeBool = ref(false)
           left: 0;
           width: 100%;
           height: 100%;
-          animation: toTopRoto 5s linear infinite;
+          animation: toTopRoto 10s linear infinite;
         }
       }
     }

@@ -204,6 +204,9 @@ const handleMenu = (_data:any) => {
 <style lang="scss" scoped>
 .headerPage{
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 40;
   &-in{
     width: 100%;
     position: relative;
@@ -219,10 +222,17 @@ const handleMenu = (_data:any) => {
       line-height: 28px;
       background: var(--topic-color);
       text-align: center;
+      position: relative;
+      overflow: hidden;
       span{
         &:not(:last-child){
           margin-right: 60px;
         }
+      }
+      div{
+        width: max-content;
+        animation: topAnim 14s linear infinite;
+        position: absolute;
       }
     }
     &-c{
@@ -345,12 +355,22 @@ const handleMenu = (_data:any) => {
                         letter-spacing: 3px;
                         margin: 4px 0 7px;
                         white-space: nowrap;
+                        position: relative;
                         &::after{
-                          content: '>';
-                          font-family: '黑体';
-                          display: inline-block;
+                          // content: '';
+                          // font-family: '黑体';
+                          // display: inline-block;
+                          // color: var(--topic-color);
+                          // transform: scale(.8);
+                          content: '';
                           color: var(--topic-color);
-                          transform: scale(.8);
+                          background: url(https://static.cmereye.com/imgs/2023/07/5331fed4a9f0f487.png) no-repeat;
+                          width: 5px;
+                          height: 10px;
+                          background-size: 100% 100%;
+                          position: absolute;
+                          font-weight: bold;
+                          top: 25%;
                         }
                       }
                     }
@@ -480,6 +500,16 @@ const handleMenu = (_data:any) => {
     }
   }
 }
+@keyframes topAnim {
+  0%{
+    left: 100%;
+    transform: translateX(0);
+  }
+  100%{
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
 @media (min-width: 768px) and (max-width: 1920px) {}
 @media screen and (max-width: 768px) {
   .headerPage{
@@ -493,7 +523,7 @@ const handleMenu = (_data:any) => {
         overflow: hidden;
         div{
           width: max-content;
-          animation: topAnim 10s linear infinite;
+          animation: topAnim 14s linear infinite;
         }
       }
       &-c{
@@ -690,12 +720,12 @@ const handleMenu = (_data:any) => {
     }
   }
 }
-@keyframes topAnim {
-  0%{
-    transform: translateX(100%);
-  }
-  100%{
-    transform: translateX(-100%);
-  }
-}
+// @keyframes topAnim {
+//   0%{
+//     transform: translateX(100%);
+//   }
+//   100%{
+//     transform: translateX(-100%);
+//   }
+// }
 </style>

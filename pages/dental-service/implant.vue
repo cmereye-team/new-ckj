@@ -118,7 +118,7 @@ const stepData = {
 const reasonData = {
   title: 'pages.dental-service.implant.reason.title',
   text: 'pages.dental-service.implant.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/bab7e2cd0e553a7f.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/c5c74925f782c874.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.implant.reason.lists[0].context',
@@ -306,8 +306,8 @@ const getWindowWidth = () => {
   <div>
     <div class="dentistryServices">
       <ServiceBanner />
-      <ServiceIntroduce :introduceData="introduceData" />
-      <ServiceReason :reasonData="reasonData" />
+      <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" />
+      <!-- <ServiceReason :reasonData="reasonData" /> -->
       <div class="features">
         <div class="dentistryServices-title">
           <div class="dentistryServices-title-in bb">{{$t(featuresData.title)}}</div>

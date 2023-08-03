@@ -42,6 +42,27 @@ defineProps({
       <div class="introduce-in-content">
         {{$t(introduceData.content)}}
       </div>
+      <div class="introduce-in-reason">
+        <div class="reason-l">
+          <div class="reason-l-title">
+            {{$t(reasonData.title)}}
+          </div>
+          <div class="reason-l-text">{{$t(reasonData.text)}}</div>
+          <div class="reason-l-context">
+            <div v-for="(reason,reasonIndex) in reasonData.reasonLists" :key="reasonIndex">
+              <div class="icon">
+                {{reason.hideIcon ? '': '· '}}
+              </div>
+              <div class="context">
+                {{$t(reason.context)}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reason-r">
+          <img :src="reasonData.imgUrl" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -80,7 +101,19 @@ defineProps({
           letter-spacing: 4.8px;
           margin: 70px auto 0;
           text-align: center;
-
+        }
+        &-reason{
+          display: flex;
+          margin-top: 260px;
+          .reason-l{
+            width: 40%;
+          }
+          .reason-r{
+            flex: 1;
+            img{
+              
+            }
+          }
         }
       }
     }

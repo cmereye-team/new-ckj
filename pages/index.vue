@@ -529,19 +529,13 @@ svg:hover path{
   position: relative;
 }
 .index-banner{
-  // background: #f2f2f2;
   height: auto;
   margin-top: -30px;
   position: relative;
   z-index: 1;
   .index-banner-t{
     width: 100%;
-    // min-height: 1000px;
-    // max-height: 1000px;
-    // min-height: 1000px;
     overflow: hidden;
-    // position: relative;
-    // perspective: 30px;
   }
   .index-banner-b{
     height: 200px;
@@ -630,7 +624,7 @@ svg:hover path{
         color: var(--topic-text-color);
         font-size: 22px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 171%; /* 37.62px */
         letter-spacing: 5.83px;
         &.topic{
@@ -921,7 +915,7 @@ svg:hover path{
         color: #FC1682;
         text-align: justify;
         font-family: 'cwTeXYen';
-        font-size: 19.755px;
+        font-size: 22px;
         font-style: normal;
         font-weight: 600;
         line-height: 160%; /* 31.608px */
@@ -1052,7 +1046,7 @@ svg:hover path{
           margin-left: 52px;
           color: var(--topic-color);
           font-family: 'cwTeXYen';
-          font-size: 21.964px;
+          font-size: 24px;
           font-style: normal;
           font-weight: 600;
           line-height: 160%; /* 35.143px */
@@ -1078,7 +1072,7 @@ svg:hover path{
         .name{
           color: var(--topic-text-color);
           font-family: 'cwTeXYen';
-          font-size: 25.666px;
+          font-size: 28px;
           font-style: normal;
           font-weight: 600;
           line-height: 160%; /* 96.252px */
@@ -1086,14 +1080,14 @@ svg:hover path{
           white-space: nowrap;
           margin-top: 20px;
           span{
-            font-size: 19.203px;
+            font-size: 22px;
             letter-spacing: 4.801px;
           }
         }
         .skill{
           color: var(--topic-text-color);
           font-family: 'cwTeXYen';
-          font-size: 15px;
+          font-size: 17px;
           font-style: normal;
           font-weight: 600;
           line-height: 160%; /* 24px */
@@ -1121,7 +1115,7 @@ svg:hover path{
           color: #FC1682;
           text-align: justify;
           font-family: 'cwTeXYen';
-          font-size: 16px;
+          font-size: 18px;
           font-style: normal;
           font-weight: 600;
           line-height: 160%; /* 31.608px */

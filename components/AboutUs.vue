@@ -156,9 +156,9 @@ const handleLineCur = (_value:number) =>{
             color: #FFF;
             text-align: justify;
             font-family: 'cwTeXYen';
-            font-size: 16px;
+            font-size: 18px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 170%; /* 27.2px */
             letter-spacing: 4.8px;
           }

@@ -114,7 +114,7 @@
             font-family: 'cwTeXYen';
             font-size: 18px;
             font-style: normal;
-            font-weight: 500;
+            font-weight: 600;
             line-height: 181%; /* 28.96px */
             letter-spacing: 4.8px;
           }

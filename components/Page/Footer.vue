@@ -159,7 +159,7 @@ const handleMenu = (item:any,index:any) => {
     <div class="footer-content">
       <div class="footer-content-logo_one">
         <nuxt-link :to="'/'">
-          <img src="@/assets/images/logo_2.png" alt="" />
+          <img src="https://static.cmereye.com/imgs/2023/08/8324b35b12f6ac6a.png" alt="" />
         </nuxt-link>
       </div>
       <div class="footer-content-text">
@@ -188,7 +188,8 @@ const handleMenu = (item:any,index:any) => {
                 </div>
               </div>
             </div>
-            <div class="nav-list-in-child mbChild" v-show="_arr.includes(`${navIndex}-${menuIndex}`)">
+             <!-- v-show="_arr.includes(`${navIndex}-${menuIndex}`)" -->
+            <div :class="{'nav-list-in-child':true, 'mbChild':true, 'act':_arr.includes(`${navIndex}-${menuIndex}`)}">
               <div>
                 <div v-for="(menuChild,childIndex) in menuItem.child.slice(0,7)" :key="childIndex">
                   {{$t(menuChild.name)}}
@@ -337,9 +338,9 @@ const handleMenu = (item:any,index:any) => {
         &-name{
           color: #FFF;
           font-family: 'cwTeXYen';
-          font-size: 18px;
+          font-size: 19px;
           font-style: normal;
-          font-weight: 500;
+          font-weight: 800;
           line-height: 160%; /* 28.8px */
           letter-spacing: 4.5px;
           cursor: pointer;
@@ -360,9 +361,9 @@ const handleMenu = (item:any,index:any) => {
               cursor: pointer;
               color: #FFF;
               font-family: 'cwTeXYen';
-              font-size: 15px;
+              font-size: 17px;
               font-style: normal;
-              font-weight: 500;
+              font-weight: 700;
               line-height: 160%; /* 24px */
               letter-spacing: 3.75px;
               margin-top: 11px;
@@ -378,14 +379,14 @@ const handleMenu = (item:any,index:any) => {
   }
   &-logo_one {
     padding: 25px 0;
-    & > img {
+    img {
       width: 150px;
     }
   }
   &-text {
     color: #fff;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 23px;
+    font-weight: 600;
     text-align: center;
     line-height: 160%;
     text-shadow: 0px 0px 4px rgba(255, 120, 117, 0.45);
@@ -443,7 +444,7 @@ const handleMenu = (item:any,index:any) => {
     padding: 10px 70px 100px;
     &-logo_one {
       padding: 0;
-      &>img{
+      img{
         width: 133px;
       }
     }
@@ -490,10 +491,16 @@ const handleMenu = (item:any,index:any) => {
           .pcChild{
             display: none;
           }
-          .mbChild{
-            display: flex;
-          }
+          // .mbChild{
+          //   display: flex;
+          // }
           &-child{
+            display: none;
+            &.act{
+              display: flex;
+              animation: childAnim .3s;
+              animation-fill-mode: forwards;
+            }
             &>div{
               width: 100%;
               justify-content: space-between;
@@ -514,8 +521,23 @@ const handleMenu = (item:any,index:any) => {
       margin: 30px 0 0;
       &-in {
         padding: 0 7px;
+        &:nth-of-type(2){
+          padding: 0 5px 0 0;
+        }
       }
     }
+  }
+}
+@keyframes childAnim {
+  0%{
+    opacity: 0;
+    transform: translateY(-50px);
+    // display: none;
+  }
+  100%{
+    opacity: 1;
+    // display: flex;
+    transform: translateY(0);
   }
 }
 </style>
