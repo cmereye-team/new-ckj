@@ -72,8 +72,8 @@ let newsLists = [
   },
   {
     title: '成功種牙或矯齒，免費贈送專業潔牙1次',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/08/dbd9e2a6a42f8c71.jpg',
-    mbUrl: 'https://static.cmereye.com/imgs/2023/08/5262c7cb44a593ef.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/08/4f549633dc58edc8.jpg',
+    mbUrl: 'https://static.cmereye.com/imgs/2023/08/04d2fda78d9af644.jpg',
     link: '/dental-service'
   }
 ]
