@@ -45,9 +45,13 @@ defineProps({
       <div class="introduce-in-reason">
         <div class="reason-l">
           <div class="reason-l-title">
-            {{$t(reasonData.title)}}
+            <serviceTitle :title="'關於植牙'" /> 
+            <!-- {{$t(reasonData.title)}} -->
           </div>
-          <div class="reason-l-text">{{$t(reasonData.text)}}</div>
+          <div class="reason-l-text">
+            <img src="https://static.cmereye.com/imgs/2023/08/0247872a5a18b171.png" alt="">
+            <span>{{$t(reasonData.text)}}</span>
+          </div>
           <div class="reason-l-context">
             <div v-for="(reason,reasonIndex) in reasonData.reasonLists" :key="reasonIndex">
               <div class="icon">
@@ -72,7 +76,6 @@ defineProps({
     .introduce{
       &-in{
         margin-top: 96px;
-        max-height: 628px;
         &-title{
           font-weight: 700;
           font-size: 32px;
@@ -104,14 +107,52 @@ defineProps({
         }
         &-reason{
           display: flex;
-          margin-top: 260px;
+          width: 100%;
+          max-width: 1036px;
+          margin:  260px auto 0;
           .reason-l{
             width: 40%;
+            &-text{
+              margin-top: 19px;
+              display: flex;
+              color: var(--topic-text-color);
+              font-size: 22px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 160%; /* 35.2px */
+              letter-spacing: 6.6px;
+              img{
+                margin-right: 14px;
+              }
+            }
+            &-context{
+              margin-top: 26px;
+              display: flex;
+              flex-direction: column;
+              &>div{
+                display: flex;
+                color: var(--topic-text-color);
+                .icon{
+                  width: 20px;
+                  min-width: 20px;
+                  font-size: 20px;
+                  margin-right: 5px;
+                  line-height: 1.8;
+                }
+                .context{
+                  flex: 1;
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 200%; /* 36.96px */
+                  letter-spacing: 4.8px;
+                }
+              }
+            }
           }
           .reason-r{
             flex: 1;
             img{
-              
+              width: 100%;
             }
           }
         }
@@ -120,19 +161,19 @@ defineProps({
     @media (min-width: 768px) and (max-width: 1452px) {
       .introduce{
         &-in{
-          margin-top: 3.5vw;
+          // margin-top: 3.5vw;
           &-l{
-            padding-bottom: 7vw;
+            // padding-bottom: 7vw;
             .title{
-              font-size: 2.2vw;
-              margin-top: 6vw;
+              // font-size: 2.2vw;
+              // margin-top: 6vw;
             }
             .content{
-              font-size: 1.7vw;
-              width: 33.85vw;
-              margin-top: 4vw;
+              // font-size: 1.7vw;
+              // width: 33.85vw;
+              // margin-top: 4vw;
               &.orthodontics{
-                width: 25vw;
+                // width: 25vw;
               }
             }
           }

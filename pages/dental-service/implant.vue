@@ -48,35 +48,35 @@ const featuresData = {
 const noteLists = [
   {
     name: 'pages.dental-service.implant.note.lists[0].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/786842c578839f96.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/7dabe6faacc48b04.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[1].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/375325d1f47a3eef.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/787663abc1c63cef.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[2].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/d2d6a05ff3b7bedc.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/a77e15eda9e64099.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[3].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/b9bffb9d0a93caf8.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/228db97180a69d96.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[4].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/e263a699e37bb71a.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/8c7772210c6ef1cf.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[5].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/e8d6a6c148d1a0ac.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/3ba1917956c5ce31.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[6].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/eeb2f6a620511833.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/263a527d0134bbeb.png'
   },
   {
     name: 'pages.dental-service.implant.note.lists[7].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/00405fd84dde1a1d.png'
+    img: 'https://static.cmereye.com/imgs/2023/08/754080dcc96893a6.png'
   }
 ]
 
@@ -84,34 +84,30 @@ const stepData = {
   title: '認識種植牙的六個步驟',
   remark: '種植牙於現在是較常見的牙科手術之一，病人最少需要 2 至 3 次的覆診來完成整個種牙程序，整個程序或需要 3 至 6 個月時間。',
   stepLists: [
-    [
-      {
-        title: 'Step 1',
-        text: '進行全面口腔檢查、X光或3D電腦掃描，確定植體的安裝位置，需確認患者的身體狀況及病歷'
-      },
-      {
-        title: 'Step 2',
-        text: '注射麻醉藥'
-      },
-      {
-        title: 'Step 3',
-        text: '翻開牙齦在適合安裝的位置鑽孔，植入植體，作為假牙的牙根，有需要時可以利用手術導航系統輔助植入理想位置，再縫合傷口'
-      }
-    ],
-    [
-      {
-        title: 'Step 4',
-        text: '等待2至3個月後，當牙骨與植體癒合，牙醫會安放癒合帽'
-      },
-      {
-        title: 'Step 5',
-        text: '牙齦癒合後，再進行下一階段的療程進行掃描式印模，再由牙科技師製作義齒'
-      },
-      {
-        title: 'Step 6',
-        text: '將義齒固定在植體上，補上缺去的牙齒'
-      }
-    ]
+    {
+      title: '1',
+      text: '進行全面口腔檢查、X光或3D電腦掃描，確定植體的安裝位置，需確認患者的身體狀況及病歷'
+    },
+    {
+      title: '2',
+      text: '注射麻醉藥'
+    },
+    {
+      title: '3',
+      text: '翻開牙齦在適合安裝的位置鑽孔，植入植體，作為假牙的牙根，有需要時可以利用手術導航系統輔助植入理想位置，再縫合傷口'
+    },
+    {
+      title: '4',
+      text: '等待2至3個月後，當牙骨與植體癒合，牙醫會安放癒合帽'
+    },
+    {
+      title: '5',
+      text: '牙齦癒合後，再進行下一階段的療程進行掃描式印模，再由牙科技師製作義齒'
+    },
+    {
+      title: '6',
+      text: '將義齒固定在植體上，補上缺去的牙齒'
+    }
   ]
 }
 
@@ -307,47 +303,50 @@ const getWindowWidth = () => {
     <div class="dentistryServices">
       <ServiceBanner />
       <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" />
-      <!-- <ServiceReason :reasonData="reasonData" /> -->
       <div class="features">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">{{$t(featuresData.title)}}</div>
-        </div>
-        <div class="features-in">
-          <div class="features-in-l">
-            <img src="https://static.cmereye.com/imgs/2023/05/b5a6fc53ad15b758.png" alt="">
-          </div>
-          <div class="features-in-r">
-            <div class="features-in-r-item" v-for="(featuresItem,index) in featuresData.featuresLists" :key="index">
-              <div class="w-20px">· </div>
-              <div>{{$t(featuresItem)}}</div>
+        <RippleLine :type="'2'" />
+        <div class="features-box">
+          <div class="features-in">
+            <div class="features-in-l">
+              <div class="l-in">
+                <img src="https://static.cmereye.com/imgs/2023/08/74a5cfd8e8f07994.png" alt="">
+              </div>
+            </div>
+            <div class="features-in-r">
+              <div class="features-in-r-title">
+                <serviceTitle :title="'種植牙的特點'" :yaBorder="'#FECB02'" :bgColor="'#fff'" :textColor="'#505050'" />
+                <!-- {{$t(featuresData.title)}} -->
+              </div>
+              <div class="features-in-r-item" v-for="(featuresItem,index) in featuresData.featuresLists" :key="index">
+                <div class="w-20px">· </div>
+                <div>{{$t(featuresItem)}}</div>
+              </div>
             </div>
           </div>
         </div>
+        <RippleLine :type="'2'" :isBottom="true" />
       </div>
       <div class="notice">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">{{$t(noticeData.title)}}</div>
+        <div class="notice-title">
+          <div class="notice-title-in">
+            <serviceTitle :title="'傳統植牙和微創植牙的區別？'" />
+            <!-- {{$t(noticeData.title)}} -->
+          </div>
         </div>
         <div class="notice-topText">
           <span v-for="(topTextItem,topTextIndex) in noticeData.topText" :key="topTextIndex">{{$t(topTextItem)}}</span>
         </div>
         <div class="notice-in">
-          <swiper :slidesPerView="windowWidth>768 ? '2': '1'" class="swiper-wrapper" @slideChange="onSlideChange">
-              <swiper-slide class="swiper-slide">
-                <div class="box box-left">
-                  <div class="box-in" v-for="(meritItem,meritIndex) in noticeData.meritLists" :key="meritIndex" >
-                    <div>{{$t(meritItem)}}</div>
-                  </div>
-                </div>
-              </swiper-slide>
-              <swiper-slide class="swiper-slide">
-                <div class="box box-right">
-                  <div class="box-in" v-for="(shortcomingItem,shortcomingIndex) in noticeData.shortcomingLists" :key="shortcomingIndex" >
-                    <div>{{$t(shortcomingItem)}}</div>
-                  </div>
-                </div>
-              </swiper-slide>
-          </swiper>
+          <div class="box box-left">
+            <div class="box-in" v-for="(meritItem,meritIndex) in noticeData.meritLists" :key="meritIndex" >
+              <div><span>{{$t(meritItem)}}</span></div>
+            </div>
+          </div>
+          <div class="box box-right">
+            <div class="box-in" v-for="(shortcomingItem,shortcomingIndex) in noticeData.shortcomingLists" :key="shortcomingIndex" >
+              <div><span>{{$t(shortcomingItem)}}</span></div>
+            </div>
+          </div>
         </div>
         <div class="notice-bottomText pcBox">
           <span v-for="(bottomTextItem,bottomTextIndex) in noticeData.bottomText" :key="bottomTextIndex">{{$t(bottomTextItem)}}</span>
@@ -358,8 +357,11 @@ const getWindowWidth = () => {
       </div>
       <ServiceStep :stepData="stepData" />
       <div class="note">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">{{$t('pages.dental-service.implant.note.title')}}</div>
+        <div class="note-title">
+          <div class="note-title-in">
+            <!-- {{$t('pages.dental-service.implant.note.title')}} -->
+            <serviceTitle :title="'種植牙後注意事項'" />
+          </div>
         </div>
         <div class="noteCard pageCon">
           <div class="noteCard-in" v-for="(note,noteIndex) in noteLists" :key="noteIndex">
@@ -371,8 +373,12 @@ const getWindowWidth = () => {
         </div>
       </div>
       <div class="detail">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">{{$t(detailData.title)}}</div>
+        <RippleLine :type="'4'" />
+        <div class="detail-title">
+          <div class="detail-title-in bb">
+            <!-- {{$t(detailData.title)}} -->
+            <serviceTitle :title="'項目收費詳情'" />
+          </div>
         </div>
         <div class="detail-table">
           <div class="detail-table-in">
@@ -404,6 +410,7 @@ const getWindowWidth = () => {
           </div>
         </div>
         <div class="detail-remark">{{$t(detailData.remark)}}</div>
+        <RippleLine :type="'4'" />
       </div>
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
@@ -417,27 +424,50 @@ const getWindowWidth = () => {
     background: #fff;
     padding: 0 0 143px;
     margin-top: -60px;
-    
     .features{
-      margin-top: 90px;
+      margin-top: 140px;
+      width: 100%;
+      &-box{
+        background: var(--yellow-color);
+      }
       &-in{
-        margin-top: 34px;
-        padding: 54px 0;
-        background: linear-gradient(135deg, rgba(255, 241, 240, 0.25) 0%, rgba(255, 221, 218, 0.25) 100%);
+        width: 100%;
+        height: auto;
+        max-width: 945px;
+        margin: 0 auto;
+        padding: 165px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         &-l{
-          margin-right: 10px;
+          margin-right: 7.93%;
+          width: 46.45%;
+          position: relative;
+          .l-in{
+            padding-bottom: 100%;
+            height: 0;
+            position: relative;
+            border: 5px solid #fff;
+            border-radius: 50%;
+          }
+          img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+          }
         }
         &-r{
+          &-title{
+            margin-bottom: 30px;
+          }
           &-item{
             display: flex;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 160%;
-            color: #666666;
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 181%; /* 28.96px */
+            letter-spacing: 4.8px;
             &>div:first-child{
               width: 20px;
             }
@@ -447,26 +477,31 @@ const getWindowWidth = () => {
     }
     .detail{
       margin-top: 98px;
+      &-title{
+        display: flex;
+        justify-content: center;
+        margin-top: 187px;
+      }
       &-table{
         width: 100%;
-        max-width: 1245px;
-        margin: 54px auto 0;
+        max-width: 1172px;
+        margin: 140px auto 0;
         overflow: hidden;
-        overflow-x: auto;
+        // overflow-x: auto;
         &-in{
           width: 100%;
-          min-width: 714px;
-          border-radius: 60px;
+          // min-width: 714px;
+          // border-radius: 60px;
           overflow: hidden;
           &-col{
             display: flex;
-            height: 69px;
+            height: 48px;
             &>div{
-              background: #FFA09E;
+              background: var(--topic-color);
               flex: 1;
               font-style: normal;
               font-weight: 700;
-              font-size: 28px;
+              font-size: 18px;
               line-height: 160%;
               display: flex;
               align-items: center;
@@ -479,25 +514,27 @@ const getWindowWidth = () => {
                 flex: 2;
               }
               &:not(:last-child){
-                margin-right: 3px;
+                // margin-right: 1px;
+                border-right: 1px solid #fff;
               }
             }
           }
           &-data{
             display: flex;
-            height: 172px;
+            height: 199px;
             &>div{
               flex: 1;
-              background: #FFF1F0;
+              // background: #FFF1F0;
               font-style: normal;
               font-weight: 600;
-              font-size: 20px;
+              font-size: 18px;
               line-height: 160%;
-              color: #666666;
+              color: var(--topic-text-color);
               display: flex;
               align-items: center;
               justify-content: center;
               flex-direction: column;
+              letter-spacing: 4.5px;
               span{
                 width: 100%;
                 max-width: 80%;
@@ -519,99 +556,124 @@ const getWindowWidth = () => {
               }
               &:nth-of-type(1){
                 flex: 1.5;
+                color: var(--topic-color);
               }
               &:nth-of-type(2){
                 flex: 2;
               }
-              &:nth-of-type(3),&:nth-of-type(4){
-                font-weight: 700;
-                font-size: 28px;
-              }
+              // &:nth-of-type(3),&:nth-of-type(4){
+              //   font-weight: 700;
+              //   font-size: 28px;
+              // }
               &:not(:last-child){
-                margin-right: 3px;
+                // margin-right: 3px;
+                border-right: 1px solid var(--topic-color);
               }
             }
-            &:not(:nth-of-type(2)){
-              margin-top: 8px;
-            }
+            // &:not(:nth-of-type(2)){
+            //   // margin-top: 8px;
+            //   border-bottom: 1px solid var(--topic-color);
+            // }
+            border-bottom: 1px solid var(--topic-color);
           }
         }
       }
       &-remark{
         width: 100%;
         max-width: 1245px;
-        margin: 20px auto 0;
-        font-size: 20px;
+        margin: 34px auto 0;
+        font-size: 16px;
         font-weight: 600;
+        color: var(--topic-text-color);
+        text-align: center;
+        margin-bottom: 177px;
       }
     }
     .notice{
       width: 100%;
       max-width: 1450px;
-      margin: 96px auto 0;
+      margin: 169px auto 0;
+      &-title{
+        display: flex;
+        justify-content: center;
+      }
       &-topText,&-bottomText{
         width: 100%;
         span{
           display: block;
           font-style: normal;
           font-weight: 600;
-          font-size: 20px;
-          line-height: 160%;
+          font-size: 16px;
+          line-height: 160%; /* 25.6px */
+          letter-spacing: 4.8px;
           text-align: center;
-          color: #666666;
+          color: var(--topic-text-color);
         }
       }
       &-topText{
-        margin: 35px auto 0;
+        margin: 69px auto 0;
       }
       &-bottomText{
-        margin: 60px auto 0;
+        margin: 116px auto 0;
       }
       &-in{
         width: 90%;
-        margin: 30px auto 0;
+        margin: 98px auto 0;
+        display: flex;
         .box{
           .box-in{
-            height: 207px;
             margin-top: 15px;
             display: flex;
-            background: #FFF1F0;
             font-style: normal;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 160%;
-            color: #666666;
+            color: var(--topic-text-color);
             padding: 0 80px;
             box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: center;
             &:first-child{
-              background: #FFA09E;
-              color: #fff;
+              color: var(--topic-text-color);
               margin-top: 0;
               height: 69px;
               font-weight: 700;
               font-size: 28px;
+              &>div{
+                position: relative;
+                span{
+                  position: relative;
+                  z-index: 2;
+                  background: #fff;
+                }
+                &::before{
+                  content: '';
+                  position: absolute;
+                  z-index: 1;
+                  background: url(https://static.cmereye.com/imgs/2023/08/4d2d77d10bec6851.png);
+                  background-size: 100% 100%;
+                  width: 43px;
+                  height: 48px;
+                  left: -25px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
             }
             &:nth-of-type(2){
-              margin-top: 0;
+              margin-top: 46px;
             }
           }
         }
         .box-left{
-          border-radius:  60px 0 0 60px;
+          // border-radius:  60px 0 0 60px;
           overflow: hidden;
         }
         .box-right{
-          margin-left: 3px;
-          border-radius:  0 60px 60px 0;
+          border-left: 1px solid #505050;
+          // border-radius:  0 60px 60px 0;
           overflow: hidden;
-          .box-in{
-            &:first-child{
-              background: #FFCECB;
-            }
-          }
         }
       }
       &-line{
@@ -620,11 +682,36 @@ const getWindowWidth = () => {
       }
     }
     .note{
-      margin-top: 96px;
+      margin-top: 178px;
+      &-title{
+        display: flex;
+        justify-content: center;
+        &-in{
+          position: relative;
+          &::before{
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -183px;
+            background: url(https://static.cmereye.com/imgs/2023/07/2142b5e26918c181.png) no-repeat;
+            width: 120px;
+            height: 120px;
+          }
+          &::after{
+            content: "";
+            background: url(https://static.cmereye.com/imgs/2023/07/e2ded86c01ed3723.png) no-repeat;
+            position: absolute;
+            right: -183px;
+            top: -40%;
+            width: 120px;
+            height: 120px;
+          }
+        }
+      }
       .noteCard{
         display: flex;
         flex-wrap: wrap;
-        margin: 46px auto 0;
+        margin: 159px auto 0;
         width: 100%;
         max-width: 1090px;
         &-in{
@@ -635,33 +722,32 @@ const getWindowWidth = () => {
           align-items: center;
           padding: 0 45px;
           box-sizing: border-box;
+          margin-bottom: 60px;
           &-image{
             width: 100%;
             height: 0;
             padding-top: 100%;
             position: relative;
-            background: #E6F4FF;
-            border-radius: 10px;
+            background: #F5F4F4;
+            border-radius: 50%;
             img{
               position: absolute;
               left: 50%;
               top: 50%;
               transform: translate(-50%,-50%);
-              max-width: 90%;
-              max-height: 90%;
+              max-width: 50%;
+              max-height: 50%;
             }
-          }
-          &:nth-of-type(1)>&-image,&:nth-of-type(3)>&-image,&:nth-of-type(6)>&-image,&:nth-of-type(8)>&-image{
-            background: #FFF1F0;
           }
           &-name{
             height: 64px;
             line-height: 64px;
             font-style: normal;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 18px;
             color: #666666;
             text-align: center;
+            white-space: nowrap;
           }
         }
       }
@@ -669,20 +755,20 @@ const getWindowWidth = () => {
   }
   @media (min-width: 768px) and (max-width: 1452px) {
     .dentistryServices{
-      padding: 0 0 110px;
-      margin-top: -60px;
+      // padding: 0 0 110px;
+      // margin-top: -60px;
       .note{
         .noteCard{
           &-in{
-            padding: 0 3vw;
+            // padding: 0 3vw;
              &-image{
               img{
-                max-width: 80%;
-                max-height: 80%;
+                // max-width: 80%;
+                // max-height: 80%;
               }
               &-name{
-                height: 60px;
-                line-height: 60px;
+                // height: 60px;
+                // line-height: 60px;
               }
             }
           }
@@ -696,7 +782,7 @@ const getWindowWidth = () => {
         &-in{
           &-ul{
             &-li{
-              margin-right: 3vw;
+              // margin-right: 3vw;
             }
           }
         }
@@ -739,23 +825,23 @@ const getWindowWidth = () => {
           padding-bottom: 30px;
           margin: 29px auto 0;
           position: relative;
-          &::-webkit-scrollbar {
-            background: none;
-            height: 3px;
-            width: 3px;
-            position: relative;
-          }
-          &::-webkit-scrollbar-thumb{
-            background: #FFA09E;
-            border: none;
-          }
-          &::-webkit-scrollbar-track{
-            background: #FFF1F0;
-          }
-          &::-webkit-scrollbar-button{
-            display: block;
-            opacity: 0;
-          }
+          // &::-webkit-scrollbar {
+          //   background: none;
+          //   height: 3px;
+          //   width: 3px;
+          //   position: relative;
+          // }
+          // &::-webkit-scrollbar-thumb{
+          //   background: #FFA09E;
+          //   border: none;
+          // }
+          // &::-webkit-scrollbar-track{
+          //   background: #FFF1F0;
+          // }
+          // &::-webkit-scrollbar-button{
+          //   display: block;
+          //   opacity: 0;
+          // }
           &-in{
             margin: 0 30px;
             &-col{

@@ -221,7 +221,7 @@ onMounted(()=>{
   // getNewsLists()
   getWindowWidth()
   window.addEventListener('resize',getWindowWidth)
-  getScrollTop
+  getScrollTop()
   window.addEventListener('scroll',getScrollTop)
 })
 
