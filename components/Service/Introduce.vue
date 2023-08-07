@@ -48,6 +48,9 @@ defineProps({
             <serviceTitle :title="'關於植牙'" /> 
             <!-- {{$t(reasonData.title)}} -->
           </div>
+          <div class="reason-l-img">
+            <img :src="reasonData.imgUrl" alt="">
+          </div>
           <div class="reason-l-text">
             <img src="https://static.cmereye.com/imgs/2023/08/0247872a5a18b171.png" alt="">
             <span>{{$t(reasonData.text)}}</span>
@@ -112,6 +115,9 @@ defineProps({
           margin:  260px auto 0;
           .reason-l{
             width: 40%;
+            &-img{
+              display: none;
+            }
             &-text{
               margin-top: 19px;
               display: flex;
@@ -187,47 +193,107 @@ defineProps({
     @media screen and (max-width: 768px) {
       .introduce{
         &-in{
-          height: auto;
-          max-height: 300%;
-          background: none !important;
-          margin-top: 0;
-          &.noTitle{
-            margin-top: 0;
+          margin-top: 60px;
+          &-title{
+            font-size: 20px;
+            &::after{
+              height: 3px;
+              border-radius: 2px;
+            }
           }
-          &-t{
-            width: 100%;
-            img{
+          &-content{
+            padding: 0 52px;
+            margin: 37px auto 0;
+            font-size: 15px;
+            text-align: left;
+            letter-spacing: 4.5px;
+          }
+          &-reason{
+            flex-direction: column;
+            margin:  81px auto 0;
+            padding: 0 40px;
+            .reason-l{
               width: 100%;
-            }
-          }
-          &-l{
-            padding-bottom: 0;
-            .title{
-              padding: 0 30px;
-              font-weight: 700;
-              font-size: 26px;
-              margin-top: 0;
-              &.teeth-whitening{
-                margin-top: 0;
+              &-title{
+                display: flex;
+                justify-content: center;
+              }
+              &-img{
+                display: block;
+                margin-top: 50px;
+                margin-bottom: 30px;
+              }
+              &-text{
+                font-size: 16px;
+                letter-spacing: 4.8px;
+                img{
+                  margin-right: 5.7px;
+                  transform: rotateY(180deg);
+                  margin-top: -5px;
+                }
+              }
+              &-context{
+                margin-top: 14px;
+                &>div{
+                  .icon{
+                    width: 15px;
+                    min-width: 15px;
+                    font-size: 18px;
+                  }
+                  .context{
+                    font-size: 15px;
+                    line-height: 180%;
+                    letter-spacing: 4.5px;
+                  }
+                }
               }
             }
-            .content{
-              font-size: 1rem;
-              width: 95%;
-              padding: 0 30px;
-              margin-top: 30px;
-              &.orthodontics{
-                width: 95%;
-              }
+            .reason-r{
+              width: 100%;
+              display: none;
             }
           }
+        //   height: auto;
+        //   max-height: 300%;
+        //   background: none !important;
+        //   margin-top: 72px;
+        //   &.noTitle{
+        //     margin-top: 0;
+        //   }
+        //   &-t{
+        //     width: 100%;
+        //     img{
+        //       width: 100%;
+        //     }
+        //   }
+        //   &-l{
+        //     padding-bottom: 0;
+        //     .title{
+        //       padding: 0 30px;
+        //       font-weight: 700;
+        //       font-size: 26px;
+        //       margin-top: 0;
+        //       &.teeth-whitening{
+        //         margin-top: 0;
+        //       }
+        //     }
+        //     .content{
+        //       font-size: 1rem;
+        //       width: 95%;
+        //       padding: 0 30px;
+        //       margin-top: 30px;
+        //       &.orthodontics{
+        //         width: 95%;
+        //       }
+        //     }
+        //   }
         }
       }
-      .tabNav{
-        padding: 30px;
-        font-size: 1rem;
-        margin-top: 20px;
-      }
+      // .tabNav{
+      //   padding: 30px;
+      //   font-size: 1rem;
+      //   margin-top: 20px;
+      // }
     }
 </style>
 

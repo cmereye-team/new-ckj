@@ -317,6 +317,9 @@ const getWindowWidth = () => {
                 <serviceTitle :title="'種植牙的特點'" :yaBorder="'#FECB02'" :bgColor="'#fff'" :textColor="'#505050'" />
                 <!-- {{$t(featuresData.title)}} -->
               </div>
+              <div class="features-in-r-img">
+                <img src="https://static.cmereye.com/imgs/2023/08/74a5cfd8e8f07994.png" alt="">
+              </div>
               <div class="features-in-r-item" v-for="(featuresItem,index) in featuresData.featuresLists" :key="index">
                 <div class="w-20px">· </div>
                 <div>{{$t(featuresItem)}}</div>
@@ -348,11 +351,8 @@ const getWindowWidth = () => {
             </div>
           </div>
         </div>
-        <div class="notice-bottomText pcBox">
+        <div class="notice-bottomText">
           <span v-for="(bottomTextItem,bottomTextIndex) in noticeData.bottomText" :key="bottomTextIndex">{{$t(bottomTextItem)}}</span>
-        </div>
-        <div class="notice-line mbBox">
-          <PageSwiperPointLine :latestNewsNum="2" :latestNewsCurrent="noticeCurrent"></PageSwiperPointLine>
         </div>
       </div>
       <ServiceStep :stepData="stepData" />
@@ -424,6 +424,7 @@ const getWindowWidth = () => {
     background: #fff;
     padding: 0 0 143px;
     margin-top: -60px;
+    overflow: hidden;
     .features{
       margin-top: 140px;
       width: 100%;
@@ -461,6 +462,9 @@ const getWindowWidth = () => {
           &-title{
             margin-bottom: 30px;
           }
+          &-img{
+            display: none;
+          }
           &-item{
             display: flex;
             color: #FFF;
@@ -487,11 +491,8 @@ const getWindowWidth = () => {
         max-width: 1172px;
         margin: 140px auto 0;
         overflow: hidden;
-        // overflow-x: auto;
         &-in{
           width: 100%;
-          // min-width: 714px;
-          // border-radius: 60px;
           overflow: hidden;
           &-col{
             display: flex;
@@ -514,7 +515,6 @@ const getWindowWidth = () => {
                 flex: 2;
               }
               &:not(:last-child){
-                // margin-right: 1px;
                 border-right: 1px solid #fff;
               }
             }
@@ -524,7 +524,6 @@ const getWindowWidth = () => {
             height: 199px;
             &>div{
               flex: 1;
-              // background: #FFF1F0;
               font-style: normal;
               font-weight: 600;
               font-size: 18px;
@@ -561,19 +560,10 @@ const getWindowWidth = () => {
               &:nth-of-type(2){
                 flex: 2;
               }
-              // &:nth-of-type(3),&:nth-of-type(4){
-              //   font-weight: 700;
-              //   font-size: 28px;
-              // }
               &:not(:last-child){
-                // margin-right: 3px;
                 border-right: 1px solid var(--topic-color);
               }
             }
-            // &:not(:nth-of-type(2)){
-            //   // margin-top: 8px;
-            //   border-bottom: 1px solid var(--topic-color);
-            // }
             border-bottom: 1px solid var(--topic-color);
           }
         }
@@ -791,31 +781,41 @@ const getWindowWidth = () => {
   }
   @media screen and (max-width: 768px) {
     .dentistryServices{
-      padding: 90px 0;
+      padding: 50px 0;
       .note{
+        &-title{
+          &-in{
+            &::before{
+
+            }
+            &::after{
+              right: 0;
+            }
+          }
+        }
         .noteCard{
-          padding: 0 21.5px;
-          box-sizing: border-box;
+          // padding: 0 21.5px;
+          // box-sizing: border-box;
           &-in{
             width: 50%;
-            padding: 0 8.5px;
-            &-image{
-              img{
-                max-width: 70%;
-                max-height: 70%;
-              }
-            }
-            &:nth-of-type(1)>&-image,&:nth-of-type(4)>&-image,&:nth-of-type(5)>&-image,&:nth-of-type(8)>&-image{
-              background: #FFF1F0;
-            }
-            &:nth-of-type(3)>&-image,&:nth-of-type(6)>&-image{
-              background: #E6F4FF;
-            }
-            &-name{
-              height: 56px;
-              line-height: 56px;
-              font-size: 15px;
-            }
+          //   padding: 0 8.5px;
+          //   &-image{
+          //     img{
+          //       max-width: 70%;
+          //       max-height: 70%;
+          //     }
+          //   }
+          //   &:nth-of-type(1)>&-image,&:nth-of-type(4)>&-image,&:nth-of-type(5)>&-image,&:nth-of-type(8)>&-image{
+          //     background: #FFF1F0;
+          //   }
+          //   &:nth-of-type(3)>&-image,&:nth-of-type(6)>&-image{
+          //     background: #E6F4FF;
+          //   }
+          //   &-name{
+          //     height: 56px;
+          //     line-height: 56px;
+          //     font-size: 15px;
+          //   }
           }
         }
       }
@@ -885,49 +885,107 @@ const getWindowWidth = () => {
         }
       }
       .notice{
+        margin: 78px auto 0;
         &-topText,&-bottomText{
-          padding: 0 30px;
+          // padding: 0 30px;
           span{
             display: inline;
+            font-size: 15px;
+            letter-spacing: 2.85px;
           }
         }
         &-topText{
-          margin: 28px auto 0;
+          margin: 60px auto 0;
           text-align: center;
+          span{
+            display: block;
+          }
+        }
+        &-bottomText{
+          // font-size: 12px;
+          // font-weight: 400;
+          // letter-spacing: 3.6px;
+          margin: 57px auto 0;
+          padding: 0 44px;
+          span{
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 3.6px;
+            line-height: 1.6;
+            display: inline;
+          }
         }
         &-in{
           width: 100%;
-          margin: 34px 0 0;
+          margin: 74px 0 0;
           .box{
             margin-left: 30px;
             .box-in{
               font-weight: 500;
               font-size: 15px;
-              height: 168px;
+              // height: 168px;
               margin-top: 9px;
-              padding: 0 46px;
+              padding: 0;
+              letter-spacing: 4.5px;
               &:first-child{
                 height: 40px;
                 font-weight: 600;
-                font-size: 20px;
+                font-size: 15px;
+                &>div{
+                  &::before{
+                    width: 27px;
+                    height: 30px;
+                    left: -17px;
+                  }
+                }
+              }
+              &:nth-of-type(2){
+                margin-top: 28px;
               }
             }
           }
+          .box-left{
+            padding-right: 25px;
+          }
           .box-right{
+            padding-left: 30px;
             margin-right: 30px;
             margin-left: 0;
           }
         }
       }
       .features{
+        margin-top: 67px;
         &-in{
-          padding: 24px 30px;
+          padding: 30px 40px 40px;
           box-sizing: border-box;
           flex-direction: column;
+          &-l{
+            display: none;
+          }
           &-r{
+            &-title{
+              display: flex;
+              justify-content: center;
+            }
+            &-img{
+              display: block;
+              width: 144px;
+              height: 144px;
+              border: 3px solid #fff;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 30px auto 30px;
+              img{
+                width: 60%;
+              }
+            }
             &-item{
               font-weight: 500;
-              font-size: 16px;
+              font-size: 15px;
+              letter-spacing: 4.5px;
             }
           }
         }

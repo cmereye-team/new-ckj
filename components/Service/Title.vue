@@ -27,7 +27,7 @@ defineProps({
       </div>
       <div class="serviceTitle-in" :style="{color: textColor,background: bgColor}">
         {{title}}
-        <div class="serviceTitle-in-right" :style="{'border-right': `15px solid ${yaBorder}`}"></div>
+        <div class="serviceTitle-in-right" :style="{'border-right-color': `${yaBorder}`}"></div>
       </div>
     </div>
 </template>
@@ -61,6 +61,8 @@ defineProps({
       position: absolute;
       top: 0;
       right: 0;
+      border-right-width: 15px;
+      border-right-style: solid;
       border-top: 19px solid transparent;
       border-left: 15px solid transparent;
       border-bottom: 19px solid transparent;
@@ -68,5 +70,27 @@ defineProps({
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {}
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .serviceTitle{
+    &-svg{
+      transform: scale(.8);
+    }
+    &-in{
+      height: 30px;
+      line-height: 30px;
+      font-size: 18px;
+      letter-spacing: 4px;
+      padding: 0 30px;
+      &-right{
+        width: 24px;
+        height: 30px;
+        border-right-width: 12px;
+        border-right-style: solid;
+        border-top: 15px solid transparent;
+        border-left: 12px solid transparent;
+        border-bottom: 15px solid transparent;
+      }
+    }
+  }
+}
 </style>

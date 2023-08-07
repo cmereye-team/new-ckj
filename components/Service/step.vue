@@ -189,6 +189,44 @@ onMounted(()=>{
   // }
 }
 @media screen and (max-width: 768px) {
+  .step{
+    margin-top: 78px;
+    &-bg{
+      padding: 20px 0 0;
+    }
+    &-remark{
+      display: none;
+    }
+    &-in{
+      flex-direction: column;
+      padding: 0 40px;
+      margin: 46px auto 0;
+      &-box{
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 37px;
+        .title{
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+          font-size: 22px;
+        }
+        .text{
+          padding: 0 0 40px 19px;
+          letter-spacing: 4.5px;
+          font-size: 15px;
+        }
+        &:not(:last-child){
+          &::after{
+            left: 50%;
+            top: auto;
+            bottom: 0;
+            transform: translateX(-50%) rotate(90deg) scale(.6);
+          }
+        }
+      }
+    }
+  }
   // .step{
   //       background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.7) 12.5%, rgba(255, 241, 240, 0.7) 81.99%, rgba(255, 241, 240, 0) 100%);
   //       padding: 0 30px;

@@ -6,6 +6,7 @@ defineProps({
     default(){
         return {
             img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+            mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
             gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
             text1: '#享受失而復得的喜悅',
             text2: '重拾完整人生之旅',
@@ -18,7 +19,7 @@ defineProps({
 
 <template>
     <div class="banner">
-        <img class="banner-bg" :src="bannerData.img" alt="">
+        <img class="banner-bg" :data-cfsrc="bannerData.img" :srcset="`${bannerData.mbImg} 768w, ${bannerData.img}`" :src="bannerData.img" alt="">
         <div class="banner-in">
           <div class="bannerText-1">
             <span>{{bannerData.text1}}</span>
@@ -121,25 +122,71 @@ defineProps({
         margin: -85px auto 0;
       }
       &-tabNav{
-            font-weight: 400;
-            font-size: 1.25rem;
-            line-height: 160%;
-            color: #6B6B6B;
-            margin-top: -40px;
-            a{
-                text-decoration: underline;
-            }
-            &>span{
-              cursor: pointer;
-              color: var(--topic-color)
-            }
-            &>svg{
-                display: inline-block;
-                margin: -3px 10px 0;
-                vertical-align: middle;
-            }
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 160%;
+        color: #6B6B6B;
+        margin-top: -40px;
+        a{
+            text-decoration: underline;
         }
+        &>span{
+          cursor: pointer;
+          color: var(--topic-color)
+        }
+        &>svg{
+            display: inline-block;
+            margin: -3px 10px 0;
+            vertical-align: middle;
+        }
+      }
     }
 @media (min-width: 768px) and (max-width: 1452px) {}
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .banner{
+    &-in{
+      left: 5%;
+      bottom: 18%;
+      .bannerText-1{
+        span{
+          padding: 5px 10px;
+          font-size: 15px;
+          min-width: auto;
+          // height: 40px;
+          // line-height: 40px;
+          border: 1px solid var(--topic-text-color);
+          &:first-child{
+            &::after{
+              
+              width: calc(100% - 50px);
+            }
+          }
+          &:last-child{
+            margin-left: 50px;
+            margin-top: -4px;
+          }
+        }
+      }
+      .bannerText-2{
+        margin-top: 10px;
+        span{
+          font-size: 12px;
+          letter-spacing: 2.65px;
+        }
+      }
+    }
+    &-gif{
+      width: 45px;
+      margin: -20px auto 0;
+    }
+    &-tabNav{
+      margin-top: 0px;
+      margin-left: 26px;
+      font-size: 12px;
+      &>svg{
+        transform: scale(.8);
+      }
+    }
+  }
+}
 </style>
