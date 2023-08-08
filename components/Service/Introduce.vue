@@ -45,7 +45,7 @@ defineProps({
       <div class="introduce-in-reason">
         <div class="reason-l">
           <div class="reason-l-title">
-            <serviceTitle :title="'關於植牙'" /> 
+            <serviceTitle :title="reasonData.title" /> 
             <!-- {{$t(reasonData.title)}} -->
           </div>
           <div class="reason-l-img">
@@ -115,6 +115,7 @@ defineProps({
           margin:  260px auto 0;
           .reason-l{
             width: 40%;
+            padding-right: 5%;
             &-img{
               display: none;
             }
@@ -214,6 +215,7 @@ defineProps({
             padding: 0 40px;
             .reason-l{
               width: 100%;
+              padding-right: 0;
               &-title{
                 display: flex;
                 justify-content: center;

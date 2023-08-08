@@ -10,5 +10,9 @@ export default [
     {
         path: '/devMassage',
         name: 'devMassage'
+    },
+    {
+        path: '/dental-service/orthodontics',
+        name: 'dental-service-orthodontics'
     }
 ]

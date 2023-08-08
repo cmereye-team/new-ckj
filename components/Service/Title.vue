@@ -26,7 +26,7 @@ defineProps({
         <SvgYa :yaBorder="yaBorder" :color="bgColor" />
       </div>
       <div class="serviceTitle-in" :style="{color: textColor,background: bgColor}">
-        {{title}}
+        {{$t(title)}}
         <div class="serviceTitle-in-right" :style="{'border-right-color': `${yaBorder}`}"></div>
       </div>
     </div>

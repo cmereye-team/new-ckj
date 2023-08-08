@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#享受失而復得的喜悅',
+  text2: '重拾完整人生之旅',
+  tabNavName: 'pages.dental-service.implant.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/baaf111867247a7f.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/2c162ddf8e5bfcd7.jpg',
@@ -423,7 +432,7 @@ const getWindowWidth = () => {
   .dentistryServices{
     background: #fff;
     padding: 0 0 143px;
-    margin-top: -60px;
+    margin-top: -20px;
     overflow: hidden;
     .features{
       margin-top: 140px;

@@ -664,6 +664,9 @@ const handleMenu = (_data:any) => {
                     padding-top: 0;
                     &-border{
                       border: none;
+                      &::after{
+                        display: none;
+                      }
                     }
                   }
                 }

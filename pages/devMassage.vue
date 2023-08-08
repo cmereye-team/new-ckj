@@ -7,10 +7,10 @@ let btnDisable = ref(false)
 let errMessage = ref('')
 let btnLoading = ref(false)
 const sumj = () =>{
-    ElMessage.warning('功能暂未开放...')
+    // ElMessage.warning('功能暂未开放...')
     errMessage.value = ''
     btnLoading.value = true
-    return
+    // return
     setTimeout(()=>{
         if(inputText.value === 'newckj'){
             errMessage.value = '密碼驗證成功！'

@@ -44,45 +44,23 @@ onMounted(()=>{
     <div class="step-bg">
     <div class="step-title">
       <div class="step-title-in">
-        <!-- {{stepData.title}} -->
-        <serviceTitle :title="'認識種植牙的六個步驟'" :yaBorder="'#089CFE'" :bgColor="'#fff'" :textColor="'#089CFE'" />
+        <serviceTitle :title="stepData.title" :yaBorder="'#089CFE'" :bgColor="'#fff'" :textColor="'#089CFE'" />
       </div>
     </div>
     <div :class="['step-remark']" v-if="stepData.remark">
       {{stepData.remark}}
     </div>
-    <!-- <div :class="`${stepData.pageName}Bg`">
-      <div :class="['step-in','pageCon',stepData.pageName]">
-        <div :class="['step-in-box',stepData.stepLists.length === 1 ? 'oneBox' : '']"
-          v-for="(step,stepIndex) in stepData.stepLists" :key="stepIndex">
-          <div class="step-itemLists">
-            <div :class="['step-itemLists-in',{'oneBoxListItem':stepData.stepLists.length === 1 ,'listInOneTiem': step.length === 1}]" v-for="(stepChild,stepChildIndex) in step" :key="stepChildIndex">
-              <div :class="['line',{ 'lineNone' : step.length === 1 }]"></div>
-              <span class="round"></span>
-              <span class="title">{{stepChild.title}}</span>
-              <span class="text">
-                <div class="text-th" v-if="stepChild.textTh">{{stepChild.textTh}}</div>
-                <div>{{stepChild.text}}</div>
-              </span>
-            </div>
-          </div>
-          <div class="step-bottom" v-if="stepIndex===1 && stepData.isShowBottom">
-            {{stepData.bottomText}}
-          </div>
+      <div class="step-in">
+        <div :class="['step-in-box',{tepAnim:showStepAnim}]" :style="{'animation-delay': `${stepIndex/5}s`}" v-for="(step,stepIndex) in stepData.stepLists" :key="stepIndex">
+            <span class="title">{{step.title}}</span>
+            <span class="text">
+              <div>{{step.text}}</div>
+            </span>
         </div>
       </div>
-    </div> -->
-    <div class="step-in">
-      <div :class="['step-in-box',{tepAnim:showStepAnim}]" :style="{'animation-delay': `${stepIndex/5}s`}" v-for="(step,stepIndex) in stepData.stepLists" :key="stepIndex">
-          <!-- <div :class="['line',{ 'lineNone' : step.length === 1 }]"></div> -->
-          <!-- <span class="round"></span> -->
-          <span class="title">{{step.title}}</span>
-          <span class="text">
-            <!-- <div class="text-th" v-if="step.textTh">{{step.textTh}}</div> -->
-            <div>{{step.text}}</div>
-          </span>
+      <div class="step-bottom" v-if="stepData.bottomText">
+        {{stepData.bottomText}}
       </div>
-    </div>
     </div>
     <RippleLine :type="'3'" :isBottom="true" />
   </div>
@@ -168,6 +146,17 @@ onMounted(()=>{
         animation-fill-mode: forwards;
       }
     }
+  }
+  &-bottom{
+    margin-top: 100px;
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+    letter-spacing: 4.8px;
   }
 }
 @keyframes stepBoxAnim {

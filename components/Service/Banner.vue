@@ -10,7 +10,7 @@ defineProps({
             gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
             text1: '#享受失而復得的喜悅',
             text2: '重拾完整人生之旅',
-            tabNavName: '种植牙'
+            tabNavName: 'pages.dental-service.implant.introduce.tabNavName'
         }
     }
   }
@@ -70,7 +70,7 @@ defineProps({
             font-size: 35px;
             font-style: normal;
             font-weight: 600;
-            line-height: normal;
+            // line-height: normal;
             letter-spacing: 4.751px;
             background: #fff;
             padding: 5px 20px;
@@ -84,9 +84,9 @@ defineProps({
               &::after{
                 content: '';
                 position: absolute;
-                bottom: -3px;
+                bottom: -5px;
                 right: 0;
-                height: 6px;
+                height: 8px;
                 width: calc(100% - 60px);
                 background: #fff;
               }

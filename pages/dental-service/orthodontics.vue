@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#追求美學極致 展現最燦爛笑容',
+  text2: '愛康健為愛美的您打造完美面部輪廓',
+  tabNavName: 'pages.dental-service.orthodontics.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/853005c3e17e4c2a.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/6d1016f37061df54.png',
@@ -27,7 +36,7 @@ const headerConfig = {
   mbText: ['追求美學極致','展現最燦爛笑容']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.orthodontics.introduce.title',
   content: 'pages.dental-service.orthodontics.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/04/78f038c56a4dc38b.jpg',
@@ -39,7 +48,7 @@ const orthodonticsIntroduceData = {
 const reasonData = {
   title: 'pages.dental-service.orthodontics.reason.title',
   text: 'pages.dental-service.orthodontics.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/39b4d45b6b7bc2ab.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.orthodontics.reason.lists[0].context',
@@ -56,33 +65,29 @@ const reasonData = {
 const stepData = {
   title: '矯齒(箍牙)過程',
   stepLists: [
-    [
-      {
-        title: 'Step 1',
-        text: '醫生會先進行檢查及評估，確認矯齒的需要'
-      },
-      {
-        title: 'Step 2',
-        text: '拍攝牙齒外觀照片，包括全口腔及側面X光照片，以印製牙模'
-      },
-      {
-        title: 'Step 3',
-        text: '醫生講解情況及治療方案'
-      }, 
-    ],
-    [
-      {
-        title: 'Step 4',
-        text: '配戴牙箍及定期覆診'
-      },
-      {
-        title: 'Step 5',
-        text: '矯齒完成後，需定期覆診，晚上佩戴固定器，防止牙齒移位'
-      }
-    ]
+    {
+      title: '1',
+      text: '醫生會先進行檢查及評估，確認矯齒的需要'
+    },
+    {
+      title: '2',
+      text: '拍攝牙齒外觀照片，包括全口腔及側面X光照片，以印製牙模'
+    },
+    {
+      title: '3',
+      text: '醫生講解情況及治療方案'
+    }, 
+    {
+      title: '4',
+      text: '配戴牙箍及定期覆診'
+    },
+    {
+      title: '5',
+      text: '矯齒完成後，需定期覆診，晚上佩戴固定器，防止牙齒移位'
+    }
   ],
   isShowBottom: true,
-  bottomText: '*不建議牙齒還沒完成發育、智慧齒還沒長出的人士接受牙齒矯正治療'
+  bottomText: '※不建議牙齒還沒完成發育、智慧齒還沒長出的人士接受牙齒矯正治療'
 }
 
 const differData = {
@@ -178,31 +183,31 @@ const bpData ={
   lists: [
     {
       title: '咬合過深',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/9e889b19a082e947.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/659c1202bbd4ed07.jpg'
     },
     {
       title: '倒 及',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/048d9aa589afe550.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/de45cb52280d47a4.jpg'
     },
     {
       title: '錯咬/反咬合',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/b00ece7e972d0c6a.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/20201ad8730fc23c.jpg'
     },
     {
       title: '牙縫過大',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/03d8d7e690946901.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/432308f39180a542.jpg'
     },
     {
       title: '開 咬',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/a47574b0e83d0c42.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/293c6ce8f1b96bb2.jpg'
     },
     {
       title: '齒列擠擁',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/65c91ee1b7b46f5d.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/bfe587b6509e755b.jpg'
     },
     {
       title: '前排齒列擠擁',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/e53653134a5709f1.jpg'
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/90f078714af32ed9.jpg'
     }
   ]
 }
@@ -222,22 +227,22 @@ const aestheticsData = {
   title: '美學牙齒矯正',
   lists: [
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/056cf3b645f697c6.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
       title: '隱形牙箍矯正',
       text: '全透明全隱形，不影響美觀，並在矯正牙齒的同時矯正頜面形態，矯治過程自然舒適，收獲自信笑容！'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/eb84d445e77694da.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
       title: '陶瓷半隱形矯正',
       text: '使用陶瓷透明托槽和鋼絲，顏色與牙齒相似，美觀度高，不易發現。'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/1fc83a75a1e52762.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
       title: '金屬托槽矯正',
       text: '是矯正牙齒中價格最實惠的一種，適用性廣泛，適合各種牙齒矯正情況，是一種經濟實惠且有效的矯正方法。'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/bef07fba3d050f64.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
       title: '舌側隱形矯正',
       text: '在於不影響外觀，且能夠有效地矯正各種牙齒問題，包括咬合問題和牙齒排列不整齊等。'
     }
@@ -260,21 +265,23 @@ const getWindowWidth = () => {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" /> 
   <div class="orthodonticsPage">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-    <ServiceReason :reasonData="reasonData" />
+    <ServiceBanner :bannerData="bannerData" />
+    <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" />
+    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+    <!-- <ServiceIntroduce :introduceData="orthodonticsIntroduceData" /> -->
+    <!-- <ServiceReason :reasonData="reasonData" /> -->
     <div class="bp">
-      <div class="dentistryServices-title">
-        <div class="dentistryServices-title-in bb">
-          <span>{{bpData.title}}</span>
+      <RippleLine :type="'4'" />
+      <div class="bp-title">
+        <div class="bp-title-in">
+          <serviceTitle :title="'您是否有牙齒不齊問題困擾？'" />
         </div>
       </div>
       <div class="bp-text">
         {{bpData.text}}
       </div>
-      <div class="bp-swiper mbBox">
+      <!-- <div class="bp-swiper mbBox">
         <swiper
           :slidesPerView="1"
           class="swiper-wrapper"
@@ -282,19 +289,23 @@ const getWindowWidth = () => {
         >
           <swiper-slide class="swiper-slide" v-for="slideItem in 4" :key="slideItem">
             <div class="swiper-slide-in" v-for="(bpItem,bpIndex) in bpData.lists.slice(2*(slideItem-1),2*slideItem)" :key="bpIndex">
-              <div class="swiper-slide-in-title">{{bpItem.title}}</div>
+              
               <img :src="bpItem.imgUrl" alt="" />
+              <div class="swiper-slide-in-title">{{bpItem.title}}</div>
             </div>
           </swiper-slide>
         </swiper>
         <div class="bp-swiper-line mbBox">
           <PageSwiperPointLine :latestNewsNum="4" :latestNewsCurrent="bpCurrent"></PageSwiperPointLine>
         </div>
-      </div>
+      </div> -->
       <div class="bp-lists">
         <div class="bp-lists-in" v-for="(bpItem,bpIndex) in bpData.lists" :key="bpIndex">
-          <div class="bp-lists-in-title">{{bpItem.title}}</div>
           <img :src="bpItem.imgUrl" alt="" />
+          <div class="bp-lists-in-title">{{bpItem.title}}</div>
+        </div>
+        <div class="bp-lists-in">
+          <img class="mascot" src="https://static.cmereye.com/imgs/2023/07/f0cf6f4a2ed12566.png" alt="">
         </div>
       </div>
     </div>
@@ -329,8 +340,6 @@ const getWindowWidth = () => {
     <serviceCard />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
 </div>
 </template>
 
@@ -339,10 +348,16 @@ const getWindowWidth = () => {
 <style lang="scss" scoped>
 .orthodonticsPage{
   background: #fff;
-  padding: 140px 0;
+  padding: 0 0 140px;
+  margin-top: -20px;
 }
 .bp{
-  margin-top: 176px;
+  margin-top: 119px;
+  &-title{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
   &-swiper{
     margin-top: 42px;
     .swiper-slide-in{
@@ -405,69 +420,82 @@ const getWindowWidth = () => {
   }
   &-text{
     font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 16px;
     line-height: 160%;
     color: #666666;
     width: 100%;
-    max-width: 1042px;
+    max-width: 889px;
+    letter-spacing: 4.8px;
     text-align: center;
-    margin: 36px auto 0;
+    margin: 40px auto 0;
   }
   &-lists{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 136px auto;
     &-in{
       min-width: 33.33%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       padding: 0 39.5px 95.69px;
       box-sizing: border-box;
       align-items: center;
       &-title{
-        min-width: 165px;
-        height: 40px;
-        line-height: 40px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
+        margin-top: 39px;
+        color: var(--topic-text-color);
         text-align: center;
-        color: #FFFFFF;
-        background: #FFA09E;
-        position: relative;
-        &::after{
-          content: '';
-          position: absolute;
-          bottom: -40px;
-          left: 50%;
-          transform: translateX(-50%);
-          border-top: 20px solid;
-          border-left: 8px solid;
-          border-right: 8px solid;
-          border-bottom: 20px solid;
-          border-color: #FFA09E transparent transparent transparent;
-        }
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 28.8px */
+        letter-spacing: 4.5px;
+        // min-width: 165px;
+        // height: 40px;
+        // line-height: 40px;
+        // font-style: normal;
+        // font-weight: 500;
+        // font-size: 20px;
+        // text-align: center;
+        // color: #FFFFFF;
+        // background: #FFA09E;
+        // position: relative;
+        // &::after{
+        //   content: '';
+        //   position: absolute;
+        //   bottom: -40px;
+        //   left: 50%;
+        //   transform: translateX(-50%);
+        //   border-top: 20px solid;
+        //   border-left: 8px solid;
+        //   border-right: 8px solid;
+        //   border-bottom: 20px solid;
+        //   border-color: #FFA09E transparent transparent transparent;
+        // }
       }
       img{
         margin-top: 30px;
         width: 100%;
       }
-      &:last-child{
-        padding: 0 39.5px;
+      .mascot{
+        width: 60%;
+        padding: 0;
       }
+      // &:last-child{
+      //   padding: 0 39.5px;
+      // }
     }
   }
 }
 .aesthetics{
-  margin-top: 108px;
+  margin-top: 136px;
   &-in{
     margin-top: 40px;
     padding: 88px 0;
-    background: linear-gradient(180deg, #FFF1F0 0%, rgba(255, 241, 240, 0) 100%);
+    // background: linear-gradient(180deg, #FFF1F0 0%, rgba(255, 241, 240, 0) 100%);
   }
   &-swiper{
     padding-bottom: 10px;
