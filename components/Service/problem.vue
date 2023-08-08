@@ -14,20 +14,28 @@ let props = defineProps({
   }
 })
 // const activeNames = ref(0)
-const activeNames = ref([0,1])
+const activeNames = ref([0])
+let windowWidth = ref(1920)
+const getWindowWidth = () => {
+  windowWidth.value = window.innerWidth
+}
 onMounted(()=>{
-  let a = props.problemData.lists.length
-  // console.log(a)
-  var i = ref(0)
-  while(i.value < a){
-    activeNames.value.push(i.value)
-    i.value++
+  getWindowWidth()
+  window.addEventListener('resize',getWindowWidth)
+  if(windowWidth.value > 768){
+    let a = props.problemData.lists.length
+    var i = ref(0)
+    while(i.value < a){
+      activeNames.value.push(i.value)
+      i.value++
+    }
   }
-  // console.log(activeNames)
 })
 const handleChange = (val: string[]) => {
   console.log(val)
 }
+
+
 </script>
 
 <template>
@@ -40,14 +48,19 @@ const handleChange = (val: string[]) => {
     </div>
     <div class="problem-in pageCon">
       <el-collapse v-model="activeNames" :accordion="false">
-        <el-collapse-item :name="problemIndex" :disabled="true" v-for="(problemItem,problemIndex) in props.problemData.lists" :key="problemIndex">
+        <el-collapse-item :name="problemIndex" :disabled="windowWidth>768" v-for="(problemItem,problemIndex) in props.problemData.lists" :key="problemIndex">
           <template #title>
             <div class="problem-in-title">
               <!-- <div>Q</div> -->
               <div>{{$t(problemItem.Q)}}</div>
-              <!-- <div>
-                <img src="@/assets/images/icon_9.png" alt="">
-              </div> -->
+              <div>
+                <!-- <img src="@/assets/images/icon_9.png" alt=""> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="10" fill="white"/>
+                  <path d="M5 10H14" stroke="#FC1682" stroke-width="2" stroke-linecap="round"/>
+                  <path v-show="!activeNames.includes(problemIndex)" d="M9.5 5.5L9.5 14.5" stroke="#FC1682" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
             </div>
           </template>
           <div class="problem-in-context">
@@ -80,27 +93,18 @@ const handleChange = (val: string[]) => {
       align-items: center;
       width: 100%;
       position: relative;
-      // &>div:nth-of-type(1){
-      //   font-style: normal;
-      //   font-weight: 700;
-      //   font-size: 40px;
-      //   color: #FFA09E;
-      //   margin-left: 32px;
-      //   margin-top: -6px;
-      // }
       &>div:nth-of-type(1){
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
-        color: #505050;
+        color: #fff;
         max-width: 100%;
         flex: 1;
-        // margin-left: 20px;
         padding: 0 20px;
         text-align: center;
       }
       &>div:nth-of-type(2){
-        margin-right: 32px;
+        display: none;
       }
       &::before{
         content: '';
@@ -117,17 +121,7 @@ const handleChange = (val: string[]) => {
     }
     &-context{
       margin-top: 34px;
-      margin-bottom: 75px;
       display: flex;
-      // &>span:first-child{
-      //   font-style: normal;
-      //   font-weight: 700;
-      //   font-size: 40px;
-      //   line-height: 160%;
-      //   color: #FFA09E;
-      //   margin-left: 32px;
-      //   margin-top: 20px;
-      // }
       &>span:last-child{
         flex: 1;
         font-style: normal;
@@ -135,7 +129,6 @@ const handleChange = (val: string[]) => {
         font-size: 20px;
         line-height: 160%;
         color: var(--topic-color);
-        // padding: 45px 82px 26px 19px;
         padding: 25px 30px;
         white-space: pre-wrap;
         background: #F5F4F4;
@@ -151,7 +144,7 @@ const handleChange = (val: string[]) => {
   padding-left: 6.33%;
 }
 :deep(.el-collapse-item){
-  margin-bottom: 4px;
+  margin-bottom: 80px;
   border: none;
   width: calc(27%);
   margin-right: 6.33%;
@@ -161,22 +154,22 @@ const handleChange = (val: string[]) => {
 }
 :deep(.el-collapse-item__header){
   padding: 12px 0;
-  background: #FFF1F0;
+  background: var(--topic-color);
   border: none;
   box-sizing: initial;
   line-height: 160%;
   height: auto;
   min-height: 45px;
+  border-radius: 35px;
 }
 :deep(.el-collapse-item__header.is-active){
-  // background: #FFA09E;
   background: var(--topic-color);
   border-radius: 35px;
   .problem-in-title>div:nth-of-type(1){
-    color: #FFF1F0;
+    color: #fff;
   }
   .problem-in-title>div:nth-of-type(2){
-    color: #FFFFFF;
+    color: #fff;
   }
 }
 :deep(.el-icon){
@@ -185,40 +178,57 @@ const handleChange = (val: string[]) => {
 @media (min-width: 768px) and (max-width: 1452px) {}
 @media screen and (max-width: 768px) {
   .problem{
-    margin-top: 90px;
+    margin-top: 10px;
     &-in{
       margin-top: 30px;
       width: calc(100% - 60px);
       &-title{
         &>div:nth-of-type(1){
-          font-size: 26px;
-          margin-left: 3px;
+          font-size: 15px;
+          margin-left: 0px;
+          text-align: left;
         }
         &>div:nth-of-type(2){
-          font-size: 16px;
-          margin-left: 0px;
+          display: block;
+          margin-right: 7px;
         }
-        &>div:nth-of-type(3){
-          width: 13px;
-          margin-right: 8px;
+        &::before{
+          bottom: -14px;
+          width: 22px;
+          height: 18px;
+          border-left: 11px solid var(--topic-color);
+          border-right: 11px solid transparent;
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
         }
       }
       &-context{
-        &>span:first-child{
-          margin-left: 3px;
-          font-size: 26px;
-        }
+        margin-top: -15px;
         &>span:last-child{
-          padding: 20px 17px 1px 14px;
-          font-size: 14px;
+          padding: 45px 30px 30px;
+          font-size: 15px;
+          border-radius: 0 0 15px 15px;
         }
       }
     }
   }
+  :deep(.el-collapse){
+    display: block;
+    padding-left: 0;
+  }
+  :deep(.el-collapse-item){
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 26px;
+  }
+  :deep(.el-collapse-item__wrap){
+    overflow: initial;
+  }
   :deep(.el-collapse-item__header){
-    // height: 43px;
-    min-height: 43px;
+    padding: 5px 0;
+    min-height: 0;
     box-sizing: border-box;
+    position: relative;
   }
 }
 </style>

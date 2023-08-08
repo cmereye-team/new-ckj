@@ -205,6 +205,7 @@ onMounted(()=>{
         flex-direction: row;
         align-items: flex-start;
         margin-bottom: 37px;
+        // transform: translateY(-100%);
         .title{
           width: 28px;
           height: 28px;
@@ -224,9 +225,19 @@ onMounted(()=>{
             transform: translateX(-50%) rotate(90deg) scale(.6);
           }
         }
+        // &.tepAnim{
+        //   animation: stepBoxAnim2 .8s ease-out;
+        //   animation-fill-mode: forwards;
+        // }
       }
     }
   }
+  // @keyframes stepBoxAnim2 {
+  //   to{
+  //     opacity: 1;
+  //     transform: translateY(0);
+  //   }
+  // }
   // .step{
   //       background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.7) 12.5%, rgba(255, 241, 240, 0.7) 81.99%, rgba(255, 241, 240, 0) 100%);
   //       padding: 0 30px;

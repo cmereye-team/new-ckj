@@ -571,12 +571,11 @@ const getWindowWidth = () => {
       &-remark{
         width: 100%;
         max-width: 1245px;
-        margin: 34px auto 0;
+        margin: 34px auto 177px;
         font-size: 16px;
         font-weight: 600;
         color: var(--topic-text-color);
         text-align: center;
-        margin-bottom: 177px;
       }
     }
     .notice{
@@ -657,12 +656,10 @@ const getWindowWidth = () => {
           }
         }
         .box-left{
-          // border-radius:  60px 0 0 60px;
           overflow: hidden;
         }
         .box-right{
           border-left: 1px solid #505050;
-          // border-radius:  0 60px 60px 0;
           overflow: hidden;
         }
       }
@@ -684,12 +681,14 @@ const getWindowWidth = () => {
             top: -40%;
             left: -183px;
             background: url(https://static.cmereye.com/imgs/2023/07/2142b5e26918c181.png) no-repeat;
+            background-size: 100% 100%;
             width: 120px;
             height: 120px;
           }
           &::after{
             content: "";
             background: url(https://static.cmereye.com/imgs/2023/07/e2ded86c01ed3723.png) no-repeat;
+            background-size: 100% 100%;
             position: absolute;
             right: -183px;
             top: -40%;
@@ -743,151 +742,101 @@ const getWindowWidth = () => {
       }
     }
   }
-  @media (min-width: 768px) and (max-width: 1452px) {
-    .dentistryServices{
-      // padding: 0 0 110px;
-      // margin-top: -60px;
-      .note{
-        .noteCard{
-          &-in{
-            // padding: 0 3vw;
-             &-image{
-              img{
-                // max-width: 80%;
-                // max-height: 80%;
-              }
-              &-name{
-                // height: 60px;
-                // line-height: 60px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  @media (min-width: 768px) and (max-width: 890px) {
-    .dentistryServices{
-      .note{
-        &-in{
-          &-ul{
-            &-li{
-              // margin-right: 3vw;
-            }
-          }
-        }
-      }
-    }
-  }
   @media screen and (max-width: 768px) {
     .dentistryServices{
       padding: 50px 0;
       .note{
+        margin-top: 76px;
         &-title{
           &-in{
             &::before{
-
+              width: 50px;
+              height: 50px;
+              left: -50px;
+              top: 0;
             }
             &::after{
-              right: 0;
+              width: 50px;
+              height: 50px;
+              right: -50px;
+              top: 0;
             }
           }
         }
         .noteCard{
-          // padding: 0 21.5px;
-          // box-sizing: border-box;
+          margin: 39px auto 0;
+          padding: 0 40px;
           &-in{
             width: 50%;
-          //   padding: 0 8.5px;
-          //   &-image{
-          //     img{
-          //       max-width: 70%;
-          //       max-height: 70%;
-          //     }
-          //   }
-          //   &:nth-of-type(1)>&-image,&:nth-of-type(4)>&-image,&:nth-of-type(5)>&-image,&:nth-of-type(8)>&-image{
-          //     background: #FFF1F0;
-          //   }
-          //   &:nth-of-type(3)>&-image,&:nth-of-type(6)>&-image{
-          //     background: #E6F4FF;
-          //   }
-          //   &-name{
-          //     height: 56px;
-          //     line-height: 56px;
-          //     font-size: 15px;
-          //   }
+            padding: 0 12px;
+            margin-bottom: 27px;
+            &-name{
+              height: 40px;
+              line-height: 40px;
+            }
           }
         }
       }
       .detail{
-        margin-top: 90px;
+        margin-top: 53px;
+        &-title{
+          margin-top: 39px;
+        }
         &-table{
-          padding-bottom: 30px;
-          margin: 29px auto 0;
+          margin: 35px auto 0;
           position: relative;
-          // &::-webkit-scrollbar {
-          //   background: none;
-          //   height: 3px;
-          //   width: 3px;
-          //   position: relative;
-          // }
-          // &::-webkit-scrollbar-thumb{
-          //   background: #FFA09E;
-          //   border: none;
-          // }
-          // &::-webkit-scrollbar-track{
-          //   background: #FFF1F0;
-          // }
-          // &::-webkit-scrollbar-button{
-          //   display: block;
-          //   opacity: 0;
-          // }
           &-in{
-            margin: 0 30px;
+            margin: 0;
             &-col{
               height: 40px;
               &>div{
                 flex: 1.2;
                 font-weight: 600;
-                font-size: 20px;
-                &>div{
-                  &:last-child{
-                    font-weight: 700;
-                    font-size: 16px;
-                  }
+                font-size: 16px;
+                &:nth-of-type(3),&:nth-of-type(4){
+                  font-size: 12px;
                 }
               }
             }
             &-data{
-              height: 117px;
+              height: 115px;
               &>div{
                 flex: 1.2;
                 font-weight: 500;
-                font-size: 15px;
-                &:nth-of-type(3),&:nth-of-type(4){
-                  font-weight: 600;
-                  font-size: 20px;
+                font-size: 12px;
+                line-height: 1.4;
+                letter-spacing: 2.4px;
+                span{
+                  max-width: 100%;
+                  &>p{
+                    &:nth-of-type(1){
+                      width: 10px;
+                    }
+                  }
+                }
+                &:nth-of-type(1){
+                  span{
+                    padding-left: 10px;
+                  }
                 }
               }
-              &:not(:nth-of-type(2)){
-                margin-top: 4px;
-              }
-              &:last-child{
+              &:nth-of-type(4),&:nth-of-type(5){
                 height: 149px;
               }
             }
           }
         }
         &-remark{
-          padding: 0 30px;
-          font-size: 16px;
+          margin: 16px auto 45px;
+          padding: 0 45px;
+          font-size: 12px;
+          letter-spacing: 3.6px;
           text-align: center;
         }
       }
       .notice{
         margin: 78px auto 0;
         &-topText,&-bottomText{
-          // padding: 0 30px;
           span{
             display: inline;
             font-size: 15px;
@@ -902,9 +851,6 @@ const getWindowWidth = () => {
           }
         }
         &-bottomText{
-          // font-size: 12px;
-          // font-weight: 400;
-          // letter-spacing: 3.6px;
           margin: 57px auto 0;
           padding: 0 44px;
           span{
@@ -923,7 +869,6 @@ const getWindowWidth = () => {
             .box-in{
               font-weight: 500;
               font-size: 15px;
-              // height: 168px;
               margin-top: 9px;
               padding: 0;
               letter-spacing: 4.5px;
