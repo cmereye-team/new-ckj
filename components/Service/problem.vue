@@ -106,18 +106,7 @@ const handleChange = (val: string[]) => {
       &>div:nth-of-type(2){
         display: none;
       }
-      &::before{
-        content: '';
-        position: absolute;
-        left: 50px;
-        bottom: -36px;
-        width: 28px;
-        height: 24px;
-        border-left: 14px solid var(--topic-color);
-        border-right: 14px solid transparent;
-        border-top: 12px solid transparent;
-        border-bottom: 12px solid transparent;
-      }
+      
     }
     &-context{
       margin-top: 34px;
@@ -161,6 +150,19 @@ const handleChange = (val: string[]) => {
   height: auto;
   min-height: 45px;
   border-radius: 35px;
+  position: relative;
+  &::before{
+        content: '';
+        position: absolute;
+        left: 50px;
+        bottom: -12px;
+        width: 28px;
+        height: 24px;
+        border-left: 14px solid var(--topic-color);
+        border-right: 14px solid transparent;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+      }
 }
 :deep(.el-collapse-item__header.is-active){
   background: var(--topic-color);
@@ -192,15 +194,7 @@ const handleChange = (val: string[]) => {
           display: block;
           margin-right: 7px;
         }
-        &::before{
-          bottom: -14px;
-          width: 22px;
-          height: 18px;
-          border-left: 11px solid var(--topic-color);
-          border-right: 11px solid transparent;
-          border-top: 9px solid transparent;
-          border-bottom: 9px solid transparent;
-        }
+        
       }
       &-context{
         margin-top: -15px;
@@ -229,6 +223,15 @@ const handleChange = (val: string[]) => {
     min-height: 0;
     box-sizing: border-box;
     position: relative;
+    &::before{
+          bottom: -9px;
+          width: 22px;
+          height: 18px;
+          border-left: 11px solid var(--topic-color);
+          border-right: 11px solid transparent;
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
+        }
   }
 }
 </style>

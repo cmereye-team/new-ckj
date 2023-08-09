@@ -13,6 +13,10 @@ defineProps({
         pageName: ''
       }
     }
+  },
+  pageName: {
+    type: String,
+    default: ''
   }
 })
 
@@ -40,11 +44,11 @@ onMounted(()=>{
 
 <template>
   <div :class="['step']">
-    <RippleLine :type="'3'" />
-    <div class="step-bg">
+    <RippleLine :type="pageName==='rootCanal'?'2':'3'" />
+    <div :class="['step-bg',pageName]">
     <div class="step-title">
       <div class="step-title-in">
-        <serviceTitle :title="stepData.title" :yaBorder="'#089CFE'" :bgColor="'#fff'" :textColor="'#089CFE'" />
+        <serviceTitle :title="stepData.title" :yaBorder="pageName==='rootCanal'?'#FECB02':'#089CFE'" :bgColor="'#fff'" :textColor="pageName==='rootCanal'?'#FECB02':'#089CFE'" />
       </div>
     </div>
     <div :class="['step-remark']" v-if="stepData.remark">
@@ -62,7 +66,7 @@ onMounted(()=>{
         {{stepData.bottomText}}
       </div>
     </div>
-    <RippleLine :type="'3'" :isBottom="true" />
+    <RippleLine :type="pageName==='rootCanal'?'2':'3'" :isBottom="true" />
   </div>
 </template>
 
@@ -73,6 +77,9 @@ onMounted(()=>{
   &-bg{
     background: var(--blue-color);
     padding: 140px 0 80px;
+    &.rootCanal{
+      background: var(--yellow-color);
+    }
   }
   &-title{
     display: flex;

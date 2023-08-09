@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#根管治療助您解決牙痛 恢復健康的口腔狀態',
+  text2: '立即接受專業治療手術 徹底解放美食自由',
+  tabNavName: 'pages.dental-service.rootCanal.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/870d54eb88782632.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/01d15590f9c0df29.jpg',
@@ -27,7 +36,7 @@ const headerConfig = {
   mbText: ['根管治療助您解決牙痛','恢復健康的口腔狀態']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.rootCanal.introduce.title',
   content: 'pages.dental-service.rootCanal.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/4981f5bda13e2428.jpg',
@@ -39,7 +48,7 @@ const orthodonticsIntroduceData = {
 const reasonData = {
   title: 'pages.dental-service.rootCanal.reason.title',
   text: 'pages.dental-service.rootCanal.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/6e9ea22364596cbd.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.rootCanal.reason.lists[0].context',
@@ -63,26 +72,26 @@ const stageData = {
   },
   stageLists: [
     {
-      num: 1,
-      imgUrl: 'https://static.cmereye.com/imgs/2023/05/26f87784ff84ce3f.jpg',
+      num: '01',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/edf2fc3509499c3f.png',
       name: '受到感染',
       text: '當琺瑯質被破壞，蛀洞擴大至牙本質（即琺瑯質下面的一層），牙齒便會受到感染或有膿腫。',
     },
     {
-      num: 2,
-      imgUrl: 'https://static.cmereye.com/imgs/2023/05/0e76a7c55a53e406.jpg',
+      num: '02',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/dd532073e70646ec.png',
       name: '影響深遠',
       text: '最終蛀進牙神經，亦即牙髓，此階段蛀牙已導致永久的發炎，牙神經開始壞死。',
     },
     {
-      num: 3,
-      imgUrl: 'https://static.cmereye.com/imgs/2023/05/672e9cafcbb9a069.jpg',
+      num: '03',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/c336b9645ce0969a.png',
       name: '腫痛難耐',
       text: '此時釋放出的化學物質可造成牙根頂部感染，導致紅腫及疼痛。這時牙痛感覺變得十分明顯。',
     },
     {
-      num: 4,
-      imgUrl: 'https://static.cmereye.com/imgs/2023/05/ee7dc07f02961402.jpg',
+      num: '04',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/701abf1b28fe3b1a.png',
       name: '立即求醫',
       text: '病人通常會求醫，以求減輕痛楚及進行根管治療。',
     }
@@ -96,34 +105,30 @@ const stageData = {
 const stepData = {
   title: '根管治療過程',
   stepLists: [
-    [
-      {
-        title: 'Step 1',
-        text: '為受感染的牙齒照X光，了解根管形狀及長度'
-      },
-      {
-        title: 'Step 2',
-        text: '局部麻醉，進行牙根消毒'
-      },
-      {
-        title: 'Step 3',
-        text: '從牙冠進入牙髓腔，把牙髓組織刮除或吸出'
-      }
-    ],
-    [
-      {
-        title: 'Step 4',
-        text: '以藥水徹底消毒乾淨根管內壁'
-      },
-      {
-        title: 'Step 5',
-        text: ' 把牙冠髓腔填封及覆蓋牙洞，以降低蛀牙菌再度入侵的機會'
-      },
-      {
-        title: 'Step 6',
-        text: '如經治療後的牙齒太脆弱，需為牙齒套上牙套，預防再被咬崩而要拔除'
-      }
-    ]
+    {
+      title: '1',
+      text: '為受感染的牙齒照X光，了解根管形狀及長度'
+    },
+    {
+      title: '2',
+      text: '局部麻醉，進行牙根消毒'
+    },
+    {
+      title: '3',
+      text: '從牙冠進入牙髓腔，把牙髓組織刮除或吸出'
+    },
+    {
+      title: '4',
+      text: '以藥水徹底消毒乾淨根管內壁'
+    },
+    {
+      title: '5',
+      text: ' 把牙冠髓腔填封及覆蓋牙洞，以降低蛀牙菌再度入侵的機會'
+    },
+    {
+      title: '6',
+      text: '如經治療後的牙齒太脆弱，需為牙齒套上牙套，預防再被咬崩而要拔除'
+    }
   ],
   pageName: 'rootCanal'
 }
@@ -203,37 +208,34 @@ const handleProcessBtn = (_type: string) => {
 
 const processData = {
   title: '顯微根管治療',
-  context: ['愛康健引進德國蔡司顯微鏡根管治療儀，','結合顯微鏡技術和醫學技術，可清晰觀察牙齒的結構和根管形態。這項技術不僅適用於常規根管治療，還可用於根尖顯微外科手術，幫助醫生更好地維護正常組織，提高手術治療效率。'],
-  lists: [
-    [
+  // context: ['愛康健引進德國蔡司顯微鏡根管治療儀，','結合顯微鏡技術和醫學技術，可清晰觀察牙齒的結構和根管形態。這項技術不僅適用於常規根管治療，還可用於根尖顯微外科手術，幫助醫生更好地維護正常組織，提高手術治療效率。'],
+  remark: '愛康健引進德國蔡司顯微鏡根管治療儀，結合顯微鏡技術和醫學技術，可清晰觀察牙齒的結構和根管形態。這項技術不僅適用於常規根管治療，還可用於根尖顯微外科手術，幫助醫生更好地維護正常組織，提高手術治療效率。',
+  stepLists: [
       {
-        title: 'Step 1',
+        title: '1',
         text: '使用X-Ray拍片確定患處結構，制定治療方案'
       },
       {
-        title: 'Step 2',
+        title: '2',
         text: '施以口腔局部麻醉，減輕患者對治療的恐懼'
       },
       {
-        title: 'Step 3',
+        title: '3',
         text: '施術前進行術區消毒隔離，手術器械消毒滅菌，專人專次使用，防止交叉感染。'
-      }
-    ],
-    [
+      },
       {
-        title: 'Step 4',
+        title: '4',
         text: '在顯微鏡下打開牙髓腔，挑出壞死牙髓，擴大根管，沖洗根管內部'
       },
       {
-        title: 'Step 5',
+        title: '5',
         text: '使用顯微鏡進行根管預備，清理根管內的感染物質，施以消炎藥封口。'
       },
       {
-        title: 'Step 6',
+        title: '6',
         text: '在顯微鏡輔助下進行根管內的嚴密填充，隔絕根管和根尖周組織，防止再次感染。'
       },
     ]
-  ]
 }
 
 </script>
@@ -241,11 +243,14 @@ const processData = {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" /> 
-  <div class="pageIn whitebgColor">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-    <ServiceReason :reasonData="reasonData" />
+  <!-- <PageHeader :headerConfig="headerConfig" />  -->
+  <div class="rootCanalPage">
+    <ServiceBanner :bannerData="bannerData" />
+    <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" />
+    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+    <!-- <ServiceIntroduce :introduceData="orthodonticsIntroduceData" /> -->
+    <!-- <ServiceReason :reasonData="reasonData" /> -->
+    <div class="stageTopLine"><RippleLine :type="'5'" /></div>
     <div class="stage">
       <div class="stage-title">
         <span>{{stageData.title.span1}}</span>
@@ -268,7 +273,8 @@ const processData = {
     </div>
     <ServiceStep :stepData="stepData" />
     <div class="process">
-      <div class="dentistryServices-title">
+      <ServiceStep :stepData="processData" :pageName="'rootCanal'" />
+      <!-- <div class="dentistryServices-title">
         <div class="dentistryServices-title-in bb">{{processData.title}}</div>
       </div>
       <div class="process-context pageCon">
@@ -290,10 +296,11 @@ const processData = {
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <ServiceNote :noteData="noteData" />
     <div class="honor">
+      <RippleLine :type="'4'" />
       <div class="honor-bg">
         <div class="honor-title">
           <span>愛康健齒科品牌連鎖</span>
@@ -319,87 +326,115 @@ const processData = {
           <div class="rightBtn" @click="handleProcessBtn('slideNext')"></div>
         </div>
       </div>
+      <RippleLine :type="'4'" />
     </div>
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
+  <!-- <PageFooter /> -->
+  <!-- <PageNavbar /> -->
 </div>
 </template>
 
 
 
 <style lang="scss" scoped>
+.rootCanalPage{
+  margin-top: -20px;
+  margin-bottom: 100px;
+}
+.stageTopLine{
+  margin-top: 214px;
+}
 .stage{
-  margin-top: 126px;
+  margin-top: 0;
+  background: #FF6096;
+  margin-bottom: -150px;
+  padding-bottom: 190px;
+  padding-top: 160px;
   &-title{
+    color: #FFF;
+    font-size: 31.766px;
     font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 160%;
+    font-weight: 400;
+    line-height: 160%; /* 50.826px */
+    letter-spacing: 7.942px;
     text-align: center;
-    color: #666666;
   }
   &-lists{
     display: flex;
-    max-width: 1229px;
-    margin:  34px auto 42px;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin:  85px auto 42px;
     &-in{
-      color: #666666;
+      color: #FF6096;
       font-style: normal;
-      width: 23.3%;
+      max-width: 20%;
+      position: relative;
       .num{
+        width: 50px;
+        height: 50px;
+        line-height: 42px;
+        border-radius: 50%;
         font-weight: 700;
-        font-size: 50px;
+        font-size: 28px;
         z-index: 2;
-        position: relative;
+        position: absolute;
+        left: 0;
+        top: -20px;
+        text-align: center;
+        background: #fff;
+        border: 4px solid #FF6096;
       }
       .image{
         margin-top: -10px;
         position: relative;
         z-index: 1;
+        img{
+          width: 100%;
+        }
       }
       .name{
         font-weight: 700;
-        font-size: 28px;
-        margin-top: 15px;
+        font-size: 22px;
+        margin-top: 30px;
         line-height: 160%;
+        text-align: center;
+        color: #fff;
+        letter-spacing: 6.6px;
       }
       .text{
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 160%;
-        margin-top: 17px;
-      }
-      &:not(:last-child){
-        margin-right: 28px;
-      }
-      &:last-child{
-        .image{
-          margin-top: calc(-7% - 10px);
-        }
+        margin-top: 8px;
+        color: #fff;
+        letter-spacing: 4.8px;
+        padding: 0 20px;
       }
     }
   }
   &-remark{
     max-width: 1229px;
-    margin:  0 auto;
+    margin: 100px auto 0;
     p{
-      font-style: normal;
-      font-weight: 500;
+      color: #fff;
+      text-align: center;
       font-size: 16px;
-      line-height: 160%;
-      color: #666666;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 25.6px */
+      letter-spacing: 4.8px;
+      text-align: center;
     }
   }
 }
 .honor{
   margin-top: 157px;
   &-bg{
-    padding: 70px 0 106px;
-    background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
+    padding: 90px 0 140px;
   }
   &-title{
     display: flex;
@@ -413,60 +448,94 @@ const processData = {
       font-size: 30px;
       line-height: 160%;
       color: #666666;
-      &:last-child{
-        border-bottom: 4px solid #FFA09E;
+      position: relative;
+      padding-bottom: 20px;
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 40px;
+        height: 5px;
+        border-radius: 3px;
+        background: var(--topic-color);
+        transform: translateX(-50%);
       }
+      // &:last-child{
+        // border-bottom: 4px solid #FFA09E;
+      // }
     }
   }
   &-text{
+    color: var(--topic-text-color);
+    font-size: 31.766px;
     font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 160%;
+    font-weight: 400;
+    line-height: 160%; /* 50.826px */
+    letter-spacing: 7.942px;
     text-align: center;
-    color: #FFA09E;
-    margin-top: 35px;
+    position: relative;
+    width: max-content;
+    margin: 30px auto 0;
+    &::after{
+      content: '';
+      position: absolute;
+      left: -10px;
+      bottom: 0;
+      height: 23px;
+      border-radius: 8px;
+      opacity: 0.5;
+      background: #FECB02;
+      width: 0;
+      width: calc(100% + 20px);
+      // animation: honorAnim 3s linear;
+      // animation-fill-mode: forwards;
+    }
   }
   &-in{
-    margin-top: 39.2px;
+    margin-top: 58px;
     display: flex;
     .leftBtn{
       width: 70px;
-      background: #FFF1F0;
+      // background: #FFF1F0;
       cursor: pointer;
       position: relative;
-      &::after{
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-75%,-50%);
-        border-top: 20px solid;
-        border-right: 30px solid;
-        border-bottom: 20px solid;
-        border-left: 30px solid;
-        border-color: transparent #fff transparent transparent;
-        filter: drop-shadow(0px 0px 7.21491px rgba(255, 120, 117, 0.25));
-      }
+      background: var(--prev-icon) no-repeat;
+      background-position: 50% 50%;
+      // &::after{
+        // content: '';
+        // position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-75%,-50%);
+      //   border-top: 20px solid;
+      //   border-right: 30px solid;
+      //   border-bottom: 20px solid;
+      //   border-left: 30px solid;
+      //   border-color: transparent #fff transparent transparent;
+      //   filter: drop-shadow(0px 0px 7.21491px rgba(255, 120, 117, 0.25));
+      // }
     }
     .rightBtn{
       width: 70px;
-      background: #FFCECB;
+      // background: #FFCECB;
       cursor: pointer;
       position: relative;
-      &::after{
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-25%,-50%);
-        border-top: 20px solid;
-        border-right: 30px solid;
-        border-bottom: 20px solid;
-        border-left: 30px solid;
-        border-color: transparent transparent transparent #fff;
-        filter: drop-shadow(0px 0px 7.21491px rgba(255, 120, 117, 0.25));
-      }
+      background: var(--next-icon) no-repeat;
+      background-position: 50% 50%;
+      // &::after{
+      //   content: '';
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-25%,-50%);
+      //   border-top: 20px solid;
+      //   border-right: 30px solid;
+      //   border-bottom: 20px solid;
+      //   border-left: 30px solid;
+      //   border-color: transparent transparent transparent #fff;
+      //   filter: drop-shadow(0px 0px 7.21491px rgba(255, 120, 117, 0.25));
+      // }
     }
     .honorSwiper{
       width: calc(100% - 140px);
@@ -481,106 +550,113 @@ const processData = {
   }
 }
 .process{
-  background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
-  margin-top: 153px;
-  padding-top: 70px;
-  &-context{
-    text-align: center;
-    width: calc(100% - 60px);
-    max-width: 1102px;
-    margin: 35px auto;
-    span{
-      font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 160%;
-      color: #666666;
-    }
-  }
-  &-step{
-    padding-bottom: 106px;
-    .step-in{
-        width: 100%;
-        background: #FFFFFF;
-        display: flex;
-        padding: 44px 65px;
-        box-sizing: border-box;
-        height: 100%;
-        min-height: 460px;
-        &-box{
-          width: 50%;
-          height: 100%;
-          .step-itemLists{
-            width: 100%;
-            &-in{
-              padding-bottom: 90px;
-              display: flex;
-              align-items: flex-start;
-              cursor: pointer;
-              position: relative;
-              .line{
-                width: 4px;
-                height: 100%;
-                background: #FFF1F0;
-                position: absolute;
-                top: 20px;
-                left: 10px;
-                z-index: 0;
-                &.lineNone{
-                  height: 0;
-                }
-              }
-              .round{
-                width: 24px;
-                height: 24px;
-                margin-right: 14px;
-                margin-top: 8px;
-                border-radius: 50%;
-                background: #FFF1F0;
-                display: block;
-                z-index: 1;
-              }
-              .title{
-                margin-right: 28px;
-                font-weight: 700;
-                font-size: 28px;
-                line-height: 160%;
-                color: #666666;
-                display: block;
-              }
-              .text{
-                flex: 1;
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 160%;
-                color: #666666;
-                display: block;
-                padding-top: 10px;
-              }
-              &:last-child{
-                margin-bottom: 0;
-                padding-bottom: 0;
-                .line{
-                  height: 0;
-                  &.lineNone{
-                    height: 0;
-                  }
-                }
-              }
-              &:hover .round{
-                background: #FFCECB;
-              }
-            }
-          }
-          &:first-child{
-            padding-right: 40px;
-          }
-          &:last-child{
-            margin-left: 40px;
-          }
-        }
-      }
+  margin-top: -150px;
+}
+//   background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
+//   margin-top: 153px;
+//   padding-top: 70px;
+//   &-context{
+//     text-align: center;
+//     width: calc(100% - 60px);
+//     max-width: 1102px;
+//     margin: 35px auto;
+//     span{
+//       font-style: normal;
+//       font-weight: 600;
+//       font-size: 20px;
+//       line-height: 160%;
+//       color: #666666;
+//     }
+//   }
+//   &-step{
+//     padding-bottom: 106px;
+//     .step-in{
+//         width: 100%;
+//         background: #FFFFFF;
+//         display: flex;
+//         padding: 44px 65px;
+//         box-sizing: border-box;
+//         height: 100%;
+//         min-height: 460px;
+//         &-box{
+//           width: 50%;
+//           height: 100%;
+//           .step-itemLists{
+//             width: 100%;
+//             &-in{
+//               padding-bottom: 90px;
+//               display: flex;
+//               align-items: flex-start;
+//               cursor: pointer;
+//               position: relative;
+//               .line{
+//                 width: 4px;
+//                 height: 100%;
+//                 background: #FFF1F0;
+//                 position: absolute;
+//                 top: 20px;
+//                 left: 10px;
+//                 z-index: 0;
+//                 &.lineNone{
+//                   height: 0;
+//                 }
+//               }
+//               .round{
+//                 width: 24px;
+//                 height: 24px;
+//                 margin-right: 14px;
+//                 margin-top: 8px;
+//                 border-radius: 50%;
+//                 background: #FFF1F0;
+//                 display: block;
+//                 z-index: 1;
+//               }
+//               .title{
+//                 margin-right: 28px;
+//                 font-weight: 700;
+//                 font-size: 28px;
+//                 line-height: 160%;
+//                 color: #666666;
+//                 display: block;
+//               }
+//               .text{
+//                 flex: 1;
+//                 font-style: normal;
+//                 font-weight: 600;
+//                 font-size: 20px;
+//                 line-height: 160%;
+//                 color: #666666;
+//                 display: block;
+//                 padding-top: 10px;
+//               }
+//               &:last-child{
+//                 margin-bottom: 0;
+//                 padding-bottom: 0;
+//                 .line{
+//                   height: 0;
+//                   &.lineNone{
+//                     height: 0;
+//                   }
+//                 }
+//               }
+//               &:hover .round{
+//                 background: #FFCECB;
+//               }
+//             }
+//           }
+//           &:first-child{
+//             padding-right: 40px;
+//           }
+//           &:last-child{
+//             margin-left: 40px;
+//           }
+//         }
+//       }
+//   }
+// }
+@keyframes honorAnim {
+  to{
+    width: calc(100% + 20px);
   }
 }
 @media only screen and (max-width: 760px) {
@@ -635,14 +711,14 @@ const processData = {
   .honor{
     margin-top: 90px;
     &-bg{
-      padding: 44px 30px;
-      background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.3) 12.5%, rgba(255, 241, 240, 0.3) 81.99%, rgba(255, 241, 240, 0) 100%);
+      padding: 34px 30px;
+      // background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.3) 12.5%, rgba(255, 241, 240, 0.3) 81.99%, rgba(255, 241, 240, 0) 100%);
     }
     &-title{
       span{
-        font-size: 26px;
+        font-size: 20px;
         &:last-child{
-          border-bottom: 2.5px solid #FFA09E;
+          // border-bottom: 2.5px solid #FFA09E;
         }
       }
     }
@@ -650,117 +726,120 @@ const processData = {
       font-weight: 600;
       font-size: 14px;
       margin-top: 8px;
+      width: auto;
     }
     &-in{
       margin-top: 22px;
       .leftBtn{
         width: 15.5px;
-        &::after{
-          border-top: 5px solid;
-          border-right: 7px solid;
-          border-bottom: 5px solid;
-          border-left: 7px solid;
-          border-color: transparent #fff transparent transparent;
-        }
+        // &::after{
+        //   border-top: 5px solid;
+        //   border-right: 7px solid;
+        //   border-bottom: 5px solid;
+        //   border-left: 7px solid;
+        //   border-color: transparent #fff transparent transparent;
+        // }
       }
-      .rightBtn{
-        width: 15.5px;
-        &::after{
-          border-top: 5px solid;
-          border-right: 7px solid;
-          border-bottom: 5px solid;
-          border-left: 7px solid;
-          border-color: transparent transparent transparent #fff;
-        }
-      }
-      .honorSwiper{
-        width: calc(100% - 31px);
-      }
+      // .rightBtn{
+      //   width: 15.5px;
+      //   &::after{
+      //     border-top: 5px solid;
+      //     border-right: 7px solid;
+      //     border-bottom: 5px solid;
+      //     border-left: 7px solid;
+      //     border-color: transparent transparent transparent #fff;
+      //   }
+      // }
+      // .honorSwiper{
+      //   width: calc(100% - 31px);
+      // }
     }
   }
   .process{
-    background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.7) 12.5%, rgba(255, 241, 240, 0.7) 81.99%, rgba(255, 241, 240, 0) 100%);
-    margin-top: 69px;
-    padding-top: 44px;
-    &-context{
-      margin-top: 15px;
-      span{
-        font-weight: 500;
-        font-size: 14px;
-        width: 100%;
-        display: inline-block;
-        text-align: center;
-      }
-    }
-    &-step{
-      padding: 0 30px 46px;
-      .step-in{
-        flex-direction: column;
-        padding: 23px 0 23px 24px;
-        &-box{
-          width: 100%;
-          .step-itemLists{
-            &-in{
-              height: auto;
-              padding-right: 10px;
-              padding-bottom: 40px;
-              .line{
-                width: 2px;
-                left: 7px;
-              }
-              .round{
-                width: 16px;
-                height: 16px;
-                margin-top: 4px;
-                margin-right: 7px;
-              }
-              .title{
-                font-weight: 500;
-                font-size: 1rem;
-                margin-right: 12px;
-              }
-              .text{
-                font-weight: 500;
-                font-size: 16px;
-                padding-top: 0;
-              }
-              &:first-child{
-                margin-bottom: 0px;
-                margin-top: 0;
-              }
-              &:last-child{
-                align-items: flex-start;
-                padding-bottom: 40px;
-                .round{
-                  margin-top: 4px;
-                }
-              }
-            }
-            &-in:last-child{
-              .line{
-                width: 2px;
-                left: 7px;
-                height: 100%;
-              }
-            }
-          }
-          &:first-child{
-            padding-right: 0;
-          }
-          &:last-child{
-            margin-left: 0;
-            .step-itemLists{
-              &-in:last-child{
-                padding-bottom: 0;
-                .line{
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    margin-top: -100px;
   }
+  //   background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.7) 12.5%, rgba(255, 241, 240, 0.7) 81.99%, rgba(255, 241, 240, 0) 100%);
+  //   margin-top: 69px;
+  //   padding-top: 44px;
+  //   &-context{
+  //     margin-top: 15px;
+  //     span{
+  //       font-weight: 500;
+  //       font-size: 14px;
+  //       width: 100%;
+  //       display: inline-block;
+  //       text-align: center;
+  //     }
+  //   }
+  //   &-step{
+  //     padding: 0 30px 46px;
+  //     .step-in{
+  //       flex-direction: column;
+  //       padding: 23px 0 23px 24px;
+  //       &-box{
+  //         width: 100%;
+  //         .step-itemLists{
+  //           &-in{
+  //             height: auto;
+  //             padding-right: 10px;
+  //             padding-bottom: 40px;
+  //             .line{
+  //               width: 2px;
+  //               left: 7px;
+  //             }
+  //             .round{
+  //               width: 16px;
+  //               height: 16px;
+  //               margin-top: 4px;
+  //               margin-right: 7px;
+  //             }
+  //             .title{
+  //               font-weight: 500;
+  //               font-size: 1rem;
+  //               margin-right: 12px;
+  //             }
+  //             .text{
+  //               font-weight: 500;
+  //               font-size: 16px;
+  //               padding-top: 0;
+  //             }
+  //             &:first-child{
+  //               margin-bottom: 0px;
+  //               margin-top: 0;
+  //             }
+  //             &:last-child{
+  //               align-items: flex-start;
+  //               padding-bottom: 40px;
+  //               .round{
+  //                 margin-top: 4px;
+  //               }
+  //             }
+  //           }
+  //           &-in:last-child{
+  //             .line{
+  //               width: 2px;
+  //               left: 7px;
+  //               height: 100%;
+  //             }
+  //           }
+  //         }
+  //         &:first-child{
+  //           padding-right: 0;
+  //         }
+  //         &:last-child{
+  //           margin-left: 0;
+  //           .step-itemLists{
+  //             &-in:last-child{
+  //               padding-bottom: 0;
+  //               .line{
+  //                 display: none;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 </style>
