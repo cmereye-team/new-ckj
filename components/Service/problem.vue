@@ -48,7 +48,7 @@ const handleChange = (val: string[]) => {
     </div>
     <div class="problem-in pageCon">
       <el-collapse v-model="activeNames" :accordion="false">
-        <el-collapse-item :name="problemIndex" :disabled="windowWidth>768" v-for="(problemItem,problemIndex) in props.problemData.lists" :key="problemIndex">
+        <el-collapse-item :name="problemIndex"  v-for="(problemItem,problemIndex) in props.problemData.lists" :key="problemIndex">
           <template #title>
             <div class="problem-in-title">
               <!-- <div>Q</div> -->

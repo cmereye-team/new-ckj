@@ -114,7 +114,7 @@ const differData = {
     {
       name: '美觀',
       isArrayType: true,
-      firstText: ['• 牙箍固定於牙齒外側會外露(固定式外箍)','• 牙箍固定於牙齒內側較難察覺(固定式內箍)'],
+      firstText: ['·牙箍固定於牙齒外側會外露(固定式外箍)','·牙箍固定於牙齒內側較難察覺(固定式內箍)'],
       secondText: '透明牙箍，近乎隱形，極難察覺'
     },
     {
@@ -232,17 +232,17 @@ const aestheticsData = {
       text: '全透明全隱形，不影響美觀，並在矯正牙齒的同時矯正頜面形態，矯治過程自然舒適，收獲自信笑容！'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/d29acddb052417ec.jpg',
       title: '陶瓷半隱形矯正',
       text: '使用陶瓷透明托槽和鋼絲，顏色與牙齒相似，美觀度高，不易發現。'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/43c587e5c9da7de8.jpg',
       title: '金屬托槽矯正',
       text: '是矯正牙齒中價格最實惠的一種，適用性廣泛，適合各種牙齒矯正情況，是一種經濟實惠且有效的矯正方法。'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/08/8ae0d7667d3862be.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/999d8e0df1df3ae7.jpg',
       title: '舌側隱形矯正',
       text: '在於不影響外觀，且能夠有效地矯正各種牙齒問題，包括咬合問題和牙齒排列不整齊等。'
     }
@@ -268,9 +268,6 @@ const getWindowWidth = () => {
   <div class="orthodonticsPage">
     <ServiceBanner :bannerData="bannerData" />
     <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" />
-    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
-    <!-- <ServiceIntroduce :introduceData="orthodonticsIntroduceData" /> -->
-    <!-- <ServiceReason :reasonData="reasonData" /> -->
     <div class="bp">
       <RippleLine :type="'4'" />
       <div class="bp-title">
@@ -281,24 +278,6 @@ const getWindowWidth = () => {
       <div class="bp-text">
         {{bpData.text}}
       </div>
-      <!-- <div class="bp-swiper mbBox">
-        <swiper
-          :slidesPerView="1"
-          class="swiper-wrapper"
-          @slideChange="onSlideChange"
-        >
-          <swiper-slide class="swiper-slide" v-for="slideItem in 4" :key="slideItem">
-            <div class="swiper-slide-in" v-for="(bpItem,bpIndex) in bpData.lists.slice(2*(slideItem-1),2*slideItem)" :key="bpIndex">
-              
-              <img :src="bpItem.imgUrl" alt="" />
-              <div class="swiper-slide-in-title">{{bpItem.title}}</div>
-            </div>
-          </swiper-slide>
-        </swiper>
-        <div class="bp-swiper-line mbBox">
-          <PageSwiperPointLine :latestNewsNum="4" :latestNewsCurrent="bpCurrent"></PageSwiperPointLine>
-        </div>
-      </div> -->
       <div class="bp-lists">
         <div class="bp-lists-in" v-for="(bpItem,bpIndex) in bpData.lists" :key="bpIndex">
           <img :src="bpItem.imgUrl" alt="" />
@@ -311,33 +290,43 @@ const getWindowWidth = () => {
     </div>
     <ServiceStep :stepData="stepData" />
     <ServiceDiffer :differData="differData" />
+    <RippleLine :type="'2'" />
     <div class="aesthetics">
-      <div class="dentistryServices-title">
-        <div class="dentistryServices-title-in bb">
-          <span>{{aestheticsData.title}}</span>
+      <div class="aesthetics-title">
+        <div class="aesthetics-title-in">
+          <serviceTitle :title="'美學牙齒矯正'" :yaBorder="'#FECB02'" :bgColor="'#fff'" :textColor="'#505050'" />
+        </div>
+        <div :class="`star_${i}`" v-for="i in 4" :key="i">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none">
+            <g clip-path="url(#clip0_177_129)">
+            <path d="M30.356 16.2457C20.2113 17.7224 17.7207 20.2228 16.2366 30.3675C16.2366 30.5633 16.1588 30.7511 16.0204 30.8896C15.8819 31.028 15.6941 31.1058 15.4983 31.1058C15.3025 31.1058 15.1147 31.028 14.9763 30.8896C14.8378 30.7511 14.76 30.5633 14.76 30.3675C13.2833 20.2228 10.7853 17.7322 0.640673 16.2457C0.444856 16.2457 0.257055 16.1679 0.118591 16.0295C-0.0198725 15.891 -0.0976562 15.7032 -0.0976562 15.5074C-0.0976562 15.3116 -0.0198725 15.1238 0.118591 14.9853C0.257055 14.8468 0.444856 14.7691 0.640673 14.7691C10.7853 13.2924 13.2759 10.7919 14.76 0.649729C14.76 0.453912 14.8378 0.266111 14.9763 0.127647C15.1147 -0.0108164 15.3025 -0.0886002 15.4983 -0.0886002C15.6941 -0.0886002 15.8819 -0.0108164 16.0204 0.127647C16.1588 0.266111 16.2366 0.453912 16.2366 0.649729C17.7133 10.7919 20.2113 13.2825 30.356 14.7691C30.5518 14.7691 30.7396 14.8468 30.8781 14.9853C31.0165 15.1238 31.0943 15.3116 31.0943 15.5074C31.0943 15.7032 31.0165 15.891 30.8781 16.0295C30.7396 16.1679 30.5518 16.2457 30.356 16.2457Z" fill="white"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_177_129">
+            <rect width="31" height="31" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
         </div>
       </div>
       <div class="aesthetics-in">
-        <swiper
-          :slidesPerView="windowWidth>768 ? 4:1"
-          class="swiper-wrapper aesthetics-swiper"
-          @slideChange="onAestheticsSlideChange"
-        >
-          <swiper-slide class="swiper-slide" v-for="(aestheticsItem,aestheticsIndex) in aestheticsData.lists" :key="aestheticsIndex">
-            <div class="swiper-slide-in">
-              <img :src="aestheticsItem.imgUrl" alt="" />
-              <div class="swiper-slide-in-title">{{aestheticsItem.title}}</div>
-              <div class="swiper-slide-in-text">{{aestheticsItem.text}}</div>
-            </div>
-          </swiper-slide>
-        </swiper>
-        <div class="bp-swiper-line mbBox">
-          <PageSwiperPointLine :latestNewsNum="4" :latestNewsCurrent="aestheticsCurrent"></PageSwiperPointLine>
+        <div class="aesthetics-in-box" v-for="(aestheticsItem,aestheticsIndex) in aestheticsData.lists" :key="aestheticsIndex">
+          <div class="aesthetics-in-box-image">
+            <img :src="aestheticsItem.imgUrl" alt="" />
+          </div>
+          <div class="aesthetics-in-box-content">
+            <div class="aesthetics-in-box-title">{{aestheticsItem.title}}</div>
+            <div class="aesthetics-in-box-text">{{aestheticsItem.text}}</div>
+          </div>
         </div>
       </div>
     </div>
+    <div class="aesthetics-bottom">
+      <RippleLine :type="'2'" :isBottom="true" />
+    </div>
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
 </div>
@@ -358,66 +347,6 @@ const getWindowWidth = () => {
     display: flex;
     justify-content: center;
   }
-  &-swiper{
-    margin-top: 42px;
-    .swiper-slide-in{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 39.5px 83.1px;
-      box-sizing: border-box;
-      align-items: center;
-      &-title{
-        min-width: 165px;
-        height: 40px;
-        line-height: 40px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        text-align: center;
-        color: #FFFFFF;
-        background: #FFA09E;
-        position: relative;
-        &::after{
-          content: '';
-          position: absolute;
-          bottom: -40px;
-          left: 50%;
-          transform: translateX(-50%);
-          border-top: 20px solid;
-          border-left: 8px solid;
-          border-right: 8px solid;
-          border-bottom: 20px solid;
-          border-color: #FFA09E transparent transparent transparent;
-        }
-      }
-      img{
-        width: 100%;
-        max-width: 267px;
-        margin: 36px auto 0;
-      }
-      &:last-child{
-        padding: 0 39.5px;
-      }
-    }
-    .swiper-slide{
-      padding: 0 30px;
-      height: 100%;
-      &:nth-of-type(3){
-        .swiper-slide-in{
-          padding: 0 39.5px 53.1px;
-          &:last-child{
-            padding: 0 39.5px;
-          }
-        }
-      }
-    }
-    &-line{
-      max-width: 216px;
-      margin: 53px auto 0;
-    }
-  }
   &-text{
     font-style: normal;
     font-weight: 500;
@@ -433,7 +362,6 @@ const getWindowWidth = () => {
   &-lists{
     display: flex;
     flex-wrap: wrap;
-    // justify-content: center;
     max-width: 1100px;
     margin: 136px auto;
     &-in{
@@ -453,28 +381,6 @@ const getWindowWidth = () => {
         font-weight: 400;
         line-height: 160%; /* 28.8px */
         letter-spacing: 4.5px;
-        // min-width: 165px;
-        // height: 40px;
-        // line-height: 40px;
-        // font-style: normal;
-        // font-weight: 500;
-        // font-size: 20px;
-        // text-align: center;
-        // color: #FFFFFF;
-        // background: #FFA09E;
-        // position: relative;
-        // &::after{
-        //   content: '';
-        //   position: absolute;
-        //   bottom: -40px;
-        //   left: 50%;
-        //   transform: translateX(-50%);
-        //   border-top: 20px solid;
-        //   border-left: 8px solid;
-        //   border-right: 8px solid;
-        //   border-bottom: 20px solid;
-        //   border-color: #FFA09E transparent transparent transparent;
-        // }
       }
       img{
         margin-top: 30px;
@@ -484,61 +390,91 @@ const getWindowWidth = () => {
         width: 60%;
         padding: 0;
       }
-      // &:last-child{
-      //   padding: 0 39.5px;
-      // }
     }
   }
 }
 .aesthetics{
-  margin-top: 136px;
-  &-in{
-    margin-top: 40px;
-    padding: 88px 0;
-    // background: linear-gradient(180deg, #FFF1F0 0%, rgba(255, 241, 240, 0) 100%);
-  }
-  &-swiper{
-    padding-bottom: 10px;
-    width: 100%;
-    max-width: 1512px;
+  padding-top: 171px;
+  background: var(--yellow-color);
+  position: relative;
+  &-title{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    width: max-content;
     margin: 0 auto;
-    .swiper-slide{
-      height: 100%;
-      padding: 0 30px;
-      &-in{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 4px 4px 6px rgba(255, 163, 158, 0.25), inset 1px -1px 0px #FFCCC7;
-        border-radius: 15px;
+  }
+  &-in{
+    display: flex;
+    margin: 0 auto;
+    padding: 109px 0 240px;
+    width: 100%;
+    max-width: 1640px;
+    &-box{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      &:not(:last-child){
+        margin-right: 56px;
+      }
+      &-image{
+        width: 100%;
+        border-radius: 50% 50% 0 0;
+        padding: 30px;
+        box-sizing: border-box;
         overflow: hidden;
         background: #fff;
-        min-height: 539px;
         img{
           width: 100%;
-          box-sizing: border-box;
-          padding-left: 1px;
-        }
-        &-title{
-          font-style: normal;
-          font-weight: 700;
-          font-size: 28px;
-          line-height: 160%;
-          text-align: center;
-          color: #FFA09E;
-          margin-top: 40px;
-        }
-        &-text{
-          padding: 18px 34px 18px;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 160%;
-          color: #666666;
-          text-align: justify;
         }
       }
+      &-content{
+        flex: 1;
+        background: #fff;
+      }
+      &-title{
+        text-align: center;
+        color: var(--topic-color);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 28.8px */
+        letter-spacing: 4.5px;
+      }
+      &-text{
+        padding: 16px 50px 29px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 160%;
+        color: #666666;
+        text-align: justify;
+      }
     }
+  }
+  .star_1{
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    left: -60px;
+  }
+  .star_2{
+    position: absolute;
+    z-index: 1;
+    top: -40px;
+    left: 120%;
+  }
+  .star_3{
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    left: 80%;
+  }
+  .star_4{
+    display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1100px) {
@@ -555,28 +491,93 @@ const getWindowWidth = () => {
 }
 @media only screen and (max-width: 768px) {
   .orthodonticsPage{
-    padding: 90px 0;
+    padding: 0 0 90px;
   }
   .bp{
     margin-top: 94px;
+    &-title{
+      margin-top: 30px;
+    }
     &-text{
-      padding: 0 30px;
-      font-weight: 500;
-      font-size: 16px;
-      margin: 47px auto 0;
+      padding: 0 40px;
+      margin: 35px auto 0;
       text-align: justify;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 181%; /* 27.15px */
+      letter-spacing: 4.5px;
     }
     &-lists{
-      display: none;
+      margin: 35px auto 0;
+      padding: 0 20px;
+      &-in{
+        width: 50%;
+        padding: 0 25px 23px;
+        &-title{
+          font-size: 15px;
+          left: 3.75px;
+          margin-top: 20px;
+        }
+      }
     }
   }
   .aesthetics{
-    margin-top: 90px;
+    // margin-top: 90px;
+    padding-top: 60px;
     &-in{
-      margin-top: 28px;
-      padding: 0;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding: 0 30px;
       background: none;
+      &-box{
+        width: 50%;
+        min-width: 50%;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        &:not(:last-child){
+          margin-right: 0px;
+        }
+        &-image{
+          padding: 10px;
+        }
+        &-title{
+          letter-spacing: 3px;
+          font-size: 12px;
+        }
+        &-text{
+          font-size: 12px;
+          letter-spacing: 1px;
+          padding: 8px 16px 16px;
+        }
+      }
     }
+    .star_1{
+      top: 20px;
+      left: -40px;
+      transform: scale(.5);
+    }
+    .star_2{
+      top: 10px;
+      left: 120%;
+      transform: scale(.5);
+    }
+    .star_3{
+      top: 50px;
+      left: 75%;
+      transform: scale(.5);
+    }
+    .star_4{
+      position: absolute;
+      z-index: 1;
+      top: -50px;
+      left: 20%;
+      transform: scale(.5);
+      display: block;
+    }
+  }
+  .aesthetics-bottom{
+    margin-bottom: 80px;
   }
 }
 </style>

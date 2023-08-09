@@ -94,7 +94,7 @@ defineProps({
             &:last-child{
               position: relative;
               z-index: 1;
-              margin-top: -6px;
+              margin-top: -1.4%; //-6px
               margin-left: 60px;
             }
           }
@@ -180,6 +180,7 @@ defineProps({
       margin: -20px auto 0;
     }
     &-tabNav{
+      width: auto;
       margin-top: 0px;
       margin-left: 26px;
       font-size: 12px;

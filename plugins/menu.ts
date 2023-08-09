@@ -14,5 +14,9 @@ export default [
     {
         path: '/dental-service/orthodontics',
         name: 'dental-service-orthodontics'
+    },
+    {
+        path: '/dental-service/rootCanal',
+        name: 'dental-service-rootCanal'
     }
 ]

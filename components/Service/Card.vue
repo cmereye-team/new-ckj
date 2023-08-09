@@ -38,12 +38,12 @@ const openServiceCar = ref(false)
 
 
 <template>
-  <div :class="{'index-dentalServices':true,'isMenu': isMenu}">
-    <div :class="['index-dentalServices-in', {'isIndexShow': !isIndexShow,'isMenu': isMenu}]">
+  <div :class="{'index-dentalServices':true}">
+    <div :class="['index-dentalServices-in']">
       <!-- {{$t(servicesCardPageData.dentalServicesTitleIn)}} -->
       <div class="index-dentalServices-in-t">
-        <div class="title" v-if="isIndexShow">{{$t(servicesCardPageData.title)}}</div>
-        <div class="context" v-if="!isMenu">
+        <div class="title">{{$t(servicesCardPageData.title)}}</div>
+        <div class="context">
           <div class="context-in">{{$t(servicesCardPageData.contextIn)}}</div>
         </div>
       </div>    
