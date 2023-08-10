@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#根管治療助您解決牙痛 恢復健康的口腔狀態',
+  text2: '立即接受專業治療手術 徹底解放美食自由',
+  tabNavName: 'pages.dental-service.invisalign.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/d7eb727cb5e0a48a.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/6f363ef134d0612a.jpg',
@@ -27,11 +36,11 @@ const headerConfig = {
   mbText: ['保持自然笑容','牙齒更加美麗動人']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.invisalign.introduce.title',
   content: 'pages.dental-service.invisalign.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/caaab69f2a4941c9.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/e88458969b68b96d.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/9a501131524fa3e3.png',
   tabNavName: 'pages.dental-service.invisalign.introduce.tabNavName',
   pageName: 'invisalign'
 }
@@ -39,22 +48,18 @@ const orthodonticsIntroduceData = {
 const stepData = {
   title: '隱適美流程',
   stepLists: [
-    [
-      {
-        title: 'Step 1',
-        text: '與牙醫諮詢及溝通過後，專人會為你的牙齒進行拍照、X光片、口腔內掃瞄或牙模套印來建立你的牙齒資料，亦會透過詳細講解令你明白整個療程過程及效果。'
-      },
-      {
-        title: 'Step 2',
-        text: '牙醫會與廠商方面溝通，為你建立專屬的3D矯齒治療方案。'
-      },
-    ],
-    [
-      {
-        title: 'Step 3',
-        text: '廠商用3D電腦雷射列印科技製成一系列訂製牙箍，寄送至牙醫診所。我們會聯絡客人安排到診進行試戴並評估效果。客人需要每6至8星期複診，與牙醫跟進矯齒進度及取得新牙箍。'
-      }
-    ]
+    {
+      title: '1',
+      text: '與牙醫諮詢及溝通過後，專人會為你的牙齒進行拍照、X光片、口腔內掃瞄或牙模套印來建立你的牙齒資料，亦會透過詳細講解令你明白整個療程過程及效果。'
+    },
+    {
+      title: '2',
+      text: '牙醫會與廠商方面溝通，為你建立專屬的3D矯齒治療方案。'
+    },
+    {
+      title: '3',
+      text: '廠商用3D電腦雷射列印科技製成一系列訂製牙箍，寄送至牙醫診所。我們會聯絡客人安排到診進行試戴並評估效果。客人需要每6至8星期複診，與牙醫跟進矯齒進度及取得新牙箍。'
+    }
   ],
   pageName: 'invisalign'
 }
@@ -125,18 +130,27 @@ const problemData = {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" />
-  <div class="pageIn whitebgColor">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
+  <!-- <PageHeader :headerConfig="headerConfig" /> -->
+  <div class="invisalignPage">
+    <ServiceBanner :bannerData="bannerData" :pageName="'rootCanal'" />
+    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+    <ServiceIntroduce :introduceData="introduceData" :moduleType="'2'" />
     <ServiceStep :stepData="stepData" />
-    <ServiceDiffer :differData="differData" />
+    <ServiceDiffer :differData="differData" :moduleType="'2'" />
+    <RippleLine :type="'4'" />
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
+  <!-- <PageFooter /> -->
+  <!-- <PageNavbar /> -->
 </div>
 </template>
 
+<style lang="scss" scoped>
+.invisalignPage{
+  margin-top: -20px;
+  padding-bottom: 140px;
+}
+</style>

@@ -31,7 +31,26 @@ defineProps({
         ]
       }
     }
-  }
+  },
+  moduleType:{
+    type: String,
+    default: '1'
+  } 
+})
+let AnimNum = ref(0)
+let timer:any = null
+onMounted(()=>{
+  timer = setInterval(()=>{
+    if(AnimNum.value >= 20){
+      AnimNum.value = 1
+    }else{
+      AnimNum.value += 0.02
+    }
+  },10)
+})
+
+onBeforeUnmount(()=>{
+  clearInterval(timer)
 })
 </script>
 
@@ -39,10 +58,10 @@ defineProps({
   <div class="introduce bigPageCon">
     <div class="introduce-in">
       <div class="introduce-in-title">{{$t(introduceData.title)}}</div>
-      <div class="introduce-in-content">
+      <div class="introduce-in-content" v-if="moduleType === '1'">
         {{$t(introduceData.content)}}
       </div>
-      <div class="introduce-in-reason">
+      <div class="introduce-in-reason" v-if="moduleType === '1'">
         <div class="reason-l">
           <div class="reason-l-title">
             <serviceTitle :title="reasonData.title" /> 
@@ -68,6 +87,24 @@ defineProps({
         </div>
         <div class="reason-r">
           <img :src="reasonData.imgUrl" alt="">
+        </div>
+      </div>
+      <div class="introduce-in-modulType2" v-if="moduleType === '2'">
+        <div class="modulType2-content">
+          {{$t(introduceData.content)}}
+        </div>
+        <div class="modulType2-image">
+          <img :src="introduceData.pcImg" alt="">
+          <svg viewBox="0 0 1000 600" class="overflow-visible uppercase w-full">
+            <path id="leftArch" d="M 1040,600 V0 h-770 a 300 300 0 0 0 0,600 z" fill="none" stroke="none"></path>
+            <text width="500" font-size="26" class="font-gza text-secondary" fill="#FC1682">
+              <textPath class="tp" alignment-baseline="auto" xlink:href="#leftArch" :startOffset="`${AnimNum}%`">
+                <template v-for="i in 24" :key="i">
+                  INVISALIGN &nbsp;
+                </template>
+              </textPath>
+            </text>
+          </svg>
         </div>
       </div>
     </div>
@@ -163,6 +200,50 @@ defineProps({
             }
           }
         }
+        &-modulType2{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin-top: 100px;
+          .modulType2-content{
+            color: var(--topic-text-color);
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 4.8px;
+            margin-left: 30px;
+          }
+          .modulType2-image{
+            width: 50%;
+            min-width: 50%;
+            margin-left: 10.5%;
+            position: relative;
+            padding: 20px 0 20px 20px;
+            box-sizing: border-box;
+            img{  
+              width: 100%;
+            }
+            svg{
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 1452px){
+      .introduce{
+        &-in{
+          &-modulType2{
+            .modulType2-content{
+              margin-left: calc((100% - 1452px)/2);
+            }
+          }
+        }
       }
     }
     @media (min-width: 768px) and (max-width: 1452px) {
@@ -255,47 +336,23 @@ defineProps({
               display: none;
             }
           }
-        //   height: auto;
-        //   max-height: 300%;
-        //   background: none !important;
-        //   margin-top: 72px;
-        //   &.noTitle{
-        //     margin-top: 0;
-        //   }
-        //   &-t{
-        //     width: 100%;
-        //     img{
-        //       width: 100%;
-        //     }
-        //   }
-        //   &-l{
-        //     padding-bottom: 0;
-        //     .title{
-        //       padding: 0 30px;
-        //       font-weight: 700;
-        //       font-size: 26px;
-        //       margin-top: 0;
-        //       &.teeth-whitening{
-        //         margin-top: 0;
-        //       }
-        //     }
-        //     .content{
-        //       font-size: 1rem;
-        //       width: 95%;
-        //       padding: 0 30px;
-        //       margin-top: 30px;
-        //       &.orthodontics{
-        //         width: 95%;
-        //       }
-        //     }
-        //   }
+          &-modulType2{
+            flex-direction: column;
+            margin-top: 35px;
+            .modulType2-content{
+              margin-left: 0;
+              letter-spacing: 4.5px;
+              font-size: 15px;
+              padding: 0 52px;
+            }
+            .modulType2-image{
+              margin-left: 30px;
+              width: auto;
+              margin-top: 50px;
+            }
+          }
         }
       }
-      // .tabNav{
-      //   padding: 30px;
-      //   font-size: 1rem;
-      //   margin-top: 20px;
-      // }
     }
 </style>
 

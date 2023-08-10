@@ -14,7 +14,11 @@ defineProps({
         pageName: ''
       }
     }
-  }
+  },
+  moduleType:{
+    type: String,
+    default: '1'
+  } 
 })
 
 let windowWidth = ref(1920)
@@ -52,7 +56,7 @@ const handleLineCur = (_value:number) =>{
 
 <template>
   <div class="differ">
-      <div class="differ-title">
+      <div class="differ-title" v-if="moduleType === '1'">
         <div class="differ-title-icon">
           <svg width="52" height="45" viewBox="0 0 52 45" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.9497 4.5C24.1044 2.5 26.9911 2.5 28.1458 4.5L48.4974 39.75C49.6521 41.75 48.2087 44.25 45.8993 44.25H5.19616C2.88676 44.25 1.44338 41.75 2.59808 39.75L22.9497 4.5Z" fill="#FC1682"/>
@@ -63,6 +67,11 @@ const handleLineCur = (_value:number) =>{
           <div v-if="windowWidth > 768 ||  differData.title.length <= 10">{{differData.title}}</div>
           <div v-if="windowWidth <= 768 && differData.title.length > 10">{{differData.title.slice(0,6)}}</div>
           <div v-if="windowWidth <= 768 && differData.title.length > 10">{{differData.title.slice(7,differData.title.length)}}</div>
+        </div>
+      </div>
+      <div class="differ-title" v-if="moduleType==='2'">
+        <div class="differ-title-moduleType2">
+          <ServiceTitle :title="differData.title" />
         </div>
       </div>
       <div class="differ-text" v-if="differData.text">
@@ -146,6 +155,10 @@ const handleLineCur = (_value:number) =>{
         bottom: -10px;
         transform: rotate(30deg);
       }
+    }
+    &-moduleType2{
+      display: flex;
+      justify-content: center;
     }
   }
   &-text{
