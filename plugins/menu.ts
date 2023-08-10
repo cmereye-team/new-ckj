@@ -1,3 +1,4 @@
+
 export default [
     {
         path: '/',
@@ -18,5 +19,9 @@ export default [
     {
         path: '/dental-service/rootCanal',
         name: 'dental-service-rootCanal'
+    },
+    {
+        path: '/dental-service/invisalign',
+        name: 'dental-service-invisalign'
     }
 ]

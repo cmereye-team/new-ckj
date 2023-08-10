@@ -51,7 +51,7 @@ onMounted(()=>{
         <serviceTitle :title="stepData.title" :yaBorder="pageName==='rootCanal'?'#FECB02':'#089CFE'" :bgColor="'#fff'" :textColor="pageName==='rootCanal'?'#FECB02':'#089CFE'" />
       </div>
     </div>
-    <div :class="['step-remark']" v-if="stepData.remark">
+    <div :class="['step-remark',pageName]" v-if="stepData.remark">
       {{stepData.remark}}
     </div>
       <div class="step-in">
@@ -192,6 +192,11 @@ onMounted(()=>{
     }
     &-remark{
       display: none;
+      &.rootCanal{
+        margin-top: 45px;
+        padding: 0 40px;
+        display: block;
+      }
     }
     &-in{
       flex-direction: column;

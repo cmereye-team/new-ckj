@@ -243,9 +243,8 @@ const processData = {
 
 <template>
 <div>
-  <!-- <PageHeader :headerConfig="headerConfig" />  -->
   <div class="rootCanalPage">
-    <ServiceBanner :bannerData="bannerData" />
+    <ServiceBanner :bannerData="bannerData" :pageName="'rootCanal'" />
     <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" />
     <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
     <!-- <ServiceIntroduce :introduceData="orthodonticsIntroduceData" /> -->
@@ -306,7 +305,8 @@ const processData = {
           <span>愛康健齒科品牌連鎖</span>
         </div>
         <div class="honor-text">
-          致力於口腔健康28年，多次榮獲殊榮，信心保證
+          <span>致力於口腔健康28年<i>，</i></span>
+          <span>多次榮獲殊榮，信心保證</span>
         </div>
         <div class="honor-in pageCon">
           <div class="leftBtn" @click="handleProcessBtn('slidePrev')"></div>
@@ -333,8 +333,6 @@ const processData = {
     <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <!-- <PageFooter /> -->
-  <!-- <PageNavbar /> -->
 </div>
 </template>
 
@@ -461,9 +459,6 @@ const processData = {
         background: var(--topic-color);
         transform: translateX(-50%);
       }
-      // &:last-child{
-        // border-bottom: 4px solid #FFA09E;
-      // }
     }
   }
   &-text{
@@ -481,13 +476,20 @@ const processData = {
       content: '';
       position: absolute;
       left: -10px;
-      bottom: 0;
+      bottom: 5px;
       height: 23px;
       border-radius: 8px;
       opacity: 0.5;
       background: #FECB02;
-      width: 0;
       width: calc(100% + 20px);
+      z-index: 1;
+    }
+    span{
+      position: relative;
+      z-index: 2;
+      i{
+        font-style: normal;
+      }
     }
   }
   &-in{
@@ -495,45 +497,17 @@ const processData = {
     display: flex;
     .leftBtn{
       width: 70px;
-      // background: #FFF1F0;
       cursor: pointer;
       position: relative;
       background: var(--prev-icon) no-repeat;
       background-position: 50% 50%;
-      // &::after{
-        // content: '';
-        // position: absolute;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-75%,-50%);
-      //   border-top: 20px solid;
-      //   border-right: 30px solid;
-      //   border-bottom: 20px solid;
-      //   border-left: 30px solid;
-      //   border-color: transparent #fff transparent transparent;
-      //   filter: drop-shadow(0px 0px 7.21491px rgba(255, 120, 117, 0.25));
-      // }
     }
     .rightBtn{
       width: 70px;
-      // background: #FFCECB;
       cursor: pointer;
       position: relative;
       background: var(--next-icon) no-repeat;
       background-position: 50% 50%;
-      // &::after{
-      //   content: '';
-      //   position: absolute;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-25%,-50%);
-      //   border-top: 20px solid;
-      //   border-right: 30px solid;
-      //   border-bottom: 20px solid;
-      //   border-left: 30px solid;
-      //   border-color: transparent transparent transparent #fff;
-      //   filter: drop-shadow(0px 0px 7.21491px rgba(255, 120, 117, 0.25));
-      // }
     }
     .honorSwiper{
       width: calc(100% - 140px);
@@ -548,14 +522,19 @@ const processData = {
   }
 }
 .process{
-  margin-top: -150px;
+  margin-top: -170px;
 }
 @media only screen and (max-width: 760px) {
+  .stageTopLine{
+    margin-top: 80px;
+  }
   .stage{
-    padding: 0 20px;
+    padding: 30px 25px 60px;
+    margin-bottom: -100px;
     box-sizing: border-box;
     &-title{
-      font-size: 28px;
+      font-size: 20px;
+      letter-spacing: 5px;
       span{
         display: block;
         text-align: center;
@@ -563,87 +542,101 @@ const processData = {
     }
     &-lists{
       flex-wrap: wrap;
-      margin:  34px auto 0;
+      margin:  71px auto 0;
       &-in{
-        padding: 0 10px;
+        padding: 0 15px;
         box-sizing: border-box;
         width: 50%;
-        margin-bottom: 20px;
+        min-width: 50%;
+        margin-bottom: 44px;
         .num{
-          font-size: 26px;
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          font-size: 14px;
           font-weight: 700;
+          left: 15px;
+          top: -17px;
+          border: 2px solid #FF6096;
         }
         .image{
           width: 100%;
         }
         .name{
-          font-weight: 600;
-          font-size: 20px;
-          margin-top: 7px;
+          font-size: 15px;
+          margin-top: 20px;
+          letter-spacing: 4.5px;
         }
         .text{
-          font-weight: 600;
           font-size: 15px;
-          margin-top: 10px;
-        }
-        &:not(:last-child){
-          margin-right: 0;
+          margin-top: 16px;
+          padding: 0 10px;
+          letter-spacing: 4.5px;
         }
       }
     }
     &-remark{
-      margin-left: 10px;
-      p{
-        font-weight: 500;
-        font-size: 15px;
-      }
+      display: none;
     }
   }
   .honor{
-    margin-top: 90px;
+    margin-top: 81px;
     &-bg{
-      padding: 34px 30px;
-      // background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.3) 12.5%, rgba(255, 241, 240, 0.3) 81.99%, rgba(255, 241, 240, 0) 100%);
+      padding: 34px 30px 64px;
     }
     &-title{
       span{
         font-size: 20px;
-        &:last-child{
-          // border-bottom: 2.5px solid #FFA09E;
+        padding-bottom: 14px;
+        &::after{
+          height: 3px;
+          border-radius: 1.5px;
         }
       }
     }
     &-text{
       font-weight: 600;
-      font-size: 14px;
-      margin-top: 8px;
+      font-size: 20px;
+      margin-top: 20px;
+      letter-spacing: 5px;
       width: auto;
+      &::after{
+        display: none;
+      }
+      span{
+        position: relative;
+        display: inline-block;
+        &::after{
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: -8px;
+          bottom: 5px;
+          height: 10px;
+          border-radius: 5px;
+          opacity: 0.5;
+          background: #FECB02;
+          width: calc(100% + 16px);
+        }
+        i{
+          display: none;
+        }
+      }
     }
     &-in{
       margin-top: 22px;
       .leftBtn{
         width: 15.5px;
-        // &::after{
-        //   border-top: 5px solid;
-        //   border-right: 7px solid;
-        //   border-bottom: 5px solid;
-        //   border-left: 7px solid;
-        //   border-color: transparent #fff transparent transparent;
-        // }
+        background-size: 50% auto;
       }
-      // .rightBtn{
-      //   width: 15.5px;
-      //   &::after{
-      //     border-top: 5px solid;
-      //     border-right: 7px solid;
-      //     border-bottom: 5px solid;
-      //     border-left: 7px solid;
-      //     border-color: transparent transparent transparent #fff;
-      //   }
-      // }
-      // .honorSwiper{
-      //   width: calc(100% - 31px);
-      // }
+      .rightBtn{
+        width: 15.5px;
+        background-size: 50% auto;
+      }
+      .honorSwiper{
+        width: auto;
+        width: calc(100% - 31px);
+      }
     }
   }
   .process{

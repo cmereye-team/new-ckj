@@ -83,22 +83,17 @@ defineProps({
       }
     }
   }
-  &.children-dentistry{
-    padding: 143px 0 0;
-  }
+  // &.children-dentistry{
+  //   padding: 143px 0 0;
+  // }
   &-in{
     width: 100%;
     max-width: 1200px;
     margin: 90px auto;
-    // padding: 60px 0;
-    // background: #FFF1F0;
-    // box-shadow: 0px 4px 8px #FFDDDA;
-    // min-height: 378px;
     display: flex;
     justify-content: center;
     align-items: center;
     &-lists{
-      // width: 100%;
       max-width: 1000px;
       margin-right: 89px;
       &-item{
@@ -122,49 +117,55 @@ defineProps({
 
 
 @media only screen and (max-width: 1000px) {
-  // .note{
-  //   padding: 96px 30px 0;
-  //   box-sizing: border-box;
-  //   &-title{
-  //     font-size: 20px;
-  //     letter-spacing: 6px;
-  //     &-icon{
-  //       margin: 0 auto;
-  //       transform: scale(.6);
-  //     }
-  //     &-in{
-  //       &::before{
-  //         width: 2px;
-  //         height: 25px;
-  //         bottom: 5px;
-  //         left: -20px;
-  //       }
-  //       &::after{
-  //         width: 2px;
-  //         height: 25px;
-  //         bottom: 5px;
-  //         right: -20px;
-  //       }
-  //     }
-  //   }
+  .note{
+    padding: 83px 30px 0;
+    box-sizing: border-box;
+    &-title{
+      font-size: 20px;
+      letter-spacing: 6px;
+      &-icon{
+        margin: 0 auto;
+        transform: scale(.6);
+      }
+      &-in{
+        &::before{
+          width: 2px;
+          height: 25px;
+          bottom: 5px;
+          left: -20px;
+        }
+        &::after{
+          width: 2px;
+          height: 25px;
+          bottom: 5px;
+          right: -20px;
+        }
+      }
+    }
   //   &.children-dentistry{
   //     padding: 96px 30px 0;
   //   }
-  //   &-in{
-  //     padding: 23px 15px;
-  //     box-sizing: border-box;
-  //     min-height: 0;
-  //     &-lists{
-  //       &-item{
-  //         font-weight: 500;
-  //         font-size: 16px;
-  //         margin-top: 5px;
-  //         &>div:first-child{
-  //           width: 15px;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+    &-in{
+      flex-direction: column;
+      margin: 35px auto 0;
+      &-lists{
+        margin-bottom: 57px;
+        margin-right: 0;
+        &-item{
+          font-size: 15px;
+          letter-spacing: 4.5px;
+          margin-bottom: 15px;
+          &>div:first-child{
+            width: 15px;
+          }
+        }
+      }
+      &-r{
+        img{
+          width: 80%;
+        }
+      }
+    }
+  }
 }
 </style>

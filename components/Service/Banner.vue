@@ -13,6 +13,10 @@ defineProps({
             tabNavName: 'pages.dental-service.implant.introduce.tabNavName'
         }
     }
+  },
+  pageName: {
+    type: String,
+    default: ''
   }
 })
 </script>
@@ -21,7 +25,7 @@ defineProps({
     <div class="banner">
         <img class="banner-bg" :data-cfsrc="bannerData.img" :srcset="`${bannerData.mbImg} 768w, ${bannerData.img}`" :src="bannerData.img" alt="">
         <div class="banner-in">
-          <div class="bannerText-1">
+          <div class="bannerText-1" :class="pageName">
             <span>{{bannerData.text1}}</span>
             <span>
               {{bannerData.text2}}
@@ -70,7 +74,6 @@ defineProps({
             font-size: 35px;
             font-style: normal;
             font-weight: 600;
-            // line-height: normal;
             letter-spacing: 4.751px;
             background: #fff;
             padding: 5px 20px;
@@ -96,6 +99,19 @@ defineProps({
               z-index: 1;
               margin-top: -1.4%; //-6px
               margin-left: 60px;
+            }
+          }
+          &.rootCanal{
+            span{
+              &:first-child{
+                &::after{
+                  width: calc(100% - 100px);
+                }
+              }
+              &:last-child{
+                margin-top: -1%;
+                margin-left: 100px;
+              }
             }
           }
         }
@@ -148,22 +164,36 @@ defineProps({
       left: 5%;
       bottom: 18%;
       .bannerText-1{
+        margin-bottom: 15px;
         span{
           padding: 5px 10px;
           font-size: 15px;
           min-width: auto;
-          // height: 40px;
-          // line-height: 40px;
           border: 1px solid var(--topic-text-color);
           &:first-child{
             &::after{
-              
               width: calc(100% - 50px);
             }
           }
           &:last-child{
             margin-left: 50px;
             margin-top: -4px;
+          }
+        }
+        &.rootCanal{
+          span{
+            padding: 5px 15px;
+            font-size: 14px;
+            letter-spacing: 1.4px;
+            &:first-child{
+              &::after{
+                width: calc(100% - 60px);
+              }
+            }
+            &:last-child{
+              margin-top: -1.4%;
+              margin-left: 60px;
+            }
           }
         }
       }
