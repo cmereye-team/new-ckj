@@ -140,9 +140,9 @@ let mbQDCodeBool = ref(false)
   top: 30vh;
   z-index: 50;
   &-in {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 80px;
+    width: 53px;
+    height: 53px;
+    margin-bottom: 68px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -155,7 +155,7 @@ let mbQDCodeBool = ref(false)
       overflow: hidden;
       top: 50%;
       transform: translateY(-50%);
-      right: 40px;
+      right: 53px;
       padding-right: 0;
       transition: all .3s;
       &-in{
@@ -195,22 +195,22 @@ let mbQDCodeBool = ref(false)
     }
   }
   #navPcTel{
-    background-image:url(https://static.cmereye.com/imgs/2023/08/6b3c0f968db06731.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
-  #navPcWeChat{
-    background-image:url(https://static.cmereye.com/imgs/2023/08/f50b520dc325b7a1.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/a12a05f34f9836a9.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
   #navPcWhatsapp{
-    background-image:url(https://static.cmereye.com/imgs/2023/08/e07e1a304c5dfe73.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/681705edb00b5eea.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  #navPcWeChat{
+    background-image:url(https://static.cmereye.com/imgs/2023/08/42b6c4d6cdccf636.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
   #navPcFaceBook{
-    background-image:url(https://static.cmereye.com/imgs/2023/08/3f549509d7a771e6.png);
+    background-image:url(https://static.cmereye.com/imgs/2023/08/2f0b156710fd6a99.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }

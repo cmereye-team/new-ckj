@@ -504,9 +504,9 @@ onMounted(()=>{
         <img class="bgIcon bgIcon_3" src="https://static.cmereye.com/imgs/2023/07/8fe74d7997ee58b5.png" alt="">
         <img class="bgIcon bgIcon_4" src="https://static.cmereye.com/imgs/2023/07/85f08b84d0d26e06.png" alt="">
         <img class="bgIcon bgIcon_5" src="https://static.cmereye.com/imgs/2023/07/55693cf22c9a5e8e.png" alt="">
-        <img class="bgIcon bgstar_1" src="https://static.cmereye.com/imgs/2023/07/d4752d78d1563917.png" alt="">
-        <img class="bgIcon bgstar_2" src="https://static.cmereye.com/imgs/2023/07/3f4a115fbf8ca9f2.png" alt="">
-        <img class="bgIcon bgstar_3" src="https://static.cmereye.com/imgs/2023/07/8730b0cdedc3e396.png" alt="">
+        <!-- <img class="bgIcon bgstar_1" src="https://static.cmereye.com/imgs/2023/07/d4752d78d1563917.png" alt=""> -->
+        <!-- <img class="bgIcon bgstar_2" src="https://static.cmereye.com/imgs/2023/07/3f4a115fbf8ca9f2.png" alt=""> -->
+        <!-- <img class="bgIcon bgstar_3" src="https://static.cmereye.com/imgs/2023/07/8730b0cdedc3e396.png" alt=""> -->
       </div>
       <RippleLine :type="'4'" />
       <!-- 聯絡我們 -->
@@ -746,22 +746,22 @@ svg:hover path{
       right: 0;
       bottom: 10px;
     }
-    &::before{
-      content: '';
-      position: absolute;
-      background: url(https://static.cmereye.com/imgs/2023/07/05652c3c60088f99.png) no-repeat;
-      left: 50px;
-      width: 434px;
-      height: 100px;
-    }
-    &::after{
-      content: '';
-      position: absolute;
-      background: url(https://static.cmereye.com/imgs/2023/07/6016ba854dc4f4e3.png) no-repeat;
-      right: 300px;
-      width: 279px;
-      height: 149px;
-    }
+    // &::before{
+    //   content: '';
+    //   position: absolute;
+    //   background: url(https://static.cmereye.com/imgs/2023/07/05652c3c60088f99.png) no-repeat;
+    //   left: 50px;
+    //   width: 434px;
+    //   height: 100px;
+    // }
+    // &::after{
+    //   content: '';
+    //   position: absolute;
+    //   background: url(https://static.cmereye.com/imgs/2023/07/6016ba854dc4f4e3.png) no-repeat;
+    //   right: 300px;
+    //   width: 279px;
+    //   height: 149px;
+    // }
   }
   &-c{
     width: 100%;

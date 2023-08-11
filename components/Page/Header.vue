@@ -214,9 +214,9 @@ const handleMenu = (_data:any) => {
     &-t{
       color: #FFF;
       font-family: 'cwTeXYen';
-      font-size: 13px;
+      font-size: 15px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 600;
       letter-spacing: 3.9px;
       height: 28px;
       line-height: 28px;

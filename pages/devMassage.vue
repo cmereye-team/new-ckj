@@ -14,7 +14,8 @@ const sumj = () =>{
     setTimeout(()=>{
         if(inputText.value === 'newckj'){
             errMessage.value = '密碼驗證成功！'
-            sessionStorage.setItem('adminPage','1')
+            let _a = useCookie('adminPage')
+            _a.value = '1'
             location.href = pageUrl
         }else{
             errorNum.value++

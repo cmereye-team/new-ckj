@@ -47,6 +47,14 @@ onMounted(()=>{
       AnimNum.value += 0.02
     }
   },10)
+  // 隐藏玩法
+  // timer = setInterval(()=>{
+  //   if(AnimNum.value >= 7){
+  //     AnimNum.value = -5
+  //   }else{
+  //     AnimNum.value += 0.2
+  //   }
+  // },10)
 })
 
 onBeforeUnmount(()=>{
@@ -105,6 +113,17 @@ onBeforeUnmount(()=>{
               </textPath>
             </text>
           </svg>
+          <!-- 隐藏玩法 -->
+          <!-- <svg viewBox="0 0 1000 600" class="overflow-visible uppercase w-full">
+            <path id="leftArch" d="M 1040,100 h-340 L 300,500 A 200 200 0 1 1 300,100 L 700,500 h340 A 200 200 0 0 0 1040,100 z" fill="none" stroke="none"></path>
+            <text width="500" font-size="26" class="font-gza text-secondary" fill="#FC1682">
+              <textPath class="tp" alignment-baseline="auto" xlink:href="#leftArch" :startOffset="`${AnimNum}%`">
+                <template v-for="i in 10" :key="i">
+                  I---+=========> &nbsp;&nbsp;&nbsp;&nbsp;
+                </template>
+              </textPath>
+            </text>
+          </svg> -->
         </div>
       </div>
     </div>

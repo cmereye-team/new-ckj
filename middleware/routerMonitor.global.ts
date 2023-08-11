@@ -1,32 +1,17 @@
-
-import menus from '@/plugins/menu'
-export default defineNuxtRouteMiddleware((to:any, from) => {
-    const _a:any = useSessionStorage('adminPage','')
-    if(_a.value === '1'){
-        return
-    }else{
+import { useStorage } from '@vueuse/core'
+import menus from '~~/assets/js/menu'
+import { useAppState } from '~~/stores/appState'
+export default defineNuxtRouteMiddleware(to => {
+    let _a:any = useAppState()
+    // console.log('排序：=====0')
+    let _b:any = useCookie('adminPage')
+    if(_b.value != '1'){
+        // console.log('排序：=====2')
         let _obj = menus.find(item=>item.path === to.path);
-        // console.log(_obj)
         if(!_obj){
-            // console.log('?')
             return navigateTo(`/devMassage?url=${to.path}`)
         }
     }
-    // let _defaultMenus = ['/404','/devMassage','/messagePage']
-    // if(_defaultMenus.includes(to.path)){
-    //     return
-    // }
-    // console.log(from)
-    // console.log(_a.value)
-    // if(to.path === '/devMassage'){
-    //     if(_a.value !== '1'){
-    //         return navigateTo(to.query.url)
-    //     }
-    // }
-    // if(_a.value !== '1'){
-    //     // console.log('_a.value !== 1',_a.value !== '1')
-        
-    // }
     
 })
 

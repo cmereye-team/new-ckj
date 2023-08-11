@@ -23,5 +23,9 @@ export default [
     {
         path: '/dental-service/invisalign',
         name: 'dental-service-invisalign'
+    },
+    {
+        path: '/dental-service/veneers',
+        name: 'dental-service-veneers'
     }
 ]

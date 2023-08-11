@@ -276,17 +276,17 @@ const openServiceCar = ref(false)
           }
         }
       }
-      &::after{
-        content: '';    
-        position: absolute;
-        background: url(https://static.cmereye.com/imgs/2023/07/a6bc776c3b9206ef.png) no-repeat;
-        background-size: 100% auto;
-        bottom: -100px;
-        right: -100px;
-        width: 50%;
-        height: 50%;
-        pointer-events: none;
-      }
+      // &::after{
+      //   content: '';    
+      //   position: absolute;
+      //   background: url(https://static.cmereye.com/imgs/2023/07/a6bc776c3b9206ef.png) no-repeat;
+      //   background-size: 100% auto;
+      //   bottom: -100px;
+      //   right: -100px;
+      //   width: 50%;
+      //   height: 50%;
+      //   pointer-events: none;
+      // }
     }
     .pcServices{
       display: flex;

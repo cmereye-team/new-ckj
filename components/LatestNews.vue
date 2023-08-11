@@ -107,7 +107,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
 
 <template>
   <div class="index-latestNews">
-    <StarModule />
+    <!-- <StarModule /> -->
       <div class="index-latestNews-t">
         <div>最新優惠</div>
       </div>
@@ -158,7 +158,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
   overflow: hidden;
   .swiperBox{
     width: 100%;
-    max-width: 1590px;
+    max-width: 1450px;
     margin-top: 68px;
     overflow: hidden;
     border-radius: 20px;

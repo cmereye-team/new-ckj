@@ -176,28 +176,28 @@ const handleLineCur = (_value:number) =>{
         }
       }
       
-      &::before{
-        content: '';
-        position: absolute;
-        left: -100px;
-        top: -200px;
-        background: url(https://static.cmereye.com/imgs/2023/08/5e353540b6b2bb9f.png) no-repeat;
-        background-size: 100% auto;
-        width: 178px;
-        height: 150%;
-        z-index: 2;
-      }
-      &::after{
-        content: '';
-        position: absolute;
-        right: -100px;
-        top: -200px;
-        background: url(https://static.cmereye.com/imgs/2023/07/8e0d12dcfe0a04fc.png) no-repeat;
-        background-size: 100% auto;
-        width: 220px;
-        height: 150%;
-        z-index: 2;
-      }
+      // &::before{
+      //   content: '';
+      //   position: absolute;
+      //   left: -100px;
+      //   top: -200px;
+      //   background: url(https://static.cmereye.com/imgs/2023/08/5e353540b6b2bb9f.png) no-repeat;
+      //   background-size: 100% auto;
+      //   width: 178px;
+      //   height: 150%;
+      //   z-index: 2;
+      // }
+      // &::after{
+      //   content: '';
+      //   position: absolute;
+      //   right: -100px;
+      //   top: -200px;
+      //   background: url(https://static.cmereye.com/imgs/2023/07/8e0d12dcfe0a04fc.png) no-repeat;
+      //   background-size: 100% auto;
+      //   width: 220px;
+      //   height: 150%;
+      //   z-index: 2;
+      // }
     }
   }
   &-b{
