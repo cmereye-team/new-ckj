@@ -35,7 +35,16 @@ defineProps({
   moduleType:{
     type: String,
     default: '1'
-  } 
+  },
+  animConfig: {
+    type: Object,
+    default(){
+      return {
+        color: '#FC1682',
+        text: 'INVISALIGN'
+      }
+    }
+  }
 })
 let AnimNum = ref(0)
 let timer:any = null
@@ -105,10 +114,10 @@ onBeforeUnmount(()=>{
           <img :src="introduceData.pcImg" alt="">
           <svg viewBox="0 0 1000 600" class="overflow-visible uppercase w-full">
             <path id="leftArch" d="M 1040,600 V0 h-770 a 300 300 0 0 0 0,600 z" fill="none" stroke="none"></path>
-            <text width="500" font-size="26" class="font-gza text-secondary" fill="#FC1682">
+            <text width="500" font-size="26" class="font-gza text-secondary" :fill="animConfig.color">
               <textPath class="tp" alignment-baseline="auto" xlink:href="#leftArch" :startOffset="`${AnimNum}%`">
                 <template v-for="i in 24" :key="i">
-                  INVISALIGN &nbsp;
+                  {{animConfig.text}} &nbsp;
                 </template>
               </textPath>
             </text>

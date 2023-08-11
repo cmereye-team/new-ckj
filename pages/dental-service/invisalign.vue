@@ -22,8 +22,8 @@ const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
-  text1: '#根管治療助您解決牙痛 恢復健康的口腔狀態',
-  text2: '立即接受專業治療手術 徹底解放美食自由',
+  text1: '#自由．舒適．美觀',
+  text2: '保持自然笑容 牙齒更加美麗動人',
   tabNavName: 'pages.dental-service.invisalign.introduce.tabNavName'
 }
 
@@ -132,7 +132,7 @@ const problemData = {
 <div>
   <!-- <PageHeader :headerConfig="headerConfig" /> -->
   <div class="invisalignPage">
-    <ServiceBanner :bannerData="bannerData" :pageName="'rootCanal'" />
+    <ServiceBanner :bannerData="bannerData" :pageName="'invisalign'" />
     <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
     <ServiceIntroduce :introduceData="introduceData" :moduleType="'2'" />
     <ServiceStep :stepData="stepData" />

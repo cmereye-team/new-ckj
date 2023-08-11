@@ -114,6 +114,27 @@ defineProps({
               }
             }
           }
+          &.invisalign{
+            span{
+              &:last-child{
+                margin-top: -2.1%;
+              }
+            }
+          }
+          &.veneers{
+            span{
+              min-width: auto;
+              &:first-child{
+                &::after{
+                  width: calc(100% - 250px);
+                }
+              }
+              &:last-child{
+                margin-top: -3.5%;
+                margin-left: 250px;
+              }
+            }
+          }
         }
         .bannerText-2{
           display: flex;
@@ -193,6 +214,19 @@ defineProps({
             &:last-child{
               margin-top: -1.4%;
               margin-left: 60px;
+            }
+          }
+        }
+        &.veneers{
+          span{
+            &:first-child{
+              &::after{
+                width: calc(100% - 120px);
+              }
+            }
+            &:last-child{
+              margin-top: -3%;
+              margin-left: 120px;
             }
           }
         }

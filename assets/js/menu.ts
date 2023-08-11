@@ -27,5 +27,9 @@ export default [
     {
         path: '/dental-service/veneers',
         name: 'dental-service-veneers'
+    },
+    {
+        path: '/dental-service/all-ceramic-crowns',
+        name: 'dental-service-all-ceramic-crowns'
     }
 ]
