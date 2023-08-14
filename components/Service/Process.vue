@@ -24,28 +24,60 @@ const setSwiperRef = (swiper:any) => {
 let processTabsActive = ref(0)
 const handleProcessTabs = (_idx: number) =>{
   processTabsActive.value = _idx 
-  // console.log('_idx',_idx)
   swiperRef.slideToLoop(_idx);
 }
-
+let clipPathWidth = ref(26)
+let clipPathLeft = ref(123)
+let clipPathFont = ref(14)
 const onSlideProcessSwiperChange = (swiper:any) => {
-  // console.log('swiperrealIndex',swiper.realIndex)
   processTabsActive.value = swiper.realIndex
 }
+let windowWidth = ref(1920)
+const getWindowWidth = () => {
+  windowWidth.value = window.innerWidth
+  // console.log(windowWidth)
+  if(windowWidth.value>768){
+    clipPathWidth.value = 26
+    clipPathLeft.value = 123
+    clipPathFont.value = 14
+  }else{
+    clipPathWidth.value = 18
+    clipPathLeft.value = 85
+    clipPathFont.value = 10
+  }
+}
+onMounted(() => {
+  getWindowWidth()
+  window.addEventListener('resize',getWindowWidth)
+})
+
 </script>
 
 <template>
+  <div class="processCon">
+    <RippleLine :type="'3'" />
     <div class="process">
-      <div class="dentistryServices-title">
-        <div class="dentistryServices-title-in bb">{{processData.title}}</div>
+      <div class="process-title">
+        <div class="process-title-in">
+          <!-- {{processData.title}} -->
+          <serviceTitle :title="processData.title" :yaBorder="'#089CFE'" :bgColor="'#fff'" :textColor="'#089CFE'" />
+        </div>
       </div>
       <div class="process-context pageCon">
         <span v-for="(processContextItem,processContextIndex) in processData.context" :key="processContextIndex">{{processContextItem}}</span>
       </div>
       <div class="process-tabs pageCon">
-        <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
-          {{processTabItem}}
+        <div class="process-tabs-in">
+          <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
+            {{processTabItem}}
+          </div>
         </div>
+        <div class="process-tabs-in" :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%`}">
+          <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
+            {{processTabItem}}
+          </div>
+        </div>
+        <div class="process-tabs-line" :style="{left: `calc((100% / ${processData.tabs.length} - 46px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}%)`}"></div>
       </div>
       <div class="process-step pageCon">
         <Swiper
@@ -56,265 +88,204 @@ const onSlideProcessSwiperChange = (swiper:any) => {
         >
           <SwiperSlide v-for="(processItem,index) in processData.lists" :key="index">
             <div class="step-in">
-              <div class="step-in-box"
-                v-for="(step,stepIndex) in processItem.listItem" :key="stepIndex">
-                <div class="step-itemLists">
-                  <div class="step-itemLists-in" v-for="(stepChild,stepChildIndex) in step" :key="stepChildIndex">
-                    <div :class="['line', { 'lineNone' : step.length === 2 && stepChildIndex === 1 }]"></div>
-                    <span class="round"></span>
-                    <span class="title">{{stepChild.title}}</span>
-                    <span class="text">
-                      <div>{{stepChild.text}}</div>
-                      <div class="text-in" v-if="stepChild.textIn">{{stepChild.textIn}}</div>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <div :class="['step-in-box']" :style="{'animation-delay': `${stepIndex/5}s`}" v-for="(step,stepIndex) in processItem.listItem" :key="stepIndex">
+                <span class="title">{{step.title}}</span>
+                <span class="text">
+              <div>{{step.text}}</div>
+            </span>
+        </div>
             </div>
           </SwiperSlide>  
         </Swiper>
       </div>
     </div>
+    <RippleLine :type="'3'" :isBottom="true" />
+  </div>
 </template>
 
 
 <style lang="scss" scoped>
+.processCon{
+  margin-top: 171px;
+}
 .process{
-  background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
-  margin-top: 153px;
+  background: var(--blue-color);
   padding-top: 70px;
+  &-title{
+    display: flex;
+    justify-content: center;
+  }
   &-context{
     text-align: center;
-    margin-top: 35px;
+    margin-top: 36px;
     span{
+      font-size: 16px;
       font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
+      font-weight: 400;
       line-height: 160%;
-      color: #666666;
+      letter-spacing: 4.8px;
+      color: #fff;
+      &:nth-child(1){
+        display: block;
+      }
     }
   }
   &-tabs{
-    display: flex;
-    margin-top: 56px;
-    div{
-      flex: 1;
-      height: 69px;
-      // line-height: 69px;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 28px;
+    margin-top: 110px;
+    position: relative;
+    &-in{
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #FFFFFF;
-      background: #FFDDDA;
-      cursor: pointer;
-      &:not(:last-child){
-        margin-right: 3px;
+      div{
+        flex: 1;
+        padding: 25px 0;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #FFFFFF;
+        cursor: pointer;
       }
-      &:hover{
-        background: #FFA09E;
+      &:nth-of-type(2){
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        transition: all .5s;
+        transition-timing-function: ease;
+        div{
+          color: var(--blue-color);
+        }
       }
-      &.active{
-        background: #FFA09E;
-      }
+    }
+    &-line{
+      width: 46px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      bottom: 0;
+      transition: all .5s;
     }
   }
   &-step{
-    padding-bottom: 106px;
-    .swiperBox{
-      background: #fff;
-      box-shadow: 0px 4px 8px #FFDDDA;
-    }
+    margin-top: 122px;
+    padding-bottom: 100px;
     .step-in{
-        width: 100%;
-        background: #FFFFFF;
+      display: flex;
+      width: 100%;
+      max-width: 1500px;
+      &-box{
+        flex: 1;
         display: flex;
-        padding: 44px 65px;
-        box-sizing: border-box;
-        height: 100%;
-        min-height: 460px;
-        &-box{
-          width: 50%;
-          height: 100%;
-          .step-itemLists{
-            width: 100%;
-            &-in{
-              padding-bottom: 90px;
-              display: flex;
-              align-items: flex-start;
-              cursor: pointer;
-              position: relative;
-              .line{
-                width: 4px;
-                height: 100%;
-                background: #FFF1F0;
-                position: absolute;
-                top: 20px;
-                left: 10px;
-                z-index: 0;
-                &.lineNone{
-                  height: 0;
-                }
-              }
-              .round{
-                width: 24px;
-                height: 24px;
-                margin-right: 14px;
-                margin-top: 8px;
-                border-radius: 50%;
-                background: #FFF1F0;
-                display: block;
-                z-index: 1;
-              }
-              .title{
-                margin-right: 28px;
-                font-weight: 700;
-                font-size: 28px;
-                line-height: 160%;
-                color: #666666;
-                display: block;
-              }
-              .text{
-                flex: 1;
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 160%;
-                color: #666666;
-                display: block;
-                padding-top: 10px;
-                &-in{
-                  // color: #FFA09E;
-                }
-              }
-              &:last-child{
-                align-items: center;
-                margin-bottom: 0;
-                padding-bottom: 0;
-                .line{
-                  height: calc(50% - 24px);
-                  &.lineNone{
-                    height: 0;
-                  }
-                }
-              }
-              &:hover .round{
-                background: #FFCECB;
-              }
-            }
-          }
-          &:first-child{
-            padding-right: 40px;
-          }
-          &:last-child{
-            margin-left: 40px;
-            .step-itemLists{
-              &-in{
-                &:last-child{
-                  align-items: flex-start;
-                }
-              }
-            }
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        .title{
+          font-weight: 600;
+          font-size: 23px;
+          line-height: 36px;
+          color: var(--topic-text-color);
+          display: block;
+          width: 36px;
+          height: 36px;
+          background: #fff;
+          border: 1px solid var(--topic-text-color);
+          border-radius: 50%;
+          display: block;
+          text-align: center;
+        }
+        .text{
+          flex: 1;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 160%;
+          color: #fff;
+          display: block;
+          letter-spacing: 4.8px;
+          padding: 68px 37px 0;
+        }
+        &:not(:last-child){
+          &::after{
+            content: '';
+            background: url(https://static.cmereye.com/imgs/2023/08/6dd1cbda65b75ee8.png);
+            background-size: 100% 100%;
+            width: 8px;
+            height: 17px;
+            top: 9px;
+            right: 0;
+            position: absolute;
           }
         }
       }
+    }
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {}
 @media screen and (max-width: 768px) {
+  .processCon{
+    margin-top: 51px;
+  }
   .process{
-    background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.7) 12.5%, rgba(255, 241, 240, 0.7) 81.99%, rgba(255, 241, 240, 0) 100%);
-    margin-top: 69px;
-    padding-top: 44px;
+    padding-top: 40px;
     &-context{
-      margin-top: 15px;
+      padding: 0 50px;
       span{
-        font-weight: 500;
-        font-size: 16px;
+        letter-spacing: 4.5px;
+        font-size: 15px;
         width: 100%;
-        display: inline-block;
-        text-align: center;
       }
     }
     &-tabs{
-      padding: 0 30px;
-      margin-top: 33px;
-      div{
-        height: 40px;
-        line-height: 18px;
-        font-weight: 600;
-        font-size: 15px;
-        white-space: pre-wrap;
+      // width: auto;
+      // margin: 0 30px;
+      // padding: 0 30px;
+      margin-top: 60px;
+      &-in{
+        // padding: 0 30px;
+        div{
+          padding: 15px 0;
+          letter-spacing: 3px;
+          font-size: 15px;
+        }
+        &:nth-of-type(2){
+          // width: calc(100% + 60px);
+          // margin-left: -30px;
+          
+          // padding: 0 30px;
+        }
       }
     }
     &-step{
-      padding: 0 30px 46px;
+      margin-top: 14px;
+      padding-bottom: 0;
       .step-in{
         flex-direction: column;
-        padding: 23px 0 23px 24px;
-        // margin-top: 28px;
+        padding: 0 40px;
+        margin: 46px auto 0;
         &-box{
-          width: 100%;
-          .step-itemLists{
-            &-in{
-              height: auto;
-              padding-right: 10px;
-              padding-bottom: 40px;
-              .line{
-                width: 2px;
-                left: 7px;
-              }
-              .round{
-                width: 16px;
-                height: 16px;
-                margin-top: 4px;
-                margin-right: 7px;
-              }
-              .title{
-                font-weight: 500;
-                font-size: 1rem;
-                margin-right: 12px;
-              }
-              .text{
-                font-weight: 500;
-                font-size: 1rem;
-                padding-top: 0;
-              }
-              &:first-child{
-                margin-bottom: 0px;
-                margin-top: 0;
-              }
-              &:last-child{
-                align-items: flex-start;
-                padding-bottom: 40px;
-                .round{
-                  margin-top: 4px;
-                }
-              }
-            }
-            &-in:last-child{
-              .line{
-                width: 2px;
-                left: 7px;
-                height: 100%;
-              }
-            }
+          flex-direction: row;
+          align-items: flex-start;
+          margin-bottom: 37px;
+          .title{
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 22px;
           }
-          &:first-child{
-            padding-right: 0;
+          .text{
+            padding: 0 0 40px 19px;
+            letter-spacing: 4.5px;
+            font-size: 15px;
           }
-          &:last-child{
-            margin-left: 0;
-            .step-itemLists{
-              &-in:last-child{
-                padding-bottom: 0;
-                .line{
-                  display: none;
-                }
-              }
+          &:not(:last-child){
+            &::after{
+              left: 50%;
+              top: auto;
+              bottom: 0;
+              transform: translateX(-50%) rotate(90deg) scale(.6);
             }
           }
         }

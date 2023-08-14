@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#自由．舒適．美觀',
+  text2: '保持自然笑容 牙齒更加美麗動人',
+  tabNavName: 'pages.dental-service.invisalign.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/be6cbd721fed563e.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/fc94e41b3cd98d6b.jpg',
@@ -39,7 +48,7 @@ const orthodonticsIntroduceData = {
 const reasonData = {
   title: 'pages.dental-service.wisdom-teeth-extraction.reason.title',
   text: 'pages.dental-service.wisdom-teeth-extraction.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/44b6fba4b7e68c38.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.wisdom-teeth-extraction.reason.lists[0].context',
@@ -61,8 +70,8 @@ const reasonData = {
 }
 
 const issueData = {
-  title: ['智慧齒可能','導致的口腔問題：'],
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/c99ca0ddf73edcbc.jpg',
+  title: '智慧齒可能導致的口腔問題',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/35b763276aa6ecb5.jpg',
   issueLists: [
     '由於智慧齒生長位置較後，難以清潔，容易積聚牙菌膜，引致蛀牙',
     '當智慧齒出現橫生或斜生情況，鄰近的牙齒會受到壓力，嚴重更會令牙槽骨萎縮，甚至鬆脫',
@@ -95,104 +104,95 @@ const noteData = {
       name: '避免大力漱口或吐痰'
     }
   ],
+  pageName: 'wisdomTeethExtraction',
   text: '*拔牙後，傷口有機會出現腫脹，一般會數天後消退，可按醫生處方服藥或以冷敷消腫及紓緩不適。如傷口持續或大量出血，需盡快聯絡醫生，或視乎嚴重程度前往就近急症室求診。'
 }
 
 const processData = {
   title: '拔牙及智慧齒脫除過程',
   tabs: ['智慧齒脫除','手術性脫牙','非手術性脫牙'],
-  context: ['* 拔牙一般不需要進行手術，','但若牙齒歪生或非常接近神經，則有機會需','要進行手術式脫牙。'],
+  context: ['※拔牙一般不需要進行手術，','但若牙齒歪生或非常接近神經，則有機會需','要進行手術式脫牙。'],
   lists: [
     {
       listItem: [
-        [
           {
-            title: 'Step 1',
+            title: '1',
             text: '透過口腔檢查及口腔全景X光片，了解智慧齒生長的狀況及準確位置',
             textIn: ''
           },
           {
-            title: 'Step 2',
+            title: '2',
             text: '注射局部麻醉藥',
             textIn: ''
           },
           {
-            title: 'Step 3',
+            title: '3',
             text: '如智慧齒出現阻生，需把牙齦割開、翻起，將智慧齒切成數個部分再逐一移除',
             textIn: ''
-          }
-        ],
-        [
+          },
           {
-            title: 'Step 4',
+            title: '4',
             text: '清潔及縫合傷口',
             textIn: ''
           },
           {
-            title: 'Step 5',
+            title: '5',
             text: '手術後腫痛的情況會維持兩至三日，醫生會處方止痛藥和抗生素（需要時服用）舒緩情況，一般約一星期後便完全康復。',
             textIn: ''
-          },
-        ]
+          }
       ]
     },
     {
       listItem: [
-        [
           {
-            title: 'Step 1',
+            title: '1',
             text: '注射局部麻醉或全身麻醉藥（特殊情況下）',
             textIn: ''
           },
           {
-            title: 'Step 2',
+            title: '2',
             text: '翻起牙齦',
             textIn: ''
           },
           {
-            title: 'Step 3',
+            title: '3',
             text: '除去部分覆蓋牙齒的牙槽骨，使牙根外露',
             textIn: ''
-          }
-        ],
-        [
+          },
           {
-            title: 'Step 4',
+            title: '4',
             text: '把牙齒搖鬆或分割成幾部分取出',
             textIn: ''
           },
           {
-            title: 'Step 5',
+            title: '5',
             text: '縫合傷口',
             textIn: ''
           },
           {
-            title: 'Step 6',
+            title: '6',
             text: '咬緊棉花或紗布止血',
             textIn: ''
-          },
-        ]
+          }
       ]
     },
     {
       listItem: [
-        [
           {
-            title: 'Step 1',
+            title: '1',
             text: '局部麻醉',
             textIn: ''
           },
           {
-            title: 'Step 2',
+            title: '2',
             text: '把牙齒搖鬆，拔掉',
             textIn: ''
           },
           {
-            title: 'Step 3',
+            title: '3',
             text: '咬緊棉花或紗布止血',
             textIn: ''
           }
-        ]
       ]
     },
   ]
@@ -231,14 +231,12 @@ const problemData = {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" />
-  <div class="pageIn whitebgColor">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-    <ServiceReason :reasonData="reasonData" />
+  <div class="wisdomTeethExtractionPage">
+    <ServiceBanner :bannerData="bannerData" :pageName="'invisalign'" />
+    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
     <div class="issue pageCon">
       <div class="issue-top">
-        <span v-for="(titleItem,titleIndex) in issueData.title" :key="titleIndex">{{titleItem}}</span>
+        {{issueData.title}}
       </div>
       <div class="issue-bottom">
         <div class="issue-bottom-img">
@@ -246,212 +244,161 @@ const problemData = {
         </div>
         <div class="issue-bottom-lists">
           <div class="issue-bottom-lists-in" v-for="(issueItem,issueIndex) in issueData.issueLists" :key="issueIndex">
-            <div>· </div>
+            <div>·</div>
             <div>{{issueItem}}</div>
           </div>
         </div>
       </div>
     </div>
     <ServiceProcess :processData="processData" />
-    <div class="note">
-      <div class="dentistryServices-title">
-        <div class="dentistryServices-title-in bb">{{noteData.title}}</div>
-      </div>
-      <div class="note-in">
-        <div class="note-in-lists">
-          <div class="note-in-lists-item" v-for="(item,index) in noteData.lists" :key="index">
-            <div>·</div>
-            <div>{{item.name}}</div>
-          </div>
-        </div>
-        <div class="note-in-text">
-          {{noteData.text}}
-        </div>
-      </div>
+    <ServiceNote :noteData="noteData" />
+    <div class="note-line">
+      <RippleLine :type="'4'" />
     </div>
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
 </div>
 </template>
 
 <style lang="scss" scoped>
-.note{
-  padding: 96px 0 0;
-  &-in{
-    width: 100%;
-    max-width: 1200px;
-    margin: 35px auto;
-    padding: 60px 0;
-    background: #FFF1F0;
-    box-shadow: 0px 4px 8px #FFDDDA;
-    min-height: 378px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    &-lists{
-      width: 80%;
-      max-width: 1000px;
-      &-item{
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 160%;
-        color: #666666;
-        display: flex;
-        &>div:first-child{
-          width: 20px;
-        }
-        &>div:last-child{
-          flex: 1;
-        }
-      }
-    }
-    &-text{
-      margin-top: 32px;
-      width: 80%;
-      max-width: 1000px;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 160%;
-      color: #FFA09E;
-    }
-  }
+.wisdomTeethExtractionPage{
+  margin-top: -20px;
+  padding-bottom: 140px;
 }
 
 .issue{
-  margin-top: 126px;
+  margin-top: 200px;
+  text-align: center;
   &-top{
-    margin-left: 203px;
+    font-size: 31.766px;
     font-style: normal;
-    font-weight: 700;
-    font-size: 50px;
+    font-weight: 400;
     line-height: 160%;
-    color: #666666;
-    display: flex;
-    align-items: center;
+    letter-spacing: 7.942px;
+    color: var(--topic-text-color);
+    display: inline-block;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -20px;
+      bottom: 5px;
+      height: 23px;
+      border-radius: 8px;
+      opacity: 0.5;
+      background: #FFB0CA;
+      width: calc(100% + 40px);
+    }
   }
   &-bottom{
-    margin-top: 37px;
-    margin-left: 203px;
+    width: 100%;
+    max-width: 967px;
+    margin: 92px auto 0;
     display: flex;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
     &-img{
-      width: 360px;
-      height: 360px;
-      margin-right: 49px;
+      width: 50%;
+      max-width: 408px;
       img{
         width: 100%;
-        height: 100%;
+        height: auto;
       }
     }
     &-lists{
-      flex: 1;
-      max-width: 750px;
+      width: 50%;
+      max-width: 460px;
       &-in{
         font-style: normal;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 160%;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 200%;
+        letter-spacing: 4.8px;
         color: #666666;
-        display: flex;
+        &:not(:last-child){
+          margin-bottom: 10px;
+        }
         &>div:first-child{
-          width: 20px;
+          display: inline;
+          margin-right: 5px;
+          margin-left: 5px;
         }
         &>div:last-child{
           flex: 1;
+          display: inline;
         }
       }
     }
   }
+}
+.note-line{
+  margin-top: 170px;
 }
 
 @media (min-width: 768px) and (max-width: 1452px) {
-  .issue{
-    margin-top: 10vw;
-    &-top{
-      margin-left: 13vw;
-      font-size: 3vw;
-    }
-    &-bottom{
-      margin-left: 13vw;
-      margin-top: 2vw;
-      &-img{
-        width: 23vw;
-        height: 23vw;
-        margin-right: 2vw;
-      }
-      &-lists{
-        max-width: 45vw;
-        &-in{
-          font-size: 1.7vw;
-        }
-      }
-    }
-  }
+  // .issue{
+  //   margin-top: 10vw;
+  //   &-top{
+  //     margin-left: 13vw;
+  //     font-size: 3vw;
+  //   }
+  //   &-bottom{
+  //     margin-left: 13vw;
+  //     margin-top: 2vw;
+  //     &-img{
+  //       width: 23vw;
+  //       height: 23vw;
+  //       margin-right: 2vw;
+  //     }
+  //     &-lists{
+  //       max-width: 45vw;
+  //       &-in{
+  //         font-size: 1.7vw;
+  //       }
+  //     }
+  //   }
+  // }
 }
 @media only screen and (max-width: 760px) {
-  .note{
-    padding: 96px 30px 0;
-    box-sizing: border-box;
-    &-in{
-      padding: 23px 15px;
-      box-sizing: border-box;
-      min-height: 0;
-      &-lists{
-        width: 100%;
-        &-item{
-          font-weight: 500;
-          font-size: 16px;
-          margin-top: 5px;
-          &>div:first-child{
-            width: 15px;
-          }
-        }
-      }
-      &-text{
-        width: 100%;
-        margin-top: 13px;
-        font-weight: 500;
-        font-size: 15px;
-      }
-    }
-  }
   .issue{
-    margin-top: 69px;
+    margin-top: 50px;
     padding: 30px;
     &-top{
-      margin-left: 0;
-      font-weight: 700;
-      font-size: 26px;
-      display: flex;
-      flex-direction: column;
+      font-size: 20px;
+      letter-spacing: 5px;
+      &::after{
+        height: 10px;
+        left: -10px;
+        width: calc(100% + 20px);
+      }
     }
     &-bottom{
-      margin-left: 0;
-      margin-top: 34px;
+      margin-top: 39px;
       flex-direction: column;
       &-img{
         width: 100%;
         height: 100%;
-        padding: 0 20px;
-        margin-right: 0;
       }
       &-lists{
         width: 100%;
         max-width: 100%;
-        margin-top: 15px;
-        padding-right: 20px;
+        margin-top: 39px;
+        padding: 0 20px;
         &-in{
           font-weight: 500;
-          font-size: 16px;
+          font-size: 15px;
+          letter-spacing: 4.5px;
         }
       }
     }
+  }
+  .note-line{
+    margin-top: 82px;
   }
 }
 </style>

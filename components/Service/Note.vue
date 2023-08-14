@@ -7,7 +7,8 @@ defineProps({
       return {
         title: '',
         lists: [],
-        pageName: ''
+        pageName: '',
+        text: ''
       }
     }
   }
@@ -25,7 +26,7 @@ defineProps({
         </div>
         <div class="note-title-in">{{noteData.title}}</div>
       </div>
-      <div class="note-in">
+      <div :class="['note-in',noteData.pageName]">
         <div class="note-in-lists">
           <div class="note-in-lists-item" v-for="(item,index) in noteData.lists" :key="index">
             <div>·</div>
@@ -35,6 +36,9 @@ defineProps({
         <div class="note-in-r">
           <img src="https://static.cmereye.com/imgs/2023/07/bddd5d9b334f8f0a.png" alt="">
         </div>
+      </div>
+      <div class="note-remark" v-if="noteData.text">
+        {{noteData.text}}
       </div>
     </div>
 </template>
@@ -83,9 +87,6 @@ defineProps({
       }
     }
   }
-  // &.children-dentistry{
-  //   padding: 143px 0 0;
-  // }
   &-in{
     width: 100%;
     max-width: 1200px;
@@ -93,6 +94,10 @@ defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
+    &.wisdomTeethExtraction{
+      padding-right: 100px;
+      justify-content: space-between;
+    }
     &-lists{
       max-width: 1000px;
       margin-right: 89px;
@@ -112,6 +117,18 @@ defineProps({
         }
       }
     }
+  }
+  &-remark{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--topic-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+    letter-spacing: 4.8px;
   }
 }
 
@@ -142,12 +159,13 @@ defineProps({
         }
       }
     }
-  //   &.children-dentistry{
-  //     padding: 96px 30px 0;
-  //   }
     &-in{
       flex-direction: column;
       margin: 35px auto 0;
+      &.wisdomTeethExtraction{
+        padding-right: 0;
+        justify-content: center;
+      }
       &-lists{
         margin-bottom: 57px;
         margin-right: 0;
@@ -165,6 +183,11 @@ defineProps({
           width: 80%;
         }
       }
+    }
+    &-remark{
+      margin: 37.28px auto;
+      font-size: 15px;
+      letter-spacing: 4.5px;
     }
   }
 }

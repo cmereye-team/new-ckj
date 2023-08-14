@@ -206,7 +206,6 @@ onMounted(()=>{
         flex-direction: row;
         align-items: flex-start;
         margin-bottom: 37px;
-        // transform: translateY(-100%);
         .title{
           width: 28px;
           height: 28px;
@@ -226,10 +225,6 @@ onMounted(()=>{
             transform: translateX(-50%) rotate(90deg) scale(.6);
           }
         }
-        // &.tepAnim{
-        //   animation: stepBoxAnim2 .8s ease-out;
-        //   animation-fill-mode: forwards;
-        // }
       }
     }
     &-bottom{
