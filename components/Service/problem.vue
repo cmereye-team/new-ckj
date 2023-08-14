@@ -149,7 +149,7 @@ const handleChange = (val: string[]) => {
   line-height: 160%;
   height: auto;
   min-height: 45px;
-  border-radius: 35px;
+  border-radius: 15px;
   position: relative;
   &::before{
         content: '';
@@ -224,14 +224,17 @@ const handleChange = (val: string[]) => {
     box-sizing: border-box;
     position: relative;
     &::before{
-          bottom: -9px;
-          width: 22px;
-          height: 18px;
-          border-left: 11px solid var(--topic-color);
-          border-right: 11px solid transparent;
-          border-top: 9px solid transparent;
-          border-bottom: 9px solid transparent;
-        }
+      bottom: -9px;
+      width: 22px;
+      height: 18px;
+      border-left: 11px solid var(--topic-color);
+      border-right: 11px solid transparent;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+    }
+  }
+  :deep(.problem-in-title){
+    align-items: flex-end;
   }
 }
 </style>
