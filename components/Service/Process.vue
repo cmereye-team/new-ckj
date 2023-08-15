@@ -72,7 +72,7 @@ onMounted(() => {
             {{processTabItem}}
           </div>
         </div>
-        <div class="process-tabs-in" :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%`}">
+        <div class="process-tabs-in" :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%)`}">
           <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
             {{processTabItem}}
           </div>

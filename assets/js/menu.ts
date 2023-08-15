@@ -31,5 +31,9 @@ export default [
     {
         path: '/dental-service/all-ceramic-crowns',
         name: 'dental-service-all-ceramic-crowns'
+    },
+    {
+        path: '/dental-service/wisdom-teeth-extraction',
+        name: 'dental-service-wisdom-teeth-extraction'
     }
 ]
