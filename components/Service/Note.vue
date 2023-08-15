@@ -11,13 +11,21 @@ defineProps({
         text: ''
       }
     }
+  },
+  pageName:{
+    type: String,
+    default: ''
   }
 })
 </script>
 
 <template>
     <div :class="['note',noteData.pageName]">
-      <div class="note-title">
+      <div class="note-title" v-if="pageName === 'periodontal'">
+        <div class="note-title-in periodontal">{{noteData.title}}</div>
+        <div class="note-title-icon periodontal">?</div>
+      </div>
+      <div class="note-title" v-else>
         <div class="note-title-icon">
           <svg width="52" height="45" viewBox="0 0 52 45" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.9497 4.5C24.1044 2.5 26.9911 2.5 28.1458 4.5L48.4974 39.75C49.6521 41.75 48.2087 44.25 45.8993 44.25H5.19616C2.88676 44.25 1.44338 41.75 2.59808 39.75L22.9497 4.5Z" fill="#FC1682"/>
@@ -55,9 +63,19 @@ defineProps({
     font-weight: 400;
     line-height: 160%; /* 38.4px */
     letter-spacing: 7.2px;
+    position: relative;
     &-icon{
       margin: 0 auto 24px;
       width: max-content;
+      &.periodontal{
+        font-family: cursive;
+        font-size: 250px;
+        opacity: .2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 60%;
+      }
     }
     &-in{
       display: inline-block;
@@ -84,6 +102,16 @@ defineProps({
         right: -30px;
         bottom: -10px;
         transform: rotate(30deg);
+      }
+      &.periodontal{
+        margin-top: 100px;
+        &::after,&::before{
+          width: 12px;
+          height: 12px;
+          border-radius: 0;
+          bottom: 15px;
+          transform: rotate(45deg);
+        }
       }
     }
   }
@@ -143,6 +171,10 @@ defineProps({
       &-icon{
         margin: 0 auto;
         transform: scale(.6);
+        &.periodontal{
+          font-size: 150px;
+          top: 40%;
+        }
       }
       &-in{
         &::before{
@@ -156,6 +188,20 @@ defineProps({
           height: 25px;
           bottom: 5px;
           right: -20px;
+        }
+        &.periodontal{
+          font-size: 20px;
+          letter-spacing: 5px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          &::after{
+            width: 6px;
+            height: 6px;
+          }
+          &::before{
+            width: 6px;
+            height: 6px;
+          }
         }
       }
     }

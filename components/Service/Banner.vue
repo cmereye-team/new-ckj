@@ -135,6 +135,19 @@ defineProps({
               }
             }
           }
+          &.periodontal{
+            span{
+              &:first-child{
+                &::after{
+                  width: calc(100% - 170px);
+                }
+              }
+              &:last-child{
+                margin-top: -2%;
+                margin-left: 170px;
+              }
+            }
+          }
         }
         .bannerText-2{
           display: flex;
@@ -227,6 +240,19 @@ defineProps({
             &:last-child{
               margin-top: -3%;
               margin-left: 120px;
+            }
+          }
+        }
+        &.periodontal{
+          span{
+            &:first-child{
+              &::after{
+                width: calc(100% - 70px);
+              }
+            }
+            &:last-child{
+              margin-top: -1.5%;
+              margin-left: 70px;
             }
           }
         }

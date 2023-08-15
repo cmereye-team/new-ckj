@@ -24,7 +24,7 @@ const bannerData = {
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#自由．舒適．美觀',
   text2: '保持自然笑容 牙齒更加美麗動人',
-  tabNavName: 'pages.dental-service.invisalign.introduce.tabNavName'
+  tabNavName: 'pages.dental-service.wisdom-teeth-extraction.introduce.tabNavName'
 }
 
 const headerConfig = {
@@ -253,7 +253,7 @@ const problemData = {
     <ServiceProcess :processData="processData" />
     <ServiceNote :noteData="noteData" />
     <div class="note-line">
-      <RippleLine :type="'4'" />
+    <RippleLine :type="'4'" />
     </div>
     <ServiceProblem :problemData="problemData" />
     <serviceCard />

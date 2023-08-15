@@ -35,5 +35,9 @@ export default [
     {
         path: '/dental-service/wisdom-teeth-extraction',
         name: 'dental-service-wisdom-teeth-extraction'
+    },
+    {
+        path: '/dental-service/periodontal',
+        name: 'dental-service-periodontal'
     }
 ]
