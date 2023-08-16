@@ -52,7 +52,7 @@ const handleChange = (val: string[]) => {
           <template #title>
             <div class="problem-in-title">
               <!-- <div>Q</div> -->
-              <div>{{$t(problemItem.Q)}}</div>
+              <div :contenteditable="false">{{$t(problemItem.Q)}}</div>
               <div>
                 <!-- <img src="@/assets/images/icon_9.png" alt=""> -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -148,14 +148,14 @@ const handleChange = (val: string[]) => {
   box-sizing: initial;
   line-height: 160%;
   height: auto;
-  min-height: 45px;
-  border-radius: 15px;
+  // min-height: 45px;
+  border-radius: 25px;
   position: relative;
   &::before{
         content: '';
         position: absolute;
         left: 50px;
-        bottom: -12px;
+        bottom: -10px;
         width: 28px;
         height: 24px;
         border-left: 14px solid var(--topic-color);
@@ -166,7 +166,7 @@ const handleChange = (val: string[]) => {
 }
 :deep(.el-collapse-item__header.is-active){
   background: var(--topic-color);
-  border-radius: 35px;
+  // border-radius: 35px;
   .problem-in-title>div:nth-of-type(1){
     color: #fff;
   }

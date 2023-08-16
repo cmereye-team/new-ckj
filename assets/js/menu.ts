@@ -39,5 +39,9 @@ export default [
     {
         path: '/dental-service/periodontal',
         name: 'dental-service-periodontal'
+    },
+    {
+        path: '/dental-service/toothtray',
+        name: 'dental-service-toothtray'
     }
 ]

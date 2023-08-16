@@ -111,7 +111,7 @@ const symptomData = {
 
 const processData = {
   title: '牙周病治療過程',
-  tabs: ['牙根刮治\n(深層洗牙)','牙肉翻瓣手術','牙周再生手術'],
+  tabs: ['牙根刮治（深層洗牙）','牙肉翻瓣手術','牙周再生手術'],
   context: [],
   lists: [
     {

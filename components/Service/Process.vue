@@ -154,7 +154,7 @@ onMounted(() => {
         top: 0;
         width: 100%;
         background: #fff;
-        transition: all .5s;
+        transition: all 1s;
         transition-timing-function: ease;
         div{
           color: var(--blue-color);

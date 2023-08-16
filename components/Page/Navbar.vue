@@ -277,6 +277,7 @@ let mbQDCodeBool = ref(false)
           font-weight: 600;
           line-height: 160%; /* 43.273px */
           letter-spacing: 2.844px;
+          font-family: "none";
         }
         &:nth-of-type(3){
           color: var(--topic-text-color);
