@@ -765,8 +765,32 @@ svg:hover path{
   }
   &-c{
     width: 100%;
-    // max-width: 1920px;
+    max-width: 1800px;
+    // padding: 0 60px;
     margin: 85px auto 0;
+    position: relative;
+    &::before{
+      content: '';
+      width: 230px;
+      height: 100%;
+      background: linear-gradient(90deg, #FF6096 0%, rgba(255, 96, 150, 0.00) 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    &::after{
+      content: '';
+      width: 230px;
+      height: 100%;
+      background: linear-gradient(-90deg, #FF6096 0%, rgba(255, 96, 150, 0.00) 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
     .doctorTeamPage{
       display: flex;
       flex-wrap: wrap;
@@ -1321,6 +1345,14 @@ svg:hover path{
     }
     &-c{
       margin-top: 20px;
+      &::before{
+        // width: 100px;
+        display: none;
+      }
+      &::after{
+        // width: 100px;
+        display: none;
+      }
       .doctorTeamPage{
         margin: 8.6px 15px;
         img{

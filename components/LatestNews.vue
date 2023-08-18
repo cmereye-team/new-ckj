@@ -158,7 +158,7 @@ const setLatestNewsSwiperRef = (swiper:any) => {
   overflow: hidden;
   .swiperBox{
     width: 100%;
-    max-width: 1450px;
+    max-width: 1300px;
     margin-top: 68px;
     overflow: hidden;
     border-radius: 20px;
@@ -178,27 +178,27 @@ const setLatestNewsSwiperRef = (swiper:any) => {
     }
   }
   :deep(.swiper-button-next){
-    width: 25px;
-    height: 47px;
+    width: 19px;
+    height: 41px;
     color: var(--topic-color);
     &::after{
       content: '';
       background: url(https://static.cmereye.com/imgs/2023/07/5331fed4a9f0f487.png) no-repeat;
       background-size: 100% auto;
-      width: 25px;
-      height: 47px;
+      width: 19px;
+      height: 41px;
     }
   }
   :deep(.swiper-button-prev){
-    width: 25px;
-    height: 47px;
+    width: 19px;
+    height: 41px;
     color: var(--topic-color);
     &::after{
       content: '';
       background: url(https://static.cmereye.com/imgs/2023/07/638d8106c1f85272.png) no-repeat;
       background-size: 100% auto;
-      width: 25px;
-      height: 47px;
+      width: 19px;
+      height: 41px;
     }
   }
   &-in{

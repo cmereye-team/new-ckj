@@ -19,6 +19,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#回歸自然微笑 恢復咀嚼功能',
+  text2: '牙齒更加整齊、美觀、自信、舒適',
+  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/e421c3bfe25668cf.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/ac0953834f7561e4.jpg',
@@ -28,7 +37,7 @@ const headerConfig = {
   mbText: ['回歸自然微笑','恢復咀嚼功能']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.toothtray.introduce.title',
   content: 'pages.dental-service.toothtray.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/97b2cb567b59ccdc.jpg',
@@ -42,20 +51,12 @@ const reasonData = {
   imgUrl: 'https://static.cmereye.com/imgs/2023/05/5aaed24997e19f64.jpg',
   reasonLists:[
     {
-      context: 'pages.dental-service.toothtray.reason.lists[0].context',
-    },
-    {
+      name: 'pages.dental-service.toothtray.reason.lists[0].context',
       context: 'pages.dental-service.toothtray.reason.lists[1].context',
-      hideIcon: true,
-      isSmallFS: true
     },
     {
-      context: 'pages.dental-service.toothtray.reason.lists[2].context',
-    },
-    {
+      name: 'pages.dental-service.toothtray.reason.lists[2].context',
       context: 'pages.dental-service.toothtray.reason.lists[3].context',
-      hideIcon: true,
-      isSmallFS: true
     }
   ],
   pageName: 'toothtray'
@@ -148,11 +149,10 @@ const problemData = {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" />
-  <div class="pageIn whitebgColor">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-    <ServiceReason :reasonData="reasonData" />
+  <div class="toothtrayPage">
+    <ServiceBanner :bannerData="bannerData" />
+    <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :moduleType="'3'" />
+    <RippleLine :type="'4'" />
     <div class="contrast">
       <div class="contrast-bg">
         <div class="dentistryServices-title">
@@ -211,18 +211,22 @@ const problemData = {
         </div>
       </div>
     </div>
+    <RippleLine :type="'4'" />
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
 </div>
 </template>
 
 
 
 <style lang="scss" scoped>
+.toothtrayPage{
+  margin-top: -20px;
+  padding-bottom: 140px;
+}
 .contrast{
   margin-top: 147px;
   &-bg{

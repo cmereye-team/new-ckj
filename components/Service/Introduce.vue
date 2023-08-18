@@ -75,7 +75,7 @@ onBeforeUnmount(()=>{
   <div class="introduce bigPageCon">
     <div class="introduce-in">
       <div class="introduce-in-title">{{$t(introduceData.title)}}</div>
-      <div class="introduce-in-content" v-if="moduleType === '1'">
+      <div class="introduce-in-content" v-if="['1','3'].includes(moduleType)">
         {{$t(introduceData.content)}}
       </div>
       <div class="introduce-in-reason" v-if="moduleType === '1'">
@@ -133,6 +133,27 @@ onBeforeUnmount(()=>{
               </textPath>
             </text>
           </svg> -->
+        </div>
+      </div>
+      <div class="introduce-in-modulType3" v-if="moduleType === '3'">
+        <div class="modulType3-top">
+          <div class="modulType3-top-title" >
+            <serviceTitle :title="reasonData.title" />
+          </div>
+          <div class="modulType3-top-text" >
+            <img src="https://static.cmereye.com/imgs/2023/08/0247872a5a18b171.png" alt="">
+            <span>{{$t(reasonData.text)}}</span>
+          </div>
+        </div>
+        <div class="modulType3-bottom">
+          <div class="modulType3-bottom-in" v-for="(reason,reasonIndex) in reasonData.reasonLists" :key="reasonIndex">
+              <div class="name">
+                {{$t(reason.name)}}
+              </div>
+              <div class="context">
+                {{$t(reason.context)}}
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -261,6 +282,81 @@ onBeforeUnmount(()=>{
             }
           }
         }
+        &-modulType3{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 240px;
+          .modulType3-top{
+            &-title{
+              display: flex;
+              justify-content: center;
+            }
+            &-text{
+              display: flex;
+              align-items: center;
+              margin-top: 41px;
+              color: var(--topic-text-color);
+              font-size: 27px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 160%; /* 43.2px */
+              letter-spacing: 8.1px;
+              img{
+                margin-right: 14px;
+              }
+            }
+          }
+          .modulType3-bottom{
+            margin-top: 74px;
+            margin-bottom: 186px;
+            display: flex;
+            &-in{
+              position: relative;
+              max-width: 387px;
+              margin-left: 110px;
+              box-sizing: content-box;
+              color: var(--topic-text-color);
+              font-style: normal;
+              font-weight: 500;
+              line-height: 157%;
+              &:not(:last-child){
+                padding-right: 110px;
+                margin-left: 0;
+                &::after{
+                  content: '';
+                  position: absolute;
+                  right: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  height: 39px;
+                  width: 5px;
+                  border-radius: 3px;
+                  background: var(--topic-color);
+                }
+              }
+              .name{
+                font-size: 22px;
+                letter-spacing: 4.4px;
+                &::before{
+                  content: '';
+                  position: absolute;
+                  top: -36px;
+                  left: -36px;
+                  width: 98px;
+                  height: 98px;
+                  border-radius: 50%;
+                  background: linear-gradient(180deg, rgba(255, 122, 161, 0.50) 0%, rgba(255, 176, 202, 0.00) 100%);
+                }
+              }
+              .context{
+                font-size: 19px;
+                letter-spacing: 3.8px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
       }
     }
     @media screen and (min-width: 1452px){
@@ -377,6 +473,48 @@ onBeforeUnmount(()=>{
               margin-left: 30px;
               width: auto;
               margin-top: 50px;
+            }
+          }
+          &-modulType3{
+            margin-top: 80px;
+            .modulType3-top{
+              &-text{
+                font-size: 16px;
+                letter-spacing: 4.8px;
+                img{
+                  transform: rotateY(180deg);
+                }
+              }
+            }
+            .modulType3-bottom{
+              margin-top: 63px;
+              margin-bottom: 80px;
+              flex-direction: column;
+              &-in{
+                padding: 0 43px 0 70px;
+                margin: 0;
+                &:not(:last-child){
+                  padding-right: 43px;
+                  margin-bottom: 58px;
+                  &::after{
+                    display: none;
+                  }
+                }
+                .name{
+                  font-size: 16px;
+                  letter-spacing: 3.2px;
+                  &::before{
+                    top: -18px;
+                    left: 43px;
+                    width: 68px;
+                    height: 68px;
+                  }
+                }
+                .context{
+                  font-size: 15px;
+                  letter-spacing: 3px;
+                }
+              }
             }
           }
         }
