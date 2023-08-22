@@ -448,7 +448,7 @@ onMounted(()=>{
         </div>
         <div class="index-caseSharing-in">
           <div>
-            <div class="name">朱咪咪 Mimi</div>
+            <div class="name">朱咪咪 <span>Mimi</span></div>
             <div class="skill">種植牙齒療程</div>
             <div class="wujiao">
               <div v-for="icon in 5" :key="icon" >
@@ -911,6 +911,9 @@ svg:hover path{
         line-height: 160%; /* 96.252px */
         letter-spacing: 15.039px;
         white-space: nowrap;
+        span{
+          font-family: 'SF_NS_Rounded';
+        }
       }
       .skill{
         color: var(--topic-text-color);

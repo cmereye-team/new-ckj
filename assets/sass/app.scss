@@ -9,7 +9,10 @@
   --prev-icon: url('https://static.cmereye.com/imgs/2023/07/638d8106c1f85272.png');
   --next-icon: url('https://static.cmereye.com/imgs/2023/07/5331fed4a9f0f487.png');
 }
-
+@font-face {
+  font-family: 'SF_NS_Rounded';
+  src: url('../font/sf-ns-rounded.ttf');
+}
 //Noto Serif HK
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@300;400;500;600;700&display=swap');
 // Noto Serif Hong Kong

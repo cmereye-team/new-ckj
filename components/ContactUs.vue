@@ -645,7 +645,7 @@ const onSlideChange = (swiper:any) => {
           &:not(:first-child){
             &>div{
               &:first-child{
-                font-family: '.SF NS Rounded';
+                font-family: 'SF_NS_Rounded';
                 font-weight: 700;
                 letter-spacing: 2.04px;
               }

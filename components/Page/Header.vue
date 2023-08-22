@@ -267,7 +267,7 @@ const handleMenu = (_data:any) => {
             .enName{
               color: var(--topic-color);
               text-align: center;
-              font-family: '.SF NS Rounded';
+              font-family: 'SF_NS_Rounded';
               font-size: 11px;
               line-height: 2.5; /* 30.69px */
               letter-spacing: 3.3px;
@@ -594,7 +594,7 @@ const handleMenu = (_data:any) => {
                           background: none;
                           color: var(--topic-color);
                           text-align: center;
-                          font-family: '.SF NS Rounded';
+                          font-family: 'SF_NS_Rounded';
                           font-size: 11px;
                           line-height: 1.6; /* 30.69px */
                           letter-spacing: 3.3px;
@@ -613,7 +613,7 @@ const handleMenu = (_data:any) => {
                             background: none;
                             color: var(--topic-color);
                             text-align: center;
-                            font-family: '.SF NS Rounded';
+                            font-family: 'SF_NS_Rounded';
                             font-size: 11px;
                             line-height: 1.6; /* 30.69px */
                             letter-spacing: 3.3px;
