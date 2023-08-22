@@ -30,13 +30,14 @@
 .index-brandConcept {
   // margin-top: 192px;
   &-t{
-    background: url(https://static.cmereye.com/imgs/2023/07/ad0e9ea982d66127.png);
+    background: url(https://static.cmereye.com/imgs/2023/08/2e25c823efd61491.png);
     background-size: auto 100%;
     height: 60px;
     width: 100%;
   }
   &-c{
     background: #FECB02;
+    background: #FEDB4E;
     margin: -3px 0;
     width: 100%;
     &-in{
@@ -131,7 +132,7 @@
     }
   }
   &-b{
-    background: url(https://static.cmereye.com/imgs/2023/07/ad0e9ea982d66127.png);
+    background: url(https://static.cmereye.com/imgs/2023/08/2e25c823efd61491.png);
       background-size: auto 100%;
       height: 60px;
       width: 100%;

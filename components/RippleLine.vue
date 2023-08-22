@@ -48,6 +48,14 @@ defineProps({
         background: url(https://static.cmereye.com/imgs/2023/07/12b3f8a89e2db3a4.png);
         background-size: auto 100%;
     }
+    &.line_6{
+        background: url(https://static.cmereye.com/imgs/2023/08/2e25c823efd61491.png);
+        background-size: auto 100%;
+    }
+    &.line_7{
+        background: url(https://static.cmereye.com/imgs/2023/08/7a75f198c95bb4d1.png);
+        background-size: auto 100%;
+    }
     &.isBottom{
         transform: rotate(180deg);
     }

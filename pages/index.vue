@@ -1098,7 +1098,7 @@ svg:hover path{
         }
         .name{
           color: var(--topic-text-color);
-          font-family: 'cwTeXYen';
+          font-family: 'SF_NS_Rounded','cwTeXYen';
           font-size: 28px;
           font-style: normal;
           font-weight: 600;

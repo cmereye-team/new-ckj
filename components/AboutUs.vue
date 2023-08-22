@@ -59,13 +59,13 @@ const handleLineCur = (_value:number) =>{
   width: 100%;
   overflow: hidden;
   &-t{
-    background: url(https://static.cmereye.com/imgs/2023/07/c19dfcc03bbba56d.png);
+    background: url(https://static.cmereye.com/imgs/2023/08/7a75f198c95bb4d1.png);
     background-size: auto 100%;
     height: 60px;
     width: 100%;
   }
   &-c{
-    background: #089CFE;
+    background: #52BAFE;
     width: 100%;
     margin: -3px 0;
     padding: 100px 0 40px;
@@ -201,7 +201,7 @@ const handleLineCur = (_value:number) =>{
     }
   }
   &-b{
-    background: url(https://static.cmereye.com/imgs/2023/07/c19dfcc03bbba56d.png);
+    background: url(https://static.cmereye.com/imgs/2023/08/7a75f198c95bb4d1.png);
     background-size: auto 100%;
     height: 60px;
     width: 100%;
