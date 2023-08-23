@@ -403,6 +403,7 @@ const onSlideChange = (swiper:any) => {
                 transform: currentAddress === addressItem.id?'translate(-50%,-50%)':'none',
                 top: currentAddress === addressItem.id?'50%':(addressIndex>1?'246px':'446px'),
                 'border-radius': currentAddress === addressItem.id?'0':'50%',
+                transition: currentAddress === addressItem.id?'all 1.3s .3s, background .5s,border-radius .5s .8s':'all 1.3s, background .5s 1s,border-radius .5s'
               }">
               <div class="bus-image" :style="{opacity: currentAddress === addressItem.id?'0':'1'}" @click="handleAddress(addressItem.id)">
                 <img src="https://static.cmereye.com/imgs/2023/07/075ccbc4b3a80af6.png" alt="" >
@@ -412,6 +413,7 @@ const onSlideChange = (swiper:any) => {
                   width: currentAddress === addressItem.id?'500px':'0',
                   height: currentAddress === addressItem.id?'700px':'0',
                   padding: currentAddress === addressItem.id?'0 70px':'0',
+                  transition: currentAddress === addressItem.id?'all 1s,opacity 1s .8s':'all 1s,opacity .3s'
                 }">
                 <div class="bus-in-btn" @click="closeAddress">
                   <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
