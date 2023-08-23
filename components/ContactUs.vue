@@ -708,28 +708,28 @@ const onSlideChange = (swiper:any) => {
       position: relative;
       &.isA{
         .addressBox{
-          border: 3px solid #089CFE;
+          border: 3px solid #52BAFE;
           &-t{
-            background: #089CFE;
+            background: #52BAFE;
           }
           &-b{
             &>div{
               &>div{
                 &>div{
-                  color: #089CFE;
+                  color: #52BAFE;
                 }
               }
             }
           }
           &-c{
-            border: 3px solid #089CFE;
-            color: #089CFE;
+            border: 3px solid #52BAFE;
+            color: #52BAFE;
           }
           &-bus{
             .bus-in{
-              color: #089CFE;
+              color: #52BAFE;
               &-btn{
-                border: 3px solid #089CFE;
+                border: 3px solid #52BAFE;
               }
             }
           }
@@ -737,28 +737,30 @@ const onSlideChange = (swiper:any) => {
       }
       &.isB{
         .addressBox{
-          border: 3px solid #FECB02;
+          border: 3px solid #FEDB4E;
           &-t{
-            background: #FECB02;
+            background: #FEDB4E;
           }
           &-b{
             &>div{
               &>div{
                 &>div{
-                  color: #FECB02;
+                  // color: #FEDB4E;
+                  color: var(--topic-text-color);
                 }
               }
             }
           }
           &-c{
-            border: 3px solid #FECB02;
-            color: #FECB02;
+            border: 3px solid #FEDB4E;
+            // color: #FEDB4E;
+            color: var(--topic-text-color);
           }
           &-bus{
             .bus-in{
-              color: #FECB02;
+              color: #FEDB4E;
               &-btn{
-                border: 3px solid #FECB02;
+                border: 3px solid #FEDB4E;
               }
             }
           }
@@ -775,11 +777,11 @@ const onSlideChange = (swiper:any) => {
         .addressBox{
           display: flex;
           flex-direction: column;
-          // border: 3px solid #089CFE;
+          // border: 3px solid #52BAFE;
           border-radius: 250px 250px 0 0;
           &-t{
             border-radius: 250px 250px 0 0;
-            // background: #089CFE;
+            // background: #52BAFE;
             padding-bottom: 85px;
             padding-top: 30px;
           }
@@ -788,23 +790,23 @@ const onSlideChange = (swiper:any) => {
             &>div{
               &>div{
                 &>div{
-                  // color: #089CFE;
+                  // color: #52BAFE;
                 }
               }
             }
           }
           &-c{
-            // border: 3px solid #089CFE;
-            // color: #089CFE;
+            // border: 3px solid #52BAFE;
+            // color: #52BAFE;
             top: auto;
             bottom: 168px;
           }
           &-bus{
             top: 446px;
             .bus-in{
-              // color: #089CFE;
+              // color: #52BAFE;
               &-btn{
-                // border: 3px solid #089CFE;
+                // border: 3px solid #52BAFE;
                 order: 0;
                 margin: 0 auto 40px;
               }
@@ -818,13 +820,13 @@ const onSlideChange = (swiper:any) => {
         margin-bottom: 45px;
         padding-left: 23px;
         .addressBox{
-          // border: 3px solid #FECB02;
+          // border: 3px solid #FEDB4E;
           display: flex;
           flex-direction: column;
           border-radius: 250px 250px 0 0;
           &-t{
             border-radius: 250px 250px 0 0;
-            // background: #FECB02;
+            // background: #FEDB4E;
             padding-bottom: 85px;
             padding-top: 30px;
           }
@@ -833,24 +835,24 @@ const onSlideChange = (swiper:any) => {
             &>div{
               &>div{
                 &>div{
-                  // color: #FECB02;
+                  // color: #FEDB4E;
                 }
               }
             }
           }
           &-c{
-            // border: 3px solid #FECB02;
-            // color: #FECB02;
+            // border: 3px solid #FEDB4E;
+            // color: #FEDB4E;
             top: auto;
             bottom: 168px;
           }
           &-bus{
             top: 446px;
             .bus-in{
-              // color: #FECB02;
+              // color: #FEDB4E;
               order: 0;
               &-btn{
-                // border: 3px solid #FECB02;
+                // border: 3px solid #FEDB4E;
                 order: 0;
                 margin: 0 auto 40px;
               }
@@ -1050,7 +1052,7 @@ const onSlideChange = (swiper:any) => {
         right: 430px;
         top: -20px;
         &>div{
-          color: #089CFE;
+          color: #52BAFE;
           text-align: center;
           font-family: 'cwTeXYen';
           font-size: 27px;
@@ -1074,7 +1076,7 @@ const onSlideChange = (swiper:any) => {
         left: 570px;
         bottom: 80px;
         &>div{
-          color: #FECB02;
+          color: #FEDB4E;
           text-align: center;
           font-family: 'cwTeXYen';
           font-size: 24px;
@@ -1463,55 +1465,57 @@ const onSlideChange = (swiper:any) => {
           }
         }
         &.isA{
-          border: 2px solid #089CFE;
+          border: 2px solid #52BAFE;
           .addressBox-t{
-            background: #089CFE;
+            background: #52BAFE;
           }
           .addressBox-b{
             &>div{
               &>div{
                 &>div{
-                  color: #089CFE;
+                  color: #52BAFE;
                 }
               }
             }
           }
           .addressBox-c{
-            color: #089CFE;
-            border: 2px solid #089CFE;
+            color: #52BAFE;
+            border: 2px solid #52BAFE;
           }
           .addressBox-bus{
             .bus-in{
-              color: #089CFE;
+              color: #52BAFE;
               &-btn{
-                border: 2px solid #089CFE;
+                border: 2px solid #52BAFE;
               }
             }
           }
         }
         &.isB{
-          border: 2px solid #FECB02;
+          border: 2px solid #FEDB4E;
           .addressBox-t{
-            background: #FECB02;
+            background: #FEDB4E;
           }
           .addressBox-b{
             &>div{
               &>div{
                 &>div{
-                  color: #FECB02;
+                  // color: #FEDB4E;
+                  color: var(--topic-text-color);
                 }
               }
             }
           }
           .addressBox-c{
-            color: #FECB02;
-            border: 2px solid #FECB02;
+            // color: #FEDB4E;
+            color: var(--topic-text-color);
+            border: 2px solid #FEDB4E;
           }
           .addressBox-bus{
             .bus-in{
-              color: #FECB02;
+              color: #FEDB4E;
               &-btn{
-                border: 2px solid #FECB02;
+                border: 2px solid #FEDB4E;
               }
             }
           }
@@ -1522,7 +1526,7 @@ const onSlideChange = (swiper:any) => {
         top: -40px;
         left: 30px;
         &>div{
-          color: #089CFE;
+          color: #52BAFE;
           text-align: center;
           font-family: 'cwTeXYen';
           font-size: 15px;
@@ -1534,7 +1538,7 @@ const onSlideChange = (swiper:any) => {
         }
         &.leftBox103{
           &>div{
-            color: #FECB02;
+            color: #FEDB4E;
           }
         }
         img{

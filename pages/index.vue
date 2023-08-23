@@ -146,19 +146,19 @@ const handleSwiperBtn44 = (type: string) => {
 const bannerLists = [
   {
     title: '歐美種植牙 即減￥2000元/顆',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/08/4c3eebb33de264dd.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/implant'
   },
   {
     title: '隱形牙箍  即減￥5000元',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/3439799808b32972.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/08/4c3eebb33de264dd.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/invisalign'
   },
   {
     title: '金屬矯正牙箍 即減￥2000元',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/da524eb65290c225.jpg',
+    imgUrl: 'https://static.cmereye.com/imgs/2023/08/4c3eebb33de264dd.jpg',
     mbUrl: 'https://static.cmereye.com/imgs/2023/07/d514b0c5fd264b2e.jpg',
     link: '/dental-service/orthodontics'
   }
@@ -479,7 +479,7 @@ onMounted(()=>{
             <div class="text">咁多年來我只會揀愛康健，原因是他們專業細心！而家植牙嘅技術真係非常之好，簡直同真牙一樣擁有正常嘅咀嚼能力，真係食乜都得啊！</div>
           </div>
           <div>
-            <img class="userImage" src="https://static.cmereye.com/imgs/2023/07/ac4edebf6fd5fd55.jpg" alt="">
+            <img class="userImage" src="https://static.cmereye.com/imgs/2023/08/9c98a91a72fcccf1.jpg" alt="">
             <div :class="{ya: true,showYaAnim: showYaAnim}">
               <div>星級{{'\n'}}客戶</div>
             </div>
@@ -522,9 +522,9 @@ onMounted(()=>{
         </div>
         <img class="bgIcon bgIcon_1" src="https://static.cmereye.com/imgs/2023/07/db112a8f7e94d783.png" alt="">
         <img class="bgIcon bgIcon_2" src="https://static.cmereye.com/imgs/2023/07/4755f119a5fecfd5.png" alt="">
-        <img class="bgIcon bgIcon_3" src="https://static.cmereye.com/imgs/2023/07/8fe74d7997ee58b5.png" alt="">
-        <img class="bgIcon bgIcon_4" src="https://static.cmereye.com/imgs/2023/07/85f08b84d0d26e06.png" alt="">
-        <img class="bgIcon bgIcon_5" src="https://static.cmereye.com/imgs/2023/07/55693cf22c9a5e8e.png" alt="">
+        <img class="bgIcon bgIcon_3" src="https://static.cmereye.com/imgs/2023/08/b83b35376bf7ef8f.png" alt="">
+        <img class="bgIcon bgIcon_4" src="https://static.cmereye.com/imgs/2023/08/d0409b005aa08654.png" alt="">
+        <img class="bgIcon bgIcon_5" src="https://static.cmereye.com/imgs/2023/08/33a548d384ed9fd7.png" alt="">
         <!-- <img class="bgIcon bgstar_1" src="https://static.cmereye.com/imgs/2023/07/d4752d78d1563917.png" alt=""> -->
         <!-- <img class="bgIcon bgstar_2" src="https://static.cmereye.com/imgs/2023/07/3f4a115fbf8ca9f2.png" alt=""> -->
         <!-- <img class="bgIcon bgstar_3" src="https://static.cmereye.com/imgs/2023/07/8730b0cdedc3e396.png" alt=""> -->

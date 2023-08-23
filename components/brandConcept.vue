@@ -51,9 +51,9 @@
         flex: 1;
         margin-right: 136px;
         &>div{
-          color: #FFF;
+          color: var(--topic-text-color);
           &:nth-of-type(1){
-            color: #FFF;
+            color: var(--topic-text-color);
             font-family: 'cwTeXYen';
             font-size: 36px;
             font-style: normal;
@@ -64,7 +64,7 @@
             padding-bottom: 10px;
             &::after{
               content: '';
-              background: #fff;
+              background: var(--topic-text-color);
               height: 5px;
               width: 40px;
               position: absolute;
@@ -115,7 +115,7 @@
             font-family: 'cwTeXYen';
             font-size: 18px;
             font-style: normal;
-            font-weight: 600;
+            font-weight: 400;
             line-height: 181%; /* 28.96px */
             letter-spacing: 4.8px;
           }
