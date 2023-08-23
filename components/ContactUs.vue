@@ -394,15 +394,17 @@ const onSlideChange = (swiper:any) => {
               </div>
             </div>
             <div class="addressBox-c">{{$t(addressItem.name)}}</div>
-            <div :class="['addressBox-bus',{'cur': currentAddress === addressItem.id}]" :style="{background: currentAddress === addressItem.id?'#fff':'transparent',
-              width: currentAddress === addressItem.id?'150%':'69px',
-              height: currentAddress === addressItem.id?'100%':'69px',
-              left: currentAddress === addressItem.id?'50%':'20px',
-              transform: currentAddress === addressItem.id?'translate(-50%,-50%)':'none',
-              top: currentAddress === addressItem.id?'50%':(addressIndex>1?'246px':'446px'),
-              'border-radius': currentAddress === addressItem.id?'0':'50%',
-            }">
-              <div class="bus-image" @click="handleAddress(addressItem.id)">
+            <div
+              :class="['addressBox-bus',{'cur': currentAddress === addressItem.id}]" 
+              :style="{background: currentAddress === addressItem.id?'#fff':'transparent',
+                width: currentAddress === addressItem.id?'150%':'69px',
+                height: currentAddress === addressItem.id?'100%':'69px',
+                left: currentAddress === addressItem.id?'50%':'20px',
+                transform: currentAddress === addressItem.id?'translate(-50%,-50%)':'none',
+                top: currentAddress === addressItem.id?'50%':(addressIndex>1?'246px':'446px'),
+                'border-radius': currentAddress === addressItem.id?'0':'50%',
+              }">
+              <div class="bus-image" :style="{opacity: currentAddress === addressItem.id?'0':'1'}" @click="handleAddress(addressItem.id)">
                 <img src="https://static.cmereye.com/imgs/2023/07/075ccbc4b3a80af6.png" alt="" >
               </div>
               <div class="bus-in" :style="{
@@ -745,7 +747,6 @@ const onSlideChange = (swiper:any) => {
             &>div{
               &>div{
                 &>div{
-                  // color: #FEDB4E;
                   color: var(--topic-text-color);
                 }
               }
@@ -753,7 +754,6 @@ const onSlideChange = (swiper:any) => {
           }
           &-c{
             border: 3px solid #FEDB4E;
-            // color: #FEDB4E;
             color: var(--topic-text-color);
           }
           &-bus{
@@ -777,36 +777,23 @@ const onSlideChange = (swiper:any) => {
         .addressBox{
           display: flex;
           flex-direction: column;
-          // border: 3px solid #52BAFE;
           border-radius: 250px 250px 0 0;
           &-t{
             border-radius: 250px 250px 0 0;
-            // background: #52BAFE;
             padding-bottom: 85px;
             padding-top: 30px;
           }
           &-b{
             padding: 20px 30px 0;
-            &>div{
-              &>div{
-                &>div{
-                  // color: #52BAFE;
-                }
-              }
-            }
           }
           &-c{
-            // border: 3px solid #52BAFE;
-            // color: #52BAFE;
             top: auto;
             bottom: 168px;
           }
           &-bus{
             top: 446px;
             .bus-in{
-              // color: #52BAFE;
               &-btn{
-                // border: 3px solid #52BAFE;
                 order: 0;
                 margin: 0 auto 40px;
               }
@@ -820,39 +807,26 @@ const onSlideChange = (swiper:any) => {
         margin-bottom: 45px;
         padding-left: 23px;
         .addressBox{
-          // border: 3px solid #FEDB4E;
           display: flex;
           flex-direction: column;
           border-radius: 250px 250px 0 0;
           &-t{
             border-radius: 250px 250px 0 0;
-            // background: #FEDB4E;
             padding-bottom: 85px;
             padding-top: 30px;
           }
           &-b{
             padding: 20px 30px 0;
-            &>div{
-              &>div{
-                &>div{
-                  // color: #FEDB4E;
-                }
-              }
-            }
           }
           &-c{
-            // border: 3px solid #FEDB4E;
-            // color: #FEDB4E;
             top: auto;
             bottom: 168px;
           }
           &-bus{
             top: 446px;
             .bus-in{
-              // color: #FEDB4E;
               order: 0;
               &-btn{
-                // border: 3px solid #FEDB4E;
                 order: 0;
                 margin: 0 auto 40px;
               }
@@ -880,6 +854,7 @@ const onSlideChange = (swiper:any) => {
             height: 440px;
             margin: auto;
             border-radius: 50%;
+            border: 1px solid #231F20;
             cursor: pointer;
             transition: all .3s;
             position: relative;
@@ -892,11 +867,8 @@ const onSlideChange = (swiper:any) => {
             position: absolute;
             cursor: pointer;
             transition: all .3s;
-            // filter: drop-shadow(0 5px 5px rgba(0,0,0,.6));
             &:hover{
               transform: scale(1.1);
-              // transform: scale(1.1) translateY(-10px);
-              // filter: drop-shadow(0 7px 5px rgba(0,0,0,.5));
             }
           }
         }
@@ -936,7 +908,6 @@ const onSlideChange = (swiper:any) => {
           text-align: center;
           width: 380px;
           height: 64px;
-          // line-height: 56px;
           line-height: 64px;
           font-size: 20.483px;
           font-weight: 400;
@@ -956,7 +927,7 @@ const onSlideChange = (swiper:any) => {
           border-radius: 50%;
           background: transparent;
           cursor: pointer;
-          transition: all 1s;
+          transition: all 1s .5s, background .5s,border-radius .5s 1s;
           transform: none;
           display: flex;
           justify-content: center;
@@ -969,6 +940,7 @@ const onSlideChange = (swiper:any) => {
             justify-content: center;
             align-items: center;
             border-radius: 50%;
+            transition: all 1.5s;
             &>img{
               width: 60%;
             }
@@ -980,9 +952,8 @@ const onSlideChange = (swiper:any) => {
             transform: translate(-50%,-50%);
             text-align: center;
             color: #FF6096;
-            // padding: 0 70px;
             box-sizing: border-box;
-            transition: all 2s;
+            transition: all 1s,opacity 1s 1.5s;
             width: 0;
             height: 0;
             overflow: hidden;
@@ -997,7 +968,6 @@ const onSlideChange = (swiper:any) => {
               width: 78px;
               height: 78px;
               font-size: 50px;
-              // font-weight: bold;
               margin: 40px auto 0;
               text-align: center;
               line-height: 60px;
@@ -1065,7 +1035,6 @@ const onSlideChange = (swiper:any) => {
         }
         img{
           position: absolute;
-          // width: 100%;
           left: 0;
           top: -60px;
           transform: scale(1.3);
