@@ -108,6 +108,8 @@ let doctorTeamCurrent = ref(1)
 // })
 
 let doctorTeamSwiperRef = {
+  slidePrev: ()=>{},
+  slideNext: ()=>{},
   slideTo: (a,b)=>{},
   slideToLoop: (a)=>{},
   autoplay: {
@@ -120,6 +122,8 @@ const setDoctorTeamSwiperRef = (swiper:any) => {
 
 
 let doctorTeamSwiperRef44 = {
+  slidePrev: ()=>{},
+  slideNext: ()=>{},
   slideTo: (a,b)=>{},
   slideToLoop: (a)=>{},
   autoplay: {
@@ -130,21 +134,14 @@ const setDoctorTeamSwiperRef44 = (swiper:any) =>{
   doctorTeamSwiperRef44 = swiper
 }
 
-// watch(
-//   appState, (newValue, oldValue) => {
-//     if(newValue.areaTabAct !== oldValue.areaTabAct){
-//       doctorTeamSwiperRef.slideTo(0, 0);
-//       doctorTeamSwiperRef.autoplay.start()
-//       if(newValue.areaTabAct === 0){
-//         doctorTeamSwiperRef44.slideTo(0, 44);
-//         doctorTeamSwiperRef44.autoplay.start()
-//       }
-//     }
-//   },
-//   {
-//     deep: true,
-//   }
-// );
+const handleSwiperBtn = (type: string) => {
+  doctorTeamSwiperRef[`slide${type}`]()
+  // doctorTeamSwiperRef.slidePrev()
+}
+const handleSwiperBtn44 = (type: string) => {
+  // console.log(doctorTeamSwiperRef44)
+  doctorTeamSwiperRef44[`slide${type}`]()
+}
 
 const bannerLists = [
   {
@@ -307,12 +304,13 @@ onMounted(()=>{
             <div class="c-in-22">
               <Swiper
                 class="doctorTeamSwiperBox"
-                :modules="[Autoplay]"
+                :modules="[Autoplay,Navigation]"
                 :autoplay="{
                   disableOnInteraction: true,
                   stopOnLastSlide: true,
                   delay: 0
                 }"
+                :navigation="true"
                 :speed="3000"
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef"
@@ -325,11 +323,21 @@ onMounted(()=>{
                   </div>
                 </SwiperSlide>
               </Swiper>
+              <!-- <div class="btn-prev" @click="handleSwiperBtn('Prev')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
+                  <path d="M14.1221 3L3.00012 14.7073L14.1221 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="btn-next" @click="handleSwiperBtn('Next')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
+                  <path d="M3 3L14.122 14.7073L3 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div> -->
             </div>
             <div class="c-in-44" v-if="doctorLists_cs[appState.areaTabAct].length > 22">
               <Swiper
                 class="doctorTeamSwiperBox"
-                :modules="[Autoplay]"
+                :modules="[Autoplay,Navigation]"
                 :initialSlide="43"
                 :autoplay="{
                   disableOnInteraction: true,
@@ -337,9 +345,11 @@ onMounted(()=>{
                   stopOnLastSlide: true,
                   delay: 0
                 }"
+                :navigation="true"
                 :speed="3000"
                 :slidesPerView="8.5"
                 @swiper="setDoctorTeamSwiperRef44"
+                
               >
                 <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(22,44)" :key="doctorIndex" >
                   <div class="doctorTeamPage">
@@ -349,6 +359,16 @@ onMounted(()=>{
                   </div>
                 </SwiperSlide>
               </Swiper>
+              <!-- <div class="btn-prev" @click="handleSwiperBtn44('Prev')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
+                  <path d="M14.1221 3L3.00012 14.7073L14.1221 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="btn-next" @click="handleSwiperBtn44('Next')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
+                  <path d="M3 3L14.122 14.7073L3 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div> -->
             </div>
           </div>
           <div class="c-in" v-else>
@@ -426,6 +446,7 @@ onMounted(()=>{
                 }"
                 :speed="3000"
                 :slidesPerView="3"
+                :loop="true"
                 @swiper="setDoctorTeamSwiperRef"
               >
                 <SwiperSlide v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(30,44)" :key="doctorIndex" >
@@ -773,7 +794,7 @@ svg:hover path{
       content: '';
       width: 230px;
       height: 100%;
-      background: linear-gradient(90deg, #FF6096 0%, rgba(255, 96, 150, 0.00) 100%);
+      background: linear-gradient(90deg, #FF6096 20%, rgba(255, 96, 150, 0.00) 100%);
       position: absolute;
       top: 0;
       left: 0;
@@ -784,7 +805,7 @@ svg:hover path{
       content: '';
       width: 230px;
       height: 100%;
-      background: linear-gradient(-90deg, #FF6096 0%, rgba(255, 96, 150, 0.00) 100%);
+      background: linear-gradient(-90deg, #FF6096 20%, rgba(255, 96, 150, 0.00) 100%);
       position: absolute;
       top: 0;
       right: 0;
@@ -803,6 +824,41 @@ svg:hover path{
     }
     .c-in{
       width: 100%;
+      &-22,&-44{
+        position: relative;
+        .btn-prev{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 5;
+          cursor: pointer;
+        }
+        .btn-next{
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 5;
+          cursor: pointer;
+        }
+        :deep(.swiper){
+          z-index: auto;
+        }
+        :deep(.swiper-button-prev){
+          background: url(https://static.cmereye.com/imgs/2023/08/a56415dc38467033.png) no-repeat center center;
+          transform: rotate(180deg);
+          &::after{
+            display: none;
+          }
+        }
+        :deep(.swiper-button-next){
+          background: url(https://static.cmereye.com/imgs/2023/08/a56415dc38467033.png) no-repeat center center;
+          &::after{
+            display: none;
+          } 
+        }
+      }
       &-44{
         margin-top: 60px;
       }
