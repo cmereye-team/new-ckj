@@ -927,7 +927,7 @@ const onSlideChange = (swiper:any) => {
           border-radius: 50%;
           background: transparent;
           cursor: pointer;
-          transition: all 1s .5s, background .5s,border-radius .5s 1s;
+          transition: all 1.3s .3s, background .5s,border-radius .5s .8s;
           transform: none;
           display: flex;
           justify-content: center;
@@ -940,7 +940,7 @@ const onSlideChange = (swiper:any) => {
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            transition: all 1.5s;
+            transition: all 1s;
             &>img{
               width: 60%;
             }
@@ -953,7 +953,7 @@ const onSlideChange = (swiper:any) => {
             text-align: center;
             color: #FF6096;
             box-sizing: border-box;
-            transition: all 1s,opacity 1s 1.5s;
+            transition: all 1s,opacity 1s .8s;
             width: 0;
             height: 0;
             overflow: hidden;
