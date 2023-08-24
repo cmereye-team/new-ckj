@@ -20,7 +20,7 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/6812edc00b543a05.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#回歸自然微笑 恢復咀嚼功能',
@@ -64,8 +64,8 @@ const reasonData = {
 
 const contrastData = {
   title: {
-    span1: '固定式假牙 VS ',
-    span2: '活動式假牙 點揀好？'
+    span1: '固定式假牙 VS 活動式假牙',
+    span2: '點揀好？'
   },
   context: '固定式假牙與活動式假牙各有其優缺點及適用的情況，通常會經由牙醫評估口內缺牙的情況及剩下牙齒的狀況，再進一步進行全面的考量及建議。',
   tableRemark: '以下為你分析固定式/活動式假牙的優缺點：',
@@ -155,10 +155,13 @@ const problemData = {
     <RippleLine :type="'4'" />
     <div class="contrast">
       <div class="contrast-bg">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
+        <div class="contrast-title">
+          <div class="contrast-title-in">
             <span>{{contrastData.title.span1}}</span>
             <span>{{contrastData.title.span2}}</span>
+          </div>
+          <div class="svgQuestionMark">
+            <SvgQuestionMark />
           </div>
         </div>
         <div class="contrast-context">
@@ -230,31 +233,79 @@ const problemData = {
 .contrast{
   margin-top: 147px;
   &-bg{
-    padding: 76px 0 103px;
-    background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
+    padding: 76px 0 186px;
+    // background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
+  }
+  &-title{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &-in{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      span{
+        font-size: 30px;
+        color: var(--topic-color);
+        text-align: center;
+        &:last-child{
+          font-size: 40px;
+        }
+      }
+      &::before{
+        content: '';
+        width: 12px;
+        height: 12px;
+        transform: rotate(45deg);
+        background: var(--topic-color);
+        position: absolute;
+        left: -40px;
+        bottom: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &::after{
+        content: '';
+        width: 12px;
+        height: 12px;
+        transform: rotate(-45deg);
+        background: var(--topic-color);
+        position: absolute;
+        right: -40px;
+        bottom: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+    .svgQuestionMark{
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%,-40%);
+    }
   }
   &-context{
     text-align: center;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     line-height: 160%;
-    color: #666666;
-    max-width: 820px;
-    margin: 35px auto 0;
+    color: var(--topic-text-color);
+    max-width: 780px;
+    margin: 69px auto 0;
+    letter-spacing: 3.8px;
   }
   &-tableRemark{
-    margin-top: 28px;
+    // margin-top: 28px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     line-height: 160%;
-    color: #FFA09E;
+    letter-spacing: 3.8px;
+    color: var(--topic-color);
     text-align: center;
   }
   &-table{
-    margin: 40px auto 0;
-    max-width: 1452px;
+    margin: 72px auto 0;
+    max-width: 1200px;
     width: 100%;
     &-in{
       display: flex;
@@ -266,7 +317,7 @@ const problemData = {
         flex-direction: column;
         &.content{
           flex-direction: row;
-          margin-bottom: 6px;
+          border-bottom: 1px solid var(--topic-color);
           &>div{
             flex: 1;
             height: 100%;
@@ -274,10 +325,10 @@ const problemData = {
             flex-direction: column;
             justify-content: center;
             font-style: normal;
-            font-weight: 600;
-            font-size: 24px;
+            font-weight: 500;
+            font-size: 18px;
             line-height: 160%;
-            color: #666666;
+            color: var(--topic-text-color);
             padding: 0 18px;
             background: #FFFFFF;
             &>div{
@@ -293,21 +344,25 @@ const problemData = {
             }
           }
           .content-l{
-            margin-right: 4px;
+            border-left: 1px solid var(--topic-color);
+            border-right: 1px solid var(--topic-color);
           }
         }
         &:nth-of-type(1){
           height: 138px;
           display: flex;
-          margin-bottom: 6px;
+          margin-bottom: 2px;
+          margin-left: 2px;
           .th{
-            background: #FFA09E;
+            background: var(--topic-color);
             font-style: normal;
-            font-weight: 700;
-            font-size: 28px;
+            font-weight: 500;
+            font-size: 18px;
             line-height: 160%;
             color: #FFFFFF;
-            margin-bottom: 6px;
+            margin-bottom: 2px;
+            
+            // border-bottom: 1px solid var(--topic-color);
           }
           &>div{
             flex: 1;
@@ -316,12 +371,12 @@ const problemData = {
             justify-content: center;
             width: 100%;
             .td{
-              background: #FFDDDA;
+              background: #FFB0CA;
               font-style: normal;
-              font-weight: 700;
-              font-size: 28px;
+              font-weight: 500;
+              font-size: 18px;
               line-height: 160%;
-              color: #505050;
+              color: #fff;
             }
             span{
               flex: 1;
@@ -331,7 +386,7 @@ const problemData = {
               justify-content: center;
               align-items: center;
               &:last-child{
-                margin-left: 4px;
+                margin-left: 2px;
               }
             }
           }
@@ -355,24 +410,24 @@ const problemData = {
         width: 43.1%;
         &:nth-of-type(1){
           width: 13.5%;
-          border-radius: 60px 0 0 60px;
-          margin-right: 4px;
           overflow: hidden;
           .contrast-table-in{
             &>div{
               font-style: normal;
-              font-weight: 700;
-              font-size: 28px;
+              font-weight: 500;
+              font-size: 18px;
               line-height: 160%;
               background: #FFFFFF;
-              color: #FFA09E;
-              margin-bottom: 6px;
+              color: var(--topic-color);
+              border-bottom: 1px solid var(--topic-color);
+              &:nth-of-type(1){
+                border-right: none;
+                margin-right: 2px;
+              }
             }
           }
         }
         &:nth-of-type(3){
-          padding-left: 4px;
-          border-radius: 0 60px 60px 0;
           overflow: hidden;
           .contrast-table-in{
             &>div{
@@ -382,7 +437,6 @@ const problemData = {
         } 
       }
     }
-    
   }
 }
 

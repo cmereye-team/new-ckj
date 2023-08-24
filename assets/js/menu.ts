@@ -43,5 +43,25 @@ export default [
     {
         path: '/dental-service/toothtray',
         name: 'dental-service-toothtray'
+    },
+    {
+        path: '/dental-service/teeth-whitening',
+        name: 'dental-service-teeth-whitening'
+    },
+    {
+        path: '/dental-service/scaling-and-polishing',
+        name: 'dental-service-scaling-and-polishing'
+    },
+    {
+        path: '/dental-service/fillings',
+        name: 'dental-service-fillings'
+    },
+    {
+        path: '/dental-service/general-oral-examination',
+        name: 'dental-service-general-oral-examination'
+    },
+    {
+        path: '/dental-service/children-dentistry',
+        name: 'dental-service-children-dentistry'
     }
 ]

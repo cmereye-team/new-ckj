@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#回歸自然微笑 恢復咀嚼功能',
+  text2: '牙齒更加整齊、美觀、自信、舒適',
+  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/84d8cb1804ceccde.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/2baa49a13d587aa6.jpg',
@@ -52,30 +61,26 @@ const reasonData = {
 const stepData = {
   title: '補牙過程',
   stepLists: [
-    [
       {
-        title: 'Step 1',
+        title: '1',
         text: '清除牙齒蛀壞及脆弱的部分',
       },
       {
-        title: 'Step 2',
+        title: '2',
         text: '用專用的清潔消毒劑清潔牙齒表面，吹乾後，塗上黏固劑',
       },
       {
-        title: 'Step 3',
+        title: '3',
         text: '填補牙洞及修補缺損部分',
       },
-    ],
-    [
       {
-        title: 'Step 4',
+        title: '4',
         text: '穩固填充物',
       },
       {
-        title: 'Step 5',
+        title: '5',
         text: '牙齒修形及拋光（如蛀牙的程度深，或需要使用麻醉劑）',
-      },
-    ],
+      }
   ],
 }
 
@@ -161,11 +166,12 @@ const problemData = {
 
 <template>
   <div>
-    <PageHeader :headerConfig="headerConfig" />
-    <div class="pageIn whitebgColor">
-      <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-      <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-      <ServiceReason :reasonData="reasonData" />
+    <!-- <PageHeader :headerConfig="headerConfig" /> -->
+    <div class="servicePageConfig">
+      <ServiceBanner :bannerData="bannerData" />
+      <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+      <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
+      <!-- <ServiceReason :reasonData="reasonData" /> -->
       <ServiceStep :stepData="stepData" />
       <ServiceNote :noteData="noteData" />
       <div class="material">
@@ -228,14 +234,19 @@ const problemData = {
       </div>
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
+      <RippleLine :type="'4'" />
       <ContactUs />
     </div>
-    <PageFooter />
-    <PageNavbar />
+    <!-- <PageFooter /> -->
+    <!-- <PageNavbar /> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
+.servicePageConfig{
+  margin-top: -20px;
+  padding-bottom: 140px;
+}
 .material {
   width: 100%;
   max-width: 1450px;

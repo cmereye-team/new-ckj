@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#回歸自然微笑 恢復咀嚼功能',
+  text2: '牙齒更加整齊、美觀、自信、舒適',
+  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/979fc73167dda0fc.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/e2b235f6189eb9c8.jpg',
@@ -54,26 +63,22 @@ const stepData = {
   title: '洗牙過程',
   remark: '由於洗牙時會觸碰到牙肉的發炎位置，因此可能會導致牙齦出血或輕微痺痛感。特別是一些從未或相隔很久沒有洗牙的人士，不適感一般會在洗牙後的2至3天後逐漸消失（患有敏感牙齒或牙周病的人士或需更長時間）。如情況持續出現，應立即聯絡醫護人員。',
   stepLists: [
-    [
       {
-        title: 'Step 1',
+        title: '1',
         text: '利用超聲波洗牙工具，清除牙石及牙菌膜'
       },
       {
-        title: 'Step 2',
+        title: '2',
         text: '利用刮牙石器去除細小牙石'
-      }
-    ],
-    [
+      },
       {
-        title: 'Step 3',
+        title: '3',
         text: '利用牙科用浮石粉拋光打磨或特製混合物料高速噴洗牙齒表面，去除牙漬及保持牙齒平滑'
       },
       {
-        title: 'Step 4',
+        title: '4',
         text: '利用氟化物鞏固琺瑯質，強化牙齒'
       }
-    ]
   ],
   pageName: 'scaling-and-polishing'
 }
@@ -97,17 +102,26 @@ const problemData = {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" />
-  <div class="pageIn whitebgColor">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-    <ServiceReason :reasonData="reasonData" />
+  <!-- <PageHeader :headerConfig="headerConfig" /> -->
+  <div class="servicePageConfig">
+    <ServiceBanner :bannerData="bannerData" />
+    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
+    <!-- <ServiceReason :reasonData="reasonData" /> -->
     <ServiceStep :stepData="stepData" />
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
+  <!-- <PageFooter /> -->
+  <!-- <PageNavbar /> -->
 </div>
 </template>
+
+<style lang="scss" scoped>
+.servicePageConfig{
+  margin-top: -20px;
+  padding-bottom: 140px;
+}
+</style>

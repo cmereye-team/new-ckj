@@ -148,6 +148,20 @@ defineProps({
               }
             }
           }
+          &.teethWhitening{
+            span{
+              min-width: auto;
+              &:first-child{
+                &::after{
+                  width: calc(100% - 200px);
+                }
+              }
+              &:last-child{
+                margin-top: -2.5%;
+                margin-left: 200px;
+              }
+            }
+          }
         }
         .bannerText-2{
           display: flex;

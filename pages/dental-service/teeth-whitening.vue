@@ -19,6 +19,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/08/d160d4499ed752ef.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#淨白牙齒 建立閃亮笑容',
+  text2: '安全、可靠、快捷',
+  tabNavName: 'pages.dental-service.teeth-whitening.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/c495a817a3a44207.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/6f9de9264afc70b9.jpg',
@@ -28,11 +37,11 @@ const headerConfig = {
   mbText: ['淨白牙齒','建立閃亮笑容']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.teeth-whitening.introduce.title',
   content: 'pages.dental-service.teeth-whitening.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/06/528550d9da6d31f9.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/06/20a2795169586423.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/31f693b86d835a4b.png',
   tabNavName: 'pages.dental-service.teeth-whitening.introduce.tabNavName',
   pageName: 'teeth-whitening',
 }
@@ -108,55 +117,51 @@ const getWindowWidth = () => {
 const stepData = {
   title: '藍光牙齒美白過程',
   stepLists: [
-    [
           {
-            title: 'Step 1',
+            title: '1',
             text: '醫生評估病人口腔及牙齦狀況，了解病人需求，解釋漂牙的程序及風險等',
             textIn: ''
           },
           {
-            title: 'Step 2',
+            title: '2',
             text: '進行簡單清潔',
             textIn: ''
           },
           {
-            title: 'Step 3',
+            title: '3',
             text: '以牙齒專用色階進行對色，記錄療程前牙齒顏色的色號',
             textIn: ''
           },
           {
-            title: 'Step 4',
+            title: '4',
             text: '套上口腔張口器及保護眼罩',
             textIn: ''
           },
           {
-            title: 'Step 5',
+            title: '5',
             text: '在牙齦塗上牙齦保護劑，以免激光及美白劑刺激牙齦',
             textIn: ''
-          }
-        ],
-        [
+          },
           {
-            title: 'Step 6',
+            title: '6',
             text: '在牙齒表面均勻塗上激光專用美白劑',
             textIn: ''
           },
           {
-            title: 'Step 7',
+            title: '7',
             text: '以藍光燈開始照射牙齒，整個過程大概需要照射2-3次',
             textIn: ''
           },
           {
-            title: 'Step 8',
+            title: '8',
             text: '療程完成後，清除美白劑與牙齦保護劑',
             textIn: ''
           },
           {
-            title: 'Step 9',
+            title: '9',
             text: '以牙齒專用色階進行對色，比對療程前後效果',
             textIn: ''
           }
-        ]
   ]
 }
 
@@ -175,7 +180,8 @@ const noteData = {
     {
       name: '早晚刷牙，進食後清潔口腔，保持口腔清潔衛生',
     }
-  ]
+  ],
+  pageName: 'teethWhitening'
 }
 
 const problemData = {
@@ -225,17 +231,17 @@ const conditionData = {
   text: '',
   lists: [
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/451f4a98dd45a4a6.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/4ae13b3fd05710d2.png',
       title: '經常吸煙',
       text: '令牙齒變啡黑'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/dd23b041c7c646ea.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/691d6a9db7193d1b.png',
       title: '飲用深色飲品',
       text: '令牙齒變啡黑'
     },
     {
-      imgUrl: 'https://static.cmereye.com/imgs/2023/06/df6a3dce695c1e42.jpg',
+      imgUrl: 'https://static.cmereye.com/imgs/2023/08/b81ab4e57927c7e5.png',
       title: '年齡增長',
       text: '牙齒老化牙齒自然變黃'
     }
@@ -247,14 +253,17 @@ const conditionData = {
 
 <template>
   <div>
-    <PageHeader :headerConfig="headerConfig" />
-    <div class="pageIn whitebgColor">
-      <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-      <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-      <ServiceReason :reasonData="reasonData" />
+    <!-- <PageHeader :headerConfig="headerConfig" /> -->
+    <div class="teethWhiteningPage">
+      <ServiceBanner :bannerData="bannerData" pageName="teethWhitening" />
+      <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+      <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :introduceType="'1'" :moduleType="'4'" :animConfig="{color: '#FC1682',text:'TEETH WHITENING'}" />
+      <!-- <ServiceReason :reasonData="reasonData" /> -->
       <div class="condition">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
+        <RippleLine type="5" />
+        <div class="condition-bg">
+        <div class="condition-title">
+          <div class="condition-title-in">
             你有以下情況嗎？
           </div>
         </div>
@@ -272,10 +281,12 @@ const conditionData = {
             </div>
           </div>
         </div>
+        </div>
+        <RippleLine type="5" :isBottom="true" />
       </div>
       <div class="notice">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
+        <div class="notice-title">
+          <div class="notice-title-in">
             <span>{{noticeData.title}}</span>
           </div>
         </div>
@@ -284,112 +295,117 @@ const conditionData = {
             <span v-for="textItem in noticeTextItem" :key="textItem">{{textItem}}</span>
           </div>
         </div>
-        <div class="notice-in">
-          <swiper
-            :slidesPerView="windowWidth>768 ? '4': '1.6'"
-            :scrollbar="{
-              hide: true,
-            }"
-            :modules="[Scrollbar]"
-            class="swiper-wrapper"
-            @slideChange="onSlideChange"
-          >
-            <swiper-slide class="swiper-slide" v-for="(noticeItem,noticeIndex) in noticeData.lists" :key="noticeIndex">
-              <div class="box">
-                <div class="box-name">{{noticeItem.name}}</div>
-                <div class="box-text">{{noticeItem.text}}</div>
+        <div class="notice-list">
+          <div class="notice-list-in" v-for="(noticeItem,noticeIndex) in noticeData.lists" :key="noticeIndex">
+            <div class="box">
+              <div>
+                <img src="https://static.cmereye.com/imgs/2023/08/97f0fb29b550a927.png" alt="">
               </div>
-            </swiper-slide>
-          </swiper>
+              <div class="box-name">{{noticeItem.name}}</div>
+              <div class="box-text">{{noticeItem.text}}</div>
+            </div>
+          </div>
         </div>
       </div>
-      <ServiceStep :stepData="stepData" />
+      <ServiceStep :stepData="stepData" pageName="teethWhitening" />
       <div class="maintain">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
+        <div class="maintain-title">
+          <div class="maintain-title-in">
             藍光美白可以保持多久？
+          </div>
+          <div class="svgQuestionMark">
+            <SvgQuestionMark />
           </div>
         </div>
         <div class="maintain-in">
           藍光美白牙齒的效果通常可以持續兩年左右，但具體的時間長短取決於患者的飲食和衛生習慣。如果患者平時注意牙齒保養，少食用深色食物，並保持良好口腔衛生習慣，如按時刷牙和飯後漱口，那麼美白效果的持續時間相對會更長。
         </div>
       </div>
-      <ServiceNote :noteData="noteData" />
+      <div class="noteCon">
+        <RippleLine :type="'2'" />
+        <ServiceNote :noteData="noteData" />
+        <RippleLine :type="'2'" :isBottom="true" />
+      </div>
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
+      <RippleLine :type="'4'" />
       <ContactUs />
     </div>
-    <PageFooter />
-    <PageNavbar />
+    <!-- <PageFooter /> -->
+    <!-- <PageNavbar /> -->
   </div>
 </template>
 
 
 
 <style lang="scss" scoped>
+.teethWhiteningPage{
+  margin-top: -20px;
+  padding-bottom: 140px;
+}
 .notice {
   width: 100%;
   max-width: 1450px;
-  margin: 153px auto 0;
+  margin: 180px auto 0;
+  padding-bottom: 44px;
+  &-title{
+    text-align: center;
+    color: var(--topic-color);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 48px */
+    letter-spacing: 6.6px;
+  }
   &-text{
-    margin-top: 35px;
+    margin-top: 43px;
     &>div{
       text-align: center;
       span{
+        color: var(--topic-text-color);
+        text-align: center;
+        font-size: 19px;
         font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        color: #666666;
+        font-weight: 500;
+        line-height: 160%; /* 30.4px */
+        letter-spacing: 3.8px;
       }
     }
   }
-  &-in {
+  &-list {
     width: 100%;
-    margin: 56px auto 0;
+    margin: 89px auto 0;
+    display: flex;
+    &-in{
+      padding: 0 57px;
+    }
     .box {
       &>div {
-        height: 187px;
-        margin-top: 15px;
         display: flex;
-        background: #fff1f0;
-        font-style: normal;
-        font-weight: 600;
+        color: var(--topic-text-color);
+        text-align: justify;
         font-size: 20px;
-        line-height: 160%;
-        color: #666666;
-        padding: 0 70px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; 
         box-sizing: border-box;
         display: flex;
         justify-content: center;
-        &:first-child {
-          background: #ffa09e;
-          color: #fff;
-          margin-top: 0;
+
+        &:nth-of-type(2) {
+          color: var(--topic-color);
+          margin-top: 19px;
           height: 69px;
-          font-weight: 700;
-          font-size: 28px;
+          font-size: 36px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 160%;
           align-items: center;
         }
-        &:nth-of-type(2) {
+        &:nth-of-type(3) {
           margin-top: 0;
-          padding-top: 40px;
+          padding-top: 37px;
         }
-      }
-    }
-    .swiper-slide:not(:last-child){
-      padding-right: 3px;
-    }
-    .swiper-slide:nth-of-type(1){
-      .box{
-        border-radius: 60px 0 0 60px;
-        overflow: hidden;
-      }
-    }
-    .swiper-slide:nth-of-type(4){
-      .box{
-        border-radius: 0 60px 60px 0;
-        overflow: hidden;
       }
     }
   }
@@ -399,42 +415,63 @@ const conditionData = {
   }
 }
 .condition{
-  margin-top: 147px;
+  margin-top: 185px;
+  
+  &-bg{
+    background: #FF6096;
+    padding: 140px 0;
+  }
+  &-title{
+    display: flex;
+    justify-content: center;
+    &-in{
+      color: #FFF;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 160%; /* 48px */
+      letter-spacing: 6.6px
+    }
+  }
   &-text{
-    margin-top: 35px;
+    margin-top: 50px;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
+    letter-spacing: 3.8px;
     line-height: 160%;
     text-align: center;
-    color: #666666;
+    color: #fff;
     span{
-      color: #FFA09E;
+      color: #FECB02;
     }
   }
   &-lists{
-    margin-top: 40px;
+    margin-top: 65px;
     display: flex;
     justify-content: space-between;
     &-in{
       display: flex;
       flex-direction: column;
       flex: 1;
-      max-width: 440px;
+      max-width: 400px;
       &>div:last-child{
-        margin-top: 30px;
+        margin-top: 27px;
         font-style: normal;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 30px;
         line-height: 160%;
         text-align: center;
-        color: #666666;
+        color: #fff;
+        img{
+          width: 100%;
+        }
         span{
           display: inline-block;
           width: 100%;
           text-align: center;
+          font-size: 24px;
           &:last-child{
-            color: #FFA09E;
+            color: #FECB02;
           }
         }
       }
@@ -442,22 +479,64 @@ const conditionData = {
   }
 }
 .maintain{
-  margin-top: 98px;
+  margin-top: 285px;
+  &-title{
+    color: #FC1682;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 48px */
+    letter-spacing: 6.6px;
+    text-align: center;
+    position: relative;
+    &-in{
+      position: relative;
+      display: inline-block;
+      &::before{
+        content: '';
+        width: 12px;
+        height: 12px;
+        transform: rotate(45deg);
+        background: var(--topic-color);
+        position: absolute;
+        left: -40px;
+        bottom: 30%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &::after{
+        content: '';
+        width: 12px;
+        height: 12px;
+        transform: rotate(-45deg);
+        background: var(--topic-color);
+        position: absolute;
+        right: -40px;
+        bottom: 30%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+    .svgQuestionMark{
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%,-40%);
+    }
+  }
   &-in{
     width: calc(100% - 60px);
-    max-width: 1206px;
-    margin: 35px auto 0;
-    background: #FFF1F0;
-    box-shadow: 0px 4px 8px #FFDDDA;
-    padding: 59px 102px;
+    max-width: 904px;
+    margin: 138px auto 0;
     font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 20px;
     line-height: 160%;
-    color: #666666;
+    letter-spacing: 2.4px;
+    color: var(--topic-text-color);
   }
 }
-
+.noteCon{
+  padding: 176px 0 60px;
+}
 @media (min-width: 768px) and (max-width: 1452px) {
   .notice {
     &-in {

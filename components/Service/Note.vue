@@ -55,6 +55,10 @@ defineProps({
 <style lang="scss" scoped>
 .note{
   padding: 96px 0 0;
+  &.teethWhitening{
+    background: #FECB02;
+    padding: 96px 0 30px;
+  }
   &-title{
     color: var(--topic-color);
     text-align: center;
@@ -142,6 +146,13 @@ defineProps({
         }
         &>div:last-child{
           flex: 1;
+        }
+      }
+    }
+    &.teethWhitening{
+      .note-in-lists{
+        .note-in-lists-item{
+          color: #fff;
         }
       }
     }

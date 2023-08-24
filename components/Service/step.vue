@@ -22,17 +22,10 @@ defineProps({
 
 let showStepAnim = ref(false)
 const getScrollTop = () => {
-  // console.log(window.scrollY)
   let caseSharingHeight:any = document.getElementsByClassName('step')
-  // if(windowWidth.value > 768){
-    if(window.scrollY>=caseSharingHeight[0].offsetTop-500){
-      showStepAnim.value = true
-    }
-  // }else{
-    // if(window.scrollY>=caseSharingHeight[0].offsetTop){
-      // showYaAnim.value = true
-    // }
-  // }
+  if(window.scrollY>=caseSharingHeight[0].offsetTop-500){
+    showStepAnim.value = true
+  }
 }
 
 onMounted(()=>{
@@ -54,7 +47,7 @@ onMounted(()=>{
     <div :class="['step-remark',pageName]" v-if="stepData.remark">
       {{stepData.remark}}
     </div>
-      <div class="step-in">
+      <div :class="['step-in',pageName]">
         <div :class="['step-in-box',{tepAnim:showStepAnim}]" :style="{'animation-delay': `${stepIndex/5}s`}" v-for="(step,stepIndex) in stepData.stepLists" :key="stepIndex">
             <span class="title">{{step.title}}</span>
             <span class="text">
@@ -151,6 +144,23 @@ onMounted(()=>{
       &.tepAnim{
         animation: stepBoxAnim .8s ease-out;
         animation-fill-mode: forwards;
+      }
+    }
+    &.teethWhitening{
+      flex-wrap: wrap;
+      max-width: 1222px;
+      .step-in-box{
+        width: 20%;
+        flex: initial;
+        &:nth-of-type(5){
+          &::after{
+            display: none;
+          }
+        }
+        &:nth-of-type(n+6){
+          margin-top: 150px;
+          margin-bottom: 50px;
+        }
       }
     }
   }

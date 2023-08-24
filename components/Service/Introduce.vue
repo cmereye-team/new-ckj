@@ -14,6 +14,10 @@ defineProps({
       }
     }
   },
+  introduceType:{
+    type: String,
+    default: ''
+  },
   reasonData:{
     type: Object,
     default(){
@@ -77,6 +81,9 @@ onBeforeUnmount(()=>{
       <div class="introduce-in-title">{{$t(introduceData.title)}}</div>
       <div class="introduce-in-content" v-if="['1','3'].includes(moduleType)">
         {{$t(introduceData.content)}}
+      </div>
+      <div class="introduce-in-introduceType" v-if="introduceType === '1'">
+        <div>{{$t(introduceData.content)}}</div>
       </div>
       <div class="introduce-in-reason" v-if="moduleType === '1'">
         <div class="reason-l">
@@ -156,6 +163,42 @@ onBeforeUnmount(()=>{
             </div>
         </div>
       </div>
+      <div class="introduce-in-modulType4" v-if="moduleType === '4'">
+        <div class="modulType4-image">
+          <svg viewBox="0 0 1000 600" class="overflow-visible uppercase w-full">
+            <path id="leftArch" d="M -20,0 V600 h750 a 300 300 0 0 0 0,-600 z" fill="none" stroke="none"></path>
+            <text width="500" font-size="26" class="font-gza text-secondary" :fill="animConfig.color">
+              <textPath class="tp" alignment-baseline="auto" xlink:href="#leftArch" :startOffset="`${AnimNum}%`">
+                <template v-for="i in 24" :key="i">
+                  {{animConfig.text}} &nbsp;
+                </template>
+              </textPath>
+            </text>
+          </svg>
+          <img :src="introduceData.pcImg" alt="">
+        </div>
+        <div class="modulType4-content">
+          <!-- {{$t(introduceData.content)}} -->
+          <div class="modulType4-content-title">
+            <serviceTitle :title="reasonData.title" /> 
+            <!-- {{$t(reasonData.title)}} -->
+          </div>
+          <div class="modulType4-content-text">
+            <img src="https://static.cmereye.com/imgs/2023/08/0247872a5a18b171.png" alt="">
+            <span>{{$t(reasonData.text)}}</span>
+          </div>
+          <div class="modulType4-content-context">
+            <div v-for="(reason,reasonIndex) in reasonData.reasonLists" :key="reasonIndex">
+              <div class="icon">
+                {{reason.hideIcon ? '': '· '}}
+              </div>
+              <div class="context">
+                {{$t(reason.context)}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -193,6 +236,34 @@ onBeforeUnmount(()=>{
           letter-spacing: 4.8px;
           margin: 70px auto 0;
           text-align: center;
+        }
+        &-introduceType{
+          margin: 170px auto 207px;
+          display: flex;
+          justify-content: center;
+          &>div{
+            color: var(--topic-text-color);
+            text-align: center;
+            font-family: Noto Serif KR;
+            font-size: 79px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 157%; /* 124.03px */
+            letter-spacing: 15.8px;
+            white-space: pre-wrap;
+            position: relative;
+            display: inline-block;
+            &::before{
+              content: '';
+              width: 98px;
+              height: 98px;
+              display: block;
+              background: linear-gradient(180deg, rgba(255, 122, 161, 0.50) 0%, rgba(255, 176, 202, 0.00) 100%);
+              border-radius: 50%;
+              position: absolute;
+              left: 25%;
+            }
+          }
         }
         &-reason{
           display: flex;
@@ -354,6 +425,79 @@ onBeforeUnmount(()=>{
                 letter-spacing: 3.8px;
                 margin-top: 5px;
               }
+            }
+          }
+        }
+        &-modulType4{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin-top: 100px;
+          .modulType4-content{
+            color: var(--topic-text-color);
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: 4.8px;
+            margin-right: 30px;
+            // width: 40%;
+            // padding-right: 5%;
+            &-text{
+              margin-top: 19px;
+              display: flex;
+              color: var(--topic-text-color);
+              font-size: 22px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 160%; /* 35.2px */
+              letter-spacing: 6.6px;
+              img{
+                margin-right: 14px;
+              }
+            }
+            &-context{
+              margin-top: 26px;
+              display: flex;
+              flex-direction: column;
+              &>div{
+                display: flex;
+                color: var(--topic-text-color);
+                .icon{
+                  width: 20px;
+                  min-width: 20px;
+                  font-size: 20px;
+                  margin-right: 5px;
+                  line-height: 1.8;
+                }
+                .context{
+                  flex: 1;
+                  text-align: left;
+                  max-width: 471px;
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 200%; /* 36.96px */
+                  letter-spacing: 4.8px;
+                }
+              }
+            }
+          }
+          .modulType4-image{
+            width: 50%;
+            min-width: 50%;
+            margin-right: 10.5%;
+            position: relative;
+            padding: 20px 20px 20px 0px;
+            box-sizing: border-box;
+            img{  
+              width: 100%;
+            }
+            svg{
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
             }
           }
         }

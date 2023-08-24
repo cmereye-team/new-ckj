@@ -18,6 +18,15 @@ useHead({
   ]
 })
 
+const bannerData = {
+  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
+  text1: '#回歸自然微笑 恢復咀嚼功能',
+  text2: '牙齒更加整齊、美觀、自信、舒適',
+  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+}
+
 const headerConfig = {
   img: 'https://static.cmereye.com/imgs/2023/06/67f203a9b4c651be.png',
   bg: 'https://static.cmereye.com/imgs/2023/06/4a26475cb4471cee.jpg',
@@ -145,11 +154,11 @@ const handleSkillTab = (_idx:number) => {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" />
-  <div class="pageIn whitebgColor">
-    <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div>
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" />
-    <ServiceReason :reasonData="reasonData" />
+  <!-- <PageHeader :headerConfig="headerConfig" /> -->
+  <div class="servicePageConfig">
+    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
+    <!-- <ServiceReason :reasonData="reasonData" /> -->
     <div class="faq">
       <div class="dentistryServices-title">
         <div class="dentistryServices-title-in bb">兒童常見口腔問題</div>
@@ -218,16 +227,21 @@ const handleSkillTab = (_idx:number) => {
     <ServiceNote :noteData="noteData" />
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
+    <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
+  <!-- <PageFooter /> -->
+  <!-- <PageNavbar /> -->
 </div>
 </template>
 
 
 
 <style lang="scss" scoped>
+.servicePageConfig{
+  margin-top: -20px;
+  padding-bottom: 140px;
+}
 .faq{
   margin-top: 207px;
   &-in{
