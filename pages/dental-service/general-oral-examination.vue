@@ -19,12 +19,12 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/991bb5fac0819e99.jpg',
+  mbImg: 'https://static.cmereye.com/imgs/2023/08/991bb5fac0819e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
-  text1: '#回歸自然微笑 恢復咀嚼功能',
-  text2: '牙齒更加整齊、美觀、自信、舒適',
-  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+  text1: '#關注口腔健康 從定期檢查開始',
+  text2: '立即預約檢查 展開護牙行動',
+  tabNavName: 'pages.dental-service.general-oral-examination.introduce.tabNavName'
 }
 
 const headerConfig = {
@@ -36,11 +36,11 @@ const headerConfig = {
   mbText: ['關注口腔健康','從定期檢查開始']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.general-oral-examination.introduce.title',
   content: 'pages.dental-service.general-oral-examination.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/1adfbf26ba2d3e03.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/0c05f7b7469e4f0d.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/9aab891c36c78382.jpg',
   tabNavName: 'pages.dental-service.general-oral-examination.introduce.tabNavName',
 }
 
@@ -62,30 +62,26 @@ const reasonData = {
 const stepData = {
   title: '一般口腔檢查過程',
   stepLists: [
-    [
       {
-        title: 'Step 1',
+        title: '1',
         text: '檢查牙齒、牙齦健康',
       },
       {
-        title: 'Step 2',
+        title: '2',
         text: '面部或頸項有否出現異常情況',
       },
       {
-        title: 'Step 3',
+        title: '3',
         text: '評估整體口腔健康狀況及提供建議',
       },
-    ],
-    [
       {
-        title: 'Step 4',
+        title: '4',
         text: '需要時建議進行口腔X光造影檢查',
       },
       {
-        title: 'Step 5',
+        title: '5',
         text: '提供口腔保健資訊',
       },
-    ],
   ],
 }
 
@@ -101,18 +97,29 @@ const problemData = {
       A: 'pages.dental-service.general-oral-examination.problem.lists[1].A',
     },
   ],
+  pageName: 'general-oral-examination',
 }
 
 const noticeData = {
   title: '服務包括',
-  meritLists: [
-    '口腔及牙齒檢查',
-    '檢查口腔整體健康狀況包括檢查牙齦、牙齒、口腔組織和面頜骨，以確定是否需要進行進一步的治療。為了評估牙齒和牙齦的整體健康狀況，牙醫可能會建議進行牙齒X光檢查。',
-  ],
-  shortcomingLists: [
-    '口腔 X光片',
-    '口腔X光檢查一般分為傳統口內X光和口外全景X光兩種。口內X光可以提供牙齒、骨骼和口腔組織的詳細圖像，能夠幫助牙醫檢測蛀牙、觀察牙根、檢查牙齒四周的骨骼健康、診斷牙周病以及檢查正在生長的牙齒。',
-  ],
+  // meritLists: [
+  //   '口腔及牙齒檢查',
+  //   '檢查口腔整體健康狀況包括檢查牙齦、牙齒、口腔組織和面頜骨，以確定是否需要進行進一步的治療。為了評估牙齒和牙齦的整體健康狀況，牙醫可能會建議進行牙齒X光檢查。',
+  // ],
+  // shortcomingLists: [
+  //   '口腔 X光片',
+  //   '口腔X光檢查一般分為傳統口內X光和口外全景X光兩種。口內X光可以提供牙齒、骨骼和口腔組織的詳細圖像，能夠幫助牙醫檢測蛀牙、觀察牙根、檢查牙齒四周的骨骼健康、診斷牙周病以及檢查正在生長的牙齒。',
+  // ],
+  lists: [
+    {
+      img: 'https://static.cmereye.com/imgs/2023/08/9da1f6adb17f4ff8.png',
+      content: '檢查口腔整體健康狀況包括檢查牙齦、牙齒、口腔組織和面頜骨，以確定是否需要進行進一步的治療。為了評估牙齒和牙齦的整體健康狀況，牙醫可能會建議進行牙齒X光檢查。'
+    },
+    {
+      img: 'https://static.cmereye.com/imgs/2023/08/c0848e21c9906137.png',
+      content: '口腔X光檢查一般分為傳統口內X光和口外全景X光兩種。口內X光可以提供牙齒、骨骼和口腔組織的詳細圖像，能夠幫助牙醫檢測蛀牙、觀察牙根、檢查牙齒四周的骨骼健康、診斷牙周病以及檢查正在生長的牙齒。'
+    }
+  ]
 }
 let noticeCurrent = ref(1)
 
@@ -137,11 +144,11 @@ const getWindowWidth = () => {
   <div>
     <!-- <PageHeader :headerConfig="headerConfig" /> -->
     <div class="servicePageConfig">
-      <ServiceBanner :bannerData="bannerData" />
+      <ServiceBanner :bannerData="bannerData" pageName="generalOralExamination" />
       <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
-      <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
+      <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'DENTAL CHECK-UP'}" moduleType="4" introduceType="2" />
       <!-- <ServiceReason :reasonData="reasonData" /> -->
-      <div class="notice">
+      <!-- <div class="notice">
         <div class="dentistryServices-title">
           <div class="dentistryServices-title-in bb">
             <span>{{noticeData.title}}</span>
@@ -180,11 +187,27 @@ const getWindowWidth = () => {
         <div class="notice-line mbBox">
           <PageSwiperPointLine :latestNewsNum="2" :latestNewsCurrent="noticeCurrent"></PageSwiperPointLine>
         </div>
+      </div> -->
+      <div class="note">
+        <RippleLine type="2" />
+        <div class="note-bg">
+          <div class="note-title">
+            <ServiceTitle :title="noticeData.title" yaBorder="#FECB02" />
+          </div>
+          <div class="note-lists">
+            <div class="note-lists-in" v-for="(note,index) in noticeData.lists" :key="index">
+              <div class="image"><img :src="note.img" alt="" /></div>
+              <div class="text">{{note.content}}</div>
+            </div>
+          </div>
+        </div>
+        <RippleLine type="2" :isBottom="true" />
       </div>
       <div class="frequency">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
-            <span>口腔檢查頻率</span>
+        <div class="frequency-title">
+          <div class="frequency-title-in">
+            <!-- <span>口腔檢查頻率</span> -->
+            <ServiceTitle :title="'口腔檢查頻率'" />
           </div>
         </div>
         <div class="frequency-in">
@@ -197,19 +220,31 @@ const getWindowWidth = () => {
             <span>高風險人群</span>，
             <br class="mbBox" />建議每半年或更頻繁地進行口腔檢查。
           </div>
-          <div class="frequency-in-title">高危人士包括:</div>
+          <!-- <div class="frequency-in-title">高危人士包括:</div> -->
           <div class="frequency-in-lists">
-            <div>
-              <div>吸煙者：</div>
-              <div>吸煙者患牙周病的機率比非吸煙者高，高達五倍或以上。</div>
+            <div class="listsIn">
+              <div class="num">01</div>
+              <div class="image">
+                <img src="https://static.cmereye.com/imgs/2023/08/826e8ca2be7a3b20.png" alt="">
+              </div>
+              <div class="name">吸煙者</div>
+              <div class="context">吸煙者患牙周病的機率比非吸煙者高，高達五倍或以上。</div>
             </div>
-            <div>
-              <div>患有嚴重口腔疾病的人士:</div>
-              <div>如嚴重蛀牙、牙周病、口腔癌、裂顎等，需要接受較頻繁的口腔檢查以維護口腔健康。</div>
+            <div class="listsIn">
+              <div class="num">02</div>
+              <div class="image">
+                <img src="https://static.cmereye.com/imgs/2023/08/bcaf52f9657ef4b1.png" alt="">
+              </div>
+              <div class="name">患有嚴重口腔疾病的人士</div>
+              <div class="context">如嚴重蛀牙、牙周病、口腔癌、裂顎等，需要接受較頻繁的口腔檢查以維護口腔健康。</div>
             </div>
-            <div>
-              <div>患有系統性疾病人士:</div>
-              <div>對於患有糖尿病、血友病、愛滋病等系統性疾病的人士，由於身體免疫系統受到妨礙，抵抗病原體的能力降低，如果口腔衛生不佳，牙齒表面的菌斑就會容易引致牙周病，甚至發展成嚴重疾病。</div>
+            <div class="listsIn">
+              <div class="num">03</div>
+              <div class="image">
+                <img src="https://static.cmereye.com/imgs/2023/08/30e8a87fdaf42d8d.png" alt="">
+              </div>
+              <div class="name">患有系統性疾病人士</div>
+              <div class="context">對於患有糖尿病、血友病、愛滋病等系統性疾病的人士，由於身體免疫系統受到妨礙，抵抗病原體的能力降低，如果口腔衛生不佳，牙齒表面的菌斑就會容易引致牙周病，甚至發展成嚴重疾病。</div>
             </div>
           </div>
           <div class="frequency-in-bottom">因此，高風險人群需要更加重視口腔健康，並接受更頻繁的口腔檢查</div>
@@ -289,28 +324,71 @@ const getWindowWidth = () => {
     margin: 22px auto;
   }
 }
+.note{
+  margin-top: 185px;
+  &-bg{
+    background: #FECB02;
+    padding: 150px 0 140px;
+  }
+  &-title{
+    display: flex;
+    justify-content: center;
+  }
+  &-lists{
+    width: 100%;
+    max-width: 1340px;
+    margin: 125px auto 0;
+    display: flex;
+    justify-content: space-around;
+    &-in{
+      display: flex;
+      flex-direction: column;
+      max-width: 40%;
+      .image{
+        position: relative;
+        img{
+          width: 100%;
+        }
+      }
+      .text{
+        margin-top: 70px;
+        color: var(--black, #4D4D4D);
+        text-align: justify;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 157%; /* 29.83px */
+        letter-spacing: 3.8px;
+      }
+    }
+  }
+}
 .frequency {
-  margin-top: 106px;
+  margin-top: 185px;
+  &-title{
+    display: flex;
+    justify-content: center;
+  }
   &-in {
     width: 100%;
-    max-width: 1246px;
+    // max-width: 1246px;
     padding: 59px 50px;
-    background: #fff1f0;
-    box-shadow: 0px 4px 8px #ffddda;
-    margin: 35px auto;
+    // background: #fff1f0;
+    // box-shadow: 0px 4px 8px #ffddda;
+    margin: 25px auto;
     &-top {
       font-style: normal;
-      font-weight: 600;
-      font-size: 28px;
+      font-weight: 500;
+      font-size: 19px;
       line-height: 160%;
       text-align: center;
-      color: #666666;
+      color: var(--topic-text-color);
       span {
         font-style: normal;
-        font-weight: 700;
-        font-size: 30px;
+        font-weight: 500;
+        font-size: 19px;
         line-height: 160%;
-        color: #ffa09e;
+        color: var(--topic-color);
       }
     }
     &-title {
@@ -324,44 +402,67 @@ const getWindowWidth = () => {
     }
     &-lists {
       display: flex;
-      margin-top: 30px;
-      & > div {
-        padding: 36px 30px;
-        background: #fff;
-        border-radius: 30px;
-        margin: 0 20px;
-        font-style: normal;
-        box-sizing: border-box;
-        min-height: 304px;
-        & > div:first-child {
-          color: #ffa09e;
-          font-weight: 700;
-          font-size: 22px;
-          line-height: 160%;
+      margin-top: 175px;
+      .listsIn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #6B6B6B;
+        flex: 1;
+        margin: 0 52px;
+        padding: 0 68px 62px;
+        .num{
+          font-size: 80px;
+          color: var(--topic-text-color);
+          background: #fff;
+          transform: translateY(-50%);
+          padding: 0 10px 0 45px;
+          &::before{
+            content: '';
+            height: 104px;
+            width: 2px;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-60%) rotate(25deg);
+            background: var(--topic-text-color);
+          }
         }
-        & > div:last-child {
-          color: #666666;
+        .image{
+          margin-top: -70px;
+          height: 317px;
+          display: flex;
+          align-items: center;
+        }
+        .name{
+          min-height: 140px;
+          color: var(--topic-color);
+          text-align: center;
+          font-size: 60px;
+          font-style: normal;
           font-weight: 500;
-          font-size: 20px;
-          line-height: 160%;
+          line-height: 100%; /* 94.2px */
+          letter-spacing: 3.6px;
+        }
+        .context{
+          color: var(--topic-text-color);
           text-align: justify;
-        }
-        &:nth-of-type(1) {
-          min-width: 226px;
-        }
-        &:nth-of-type(2) {
-          min-width: 330px;
+          font-size: 19px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 157%; /* 29.83px */
+          letter-spacing: 3.8px;
         }
       }
     }
     &-bottom {
       margin-top: 54px;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 28px;
       line-height: 160%;
       text-align: center;
-      color: #ffa09e;
+      color: var(--topic-color);
     }
   }
 }

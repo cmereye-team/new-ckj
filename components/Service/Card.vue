@@ -106,7 +106,7 @@ const openServiceCar = ref(false)
 <style lang="scss" scoped>
 
 .index-dentalServices{
-  padding: 189px 0 190px;
+  padding: 189px 0 77px;
   position: relative;
   overflow: hidden;
   &-in{

@@ -82,6 +82,9 @@ onBeforeUnmount(()=>{
       <div class="introduce-in-content" v-if="['1','3'].includes(moduleType)">
         {{$t(introduceData.content)}}
       </div>
+      <div class="introduce-in-content"  v-if="introduceType === '2'">
+        {{$t(introduceData.content)}}
+      </div>
       <div class="introduce-in-introduceType" v-if="introduceType === '1'">
         <div>{{$t(introduceData.content)}}</div>
       </div>
@@ -432,7 +435,7 @@ onBeforeUnmount(()=>{
           width: 100%;
           display: flex;
           align-items: center;
-          margin-top: 100px;
+          margin-top: 140px;
           .modulType4-content{
             color: var(--topic-text-color);
             text-align: center;

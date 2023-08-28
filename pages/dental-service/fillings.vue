@@ -19,12 +19,12 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/a0df9167d54cd8f7.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
-  text1: '#回歸自然微笑 恢復咀嚼功能',
-  text2: '牙齒更加整齊、美觀、自信、舒適',
-  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+  text1: '#高質量的修復效果',
+  text2: '緊急救援您珍貴的牙齒',
+  tabNavName: 'pages.dental-service.fillings.introduce.tabNavName'
 }
 
 const headerConfig = {
@@ -36,11 +36,11 @@ const headerConfig = {
   mbText: ['高質量的修復效果','緊急救援您珍貴的牙齒']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.fillings.introduce.title',
   content: 'pages.dental-service.fillings.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/61b68b2597a8e44d.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/98c2430bfc65c812.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/dc170668965c0279.jpg',
   tabNavName: 'pages.dental-service.fillings.introduce.tabNavName',
   pageName: 'fillings',
 }
@@ -81,16 +81,18 @@ const stepData = {
         title: '5',
         text: '牙齒修形及拋光（如蛀牙的程度深，或需要使用麻醉劑）',
       }
-  ],
+  ]
 }
 
 const noteData = {
   title: '補牙後建議',
   lists: [
     {
+      img: 'https://static.cmereye.com/imgs/2023/08/a537b0d4aaec269b.png',
       name: '避免咬合過硬的食物',
     },
     {
+      img: 'https://static.cmereye.com/imgs/2023/08/91f81150fb7e97fd.png',
       name: '避免進食過冷或過熱的食物',
     },
   ],
@@ -170,24 +172,37 @@ const problemData = {
     <div class="servicePageConfig">
       <ServiceBanner :bannerData="bannerData" />
       <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
-      <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
+      <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'CAVITY FILLING'}" moduleType="4" introduceType="2" />
       <!-- <ServiceReason :reasonData="reasonData" /> -->
-      <ServiceStep :stepData="stepData" />
-      <ServiceNote :noteData="noteData" />
+      <ServiceStep :stepData="stepData" pageName="fillings" />
+      <!-- <ServiceNote :noteData="noteData" /> -->
+      <div class="note">
+        <RippleLine type="2" />
+        <div class="note-bg">
+          <div class="note-title">
+            <ServiceTitle :title="noteData.title" yaBorder="#FECB02" />
+          </div>
+          <div class="note-lists">
+            <div class="note-lists-in" v-for="(note,index) in noteData.lists" :key="index">
+              <div class="image"><img :src="note.img" alt="" /></div>
+              <div class="text">{{note.name}}</div>
+            </div>
+          </div>
+        </div>
+        <RippleLine type="2" :isBottom="true" />
+      </div>
       <div class="material">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">{{materialData.title}}</div>
+        <div class="material-title">
+          <div class="material-title-in bb">
+            <ServiceTitle :title="materialData.title" />
+          </div>
         </div>
         <div class="material-context">
           <span v-for="(contextItem,contextIndex) in materialData.context" :key="contextIndex">{{contextItem}}</span>
         </div>
         <div class="material-in">
-          <swiper
-            slidesPerView="auto"
-            class="swiper"
-            @slideChange="onSlideChange"
-          >
-            <swiper-slide class="swiper-slide">
+          <div class="materialBox">
+            <div class="materialBox-in">
               <div class="box-left">
                 <div class="box">
                   <div
@@ -199,8 +214,8 @@ const problemData = {
                   </div>
                 </div>
               </div>
-            </swiper-slide>
-            <swiper-slide class="swiper-slide">
+            </div >
+            <div class="materialBox-in">
               <div class="box-center">
                 <div class="box">
                   <div
@@ -212,8 +227,8 @@ const problemData = {
                   </div>
                 </div>
               </div>
-            </swiper-slide>
-            <swiper-slide class="swiper-slide">
+            </div >
+            <div class="materialBox-in">
               <div class="box-right">
                 <div class="box">
                   <div
@@ -225,13 +240,14 @@ const problemData = {
                   </div>
                 </div>
               </div>
-            </swiper-slide>
-          </swiper>
+            </div >
+          </div>
         </div>
-        <div class="material-line mbBox">
+        <!-- <div class="material-line mbBox">
           <PageSwiperPointLine :latestNewsNum="3" :latestNewsCurrent="materialCurrent"></PageSwiperPointLine>
-        </div>
+        </div> -->
       </div>
+      <RippleLine :type="'4'" />
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <RippleLine :type="'4'" />
@@ -250,91 +266,167 @@ const problemData = {
 .material {
   width: 100%;
   max-width: 1450px;
-  margin: 96px auto 0;
+  margin: 185px auto;
+  &-title{
+    display: flex;
+    justify-content: center;
+  }
   &-context{
     width: 100%;
-    max-width: 1042px;
-    margin: 35px auto 0;
+    max-width: 800px;
+    margin: 80px auto 0;
     text-align: center;
     span {
       font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 19px;
       line-height: 160%;
-      color: #666666;
+      color: var(--topic-text-color);
+      letter-spacing: 3.8px;
     }
   }
   &-in {
-    max-width: 1254px;
-    margin: 30px auto 0;
+    max-width: 1005px;
+    margin: 80px auto 0;
     .box {
       width: 100%;
       .box-in {
-        height: 140px;
-        margin-top: 4px;
+        height: 93px;
+        // margin-top: 4px;
+        border-bottom: 1px solid var(--topic-color);
+        border-right: 1px solid var(--topic-color);
         display: flex;
-        background: #fff1f0;
         font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
+        font-weight: 500;
+        font-size: 18px;
         line-height: 160%;
-        color: #666666;
+        color: var(--topic-text-color);
         padding: 0 40px;
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        justify-content: center;
         &:first-child {
-          background: #ffa09e;
+          background: var(--topic-color);
           color: #fff;
           margin-top: 0;
-          height: 69px;
-          font-weight: 700;
-          font-size: 28px;
-          justify-content: center;
+          height: 48px;
+          font-weight: 500;
+          font-size: 20px;
+          // justify-content: center;
+          border-right: none;
+          margin-right: 2px;
         }
         &:last-child{
-          height: 108px;
+          
+          
         }
-        &:nth-of-type(2) {
-          margin-top: 0;
+        &:nth-of-type(3) {
+          height: 121px;
+          padding: 0 85px;
+          text-align: center;
         }
       }
     }
-    .swiper{
-      .swiper-slide{
+    .materialBox{
+      display: flex;
+      .materialBox-in{
         &:nth-of-type(1){
-          width: 25.68% !important;
+          width: 25.68% ;
         }
         &:nth-of-type(2){
-          width: 37.16% !important;
+          width: 37.16% ;
         }
         &:nth-of-type(3){
-          width: 37.16% !important;
+          width: 37.16% ;
+          .box {
+            .box-in{
+              border-right: none;
+            }
+          }
         }
       }
     }
     .box-left {
-      margin-right: 2px;
-      border-radius: 60px 0 0 60px;
-      overflow: hidden;
-      display: flex;
+      // margin-right: 2px;
+      // border-radius: 60px 0 0 60px;
+    //   overflow: hidden;
+    //   display: flex;
       .box:nth-of-type(1){
         .box-in{
-          font-weight: 700;
-          font-size: 28px;
+    //       font-weight: 700;
+    //       font-size: 28px;
           justify-content: center;
+          color: var(--topic-color);
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 160%; /* 28.8px */
+          letter-spacing: 4.5px;
+          &:nth-of-type(1){
+            color: #fff;
+            font-size: 20px;
+          }
         }
       }
     }
-    .box-right {
-      border-radius: 0 60px 60px 0;
-      overflow: hidden;
-      margin-left: 2px;
-    }
+    // .box-right {
+      // border-radius: 0 60px 60px 0;
+      // overflow: hidden;
+      // margin-left: 2px;
+    // }
   }
-  &-line {
-    width: 120px;
-    margin: 22px auto;
+  // &-line {
+  //   width: 120px;
+  //   margin: 22px auto;
+  // }
+}
+.note{
+  margin-top: -40px;
+  &-bg{
+    background: #FECB02;
+    padding: 150px 0 140px;
+  }
+  &-title{
+    display: flex;
+    justify-content: center;
+  }
+  &-lists{
+    width: 100%;
+    max-width: 1340px;
+    margin: 125px auto 0;
+    display: flex;
+    justify-content: space-around;
+    &-in{
+      display: flex;
+      flex-direction: column;
+      .image{
+        position: relative;
+        img{
+          width: 100%;
+        }
+        &::before{
+          content: '';
+          background: url(https://static.cmereye.com/imgs/2023/08/6f4555dbf9221e6b.png) no-repeat;
+          background-size: cover;
+          position: absolute;
+          top: -12.5%;
+          left: -16%;
+          width: 40%;
+          height: 40%;
+        }
+      }
+      .text{
+        margin-top: 57px;
+        text-align: center;
+        color: var(--topic-color);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 48px */
+        letter-spacing: 9px;
+      }
+    }
   }
 }
 @media only screen and (max-width: 760px) {
@@ -379,13 +471,6 @@ const problemData = {
           }
           &:nth-of-type(3){
             width: 92.128% !important;
-          }
-        }
-      }
-      .box-left {
-        .box:nth-of-type(1){
-          .box-in{
-            font-size: 20px;
           }
         }
       }

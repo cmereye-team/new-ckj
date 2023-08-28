@@ -162,6 +162,20 @@ defineProps({
               }
             }
           }
+          &.generalOralExamination{
+            span{
+              min-width: auto;
+              &:first-child{
+                &::after{
+                  width: calc(100% - 140px);
+                }
+              }
+              &:last-child{
+                margin-top: -1.7%;
+                margin-left: 140px;
+              }
+            }
+          }
         }
         .bannerText-2{
           display: flex;

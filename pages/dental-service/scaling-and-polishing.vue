@@ -19,12 +19,12 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/2b848a792c94c4dd.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
-  text1: '#回歸自然微笑 恢復咀嚼功能',
-  text2: '牙齒更加整齊、美觀、自信、舒適',
-  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+  text1: '#定期洗牙  全方位清潔口腔盲點',
+  text2: '愛牙愛己  愛康健細心守護您牙齒健康',
+  tabNavName: 'pages.dental-service.scaling-and-polishing.introduce.tabNavName'
 }
 
 const headerConfig = {
@@ -36,18 +36,19 @@ const headerConfig = {
   mbText: ['定期洗牙','全方位清潔口腔盲點']
 }
 
-const orthodonticsIntroduceData = {
+const introduceData = {
   title: 'pages.dental-service.scaling-and-polishing.introduce.title',
   content: 'pages.dental-service.scaling-and-polishing.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/e2bc750495cbd2df.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/3e4ae32ca30ab023.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/3b519d54ffd9967a.jpg',
   tabNavName: 'pages.dental-service.scaling-and-polishing.introduce.tabNavName',
+  pageName: 'scalingAndPolishing'
 }
 
 const reasonData = {
   title: 'pages.dental-service.scaling-and-polishing.reason.title',
   text: 'pages.dental-service.scaling-and-polishing.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/a5dde3049c292ece.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/3b519d54ffd9967a.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.scaling-and-polishing.reason.lists[0].context',
@@ -94,7 +95,8 @@ const problemData = {
       Q: 'pages.dental-service.scaling-and-polishing.problem.lists[1].Q',
       A: 'pages.dental-service.scaling-and-polishing.problem.lists[1].A'
     },
-  ]
+  ],
+  pageName: 'scaling-and-polishing'
 }
 
 </script>
@@ -106,9 +108,9 @@ const problemData = {
   <div class="servicePageConfig">
     <ServiceBanner :bannerData="bannerData" />
     <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
+    <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'DENTAL CLEANING'}" moduleType="4" />
     <!-- <ServiceReason :reasonData="reasonData" /> -->
-    <ServiceStep :stepData="stepData" />
+    <ServiceStep :stepData="stepData" pageName="scaling-and-polishing" />
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
     <RippleLine :type="'4'" />

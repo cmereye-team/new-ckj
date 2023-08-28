@@ -8,7 +8,8 @@ let props = defineProps({
         title: '',
         lists: [
           
-        ]
+        ],
+        pageName: ''
       }
     }
   }
@@ -39,14 +40,14 @@ const handleChange = (val: string[]) => {
 </script>
 
 <template>
-  <div class="problem">
+  <div :class="['problem',problemData.pageName]">
     <div class="problem-title">
       <div class="problem-title-in">
         <!-- {{$t(problemData.title)}} -->
-        <serviceTitle :title="'植牙常見問題'" />
+        <serviceTitle :title="problemData.title" />
       </div>
     </div>
-    <div class="problem-in pageCon">
+    <div :class="['problem-in','pageCon',problemData.pageName]">
       <el-collapse v-model="activeNames" :accordion="false">
         <el-collapse-item :name="problemIndex"  v-for="(problemItem,problemIndex) in props.problemData.lists" :key="problemIndex">
           <template #title>
@@ -78,6 +79,9 @@ const handleChange = (val: string[]) => {
 <style lang="scss" scoped>
 .problem{
   margin-top: 120px;
+  &.scaling-and-polishing{
+    margin-top: 185px;
+  }
   &-title{
     display: flex;
     justify-content: center;
@@ -124,34 +128,31 @@ const handleChange = (val: string[]) => {
         border-radius: 20px;
       }
     }
-  }
-}
-:deep(.el-collapse){
-  border: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 6.33%;
-}
-:deep(.el-collapse-item){
-  margin-bottom: 80px;
-  border: none;
-  width: calc(27%);
-  margin-right: 6.33%;
-}
-:deep(.el-collapse-item__wrap){
-  border: none;
-}
-:deep(.el-collapse-item__header){
-  padding: 12px 0;
-  background: var(--topic-color);
-  border: none;
-  box-sizing: initial;
-  line-height: 160%;
-  height: auto;
-  // min-height: 45px;
-  border-radius: 25px;
-  position: relative;
-  &::before{
+    :deep(.el-collapse){
+      border: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 6.33%;
+    }
+    :deep(.el-collapse-item){
+      margin-bottom: 80px;
+      border: none;
+      width: calc(27%);
+      margin-right: 6.33%;
+    }
+    :deep(.el-collapse-item__wrap){
+      border: none;
+    }
+    :deep(.el-collapse-item__header){
+      padding: 12px 0;
+      background: var(--topic-color);
+      border: none;
+      box-sizing: initial;
+      line-height: 160%;
+      height: auto;
+      border-radius: 25px;
+      position: relative;
+      &::before{
         content: '';
         position: absolute;
         left: 50px;
@@ -163,24 +164,35 @@ const handleChange = (val: string[]) => {
         border-top: 12px solid transparent;
         border-bottom: 12px solid transparent;
       }
-}
-:deep(.el-collapse-item__header.is-active){
-  background: var(--topic-color);
-  // border-radius: 35px;
-  .problem-in-title>div:nth-of-type(1){
-    color: #fff;
+    }
+    :deep(.el-collapse-item__header.is-active){
+      background: var(--topic-color);
+      .problem-in-title>div:nth-of-type(1){
+        color: #fff;
+      }
+      .problem-in-title>div:nth-of-type(2){
+        color: #fff;
+      }
+    }
+    :deep(.el-icon){
+      display: none;
+    }
+    &.scaling-and-polishing,&.general-oral-examination{
+      max-width: 1360px;
+      :deep(.el-collapse-item){
+        width: calc((100% - 12.66%) / 2);
+      }
+    }
   }
-  .problem-in-title>div:nth-of-type(2){
-    color: #fff;
-  }
 }
-:deep(.el-icon){
- display: none;
-}
+
 @media (min-width: 768px) and (max-width: 1452px) {}
 @media screen and (max-width: 768px) {
   .problem{
     margin-top: 10px;
+    &.scaling-and-polishing{
+      margin-top: 10px;
+    }
     &-in{
       margin-top: 30px;
       width: calc(100% - 60px);

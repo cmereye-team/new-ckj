@@ -36,7 +36,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div :class="['step']">
+  <div :class="['step',pageName]">
     <RippleLine :type="pageName==='rootCanal'?'2':'3'" />
     <div :class="['step-bg',pageName]">
     <div class="step-title">
@@ -67,6 +67,9 @@ onMounted(()=>{
 <style lang="scss" scoped>
 .step{
   margin-top: 130px;
+  &.scaling-and-polishing,&.fillings{
+    margin-top: 185px;
+  }
   &-bg{
     background: var(--blue-color);
     padding: 140px 0 80px;
@@ -89,7 +92,7 @@ onMounted(()=>{
     color: #fff;
     letter-spacing: 4.8px;
     &.scaling-and-polishing{
-      max-width: 1042px;
+      max-width: 698px;
     }
   }
   &-in{
@@ -163,6 +166,12 @@ onMounted(()=>{
         }
       }
     }
+    &.scaling-and-polishing{
+      max-width: 961px;
+    }
+    &.fillings{
+      max-width: 1222px;
+    }
   }
   &-bottom{
     margin-top: 100px;
@@ -197,6 +206,9 @@ onMounted(()=>{
 @media screen and (max-width: 768px) {
   .step{
     margin-top: 78px;
+    &.scaling-and-polishing,&.fillings{
+      margin-top: 80px;
+    }
     &-bg{
       padding: 20px 0 0;
     }
