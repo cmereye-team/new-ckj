@@ -48,7 +48,7 @@ const introduceData = {
 const reasonData = {
   title: 'pages.dental-service.orthodontics.reason.title',
   text: 'pages.dental-service.orthodontics.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/73aec40d266e0b16.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.orthodontics.reason.lists[0].context',
@@ -284,7 +284,7 @@ const getWindowWidth = () => {
           <div class="bp-lists-in-title">{{bpItem.title}}</div>
         </div>
         <div class="bp-lists-in">
-          <img class="mascot" src="https://static.cmereye.com/imgs/2023/07/f0cf6f4a2ed12566.png" alt="">
+          <img class="mascot" src="https://static.cmereye.com/imgs/2023/07/bddd5d9b334f8f0a.png" alt="">
         </div>
       </div>
     </div>

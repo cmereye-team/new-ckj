@@ -19,7 +19,7 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/86f3f6e503d4a34b.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#自然、耐久、性價比首選',
@@ -40,7 +40,7 @@ const introduceData = {
   title: 'pages.dental-service.all-ceramic-crowns.introduce.title',
   content: 'pages.dental-service.all-ceramic-crowns.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/9fc2655c5c081f7d.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/08/9a501131524fa3e3.png',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/b931537ee7ff486c.jpg',
   tabNavName: 'pages.dental-service.all-ceramic-crowns.introduce.tabNavName',
 }
 

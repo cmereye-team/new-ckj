@@ -19,7 +19,7 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/e823c3fedd6ac480.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#自訂零死角潔白微笑線',
@@ -41,7 +41,7 @@ const introduceData = {
   title: 'pages.dental-service.veneers.introduce.title',
   content: 'pages.dental-service.veneers.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/799e2153f93aa770.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/08/9a501131524fa3e3.png',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/9f57a4695c57ff3d.jpg',
   tabNavName: 'pages.dental-service.veneers.introduce.tabNavName',
   pageName: 'veneers',
 }

@@ -171,22 +171,15 @@ const problemData = {
           {{contrastData.tableRemark}}
         </div>
         <div class="contrast-table">
-          <swiper
-            slidesPerView="auto"
-            :scrollbar="{
-              hide: true,
-            }"
-            :modules="[Scrollbar]"
-            class="swiper"
-          >
-            <swiper-slide class="swiper-slide">
+          <div class="bgBox">
+            <div class="bgBox-in">
               <div class="contrast-table-in">
                 <div v-for="(tableTitleItem,tableTitleIndex) in contrastData.table.title" :key="tableTitleIndex">
                   <span v-for="item in tableTitleItem" :key="item">{{item}}</span>
                 </div>
               </div>
-            </swiper-slide>
-            <swiper-slide class="swiper-slide" v-for="(contrastTableItem,contrastTableIndex) in contrastData.table.data" :key="contrastTableIndex">
+            </div>
+            <div class="bgBox-in" v-for="(contrastTableItem,contrastTableIndex) in contrastData.table.data" :key="contrastTableIndex">
               <div class="contrast-table-in">
                 <div>
                   <div class="th">{{contrastTableItem.th}}</div>
@@ -209,8 +202,8 @@ const problemData = {
                   </div>
                 </div>
               </div>
-            </swiper-slide>
-          </swiper>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -234,7 +227,6 @@ const problemData = {
   margin-top: 147px;
   &-bg{
     padding: 76px 0 186px;
-    // background: linear-gradient(270deg, rgba(255, 241, 240, 0) 2.6%, rgba(255, 241, 240, 0.7) 23.89%, rgba(255, 241, 240, 0.7) 75.33%, rgba(255, 241, 240, 0) 97.4%);
   }
   &-title{
     display: flex;
@@ -294,7 +286,6 @@ const problemData = {
     letter-spacing: 3.8px;
   }
   &-tableRemark{
-    // margin-top: 28px;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -361,8 +352,6 @@ const problemData = {
             line-height: 160%;
             color: #FFFFFF;
             margin-bottom: 2px;
-            
-            // border-bottom: 1px solid var(--topic-color);
           }
           &>div{
             flex: 1;
@@ -405,8 +394,9 @@ const problemData = {
         }
       }
     }
-    .swiper{
-      .swiper-slide{
+    .bgBox{
+      display: flex;
+      .bgBox-in{
         width: 43.1%;
         &:nth-of-type(1){
           width: 13.5%;
@@ -441,148 +431,175 @@ const problemData = {
 }
 
 @media (min-width: 768px) and (max-width: 1452px) {
-  .contrast{
-    margin-top: 120px;
-    &-bg{
-      padding: 55px 0 70px;
-    }
-    &-context{
-      margin: 25px auto 0;
-      font-size: 17px;
-    }
-    &-tableRemark{
-      font-size: 17px;
-      margin-top: 18px;
-    }
-    &-table{
-      &-in{
-        &>div{
-          &.content{
-              &>div{
-                font-size: 20px;
-                padding-left: 15px;
-                &>div{
-                  span{
-                    &:first-child{
-                      width: 17px;
-                    }
-                  }
-                }
-              }
-          }
-          &:nth-of-type(1){
-            .th{
-              font-size: 24px;
-            }
-            &>div{
-              .td{
-                font-size: 23px;
-              }
-              span{
-                &:last-child{
-                  margin-left: 3.4px;
-                }
-              }
-            }
-          }
-        }
-      }
-      .swiper{
-        .swiper-slide{
-          &:nth-of-type(1){
-            .contrast-table-in{
-              &>div{
-                font-size: 24px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  // .contrast{
+  //   margin-top: 120px;
+  //   &-bg{
+  //     padding: 55px 0 70px;
+  //   }
+  //   &-context{
+  //     margin: 25px auto 0;
+  //     font-size: 17px;
+  //   }
+  //   &-tableRemark{
+  //     font-size: 17px;
+  //     margin-top: 18px;
+  //   }
+  //   &-table{
+  //     &-in{
+  //       &>div{
+  //         &.content{
+  //             &>div{
+  //               font-size: 20px;
+  //               padding-left: 15px;
+  //               &>div{
+  //                 span{
+  //                   &:first-child{
+  //                     width: 17px;
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //         }
+  //         &:nth-of-type(1){
+  //           .th{
+  //             font-size: 24px;
+  //           }
+  //           &>div{
+  //             .td{
+  //               font-size: 23px;
+  //             }
+  //             span{
+  //               &:last-child{
+  //                 margin-left: 3.4px;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .swiper{
+  //       .swiper-slide{
+  //         &:nth-of-type(1){
+  //           .contrast-table-in{
+  //             &>div{
+  //               font-size: 24px;
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
   .contrast{
-    margin-top: 90px;
+    margin-top: 0px;
     &-bg{
-      padding: 44px 0 40px;
-      background: linear-gradient(360deg, rgba(255, 241, 240, 0) 0%, rgba(255, 241, 240, 0.7) 12.5%, rgba(255, 241, 240, 0.7) 81.99%, rgba(255, 241, 240, 0) 100%);
+      padding: 76px 0 80px;
+    }
+    &-title{
+      &-in{
+        span{
+          font-size: 20px;
+          &:last-child{
+            font-size: 24px;
+          }
+        }
+        &::before{
+          width: 6px;
+          height: 6px;
+          left: -20px;
+          top: 15%;
+          transform: rotate(45deg);
+        }
+        &::after{
+          width: 6px;
+          height: 6px;
+          right: -20px;
+          top: 15%;
+          transform: rotate(45deg);
+        }
+      }
+      .svgQuestionMark{
+        transform: translate(-50%,-40%) scale(.6);
+      }
     }
     &-context{
-      margin: 15px 30px 0;
+      margin: 50px 30px 0;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 15px;
     }
     &-tableRemark{
+      max-width: 60%;
       font-weight: 500;
-      font-size: 14px;
-      margin-top: 8px;
+      font-size: 15px;
+      margin: 8px auto 0;
     }
     &-table{
-      margin: 35px auto 0;
+      margin: 40px auto 0;
       &-in{
         &>div{
           &.content{
-            margin-bottom: 3.5px;
+            // margin-bottom: 3.5px;
               &>div{
                 font-size: 15px;
-                padding: 0 11px;
+                padding: 0;
+                font-size: 12px;
+                letter-spacing: 1.8px;
+                line-height: 180%;
                 &>div{
                   span{
                     &:first-child{
-                      width: 15px;
+                      width: 12px;
                     }
                   }
                 }
               }
               .content-l{
-                margin-right: 2px;
+                // margin-right: 2px;
               }
           }
           &:nth-of-type(1){
-            height: 86.77px;
-            margin-bottom: 3.5px;
+            height: 40px;
+            // margin-bottom: 3.5px;
             .th{
-              font-size: 20px;
-              margin-bottom: 3.5px;
+              font-size: 12px;
+              // margin-bottom: 3.5px;
             }
             &>div{
               .td{
-                font-size: 18px;
+                font-size: 12px;
               }
               span{
                 &:last-child{
-                  margin-left: 2.5px;
+                  // margin-left: 2.5px;
                 }
               }
             }
           } 
           &:nth-of-type(2){
-            height: 115.07px;
+            height: 154px;
           } 
           &:nth-of-type(3){
-            height: 90.55px;
+            height: 154px;
           } 
           &:nth-of-type(4){
-            height: 68.54px;
+            height: 88px;
           } 
           &:nth-of-type(5){
-            height: 109.08px;
+            height: 176px;
           } 
         }
       }
-      .swiper{
-        padding: 0 30px 40px;
-        .swiper-slide{
-          width: 109.86%;
+      .bgBox{
+        .bgBox-in{
+          width: calc((100% - 41px)/2);
           &:nth-of-type(1){
-            width: 102px;
-            margin-left: 2px;
+            width: 41px;
             .contrast-table-in{
               &>div{
-                font-size: 18px;
-                margin-bottom: 3.5px;
+                font-size: 12px;
               }
             }
           }

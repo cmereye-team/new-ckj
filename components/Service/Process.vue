@@ -11,6 +11,10 @@ defineProps({
         lists: []
       }
     }
+  },
+  pageName: {
+    type: String,
+    default: ''
   }
 })
 
@@ -66,13 +70,13 @@ onMounted(() => {
       <div class="process-context pageCon">
         <span v-for="(processContextItem,processContextIndex) in processData.context" :key="processContextIndex">{{processContextItem}}</span>
       </div>
-      <div class="process-tabs pageCon">
-        <div class="process-tabs-in">
+      <div :class="['process-tabs','pageCon',pageName]">
+        <div :class="['process-tabs-in',pageName]">
           <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
             {{processTabItem}}
           </div>
         </div>
-        <div class="process-tabs-in" :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%)`}">
+        <div :class="['process-tabs-in',pageName]" :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%)`}">
           <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
             {{processTabItem}}
           </div>
@@ -239,22 +243,12 @@ onMounted(() => {
       }
     }
     &-tabs{
-      // width: auto;
-      // margin: 0 30px;
-      // padding: 0 30px;
       margin-top: 60px;
       &-in{
-        // padding: 0 30px;
         div{
           padding: 15px 0;
           letter-spacing: 3px;
           font-size: 15px;
-        }
-        &:nth-of-type(2){
-          // width: calc(100% + 60px);
-          // margin-left: -30px;
-          
-          // padding: 0 30px;
         }
       }
     }

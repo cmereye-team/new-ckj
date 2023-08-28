@@ -61,8 +61,8 @@ defineProps({
       }
       &-in{
         position: absolute;
-        left: 10%;
-        bottom: 30%;
+        left: 5%;
+        bottom: 15%;
         z-index: 0;
         .bannerText-1{
           display: flex;

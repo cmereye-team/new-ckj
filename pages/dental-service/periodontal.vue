@@ -20,7 +20,7 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/8660f93c86f03ee9.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#健康牙齒 從牙周病治療開始',
@@ -48,7 +48,7 @@ const orthodonticsIntroduceData = {
 const reasonData = {
   title: 'pages.dental-service.periodontal.reason.title',
   text: 'pages.dental-service.periodontal.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/ff17c75afd4d2bed.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.periodontal.reason.lists[0].context',
@@ -274,7 +274,7 @@ const problemData = {
         </div>
       </div>
     </div>
-    <ServiceProcess :processData="processData" />
+    <ServiceProcess :processData="processData" :pageName="'periodontal'" />
     <ServiceNote :noteData="noteData" :pageName="'periodontal'" />
     <div class="noteLine"><RippleLine :type="'4'" /></div>
     <ServiceProblem :problemData="problemData" />

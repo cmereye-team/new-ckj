@@ -19,7 +19,7 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/20fcf0613ec64cc9.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#自由．舒適．美觀',
@@ -48,7 +48,7 @@ const orthodonticsIntroduceData = {
 const reasonData = {
   title: 'pages.dental-service.wisdom-teeth-extraction.reason.title',
   text: 'pages.dental-service.wisdom-teeth-extraction.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/4b3d11f96252f96d.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.wisdom-teeth-extraction.reason.lists[0].context',

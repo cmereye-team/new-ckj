@@ -216,37 +216,39 @@ const handleChange = (val: string[]) => {
           border-radius: 0 0 15px 15px;
         }
       }
+      :deep(.el-collapse){
+        display: block;
+        padding-left: 0;
+      }
+      :deep(.el-collapse-item){
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 26px;
+      }
+      :deep(.el-collapse-item__wrap){
+        overflow: initial;
+      }
+      :deep(.el-collapse-item__header){
+        padding: 5px 0;
+        min-height: 0;
+        box-sizing: border-box;
+        position: relative;
+        &::before{
+          bottom: -9px;
+          width: 22px;
+          height: 18px;
+          border-left: 11px solid var(--topic-color);
+          border-right: 11px solid transparent;
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
+        }
+      }
+      :deep(.problem-in-title){
+        align-items: flex-end;
+      }
     }
+    
   }
-  :deep(.el-collapse){
-    display: block;
-    padding-left: 0;
-  }
-  :deep(.el-collapse-item){
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 26px;
-  }
-  :deep(.el-collapse-item__wrap){
-    overflow: initial;
-  }
-  :deep(.el-collapse-item__header){
-    padding: 5px 0;
-    min-height: 0;
-    box-sizing: border-box;
-    position: relative;
-    &::before{
-      bottom: -9px;
-      width: 22px;
-      height: 18px;
-      border-left: 11px solid var(--topic-color);
-      border-right: 11px solid transparent;
-      border-top: 9px solid transparent;
-      border-bottom: 9px solid transparent;
-    }
-  }
-  :deep(.problem-in-title){
-    align-items: flex-end;
-  }
+  
 }
 </style>

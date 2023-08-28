@@ -48,7 +48,7 @@ const introduceData = {
 const reasonData = {
   title: 'pages.dental-service.rootCanal.reason.title',
   text: 'pages.dental-service.rootCanal.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/08/5ec08df193db38c5.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/8898c51ea95758ca.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.rootCanal.reason.lists[0].context',

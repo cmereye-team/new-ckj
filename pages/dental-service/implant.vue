@@ -40,7 +40,7 @@ const introduceData = {
   title: 'pages.dental-service.implant.introduce.title',
   content: 'pages.dental-service.implant.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/2bc3a5d449c9b42e.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/611a2ada62c8fa55.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/63c60461cd3843f2.jpg',
   tabNavName: 'pages.dental-service.implant.introduce.tabNavName',
 }
 
@@ -123,7 +123,7 @@ const stepData = {
 const reasonData = {
   title: 'pages.dental-service.implant.reason.title',
   text: 'pages.dental-service.implant.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/08/c5c74925f782c874.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/08/63c60461cd3843f2.jpg',
   reasonLists:[
     {
       context: 'pages.dental-service.implant.reason.lists[0].context',
