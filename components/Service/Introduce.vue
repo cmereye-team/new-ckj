@@ -561,6 +561,18 @@ onBeforeUnmount(()=>{
             text-align: left;
             letter-spacing: 4.5px;
           }
+          &-introduceType{
+            margin: 80px auto;
+            &>div{
+              font-size: 20px;
+              letter-spacing: 4px;
+              &::before{
+                width: 28px;
+                height: 28px;
+                left: 20%;
+              }
+            }
+          }
           &-reason{
             flex-direction: column;
             margin:  81px auto 0;
@@ -661,6 +673,44 @@ onBeforeUnmount(()=>{
                   font-size: 15px;
                   letter-spacing: 3px;
                 }
+              }
+            }
+          }
+          &-modulType4{
+            flex-direction: column;
+            margin-top: 0;
+            .modulType4-content{
+              padding: 0 30px;
+              margin-top: 53px;
+              margin-right: 0;
+              &-title{
+                display: flex;
+                justify-content: center;
+              }
+              &-text{
+                margin-top: 35px;
+                font-size: 16px;
+                letter-spacing: 4.8px;
+                span{
+                  margin-left: -10px;
+                  margin-top: 5px;
+                }
+                img{
+                  transform: rotate(90deg) scale(.8);
+                }
+              }
+              &-context{
+                font-size: 15px;
+                letter-spacing: 4.5px;
+              }
+            }
+            .modulType4-image{
+              width: 100%;
+              img{
+
+              }
+              svg{
+
               }
             }
           }

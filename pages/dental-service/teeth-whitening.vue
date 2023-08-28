@@ -552,108 +552,128 @@ const conditionData = {
 
 @media only screen and (max-width: 760px) {
   .notice {
-    margin: 90px auto 0;
+    margin: 80px auto 0;
+    padding-bottom: 0;
+    &-title{
+      font-size: 20px;
+      letter-spacing: 4.4px;
+    }
     &-text{
-      margin-top: 26px;
+      margin-top: 35px;
+      padding: 0 50px;
       &>div{
         span{
-          font-size: 14px;
-          display: inline-block;
+          font-size: 15px;
+          display: inline;
+          letter-spacing: 3px;
         }
       }
     }
-    &-in {
-      width: 100%;
-      margin: 35px auto 0;
-      .box {
+    &-list{
+      flex-wrap: wrap;
+      padding: 0 10px;
+
+      &-in{
+        width: 50%;
+        padding: 0 10px 21px;
+        // height: 100%;
+      }
+      .box{
+        height: 100%;
+        padding: 33px 18px 58px;
+        border: 1px solid var(--topic-color);
+        border-radius: 40vw;
         &>div{
-          font-weight: 600;
-          font-size: 14px;
-          height: 131px;
-          margin-top: 9px;
-          padding: 0 23px;
-          &:first-child {
-            height: 48px;
-            font-weight: 700;
-            font-size: 20px;
+          &:nth-of-type(1){
+            display: flex;
+            justify-content: center;
+            img{
+              max-width: 48px;
+            }
           }
-          &:nth-of-type(2){
-            padding-top: 28px;
+          &:nth-of-type(2) {
+            font-size: 20px;
+            margin-top: 4px;
+            height: 32px;
+          }
+          &:nth-of-type(3) {
+            font-size: 15px;
+            padding-top: 7px;
           }
         }
-      }
-      .swiper-wrapper{
-        padding: 0 30px 30px;
-        box-sizing: border-box;
-      }
-      :deep(.swiper-scrollbar){
-        width: calc(100% - 60px);
-        opacity: 1 !important;
-        left: 30px;
-        background: #FFF1F0;
-      }
-      :deep(.swiper-scrollbar-drag){
-        background: #FFA09E;
+        
       }
     }
   }
   .condition{
+    margin-top: 80px;
+    &-bg{
+      padding: 20px 0;
+    }
+    &-title{
+      &-in{
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+    }
     &-text{
-      margin-top: 22px;
-      font-size: 14px;
+      margin-top: 20px;
+      font-size: 15px;
+      letter-spacing: 3px;
     }
     &-lists{
-      margin-top: 2px;
+      margin-top: 80px;
       flex-direction: column;
-      padding: 0 30px;
+      padding: 0 50px;
       &-in{
-        flex-direction: row;
-        margin-top: 22px;
-        background: linear-gradient(90deg, #FFF1F0 15.38%, rgba(255, 241, 240, 0) 109.42%);
-        border-radius: 10px;
-        max-width: 100%;
-        &>div:first-child{
-          height: 100%;
-          img{
-            width: auto;
-            height: 90px;
-            border-radius: 10px;
+        &>div:last-child{
+          margin-top: 25px;
+          font-size: 20px;
+          span{
+            font-size: 18px;
           }
         }
-        &>div:last-child{
-          flex: 1;
-          font-size: 16px;
-          margin-top: 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          span{
-            text-align: left;
-            padding-left: 16px;
-          }
+        &:nth-of-type(1){
+          margin-bottom: 80px;
         }
         &:nth-of-type(2){
-          flex-direction: row-reverse;
-          background: linear-gradient(270deg, #FFF1F0 15.38%, rgba(255, 241, 240, 0) 109.42%);
-          &>div:last-child{
-            span{
-              text-align: right;
-              padding-left: 0;
-              padding-right: 16px;
-            }
-          }
+          margin-bottom: 80px;
         }
       }
     }
   }
   .maintain{
-    margin-top: 90px;
-    &-in{
-      margin: 28px auto 0;
-      padding: 24px 12px;
-      font-size: 16px;
-      text-align: justify;
+    margin-top: 115px;
+    &-title{
+      font-size: 20px;
+      letter-spacing: 5px;
+      &-in{
+        &::before{
+          width: 6px;
+          height: 6px;
+          left: -20px;
+        }
+        &::after{
+          width: 6px;
+          height: 6px;
+          right: -20px;
+        }
+      }
+      .svgQuestionMark{
+        transform: translate(-50%,-40%) scale(.6);
+      }
     }
+    &-in{
+      margin: 44px auto 0;
+      padding: 44px 12px;
+      font-size: 15px;
+      text-align: justify;
+      line-height: 220%;
+      letter-spacing: 4.5px;
+    }
+  }
+  .noteCon{
+    padding: 36px 0 60px;
   }
 }
 </style>

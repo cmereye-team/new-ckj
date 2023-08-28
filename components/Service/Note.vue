@@ -176,6 +176,9 @@ defineProps({
   .note{
     padding: 83px 30px 0;
     box-sizing: border-box;
+    &.teethWhitening{
+      padding: 40px 0 36px;
+    }
     &-title{
       font-size: 20px;
       letter-spacing: 6px;
@@ -219,6 +222,16 @@ defineProps({
     &-in{
       flex-direction: column;
       margin: 35px auto 0;
+      &.teethWhitening{
+        padding: 0 44px;
+        
+        .note-in-lists{
+          &-item{
+            line-height: 2.2;
+            margin-bottom: 0;
+          }
+        }
+      }
       &.wisdomTeethExtraction{
         padding-right: 0;
         justify-content: center;
@@ -238,6 +251,7 @@ defineProps({
       &-r{
         img{
           width: 80%;
+          margin: 0 auto;
         }
       }
     }

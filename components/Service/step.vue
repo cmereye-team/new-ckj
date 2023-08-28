@@ -248,6 +248,20 @@ onMounted(()=>{
           }
         }
       }
+      &.teethWhitening{
+        .step-in-box{
+          width: 100%;
+          &:nth-of-type(5){
+            &::after{
+              display: block;
+            }
+          }
+          &:nth-of-type(n+6){
+            margin-top: 0;
+            margin-bottom: 37px;
+          }
+        }
+      }
     }
     &-bottom{
       display: none;
