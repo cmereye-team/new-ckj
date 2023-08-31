@@ -18,6 +18,10 @@ defineProps({
     type: String,
     default: ''
   },
+  titleType:{
+    type: String,
+    default: '1'
+  },
   reasonData:{
     type: Object,
     default(){
@@ -60,14 +64,6 @@ onMounted(()=>{
       AnimNum.value += 0.02
     }
   },10)
-  // 隐藏玩法
-  // timer = setInterval(()=>{
-  //   if(AnimNum.value >= 7){
-  //     AnimNum.value = -5
-  //   }else{
-  //     AnimNum.value += 0.2
-  //   }
-  // },10)
 })
 
 onBeforeUnmount(()=>{
@@ -78,24 +74,25 @@ onBeforeUnmount(()=>{
 <template>
   <div class="introduce bigPageCon">
     <div class="introduce-in">
-      <div class="introduce-in-title">{{$t(introduceData.title)}}</div>
+      <div class="introduce-in-title" v-if="titleType === '1'">{{$t(introduceData.title)}}</div>
+      <div class="introduce-in-titleType2" v-if="titleType === '2'">
+        <img src="https://static.cmereye.com/imgs/2023/08/090c5504a8c99ec4.png" alt="">
+        <img src="https://static.cmereye.com/imgs/2023/08/5c36c2e2abd40415.jpg" alt="">
+        <img src="https://static.cmereye.com/imgs/2023/08/090c5504a8c99ec4.png" alt="">
+      </div>
       <div class="introduce-in-content" v-if="['1','3'].includes(moduleType)">
         {{$t(introduceData.content)}}
       </div>
       <div class="introduce-in-content"  v-if="introduceType === '2' || introduceType === '4'">
         {{$t(introduceData.content)}}
       </div>
-      <!-- <div class="introduce-in-content"  v-if="introduceType === '4'">
-        {{$t(introduceData.content)}}
-      </div> -->
       <div class="introduce-in-introduceType" v-if="introduceType === '1'">
         <div>{{$t(introduceData.content)}}</div>
       </div>
       <div class="introduce-in-reason" v-if="moduleType === '1'">
         <div class="reason-l">
           <div class="reason-l-title">
-            <serviceTitle :title="reasonData.title" /> 
-            <!-- {{$t(reasonData.title)}} -->
+            <serviceTitle :title="reasonData.title" />
           </div>
           <div class="reason-l-img">
             <img :src="reasonData.imgUrl" alt="">
@@ -135,17 +132,6 @@ onBeforeUnmount(()=>{
               </textPath>
             </text>
           </svg>
-          <!-- 隐藏玩法 -->
-          <!-- <svg viewBox="0 0 1000 600" class="overflow-visible uppercase w-full">
-            <path id="leftArch" d="M 1040,100 h-340 L 300,500 A 200 200 0 1 1 300,100 L 700,500 h340 A 200 200 0 0 0 1040,100 z" fill="none" stroke="none"></path>
-            <text width="500" font-size="26" class="font-gza text-secondary" fill="#FC1682">
-              <textPath class="tp" alignment-baseline="auto" xlink:href="#leftArch" :startOffset="`${AnimNum}%`">
-                <template v-for="i in 10" :key="i">
-                  I---+=========> &nbsp;&nbsp;&nbsp;&nbsp;
-                </template>
-              </textPath>
-            </text>
-          </svg> -->
         </div>
       </div>
       <div class="introduce-in-modulType3" v-if="moduleType === '3'">
@@ -184,16 +170,39 @@ onBeforeUnmount(()=>{
           <img :src="introduceData.pcImg" alt="">
         </div>
         <div class="modulType4-content">
-          <!-- {{$t(introduceData.content)}} -->
           <div class="modulType4-content-title">
             <serviceTitle :title="reasonData.title" /> 
-            <!-- {{$t(reasonData.title)}} -->
           </div>
           <div class="modulType4-content-text">
             <img src="https://static.cmereye.com/imgs/2023/08/0247872a5a18b171.png" alt="">
             <span>{{$t(reasonData.text)}}</span>
           </div>
           <div class="modulType4-content-context">
+            <div v-for="(reason,reasonIndex) in reasonData.reasonLists" :key="reasonIndex">
+              <div class="icon">
+                {{reason.hideIcon ? '': '· '}}
+              </div>
+              <div class="context">
+                {{$t(reason.context)}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="introduce-in-modulType5" v-if="moduleType === '5'">
+        <div class="modulType5-image">
+          <img :src="introduceData.pcImg" alt="">
+          <img class="rmk" src="https://static.cmereye.com/imgs/2023/08/f1349c7104e90d16.png" alt="">
+        </div>
+        <div class="modulType5-content">
+          <div class="modulType5-content-title">
+            <serviceTitle :title="reasonData.title" /> 
+          </div>
+          <div class="modulType5-content-text">
+            <img src="https://static.cmereye.com/imgs/2023/08/0247872a5a18b171.png" alt="">
+            <span>{{$t(reasonData.text)}}</span>
+          </div>
+          <div class="modulType5-content-context">
             <div v-for="(reason,reasonIndex) in reasonData.reasonLists" :key="reasonIndex">
               <div class="icon">
                 {{reason.hideIcon ? '': '· '}}
@@ -231,6 +240,17 @@ onBeforeUnmount(()=>{
             height: 5px;
             border-radius: 2.5px;
             background: var(--topic-color);
+          }
+        }
+        &-titleType2{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          img{
+            height: auto;
+            &:nth-of-type(3){
+              transform: rotateY(180deg);
+            }
           }
         }
         &-content{
@@ -507,6 +527,77 @@ onBeforeUnmount(()=>{
             }
           }
         }
+        &-modulType5{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin-top: 140px;
+          .modulType5-content{
+            color: var(--topic-text-color);
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            letter-spacing: 4.8px;
+            margin-right: 30px;
+            &-text{
+              margin-top: 19px;
+              display: flex;
+              color: var(--topic-text-color);
+              font-size: 22px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 160%;
+              letter-spacing: 6.6px;
+              img{
+                margin-right: 14px;
+              }
+            }
+            &-context{
+              margin-top: 26px;
+              display: flex;
+              flex-direction: column;
+              &>div{
+                display: flex;
+                color: var(--topic-text-color);
+                .icon{
+                  width: 20px;
+                  min-width: 20px;
+                  font-size: 20px;
+                  margin-right: 5px;
+                  line-height: 1.8;
+                }
+                .context{
+                  flex: 1;
+                  text-align: left;
+                  max-width: 471px;
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 200%;
+                  letter-spacing: 4.8px;
+                }
+              }
+            }
+          }
+          .modulType5-image{
+            width: 50%;
+            min-width: 50%;
+            margin-right: 10.5%;
+            position: relative;
+            padding: 20px 20px 20px 0px;
+            box-sizing: border-box;
+            img{  
+              width: 100%;
+            }
+            .rmk{
+              width: calc((252 / 934 ) * 100%);
+              position: absolute;
+              right: 0;
+              bottom: 0;
+            }
+          }
+        }
       }
     }
     @media screen and (min-width: 1452px){
@@ -521,26 +612,6 @@ onBeforeUnmount(()=>{
       }
     }
     @media (min-width: 768px) and (max-width: 1452px) {
-      .introduce{
-        &-in{
-          // margin-top: 3.5vw;
-          &-l{
-            // padding-bottom: 7vw;
-            .title{
-              // font-size: 2.2vw;
-              // margin-top: 6vw;
-            }
-            .content{
-              // font-size: 1.7vw;
-              // width: 33.85vw;
-              // margin-top: 4vw;
-              &.orthodontics{
-                // width: 25vw;
-              }
-            }
-          }
-        }
-      }
       .tabNav{
         font-size: 1.5vw;
         margin-top: 6vw;

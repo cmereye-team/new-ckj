@@ -19,12 +19,12 @@ useHead({
 })
 
 const bannerData = {
-  img: 'https://static.cmereye.com/imgs/2023/07/f0b9f3bfc80d96b1.jpg',
+  img: 'https://static.cmereye.com/imgs/2023/08/9a147138319763f0.jpg',
   mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#回歸自然微笑 恢復咀嚼功能',
   text2: '牙齒更加整齊、美觀、自信、舒適',
-  tabNavName: 'pages.dental-service.periodontal.introduce.tabNavName'
+  tabNavName: 'pages.dental-service.children-dentistry.introduce.tabNavName'
 }
 
 const headerConfig = {
@@ -40,7 +40,7 @@ const orthodonticsIntroduceData = {
   title: 'pages.dental-service.children-dentistry.introduce.title',
   content: 'pages.dental-service.children-dentistry.introduce.content',
   mbImg: 'https://static.cmereye.com/imgs/2023/05/482f1dd094438e98.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/25a2d1f9e0936571.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/08/1dd1c23bea20216f.jpg',
   tabNavName: 'pages.dental-service.children-dentistry.introduce.tabNavName',
 }
 
@@ -154,20 +154,53 @@ const handleSkillTab = (_idx:number) => {
 
 <template>
 <div>
-  <!-- <PageHeader :headerConfig="headerConfig" /> -->
   <div class="servicePageConfig">
-    <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
-    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" />
-    <!-- <ServiceReason :reasonData="reasonData" /> -->
+    <ServiceBanner :bannerData="bannerData" pageName="children-dentistry" />
+    <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" introduceType="2" moduleType="5" titleType="2" />
     <div class="faq">
-      <div class="dentistryServices-title">
-        <div class="dentistryServices-title-in bb">兒童常見口腔問題</div>
+      <div class="faq-title bigPageCon">
+        <!-- <div class="dentistryServices-title-in bb">兒童常見口腔問題</div> -->
+        <img src="https://static.cmereye.com/imgs/2023/08/41afb375adaa22f7.jpg" alt="">
       </div>
-      <div class="faq-in pageCon">
-        <div>牙齒畸形</div>
-        <div>乳牙滯留</div>
-        <div>兒童蛀牙</div>
-        <div>牙齒外傷</div>
+      <div class="faq-in">
+        <div class="faq-in-content">
+          <div class="contentIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <path d="M293.372 321.527C254.621 425.514 145.554 425.514 106.8 321.523C104.398 315.087 100.641 309.242 95.7838 304.385C90.9263 299.527 85.0816 295.771 78.6454 293.369C-25.3449 254.621 -25.3414 145.551 78.6454 106.8C85.0816 104.399 90.9264 100.642 95.7839 95.7843C100.641 90.9268 104.398 85.082 106.8 78.6459C145.547 -25.3445 254.621 -25.3445 293.372 78.6424C295.774 85.0785 299.53 90.9233 304.388 95.7808C309.245 100.638 315.09 104.395 321.526 106.797C425.524 145.558 425.513 254.621 321.526 293.373C315.09 295.774 309.245 299.531 304.388 304.388C299.53 309.246 295.774 315.091 293.372 321.527Z" fill="#FC1682"/>
+            </svg>
+            <span>牙齒畸形</span>
+          </div>
+          <div class="contentIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <path d="M293.372 321.527C254.621 425.514 145.554 425.514 106.8 321.523C104.398 315.087 100.641 309.242 95.7838 304.385C90.9263 299.527 85.0816 295.771 78.6454 293.369C-25.3449 254.621 -25.3414 145.551 78.6454 106.8C85.0816 104.399 90.9264 100.642 95.7839 95.7843C100.641 90.9268 104.398 85.082 106.8 78.6459C145.547 -25.3445 254.621 -25.3445 293.372 78.6424C295.774 85.0785 299.53 90.9233 304.388 95.7808C309.245 100.638 315.09 104.395 321.526 106.797C425.524 145.558 425.513 254.621 321.526 293.373C315.09 295.774 309.245 299.531 304.388 304.388C299.53 309.246 295.774 315.091 293.372 321.527Z" fill="#089CFE"/>
+            </svg>
+            <span>乳牙滯留</span>
+          </div>
+          <div class="contentIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <path d="M293.372 321.527C254.621 425.514 145.554 425.514 106.8 321.523C104.398 315.087 100.641 309.242 95.7838 304.385C90.9263 299.527 85.0815 295.771 78.6454 293.369C-25.3449 254.621 -25.3414 145.551 78.6454 106.8C85.0816 104.399 90.9264 100.642 95.7839 95.7843C100.641 90.9268 104.398 85.082 106.8 78.6459C145.547 -25.3445 254.621 -25.3445 293.372 78.6424C295.774 85.0785 299.53 90.9233 304.388 95.7808C309.245 100.638 315.09 104.395 321.526 106.797C425.524 145.558 425.513 254.621 321.526 293.373C315.09 295.774 309.245 299.531 304.388 304.388C299.53 309.246 295.774 315.091 293.372 321.527Z" fill="#FECB02"/>
+            </svg>
+            <span>兒童蛀牙</span>
+          </div>
+          <div class="contentIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <path d="M291.967 321.002L291.967 321.003C272.75 372.569 236.261 398.017 200.087 398.017C163.913 398.016 127.423 372.567 108.205 321L108.205 320.999C105.728 314.361 101.854 308.334 96.8445 303.324C91.835 298.315 85.8073 294.44 79.1698 291.964L79.1692 291.964C27.6015 272.749 2.15356 236.26 2.15401 200.086C2.15443 163.912 27.6033 127.422 79.1692 108.206L79.1698 108.205C85.8073 105.729 91.835 101.855 96.8446 96.845C101.854 91.8355 105.728 85.8078 108.205 79.1702L108.205 79.1696C127.42 27.602 163.91 2.15311 200.085 2.15268C236.259 2.15225 272.75 27.6003 291.967 79.1662L291.967 79.1667C294.443 85.8043 298.318 91.8319 303.327 96.8415C308.337 101.851 314.365 105.725 321.002 108.202L321.003 108.202C372.574 127.424 398.022 163.915 398.02 200.088C398.019 236.262 372.569 272.751 321.003 291.967L321.002 291.967C314.364 294.444 308.337 298.318 303.327 303.328C298.318 308.337 294.443 314.365 291.967 321.002Z" fill="white" stroke="#FC1682" stroke-width="3"/>
+            </svg>
+            <span>牙齒外傷</span>
+          </div>
+          <img class="icon_1" src="https://static.cmereye.com/imgs/2023/08/9254bd712120c79b.png" alt="">
+          <img class="icon_2" src="https://static.cmereye.com/imgs/2023/08/a3d7cc1d94be53ab.png" alt="">
+          <img class="icon_3" src="https://static.cmereye.com/imgs/2023/08/09cb4c29a9d4452d.png" alt="">
+          <img class="icon_4" src="https://static.cmereye.com/imgs/2023/08/a160dd6781c5ab24.png" alt="">
+          <img class="icon_5" src="https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif" alt="">
+        </div>
+        <!-- <div class="faq-in-icon">
+          <img class="icon_1" src="https://static.cmereye.com/imgs/2023/08/9254bd712120c79b.png" alt="">
+          <img class="icon_2" src="https://static.cmereye.com/imgs/2023/08/a3d7cc1d94be53ab.png" alt="">
+          <img class="icon_3" src="https://static.cmereye.com/imgs/2023/08/09cb4c29a9d4452d.png" alt="">
+          <img class="icon_4" src="https://static.cmereye.com/imgs/2023/08/a160dd6781c5ab24.png" alt="">
+          <img class="icon_5" src="https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif" alt="">
+        </div> -->
       </div>
     </div>
     <div class="skill">
@@ -175,6 +208,9 @@ const handleSkillTab = (_idx:number) => {
         <div class="skill-title-in">
           <span>從乳牙開始培養好的口腔衛生</span>
           <span>習慣，有助於建立良好的牙齒健康基礎。</span>
+        </div>
+        <div class="skill-title-image bigPageCon">
+          <img src="https://static.cmereye.com/imgs/2023/08/0c725256740985d4.jpg" alt="">
         </div>
       </div>
       <div class="skill-tab pcBox pageCon">
@@ -230,8 +266,6 @@ const handleSkillTab = (_idx:number) => {
     <RippleLine :type="'4'" />
     <ContactUs />
   </div>
-  <!-- <PageFooter /> -->
-  <!-- <PageNavbar /> -->
 </div>
 </template>
 
@@ -243,71 +277,172 @@ const handleSkillTab = (_idx:number) => {
   padding-bottom: 140px;
 }
 .faq{
-  margin-top: 207px;
+  margin-top: 120px;
+  &-title{
+    img{
+       
+    }
+  }
   &-in{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 46px;
-    &>div{
-      flex: 1;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 28px;
-      height: 74px;
-      line-height: 74px;
-      background: #FFF1F0;
-      border-radius: 10px;
-      text-align: center;
-      color: #666666;
-      &:not(:last-child){
-        margin-right: 25px;
+    position: relative;
+    &-content{
+      width: 100%;
+      max-width: 1381px;
+      height: 0;
+      position: relative;
+      padding-bottom: calc((1200 / 1920) * 100%);
+      margin: 0 auto;
+      .contentIn{
+        position: absolute;
+        z-index: 2;
+        width: calc((331 / 1381) * 100%);
+        &:nth-of-type(1){
+          top: calc((125 / 1381) * 100%);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &:nth-of-type(2){
+          top: calc((387 / 1381) * 100%);
+          left: 50%;
+          transform: translateX(-125%);
+        }
+        &:nth-of-type(3){
+          top: calc((387 / 1381) * 100%);
+          left: 50%;
+          transform: translateX(25%);
+        }
+        &:nth-of-type(4){
+          top: calc((640 / 1381) * 100%);
+          left: 50%;
+          transform: translateX(-50%);
+          span{
+            color: #FC1682;
+          }
+        }
+        svg{
+          width: 100%;
+        }
+        span{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          color: #FFF;
+          font-size: 3.8vw;
+          font-weight: 500;
+          line-height: 110%;
+          max-width: calc((100 / 331) * 100%);
+        }
+      }
+      .icon_1{
+        position: absolute;
+        top: calc((86 / 1381) * 100%);
+        left: 80%;
+        width: calc((221 / 1381) * 100%);
+        z-index: 1;
+      }
+      .icon_2{
+        position: absolute;
+        left: 70%;
+        top: calc((806 / 1381) * 100%);
+        width: calc((119 / 1381) * 100%);
+        z-index: 1;
+      }
+      .icon_3{
+        position: absolute;
+        left: 0;
+        top: calc((510 / 1381) * 100%);
+        width: calc((189 / 1381) * 100%);
+        z-index: 1;
+      }
+      .icon_4{
+        position: absolute;
+        left: 10%;
+        top: calc((850 / 1381) * 100%);
+        width: calc((264 / 1381) * 100%);
+        z-index: 1;
+      }
+      .icon_5{
+        position: absolute;
+        left: 15%;
+        top: calc((320 / 1381) * 100%);
+        width: calc((221 / 1381) * 100%);
+        transform: rotate(-20deg);
+        z-index: 1;
       }
     }
   }
 }
 .skill{
-  margin-top: 144px;
+  // margin-top: 144px;
   &-title{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     &-in{
-      font-style: normal;
-      font-weight: 700;
-      font-size: 30px;
-      line-height: 160%;
+      color: var(--topic-color);
       text-align: center;
-      color: #666666;
-      border-bottom: 4px solid #FFA09E;
+      font-family: CP Font;
+      font-size: 59px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 157%; /* 92.63px */
+      letter-spacing: 11.8px;
+      // font-style: normal;
+      // font-weight: 700;
+      // font-size: 30px;
+      // line-height: 160%;
+      // text-align: center;
+      // color: #666666;
+      // border-bottom: 4px solid #FFA09E;
       span{
         display: block;
       }
     }
+    &-image{
+      transform: translateY(-10%);
+      position: relative;
+      z-index: -1;
+    }
   }
   &-tab{
     margin-top: 46px;
-    box-shadow: 0px 4px 8px #FFDDDA;
+    // box-shadow: 0px 4px 8px #FFDDDA;
     &-t{
       display: flex;
       &>div{
         flex: 1;
         text-align: center;
-        background: #FFDDDA;
+        // background: #FFDDDA;
         font-style: normal;
         font-weight: 700;
+        border-radius: 25px;
         font-size: 28px;
-        height: 70px;
-        line-height: 70px;
-        color: #FFFFFF;
+        height: 50px;
+        line-height: 50px;
+        color: var(--topic-color);
         cursor: pointer;
         &:not(:last-child){
           margin-right: 3px;
         }
         &:hover{
-          background: #FFA09E;
+          // background: #FFA09E;
         }
         &.cur{
-          background: #FFA09E;
+          background: var(--topic-color);
+          color: #fff;
+          position: relative;
+          &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url(https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif);
+            background-size: 100% auto;
+            width: 100px;
+          }
         }
       }
     }
@@ -350,6 +485,25 @@ const handleSkillTab = (_idx:number) => {
       &-t{
         &>div{
           font-size: 24px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1381px) {
+  .faq{
+    &-in{
+      &-content{
+        .contentIn{
+          &:nth-of-type(1){
+            top: calc((160 / 1381) * 100%);
+          }
+          &:nth-of-type(4){
+            top: calc((600 / 1381) * 100%);
+          }
+          span{
+            font-size: 50px;
+          }
         }
       }
     }
