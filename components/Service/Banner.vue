@@ -284,6 +284,57 @@ defineProps({
             }
           }
         }
+        &.teethWhitening{
+          span{
+            min-width: auto;
+            &:first-child{
+              &::after{
+                width: calc(100% - 100px);
+              }
+            }
+            &:last-child{
+              margin-top: -2.5%;
+              margin-left: 100px;
+            }
+          }
+        }
+        &.scaling-and-polishing{
+          span{
+            font-size: 14px;
+            letter-spacing: 1.4px;
+            // min-width: auto;
+            &:first-child{
+              &::after{
+                // width: calc(100% - 140px);
+              }
+            }
+            &:last-child{
+              margin-top: -2%;
+              // margin-left: 140px;
+            }
+          }
+        }
+        &.fillings{
+          span{
+            &:last-child{
+              margin-top: -1.7%;
+            }
+          }
+        }
+        &.generalOralExamination{
+          span{
+            min-width: auto;
+            &:first-child{
+              &::after{
+                width: calc(100% - 100px);
+              }
+            }
+            &:last-child{
+              margin-top: -1.7%;
+              margin-left: 100px;
+            }
+          }
+        }
       }
       .bannerText-2{
         margin-top: 10px;

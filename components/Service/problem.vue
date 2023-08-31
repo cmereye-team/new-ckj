@@ -190,8 +190,8 @@ const handleChange = (val: string[]) => {
 @media screen and (max-width: 768px) {
   .problem{
     margin-top: 10px;
-    &.scaling-and-polishing{
-      margin-top: 10px;
+    &.scaling-and-polishing,&.general-oral-examination{
+      margin-top: 80px;
     }
     &-in{
       margin-top: 30px;
@@ -231,6 +231,7 @@ const handleChange = (val: string[]) => {
       :deep(.el-collapse-item__header){
         padding: 5px 0;
         min-height: 0;
+        border-radius: 15px;
         box-sizing: border-box;
         position: relative;
         &::before{
@@ -245,6 +246,12 @@ const handleChange = (val: string[]) => {
       }
       :deep(.problem-in-title){
         align-items: flex-end;
+      }
+      &.scaling-and-polishing,&.general-oral-examination{
+        max-width: 100%;
+        :deep(.el-collapse-item){
+          width: 100%;
+        }
       }
     }
     

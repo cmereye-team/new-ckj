@@ -219,6 +219,11 @@ onMounted(()=>{
         padding: 0 40px;
         display: block;
       }
+      &.scaling-and-polishing{
+        margin-top: 35px;
+        padding: 0 40px 14px;
+        display: block;
+      }
     }
     &-in{
       flex-direction: column;

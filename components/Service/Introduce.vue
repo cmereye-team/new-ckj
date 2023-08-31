@@ -82,9 +82,12 @@ onBeforeUnmount(()=>{
       <div class="introduce-in-content" v-if="['1','3'].includes(moduleType)">
         {{$t(introduceData.content)}}
       </div>
-      <div class="introduce-in-content"  v-if="introduceType === '2'">
+      <div class="introduce-in-content"  v-if="introduceType === '2' || introduceType === '4'">
         {{$t(introduceData.content)}}
       </div>
+      <!-- <div class="introduce-in-content"  v-if="introduceType === '4'">
+        {{$t(introduceData.content)}}
+      </div> -->
       <div class="introduce-in-introduceType" v-if="introduceType === '1'">
         <div>{{$t(introduceData.content)}}</div>
       </div>
@@ -166,7 +169,7 @@ onBeforeUnmount(()=>{
             </div>
         </div>
       </div>
-      <div class="introduce-in-modulType4" v-if="moduleType === '4'">
+      <div :class="['introduce-in-modulType4',introduceData.pageName]" v-if="moduleType === '4'">
         <div class="modulType4-image">
           <svg viewBox="0 0 1000 600" class="overflow-visible uppercase w-full">
             <path id="leftArch" d="M -20,0 V600 h750 a 300 300 0 0 0 0,-600 z" fill="none" stroke="none"></path>
@@ -679,6 +682,9 @@ onBeforeUnmount(()=>{
           &-modulType4{
             flex-direction: column;
             margin-top: 0;
+            &.scalingAndPolishing,&.fillings,&.general-oral-examination{
+              margin-top: 80px;
+            }
             .modulType4-content{
               padding: 0 30px;
               margin-top: 53px;

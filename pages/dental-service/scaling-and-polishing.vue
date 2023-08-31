@@ -106,9 +106,9 @@ const problemData = {
 <div>
   <!-- <PageHeader :headerConfig="headerConfig" /> -->
   <div class="servicePageConfig">
-    <ServiceBanner :bannerData="bannerData" />
+    <ServiceBanner :bannerData="bannerData" pageName="scaling-and-polishing" />
     <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
-    <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'DENTAL CLEANING'}" moduleType="4" />
+    <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'DENTAL CLEANING'}" moduleType="4" introduceType="4" />
     <!-- <ServiceReason :reasonData="reasonData" /> -->
     <ServiceStep :stepData="stepData" pageName="scaling-and-polishing" />
     <ServiceProblem :problemData="problemData" />

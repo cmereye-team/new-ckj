@@ -42,6 +42,7 @@ const introduceData = {
   mbImg: 'https://static.cmereye.com/imgs/2023/05/1adfbf26ba2d3e03.jpg',
   pcImg: 'https://static.cmereye.com/imgs/2023/08/9aab891c36c78382.jpg',
   tabNavName: 'pages.dental-service.general-oral-examination.introduce.tabNavName',
+  pageName: 'general-oral-examination',
 }
 
 const reasonData = {
@@ -142,52 +143,9 @@ const getWindowWidth = () => {
 
 <template>
   <div>
-    <!-- <PageHeader :headerConfig="headerConfig" /> -->
     <div class="servicePageConfig">
       <ServiceBanner :bannerData="bannerData" pageName="generalOralExamination" />
-      <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
       <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'DENTAL CHECK-UP'}" moduleType="4" introduceType="2" />
-      <!-- <ServiceReason :reasonData="reasonData" /> -->
-      <!-- <div class="notice">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
-            <span>{{noticeData.title}}</span>
-          </div>
-        </div>
-        <div class="notice-in">
-          <swiper
-            :slidesPerView="windowWidth>768 ? '2': '1'"
-            class="swiper-wrapper"
-            @slideChange="onSlideChange"
-          >
-            <swiper-slide class="swiper-slide">
-              <div class="box box-left">
-                <div
-                  class="box-in"
-                  v-for="(meritItem,meritIndex) in noticeData.meritLists"
-                  :key="meritIndex"
-                >
-                  <div>{{meritItem}}</div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="swiper-slide">
-              <div class="box box-right">
-                <div
-                  class="box-in"
-                  v-for="(shortcomingItem,shortcomingIndex) in noticeData.shortcomingLists"
-                  :key="shortcomingIndex"
-                >
-                  <div>{{shortcomingItem}}</div>
-                </div>
-              </div>
-            </swiper-slide>
-          </swiper>
-        </div>
-        <div class="notice-line mbBox">
-          <PageSwiperPointLine :latestNewsNum="2" :latestNewsCurrent="noticeCurrent"></PageSwiperPointLine>
-        </div>
-      </div> -->
       <div class="note">
         <RippleLine type="2" />
         <div class="note-bg">
@@ -206,7 +164,6 @@ const getWindowWidth = () => {
       <div class="frequency">
         <div class="frequency-title">
           <div class="frequency-title-in">
-            <!-- <span>口腔檢查頻率</span> -->
             <ServiceTitle :title="'口腔檢查頻率'" />
           </div>
         </div>
@@ -220,7 +177,6 @@ const getWindowWidth = () => {
             <span>高風險人群</span>，
             <br class="mbBox" />建議每半年或更頻繁地進行口腔檢查。
           </div>
-          <!-- <div class="frequency-in-title">高危人士包括:</div> -->
           <div class="frequency-in-lists">
             <div class="listsIn">
               <div class="num">01</div>
@@ -256,8 +212,6 @@ const getWindowWidth = () => {
       <RippleLine :type="'4'" />
       <ContactUs />
     </div>
-    <!-- <PageFooter />
-    <PageNavbar /> -->
   </div>
 </template>
 
@@ -267,62 +221,6 @@ const getWindowWidth = () => {
 .servicePageConfig{
   margin-top: -20px;
   padding-bottom: 140px;
-}
-.notice {
-  width: 100%;
-  max-width: 1450px;
-  margin: 153px auto 0;
-  &-in {
-    width: 90%;
-    margin: 30px auto 0;
-    .box {
-      .box-in {
-        height: 278px;
-        margin-top: 15px;
-        display: flex;
-        background: #fff1f0;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        color: #666666;
-        padding: 0 80px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:first-child {
-          background: #ffa09e;
-          color: #fff;
-          margin-top: 0;
-          height: 69px;
-          font-weight: 700;
-          font-size: 28px;
-        }
-        &:nth-of-type(2) {
-          margin-top: 0;
-        }
-      }
-    }
-    .box-left {
-      border-radius: 60px 0 0 60px;
-      overflow: hidden;
-    }
-    .box-right {
-      margin-left: 3px;
-      border-radius: 0 60px 60px 0;
-      overflow: hidden;
-      .box-in {
-        &:first-child {
-          background: #ffcecb;
-        }
-      }
-    }
-  }
-  &-line {
-    width: 83px;
-    margin: 22px auto;
-  }
 }
 .note{
   margin-top: 185px;
@@ -371,10 +269,7 @@ const getWindowWidth = () => {
   }
   &-in {
     width: 100%;
-    // max-width: 1246px;
     padding: 59px 50px;
-    // background: #fff1f0;
-    // box-shadow: 0px 4px 8px #ffddda;
     margin: 25px auto;
     &-top {
       font-style: normal;
@@ -417,6 +312,7 @@ const getWindowWidth = () => {
           background: #fff;
           transform: translateY(-50%);
           padding: 0 10px 0 45px;
+          font-family: SF_NS_Rounded;
           &::before{
             content: '';
             height: 104px;
@@ -467,83 +363,71 @@ const getWindowWidth = () => {
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {
-  .notice {
-    &-in {
-      .box {
-        .box-in {
-          font-size: 18px;
-          padding: 0 4vw;
-        }
-      }
-    }
-  }
+
 }
 
 @media only screen and (max-width: 760px) {
-  .notice {
-    margin: 90px auto 0;
-    &-in {
-      width: 100%;
-      margin: 34px 0 0;
-      .box {
-        margin-left: 30px;
-        .box-in {
-          font-weight: 500;
+  .note{
+    margin-top: 80px;
+    &-bg{
+      padding: 20px 0;
+    }
+    &-lists{
+      flex-direction: column;
+      width: auto;
+      margin: 0 44px;
+      &-in{
+        max-width: 100%;
+        margin-top: 80px;
+        .text{
+          margin-top: 35px;
+          letter-spacing: 3px;
           font-size: 15px;
-          height: 240px;
-          margin-top: 9px;
-          padding: 0 46px;
-          &:first-child {
-            height: 40px;
-            font-weight: 600;
-            font-size: 20px;
-          }
         }
-      }
-      .box-right {
-        margin-right: 30px;
-        margin-left: 0;
       }
     }
   }
   .frequency {
-    margin: 90px 30px 0;
+    margin: 80px 43px 0;
     &-in {
-      padding: 24px 16px 35px;
+      padding: 0;
+      margin: 45px auto;
       &-top {
-        font-size: 14px;
+        font-size: 15px;
         span {
-          font-size: 14px;
+          font-size: 15px;
         }
-      }
-      &-title {
-        font-size: 26px;
-        margin-top: 11px;
       }
       &-lists {
         flex-direction: column;
-        margin-top: 13px;
-        & > div {
-          width: 100%;
-          margin: 0;
-          padding: 14px 23px;
-          min-height: 0;
-          border-radius: 15.5967px;
-          & > div:first-child {
-            font-weight: 600;
+        margin-top: 0;
+        .listsIn{
+          margin: 87px 0 0;
+          padding: 0 40px 40px;
+          min-height: 450px;
+          .num{
+            font-size: 60px;
+            &::before{
+              height: 80px;
+            }
+          }
+          .image{
+            margin-top: -70px;
+            height: 234px;
+            img{
+              max-width: 92px;
+              max-height: 128px;
+            }
+          }
+          .name{
+            font-size: 37.5px;
+            letter-spacing: 2px;
+            min-height: auto;
+          }
+          .context{
+            margin-top: 5px;
             font-size: 14px;
-          }
-          & > div:last-child {
-            font-weight: 600;
-            font-size: 12px;
-          }
-          &:nth-of-type(1) {
-            min-width: 100%;
-            margin-bottom: 12px;
-          }
-          &:nth-of-type(2) {
-            min-width: 100%;
-            margin-bottom: 12px;
+            letter-spacing: 2.377px;
           }
         }
       }

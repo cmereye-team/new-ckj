@@ -168,14 +168,10 @@ const problemData = {
 
 <template>
   <div>
-    <!-- <PageHeader :headerConfig="headerConfig" /> -->
     <div class="servicePageConfig">
-      <ServiceBanner :bannerData="bannerData" />
-      <!-- <div class="index_title pageCon">{{$t('pages.dental-service.title')}}</div> -->
+      <ServiceBanner :bannerData="bannerData" pageName="fillings" />
       <ServiceIntroduce :introduceData="introduceData" :reasonData="reasonData" :animConfig="{color: '#FC1682',text: 'CAVITY FILLING'}" moduleType="4" introduceType="2" />
-      <!-- <ServiceReason :reasonData="reasonData" /> -->
       <ServiceStep :stepData="stepData" pageName="fillings" />
-      <!-- <ServiceNote :noteData="noteData" /> -->
       <div class="note">
         <RippleLine type="2" />
         <div class="note-bg">
@@ -292,7 +288,6 @@ const problemData = {
       width: 100%;
       .box-in {
         height: 93px;
-        // margin-top: 4px;
         border-bottom: 1px solid var(--topic-color);
         border-right: 1px solid var(--topic-color);
         display: flex;
@@ -313,13 +308,8 @@ const problemData = {
           height: 48px;
           font-weight: 500;
           font-size: 20px;
-          // justify-content: center;
           border-right: none;
           margin-right: 2px;
-        }
-        &:last-child{
-          
-          
         }
         &:nth-of-type(3) {
           height: 121px;
@@ -348,14 +338,8 @@ const problemData = {
       }
     }
     .box-left {
-      // margin-right: 2px;
-      // border-radius: 60px 0 0 60px;
-    //   overflow: hidden;
-    //   display: flex;
       .box:nth-of-type(1){
         .box-in{
-    //       font-weight: 700;
-    //       font-size: 28px;
           justify-content: center;
           color: var(--topic-color);
           font-size: 18px;
@@ -370,16 +354,7 @@ const problemData = {
         }
       }
     }
-    // .box-right {
-      // border-radius: 0 60px 60px 0;
-      // overflow: hidden;
-      // margin-left: 2px;
-    // }
   }
-  // &-line {
-  //   width: 120px;
-  //   margin: 22px auto;
-  // }
 }
 .note{
   margin-top: -40px;
@@ -408,12 +383,12 @@ const problemData = {
         &::before{
           content: '';
           background: url(https://static.cmereye.com/imgs/2023/08/6f4555dbf9221e6b.png) no-repeat;
-          background-size: cover;
+          background-size: auto 100%;
           position: absolute;
           top: -12.5%;
           left: -16%;
-          width: 40%;
-          height: 40%;
+          width: 38%;
+          height: 38%;
         }
       }
       .text{
@@ -429,48 +404,119 @@ const problemData = {
     }
   }
 }
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
   .material {
+    margin: 80px auto;
     &-context {
-      padding: 0 30px;
-      margin: 28px auto 0;
+      padding: 0 52px;
+      margin: 45px auto 0;
       text-align: center;
       span{
-        display: block;
+        // display: block;
         font-weight: 500;
         font-size: 15px;
+        letter-spacing: 4.5px;
       }
     }
     &-in {
       width: 100%;
-      margin: 34px 0 0;
+      margin: 40px 0 0;
       .box {
         .box-in {
-          font-weight: 500;
-          font-size: 15px;
-          margin-top: 3px;
-          padding: 0 30px;
+          height: 60px;
+          font-size: 13px;
+          padding: 0 20px;
+          text-align: center;
           &:first-child {
-            height: 51.15px;
-            font-weight: 600;
-            font-size: 20px;
+            height: 20px;
+            font-size: 13px;
+            margin-right: 1px;
           }
-          &:last-child {
-            height: 80px;
+          &:nth-of-type(3) {
+            height: 84px;
+            padding: 0 20px;
           }
         }
       }
-      .swiper{
-        padding: 0 30px;
-        .swiper-slide{
+      .materialBox{
+        display: flex;
+        .materialBox-in{
           &:nth-of-type(1){
-            width: 230.56px !important;
+            width: 13.5% ;
           }
           &:nth-of-type(2){
-            width: 92.128% !important;
+            // width: 37.16% ;
+            width: calc((100% - 13.5%) / 2);
           }
           &:nth-of-type(3){
-            width: 92.128% !important;
+            width: calc((100% - 13.5%) / 2);
+            // width: 37.16% ;
+            .box {
+              .box-in{
+                // border-right: none;
+                &:first-child {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .box-left {
+        .box:nth-of-type(1){
+          .box-in{
+            font-size: 13px;
+            letter-spacing: 3px;
+            padding: 0;
+            &:nth-of-type(1){
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      // .swiper{
+      //   padding: 0 30px;
+      //   .swiper-slide{
+      //     &:nth-of-type(1){
+      //       width: 230.56px !important;
+      //     }
+      //     &:nth-of-type(2){
+      //       width: 92.128% !important;
+      //     }
+      //     &:nth-of-type(3){
+      //       width: 92.128% !important;
+      //     }
+      //   }
+      // }
+    }
+  }
+  .note{
+    margin-top: -20px;
+    &-bg{
+      background: #FECB02;
+      padding: 40px 0 20px;
+    }
+    &-lists{
+      width: auto;
+      margin: 117px 40px 0;
+      flex-direction: column;
+      &-in{
+        .image{
+          padding-left: 28px;
+          &::before{
+            left: 0;
+          }
+        }
+        .text{
+          max-width: 120px;
+          letter-spacing: 5.4px;
+          font-size: 18px;
+          margin: 30px auto;
+        }
+        &:last-child{
+          margin-top: 117px;
+          .text{
+            max-width: 150px;
           }
         }
       }
