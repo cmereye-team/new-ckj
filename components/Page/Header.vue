@@ -134,9 +134,13 @@ const servicesCardLists = serviceLists
 
 let menuIsOpen = ref(false)
 
+const router = useRouter()
 const handleMenu = (_data:any) => {
   if(_data.link){
-    location.href = _data.link
+    router.push({
+      path: _data.link
+    })
+    // location.href = _data.link
   }
 }
 </script>

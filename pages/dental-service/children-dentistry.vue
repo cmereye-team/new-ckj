@@ -133,7 +133,7 @@ const skillData ={
     },
     {
       title: '根管治療',
-      introduce: '根管治療是一種治療乳牙或恒牙牙髓炎或牙髓壞死等問題的方法。\n•使用麻醉技術對孩子的疼痛感受最小化。\n•將治療風險降到最小，減少感染和出血。\n•根管治療技術使其保留牙齒和神經系統的功能，減少後續治療。',
+      introduce: '根管治療是一種治療乳牙或恒牙牙髓炎或牙髓壞死等問題的方法。\n• 使用麻醉技術對孩子的疼痛感受最小化。\n• 將治療風險降到最小，減少感染和出血。\n• 根管治療技術使其保留牙齒和神經系統的功能，減少後續治療。',
       characteristic: '對孩子的身心健康影響較小，疼痛輕微。效果長期穩定，可以保護孩子的牙齒健康，並可以避免拔牙對口腔造成的影響，保留自然牙齒。',
       adapt: '兒童牙科根管治療需要根據孩子的年齡、牙齒狀況以及治療需要等多方面因素進行綜合考慮，建議家長及時就醫，並根據醫生的建議進行治療。'
     }
@@ -162,7 +162,7 @@ const handleSkillTab = (_idx:number) => {
         <!-- <div class="dentistryServices-title-in bb">兒童常見口腔問題</div> -->
         <img src="https://static.cmereye.com/imgs/2023/08/41afb375adaa22f7.jpg" alt="">
       </div>
-      <div class="faq-in">
+      <div class="faq-in bigPageCon">
         <div class="faq-in-content">
           <div class="contentIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">
@@ -213,28 +213,32 @@ const handleSkillTab = (_idx:number) => {
           <img src="https://static.cmereye.com/imgs/2023/08/0c725256740985d4.jpg" alt="">
         </div>
       </div>
-      <div class="skill-tab pcBox pageCon">
+      <div class="skill-tab pcBox">
         <div class="skill-tab-t">
           <div :class="{'cur': skillCur === skillIndex}" v-for="(skillItem,skillIndex) in skillData.lists" :key="skillIndex" @click="handleSkillTab(skillIndex)">
             {{skillItem.title}}
           </div>
         </div>
         <div class="skill-tab-b">
-          <div>
-            <div>技術介紹</div>
-            <div>{{skillData.lists[skillCur].introduce}}</div>
+          <div class="con-l"><img src="https://static.cmereye.com/imgs/2023/08/9254bd712120c79b.png" alt=""></div>
+          <div class="con-c">
+            <div>
+              <div>技術介紹</div>
+              <div>{{skillData.lists[skillCur].introduce}}</div>
+            </div>
+            <div>
+              <div>技術特點</div>
+              <div>{{skillData.lists[skillCur].characteristic}}</div>
+            </div>
+            <div>
+              <div>{{changeSkillTitle(skillCur)}}</div>
+              <div>{{skillData.lists[skillCur].adapt}}</div>
+            </div>
           </div>
-          <div>
-            <div>技術特點</div>
-            <div>{{skillData.lists[skillCur].characteristic}}</div>
-          </div>
-          <div>
-            <div>{{changeSkillTitle(skillCur)}}</div>
-            <div>{{skillData.lists[skillCur].adapt}}</div>
-          </div>
+          <div class="con-r"><img src="https://static.cmereye.com/imgs/2023/08/a160dd6781c5ab24.png" alt=""></div>
         </div>
       </div>
-      <div class="skill-collapse mbBox">
+      <!-- <div class="skill-collapse mbBox">
         <el-collapse v-model="skillCur" accordion>
           <el-collapse-item :name="skillIndex" v-for="(skillItem,skillIndex) in skillData.lists" :key="skillIndex">
             <template #title>
@@ -258,9 +262,29 @@ const handleSkillTab = (_idx:number) => {
             </div>
           </el-collapse-item>
         </el-collapse>
+      </div> -->
+    </div>
+    <!-- <ServiceNote :noteData="noteData" /> -->
+    <div class="note bigPageCon">
+      <img class="left-star" src="https://static.cmereye.com/imgs/2023/09/60d6dba2f70f9b16.png" alt="">
+      <img class="right-star" src="https://static.cmereye.com/imgs/2023/09/60d6dba2f70f9b16.png" alt="">
+      <img class="left-center-star" src="https://static.cmereye.com/imgs/2023/09/d38d7a7fe96d74b4.png" alt="">
+      <img class="right-center-star" src="https://static.cmereye.com/imgs/2023/09/5dc7d3ccee286ca0.png" alt="">
+      <img class="mascot" src="https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif" alt="">
+      <div class="note-bg">
+        <div class="note-title">
+          <img src="https://static.cmereye.com/imgs/2023/09/4caaf1abc0d77dd5.png" alt="">
+        </div>
+        <div class="note-lists">
+          <div class="listsIn" v-for="(noteItem,noteIndex) in noteData.lists" :key="noteIndex">
+            <div>
+              <img src="https://static.cmereye.com/imgs/2023/09/c0e756de759ebf44.png" alt="">
+              <span>{{noteItem.name}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <ServiceNote :noteData="noteData" />
     <ServiceProblem :problemData="problemData" />
     <serviceCard />
     <RippleLine :type="'4'" />
@@ -374,7 +398,6 @@ const handleSkillTab = (_idx:number) => {
   }
 }
 .skill{
-  // margin-top: 144px;
   &-title{
     display: flex;
     justify-content: center;
@@ -389,13 +412,6 @@ const handleSkillTab = (_idx:number) => {
       font-weight: 400;
       line-height: 157%; /* 92.63px */
       letter-spacing: 11.8px;
-      // font-style: normal;
-      // font-weight: 700;
-      // font-size: 30px;
-      // line-height: 160%;
-      // text-align: center;
-      // color: #666666;
-      // border-bottom: 4px solid #FFA09E;
       span{
         display: block;
       }
@@ -407,7 +423,9 @@ const handleSkillTab = (_idx:number) => {
     }
   }
   &-tab{
-    margin-top: 46px;
+    width: 100%;
+    max-width: 1648px; //calc(100% - (272 / 1920) * 100%); 
+    margin: 46px auto 0;
     // box-shadow: 0px 4px 8px #FFDDDA;
     &-t{
       display: flex;
@@ -442,41 +460,180 @@ const handleSkillTab = (_idx:number) => {
             background: url(https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif);
             background-size: 100% auto;
             width: 100px;
+            height: 120px;
+            z-index: -1;
           }
         }
       }
     }
     &-b{
-      min-height: 460px;
+      // min-height: 286px;
+      margin-top: 133px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      &>div{
+      justify-content: center;
+      .con-l{
         display: flex;
-        width: 100%;
-        max-width: 806px;
-        margin: 0 auto;
-        &>div:first-child{
-          font-style: normal;
-          font-weight: 700;
-          font-size: 28px;
-          line-height: 160%;
-          color: #666666;
-          width: 152px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        img{
+          width: 76px;
+          height: auto;
+          transform: translate(-50px,-60px) rotate(-50deg);
         }
-        &>div:last-child{
-          flex: 1;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 20px;
-          line-height: 160%;
-          color: #666666;
-          padding-top: 10px;
-          white-space: pre-wrap;
+      }
+      .con-c{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        &>div{
+          display: flex;
+          width: 100%;
+          max-width: 824px;
+          margin: 0 auto;
+          border-top: 1px solid var(--topic-text-color);
+          padding: 21px 0;
+          &>div:first-child{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 160%;
+            color: var(--topic-color);
+            width: 152px;
+          }
+          &>div:last-child{
+            flex: 1;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 160%;
+            color: var(--topic-text-color);
+            // padding-top: 10px;
+            white-space: pre-wrap;
+          }
+        }
+      }
+      .con-r{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        img{
+          width: 92px;
+          height: auto;
+          transform: translate(10px,20px) rotate(50deg);
         }
       }
     }
+  }
+}
+.note{
+  width: 100%;
+  position: relative;
+  &-bg{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 450px 0 190px;
+    &::before{
+      content: '';
+      width: 200%;
+      bottom: calc(100% - 225px);
+      left: 0;
+      margin-left: -50%;
+      height: 200%;
+      border-radius: 50%;
+      position: absolute;
+      background: #fff;
+      z-index: 2;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      width: 200%;
+      border-radius: 50%;
+      bottom: 0;
+      left: 0;
+      margin-left: -50%;
+      height: 200%;
+      background: #FECB02;
+      z-index: 1;
+    }
+  }
+  &-title{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    img{
+      width: calc((513 / 1920) * 100%);
+    }
+  }
+  &-lists{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: 100%;
+    max-width: 1294px;
+    margin: 74px auto 0;
+    .listsIn{
+      flex: 1;
+      &>div{
+        color: var(--topic-text-color);
+        text-align: justify;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 23.5px; /* 123.684% */
+        letter-spacing: 3.8px;
+        position: relative;
+        span{
+          position: absolute;
+          width: auto;
+          inset: 20%;
+        }
+      }
+      &:first-child{
+        margin-right: calc((72 / 1294) * 100%);
+      }
+    }
+  }
+  .left-star{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 3;
+    transform: translateY(-20%);
+  }
+  .right-star{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    z-index: 3;
+    transform: translateY(-20%) rotateY(180deg);
+  }
+  .left-center-star{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    z-index: 3;
+  }
+  .right-center-star{
+    position: absolute;
+    top: 35%;
+    right: 10%;
+    z-index: 3;
+  }
+  .mascot{
+    position: absolute;
+    z-index: 4;
+    top: 70%;
+    right: 15%;
+    width: 211px;
+    height: auto;
+    transform: rotate(-20deg);
   }
 }
 @media (min-width: 768px) and (max-width: 1000px) {
