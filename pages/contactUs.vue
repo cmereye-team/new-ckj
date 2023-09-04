@@ -111,7 +111,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader :headerConfig="headerConfig" />
+    <!-- <PageHeader :headerConfig="headerConfig" /> -->
     <div class="contactUs">
       <ContactUs />
       <ContactForm />
@@ -142,8 +142,8 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <PageFooter />
-    <PageNavbar />
+    <!-- <PageFooter /> -->
+    <!-- <PageNavbar /> -->
   </div>
 </template>
 

@@ -90,7 +90,7 @@ onMounted(()=>{
       :headerImg="'https://static.cmereye.com/imgs/2023/05/c46fcc590da0ffdd.png'"
       :headerBgImg="'https://static.cmereye.com/imgs/2023/05/de7105389a7f04b2.png'"
       :titlePosition="'left'" -->
-    <PageHeader />
+    <!-- <PageHeader /> -->
     <div class="doctorPage">
       <div class="doctorPage-in pageCon">
         <!-- 醫生團隊 -->
@@ -197,8 +197,8 @@ onMounted(()=>{
       </div>
       <ContactUs />
     </div>
-    <PageFooter />
-    <PageNavbar />
+    <!-- <PageFooter /> -->
+    <!-- <PageNavbar /> -->
   </div>
 </template>
 

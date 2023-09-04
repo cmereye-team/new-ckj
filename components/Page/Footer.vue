@@ -127,7 +127,6 @@ const toPageTop = () =>{
   toTopType.value = true
   setTimeout(()=>{
     let top = document.documentElement.scrollTop || document.body.scrollTop;
-    // 实现滚动效果 
     const timeTop = setInterval(() => {
         document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
         if (top <= 0) {
@@ -138,17 +137,42 @@ const toPageTop = () =>{
   },500)
 }
 
-
+const router = useRouter()
 let _arr:any = ref([])
-const handleMenu = (item:any,index:any) => {
-  console.log(index)
-  console.log(_arr.value)
+const handleMenu = async (item:any,index:any) => {
+  if(!item.child.length){
+    const loadingFa = ElLoading.service({
+      lock: true,
+      text: 'Loading...',
+      background: 'rgba(0, 0, 0, 0.5)',
+    })
+    if(item.link){
+      await router.push({
+        path: item.link
+      })
+      loadingFa.close()
+    }
+    return
+  }
   if(_arr.value.indexOf(index) === -1){
     _arr.value.push(index)
   }else{
     _arr.value.splice(_arr.value.indexOf(index),1)
   }
-  console.log(_arr.value)
+}
+
+const toLinks = async (_data:any) =>{
+  const loading = ElLoading.service({
+    lock: true,
+    text: 'Loading...',
+    background: 'rgba(0, 0, 0, 0.5)',
+  })
+  if(_data.link){
+    await router.push({
+      path: _data.link
+    })
+    loading.close()
+  }
 }
 
 </script>
@@ -173,17 +197,17 @@ const handleMenu = (item:any,index:any) => {
             </div>
             <div class="nav-list-in-child pcChild">
               <div>
-                <div v-for="(menuChild,childIndex) in menuItem.child.slice(0,6)" :key="childIndex">
+                <div v-for="(menuChild,childIndex) in menuItem.child.slice(0,6)" :key="childIndex" @click="toLinks(menuChild)">
                   {{$t(menuChild.name)}}
                 </div>
               </div>
               <div v-if="menuItem.child.length > 6">
-                <div v-for="(menuChild,childIndex) in menuItem.child.slice(6,12)" :key="childIndex">
+                <div v-for="(menuChild,childIndex) in menuItem.child.slice(6,12)" :key="childIndex" @click="toLinks(menuChild)">
                   {{$t(menuChild.name)}}
                 </div>
               </div>
               <div v-if="menuItem.child.length > 12">
-                <div v-for="(menuChild,childIndex) in menuItem.child.slice(12,14)" :key="childIndex">
+                <div v-for="(menuChild,childIndex) in menuItem.child.slice(12,14)" :key="childIndex" @click="toLinks(menuChild)">
                   {{$t(menuChild.name)}}
                 </div>
               </div>

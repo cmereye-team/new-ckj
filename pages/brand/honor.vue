@@ -53,7 +53,7 @@ const handleProcessBtn = (_type: string) => {
 
 <template>
 <div>
-  <PageHeader :headerConfig="headerConfig" />
+  <!-- <PageHeader :headerConfig="headerConfig" /> -->
   <div class="pageIn whitebgColor">
     <div class="index_title pageCon">{{$t('pages.brand.title')}}</div>
     <div class="introduce bigPageCon">
@@ -193,8 +193,8 @@ const handleProcessBtn = (_type: string) => {
     </div>
     <ContactUs />
   </div>
-  <PageFooter />
-  <PageNavbar />
+  <!-- <PageFooter /> -->
+  <!-- <PageNavbar /> -->
 </div>
 </template>
 

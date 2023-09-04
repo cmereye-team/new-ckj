@@ -168,8 +168,10 @@ const handleMenu = async (_data:any) => {
           </div>
           <div class="menu">
             <div v-for="(item,index) in menuLists" :key="index">
-              <div class="enName">{{item.enName}}</div>
-              <div class="name">{{$t(item.name)}}</div>
+              <div @click="handleMenu(item)">
+                <div class="enName">{{item.enName}}</div>
+                <div class="name">{{$t(item.name)}}</div>
+              </div>
               <div class="menu-child" v-if="item.child.length && !item.link.includes('/dental-service')">
                 <div class="menu-child-border">
                   <div class="menu-child-in" v-for="(childItem,childIndex) in item.child" :key="childIndex" @click="handleMenu(childItem)">
