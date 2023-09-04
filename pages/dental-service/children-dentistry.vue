@@ -95,7 +95,8 @@ const problemData = {
       Q: 'pages.dental-service.children-dentistry.problem.lists[3].Q',
       A: 'pages.dental-service.children-dentistry.problem.lists[3].A'
     },
-  ]
+  ],
+  pageName: 'children-dentistry'
 }
 
 const skillData ={
@@ -159,7 +160,6 @@ const handleSkillTab = (_idx:number) => {
     <ServiceIntroduce :introduceData="orthodonticsIntroduceData" :reasonData="reasonData" introduceType="2" moduleType="5" titleType="2" />
     <div class="faq">
       <div class="faq-title bigPageCon">
-        <!-- <div class="dentistryServices-title-in bb">兒童常見口腔問題</div> -->
         <img src="https://static.cmereye.com/imgs/2023/08/41afb375adaa22f7.jpg" alt="">
       </div>
       <div class="faq-in bigPageCon">
@@ -194,13 +194,6 @@ const handleSkillTab = (_idx:number) => {
           <img class="icon_4" src="https://static.cmereye.com/imgs/2023/08/a160dd6781c5ab24.png" alt="">
           <img class="icon_5" src="https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif" alt="">
         </div>
-        <!-- <div class="faq-in-icon">
-          <img class="icon_1" src="https://static.cmereye.com/imgs/2023/08/9254bd712120c79b.png" alt="">
-          <img class="icon_2" src="https://static.cmereye.com/imgs/2023/08/a3d7cc1d94be53ab.png" alt="">
-          <img class="icon_3" src="https://static.cmereye.com/imgs/2023/08/09cb4c29a9d4452d.png" alt="">
-          <img class="icon_4" src="https://static.cmereye.com/imgs/2023/08/a160dd6781c5ab24.png" alt="">
-          <img class="icon_5" src="https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif" alt="">
-        </div> -->
       </div>
     </div>
     <div class="skill">
@@ -210,10 +203,10 @@ const handleSkillTab = (_idx:number) => {
           <span>習慣，有助於建立良好的牙齒健康基礎。</span>
         </div>
         <div class="skill-title-image bigPageCon">
-          <img src="https://static.cmereye.com/imgs/2023/08/0c725256740985d4.jpg" alt="">
+          <img data-cfsrc="https://static.cmereye.com/imgs/2023/09/3b22319469b2f28d.jpg" srcset="https://static.cmereye.com/imgs/2023/09/3b22319469b2f28d.jpg 768w,https://static.cmereye.com/imgs/2023/08/0c725256740985d4.jpg" src="https://static.cmereye.com/imgs/2023/08/0c725256740985d4.jpg" alt="">
         </div>
       </div>
-      <div class="skill-tab pcBox">
+      <div class="skill-tab">
         <div class="skill-tab-t">
           <div :class="{'cur': skillCur === skillIndex}" v-for="(skillItem,skillIndex) in skillData.lists" :key="skillIndex" @click="handleSkillTab(skillIndex)">
             {{skillItem.title}}
@@ -238,33 +231,7 @@ const handleSkillTab = (_idx:number) => {
           <div class="con-r"><img src="https://static.cmereye.com/imgs/2023/08/a160dd6781c5ab24.png" alt=""></div>
         </div>
       </div>
-      <!-- <div class="skill-collapse mbBox">
-        <el-collapse v-model="skillCur" accordion>
-          <el-collapse-item :name="skillIndex" v-for="(skillItem,skillIndex) in skillData.lists" :key="skillIndex">
-            <template #title>
-              <div class="skill-collapse-title">
-                {{skillItem.title}}
-              </div>
-            </template>
-            <div class="skill-collapse-b">
-              <div>
-                <div>技術介紹</div>
-                <div>{{skillItem.introduce}}</div>
-              </div>
-              <div>
-                <div>技術特點</div>
-                <div>{{skillItem.characteristic}}</div>
-              </div>
-              <div>
-                <div>{{changeSkillTitle(skillIndex)}}</div>
-                <div>{{skillItem.adapt}}</div>
-              </div>
-            </div>
-          </el-collapse-item>
-        </el-collapse>
-      </div> -->
     </div>
-    <!-- <ServiceNote :noteData="noteData" /> -->
     <div class="note bigPageCon">
       <img class="left-star" src="https://static.cmereye.com/imgs/2023/09/60d6dba2f70f9b16.png" alt="">
       <img class="right-star" src="https://static.cmereye.com/imgs/2023/09/60d6dba2f70f9b16.png" alt="">
@@ -285,7 +252,7 @@ const handleSkillTab = (_idx:number) => {
         </div>
       </div>
     </div>
-    <ServiceProblem :problemData="problemData" />
+    <ServiceProblem :problemData="problemData" titleType="2" />
     <serviceCard />
     <RippleLine :type="'4'" />
     <ContactUs />
@@ -302,11 +269,11 @@ const handleSkillTab = (_idx:number) => {
 }
 .faq{
   margin-top: 120px;
-  &-title{
-    img{
+  // &-title{
+  //   img{
        
-    }
-  }
+  //   }
+  // }
   &-in{
     position: relative;
     &-content{
@@ -345,6 +312,7 @@ const handleSkillTab = (_idx:number) => {
         }
         svg{
           width: 100%;
+          height: 100%;
         }
         span{
           position: absolute;
@@ -420,19 +388,20 @@ const handleSkillTab = (_idx:number) => {
       transform: translateY(-10%);
       position: relative;
       z-index: -1;
+      img{
+        width: 100%;
+      }
     }
   }
   &-tab{
     width: 100%;
     max-width: 1648px; //calc(100% - (272 / 1920) * 100%); 
     margin: 46px auto 0;
-    // box-shadow: 0px 4px 8px #FFDDDA;
     &-t{
       display: flex;
       &>div{
         flex: 1;
         text-align: center;
-        // background: #FFDDDA;
         font-style: normal;
         font-weight: 700;
         border-radius: 25px;
@@ -443,9 +412,6 @@ const handleSkillTab = (_idx:number) => {
         cursor: pointer;
         &:not(:last-child){
           margin-right: 3px;
-        }
-        &:hover{
-          // background: #FFA09E;
         }
         &.cur{
           background: var(--topic-color);
@@ -467,7 +433,6 @@ const handleSkillTab = (_idx:number) => {
       }
     }
     &-b{
-      // min-height: 286px;
       margin-top: 133px;
       display: flex;
       justify-content: center;
@@ -668,90 +633,229 @@ const handleSkillTab = (_idx:number) => {
 }
 @media only screen and (max-width: 768px) {
 .faq{
-  margin-top: 90px;
+  // margin-top: 90px;
+  // &-in{
+  //   flex-direction: column;
+  //   margin-top: 28px;
+  //   &>div{
+  //     font-size: 26px;
+  //     height: 67.8px;
+  //     line-height: 67.8px;
+  //     margin: 0 30px;
+  //     &:not(:last-child){
+  //       margin-right: 30px;
+  //       margin-bottom: 13.2px;
+  //     }
+  //   }
+  // }
+  margin-top: 0;
+  &-title{
+    width: 100%;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    img{
+      width: 200%;
+      max-width: 200%;
+      margin-left: -50%;
+    }
+  }
   &-in{
-    flex-direction: column;
-    margin-top: 28px;
-    &>div{
-      font-size: 26px;
-      height: 67.8px;
-      line-height: 67.8px;
-      margin: 0 30px;
-      &:not(:last-child){
-        margin-right: 30px;
-        margin-bottom: 13.2px;
+    &-content{
+      max-width: calc((350 / 390) * 100%);
+      padding-bottom: calc((300 / 390) * 100%);
+      .contentIn{
+        width: calc((93 / 300) * 100%);
+        &:nth-of-type(1){
+          top: calc((71 / 300) * 100%);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &:nth-of-type(2){
+          top: calc((139 / 300) * 100%);
+          left: 50%;
+          transform: translateX(-125%);
+        }
+        &:nth-of-type(3){
+          top: calc((139 / 300) * 100%);
+          left: 50%;
+          transform: translateX(25%);
+        }
+        &:nth-of-type(4){
+          top: calc((206 / 300) * 100%);
+          left: 50%;
+          transform: translateX(-50%);
+          span{
+            color: #FC1682;
+          }
+        }
+        span{
+          font-size: 17.5px;
+        }
+      }
+      .icon_1{
+        top: 10%;
+        left: 75%;
+      }
+      .icon_2{
+        top: 90%;
+        left: 75%;
+      }
+      .icon_3{
+        top: 60%;
+        width: 10%;
+      }
+      .icon_4{
+        top: 85%;
+        width: 18%;
+        transform: rotate(-10deg);
+      }
+      .icon_5{
+        top: 40%;
+        left: 8%;
+        transform: rotate(-25deg);
       }
     }
   }
 }
 .skill{
-  margin-top: 90px;
-  padding: 0 30px;
+  margin-top: 76px;
   &-title{
     &-in{
+      padding: 0 90px;
       font-weight: 700;
-      font-size: 26px;
+      font-size: 15px;
+      letter-spacing: 4.5px;
       span{
         display: inline;
       }
     }
   }
-  &-collapse{
-    margin-top: 33px;
-    box-shadow: 0px 4px 8px #FFDDDA;
-    &-b{
-      &>div{
-        margin-top: 25px;
-        padding: 0 24px;
-        &>div:first-child{
-          font-style: normal;
-          font-weight: 600;
-          font-size: 20px;
-          line-height: 160%;
-          text-align: center;
-          color: #666666;
-        }
-        &>div:last-child{
-          font-style: normal;
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 160%;
-          text-align: center;
-          color: #666666;
-          margin-top: 5px;
-          white-space: pre-wrap;
-        }
-      }
-    }
-    :deep(.el-collapse){
-      border: none;
-    }
-    :deep(.el-collapse-item){
-      margin-bottom: 2px;
-      border: none;
-    }
-    :deep(.el-collapse-item__wrap){
-      border: none;
-    }
-    :deep(.el-collapse-item__header){
-      padding: 10.5px 0;
-      background: #FFDDDA;
-      border: none;
-      box-sizing: initial;
-      color: #FFFFFF;
-      font-weight: 700;
-      font-size: 26px;
+  &-tab{
+    margin: 20px auto 0;
+    &-t{
+      flex-wrap: wrap;
       justify-content: center;
-    }
-    :deep(.el-collapse-item__header.is-active){
-      background: #FFA09E;
-      .skill-collapse-title{
-        color: #FFFFFF;
+      padding: 0 30px;
+      &>div{
+        flex: auto;
+        letter-spacing: 3px;
+        font-size: 15px;
+        // width: calc(100% / 3);
+        padding: 0 10px;
+        height: 22px;
+        line-height: 22px;
+        margin-bottom: 50px;
+        &:not(:last-child){
+          margin-right: 0;
+        }
+        &.cur{
+          &::before{
+            width: 46px;
+            height: 55.58px;
+          }
+        }
       }
     }
-    :deep(.el-icon){
-     display: none;
+    &-b{
+      margin-top: 0;
+      .con-l{
+        display: none;
+      }
+      .con-c{
+        padding: 0 43px;
+        &>div{
+          align-items: center;
+          padding: 20px 0;
+          &>div:first-child{
+            width: 72px;
+            letter-spacing: 2.4px;
+            font-size: 12px;
+          }
+          &>div:last-child{
+            letter-spacing: 2.4px;
+            font-size: 12px;
+          }
+        }
+      }
+      .con-r{
+        display: none;
+      }
     }
+  }
+}
+.note{
+  &-bg{
+    padding: 164px 0 90px;
+    &::before{
+      width: 400%;
+      margin-left: -150%;
+      bottom: calc(100% - 50px);
+    }
+    &::after{
+      width: 400%;
+      margin-left: -150%;
+    }
+  }
+  &-title{
+    img{
+      width: 210px;
+    }
+  }
+  &-lists{
+    flex-direction: column;
+     margin: 45px auto 0;
+    .listsIn{
+      padding: 0 35px;
+      &>div{
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 1.2px;
+        span{
+          inset: auto;
+          top: 60px;
+          left: 50px;
+          right: 50px;
+          bottom: auto;
+        }
+      }
+      &:first-child{
+        margin-right: 0;
+        margin-bottom: 45px;
+        &>div{
+          span{
+            inset: auto;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            bottom: auto;
+          }
+        }
+      }
+    }
+  }
+  .left-star{
+    width: 53px;
+  }
+  .right-star{
+    width: 53px;
+  }
+  .left-center-star{
+    top: 80%;
+    left: 5%;
+    width: 92px;
+    z-index: 5;
+  }
+  .right-center-star{
+    width: 83px;
+    top: 53%;
+    right: 2%;
+  }
+  .mascot{
+    width: 106px;
+    top: 76%;
+    right: 6%;
+    transform: rotate(-15deg);
   }
 }
 }

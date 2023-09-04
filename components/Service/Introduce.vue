@@ -628,6 +628,14 @@ onBeforeUnmount(()=>{
               border-radius: 2px;
             }
           }
+          &-titleType2{
+            img{
+              width: calc(100% / 3);
+              &:nth-of-type(1),&:nth-of-type(3){
+                margin-bottom: 60px;
+              }
+            }
+          }
           &-content{
             padding: 0 52px;
             margin: 37px auto 0;
@@ -783,10 +791,50 @@ onBeforeUnmount(()=>{
             }
             .modulType4-image{
               width: 100%;
+            }
+          }
+          &-modulType5{
+            flex-direction: column;
+            margin-top: 74px;
+            .modulType5-content{
+              margin-top: 60px;
+              margin-right: 0;
+              padding: 0 40px;
+              &-text{
+                margin-top: 35px;
+                font-size: 16px;
+                letter-spacing: 4.8px;
+                img{
+                  width: 28px;
+                  margin-right: 6px;
+                }
+              }
+              &-title{
+                display: flex;
+                justify-content: center;
+              }
+              &-context{
+                margin-top: 23px;
+                &>div{
+                  .icon{
+                    margin-right: 0;
+                    line-height: 1.5;
+                  }
+                  .context{
+                    line-height: 180%;
+                    letter-spacing: 4.5px;
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+            .modulType5-image{
+              width: 100%;
+              margin-right: 0;
               img{
 
               }
-              svg{
+              .rmk{
 
               }
             }

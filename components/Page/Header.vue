@@ -140,6 +140,7 @@ const handleMenu = (_data:any) => {
     router.push({
       path: _data.link
     })
+    menuIsOpen.value = false
     // location.href = _data.link
   }
 }

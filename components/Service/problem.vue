@@ -12,6 +12,10 @@ let props = defineProps({
         pageName: ''
       }
     }
+  },
+  titleType:{
+    type: String,
+    default: '1'
   }
 })
 // const activeNames = ref(0)
@@ -41,11 +45,16 @@ const handleChange = (val: string[]) => {
 
 <template>
   <div :class="['problem',problemData.pageName]">
-    <div class="problem-title">
+    <div class="problem-title" v-if="titleType === '1'">
       <div class="problem-title-in">
         <!-- {{$t(problemData.title)}} -->
         <serviceTitle :title="problemData.title" />
       </div>
+    </div>
+    <div class="problem-titleType2" v-if="titleType === '2'">
+      <img src="https://static.cmereye.com/imgs/2023/08/090c5504a8c99ec4.png" alt="">
+      <img src="https://static.cmereye.com/imgs/2023/09/87fd2eae606f5c39.png" alt="">
+      <img src="https://static.cmereye.com/imgs/2023/08/090c5504a8c99ec4.png" alt="">
     </div>
     <div :class="['problem-in','pageCon',problemData.pageName]">
       <el-collapse v-model="activeNames" :accordion="false">
@@ -82,9 +91,27 @@ const handleChange = (val: string[]) => {
   &.scaling-and-polishing{
     margin-top: 185px;
   }
+  &.children-dentistry{
+    margin-top: -3%;
+  }
   &-title{
     display: flex;
     justify-content: center;
+  }
+  &-titleType2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    img{
+      height: auto;
+      &:nth-of-type(1),&:nth-of-type(3){
+        margin-bottom: 50px;
+      }
+      &:nth-of-type(3){
+        transform: rotateY(180deg);
+      }
+    }
   }
   &-in{
     margin-top: 120px;
@@ -183,6 +210,22 @@ const handleChange = (val: string[]) => {
         width: calc((100% - 12.66%) / 2);
       }
     }
+    &.children-dentistry{
+      max-width: 1360px;
+      // .problem-in-title{
+      //   &>div:nth-of-type(1){
+      //     text-align: left;
+      //   }
+      // }
+      
+      :deep(.el-collapse-item){
+        width: calc((100% - 12.66%) / 2);
+      }
+      :deep(.el-collapse-item__header){
+        line-height: 1.6;
+        text-align: left;
+      }
+    }
   }
 }
 
@@ -193,9 +236,32 @@ const handleChange = (val: string[]) => {
     &.scaling-and-polishing,&.general-oral-examination{
       margin-top: 80px;
     }
+    &.children-dentistry{
+    margin-top: -2%;
+  }
+    &-titleType2{
+      img{
+        // width: calc(100% / 3);
+        width: calc((100% - 146px) / 2);
+        &:nth-of-type(1){
+          margin-bottom: 60px;
+          margin-right: -20px;
+        }
+        &:nth-of-type(3){
+          margin-left: -20px;
+          margin-bottom: 60px;
+        }
+        &:nth-of-type(2){
+          width: 186px;
+        }
+      }
+    }
     &-in{
       margin-top: 30px;
       width: calc(100% - 60px);
+      &.children-dentistry{
+        margin-top: 60px;
+      }
       &-title{
         &>div:nth-of-type(1){
           font-size: 15px;
@@ -248,6 +314,12 @@ const handleChange = (val: string[]) => {
         align-items: flex-end;
       }
       &.scaling-and-polishing,&.general-oral-examination{
+        max-width: 100%;
+        :deep(.el-collapse-item){
+          width: 100%;
+        }
+      }
+      &.children-dentistry{
         max-width: 100%;
         :deep(.el-collapse-item){
           width: 100%;
