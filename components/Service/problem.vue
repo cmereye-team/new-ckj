@@ -51,7 +51,7 @@ const handleChange = (val: string[]) => {
         <serviceTitle :title="problemData.title" />
       </div>
     </div>
-    <div class="problem-titleType2" v-if="titleType === '2'">
+    <div class="problem-titleType2 bigPageCon" v-if="titleType === '2'">
       <img src="https://static.cmereye.com/imgs/2023/08/090c5504a8c99ec4.png" alt="">
       <img src="https://static.cmereye.com/imgs/2023/09/87fd2eae606f5c39.png" alt="">
       <img src="https://static.cmereye.com/imgs/2023/08/090c5504a8c99ec4.png" alt="">

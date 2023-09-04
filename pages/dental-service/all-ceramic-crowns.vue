@@ -20,7 +20,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/86f3f6e503d4a34b.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/6.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#自然、耐久、性價比首選',
   text2: '讓您恢復美麗微笑 重拾自信',

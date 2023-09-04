@@ -20,7 +20,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/a0df9167d54cd8f7.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/12.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#高質量的修復效果',
   text2: '緊急救援您珍貴的牙齒',

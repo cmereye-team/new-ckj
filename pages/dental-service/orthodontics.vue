@@ -20,7 +20,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/2f058cd14970a7c5.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/2.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#追求美學極致 展現最燦爛笑容',
   text2: '愛康健為愛美的您打造完美面部輪廓',

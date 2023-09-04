@@ -20,7 +20,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/2b848a792c94c4dd.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/11.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#定期洗牙  全方位清潔口腔盲點',
   text2: '愛牙愛己  愛康健細心守護您牙齒健康',

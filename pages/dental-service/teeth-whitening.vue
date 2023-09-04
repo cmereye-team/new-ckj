@@ -21,7 +21,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/d160d4499ed752ef.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/10.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#淨白牙齒 建立閃亮笑容',
   text2: '安全、可靠、快捷',
@@ -40,8 +40,8 @@ const headerConfig = {
 const introduceData = {
   title: 'pages.dental-service.teeth-whitening.introduce.title',
   content: 'pages.dental-service.teeth-whitening.introduce.content',
-  mbImg: 'https://static.cmereye.com/imgs/2023/06/528550d9da6d31f9.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/08/31f693b86d835a4b.png',
+  mbImg: 'https://static.cmereye.com/imgs/2023/09/97c8013543e105ba.jpg',
+  pcImg: 'https://static.cmereye.com/imgs/2023/09/97c8013543e105ba.jpg',
   tabNavName: 'pages.dental-service.teeth-whitening.introduce.tabNavName',
   pageName: 'teeth-whitening',
 }
@@ -49,7 +49,7 @@ const introduceData = {
 const reasonData = {
   title: 'pages.dental-service.teeth-whitening.reason.title',
   text: 'pages.dental-service.teeth-whitening.reason.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/06/1c0dfb6023dc406a.jpg',
+  imgUrl: 'https://static.cmereye.com/imgs/2023/09/97c8013543e105ba.jpg',
   reasonLists: [
     {
       context: 'pages.dental-service.teeth-whitening.reason.lists[0].context',

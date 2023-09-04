@@ -20,7 +20,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/991bb5fac0819e99.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/991bb5fac0819e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/13.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#關注口腔健康 從定期檢查開始',
   text2: '立即預約檢查 展開護牙行動',

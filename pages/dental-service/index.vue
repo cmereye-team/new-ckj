@@ -6,13 +6,14 @@ useHead({
 
 <template>
   <div>
-    <PageHeader />
+    <!-- <PageHeader /> -->
     <div class="service">
       <serviceCard :isIndexShow="true" />
+      <RippleLine :type="'4'" />
       <ContactUs />
     </div>
-    <PageFooter />
-    <PageNavbar />
+    <!-- <PageFooter /> -->
+    <!-- <PageNavbar /> -->
   </div>
 </template>
 

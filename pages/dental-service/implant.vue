@@ -20,7 +20,7 @@ useHead({
 
 const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/4503bc17e0c71dd0.jpg',
-  mbImg: 'https://static.cmereye.com/imgs/2023/08/3b1b35c6febb6e99.jpg',
+  mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/1.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
   text1: '#享受失而復得的喜悅',
   text2: '重拾完整人生之旅',
@@ -754,7 +754,7 @@ const getWindowWidth = () => {
   }
   @media screen and (max-width: 768px) {
     .dentistryServices{
-      padding: 50px 0;
+      // padding: 50px 0;
       .note{
         margin-top: 76px;
         &-title{
