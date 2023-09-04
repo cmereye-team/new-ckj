@@ -21,22 +21,29 @@ defineProps({
 })
 
 let showStepAnim = ref(false)
+const step:any = ref<HTMLElement>()
 const getScrollTop = () => {
-  let caseSharingHeight:any = document.getElementsByClassName('step')
-  if(window.scrollY>=caseSharingHeight[0].offsetTop-500){
-    showStepAnim.value = true
-  }
+    let _offsetTop = step.value.offsetTop || 0
+    // let caseSharingHeight:any = document.getElementsByClassName('step')
+    // let _offsetTop = caseSharingHeight[0].offsetTop
+    if(window.scrollY>=_offsetTop-500){
+      showStepAnim.value = true
+    }else{
+      showStepAnim.value = false
+    }
 }
 
 onMounted(()=>{
   getScrollTop()
   window.addEventListener('scroll',getScrollTop)
 })
-
+onUnmounted(()=>{
+  window.removeEventListener('scroll',getScrollTop)
+})
 </script>
 
 <template>
-  <div :class="['step',pageName]">
+  <div :class="['step',pageName]" ref="step" :key="pageName">
     <RippleLine :type="pageName==='rootCanal'?'2':'3'" />
     <div :class="['step-bg',pageName]">
     <div class="step-title">

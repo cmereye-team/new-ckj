@@ -200,28 +200,31 @@ const getWindowWidth = () => {
 }
 
 let showYaAnim = ref(false)
+const indexCaseSharing:any = ref<HTMLElement>()
 const getScrollTop = () => {
-  // console.log(window.scrollY)
-  let caseSharingHeight:any = document.getElementsByClassName('index-caseSharing')
+  let _offsetTop = indexCaseSharing.value.offsetTop || 0
+  // let caseSharingHeight:any = document.getElementsByClassName('index-caseSharing')
+  // let _offsetTop = caseSharingHeight[0].offsetTop || 0
   if(windowWidth.value > 768){
-    if(window.scrollY>=caseSharingHeight[0].offsetTop+300){
+    if(window.scrollY>=_offsetTop+300){
       showYaAnim.value = true
     }
   }else{
-    if(window.scrollY>=caseSharingHeight[0].offsetTop){
+    if(window.scrollY>=_offsetTop){
       showYaAnim.value = true
     }
   }
 }
 
 onMounted(()=>{
-  // getNewsLists()
   getWindowWidth()
   window.addEventListener('resize',getWindowWidth)
   getScrollTop()
   window.addEventListener('scroll',getScrollTop)
 })
-
+onUnmounted(()=>{
+  window.removeEventListener('scroll',getScrollTop)
+})
 </script>
 
 <template>
@@ -463,7 +466,7 @@ onMounted(()=>{
       </div>
       <!-- 個案分享 -->
       <RippleLine :type="'5'" :isBottom="true" />
-      <div class="index-caseSharing">
+      <div class="index-caseSharing" ref="indexCaseSharing">
         <div class="index-caseSharing-title">
           <div class="title">{{$t('pages.index.caseSharing.title')}}</div>
         </div>

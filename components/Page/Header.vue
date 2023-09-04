@@ -135,12 +135,18 @@ const servicesCardLists = serviceLists
 let menuIsOpen = ref(false)
 
 const router = useRouter()
-const handleMenu = (_data:any) => {
+const handleMenu = async (_data:any) => {
+  const loading = ElLoading.service({
+    lock: true,
+    text: 'Loading...',
+    background: 'rgba(0, 0, 0, 0.5)',
+  })
   if(_data.link){
-    router.push({
+    await router.push({
       path: _data.link
     })
     menuIsOpen.value = false
+    loading.close()
     // location.href = _data.link
   }
 }
