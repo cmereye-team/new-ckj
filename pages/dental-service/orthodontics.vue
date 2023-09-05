@@ -362,6 +362,7 @@ const getWindowWidth = () => {
   &-lists{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     max-width: 1100px;
     margin: 136px auto;
     &-in{
@@ -485,6 +486,21 @@ const getWindowWidth = () => {
     &-list{
       &-in{
         min-width: 50%;
+      }
+    }
+  }
+  .aesthetics{
+    &-in{
+      &-box{
+        &:not(:last-child){
+          margin-right: 30px;
+        }
+        &-image{
+          padding: 20px;
+        }
+        &-text{
+          padding: 16px 30px;
+        }
       }
     }
   }

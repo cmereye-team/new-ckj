@@ -242,6 +242,19 @@ onMounted(() => {
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .process{
+    &-step{
+      .step-in{
+        &-box{
+          .text{
+            padding: 68px 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .processCon{
     margin-top: 51px;

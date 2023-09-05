@@ -198,6 +198,17 @@ onUnmounted(()=>{
     transform: translateX(0);
   }
 }
+@media (min-width: 768px) and (max-width: 1000px) {
+  .step{
+    &-in{
+      &-box{
+        .text{
+          padding: 68px 10px 0;
+        }
+      }
+    }
+  }
+}
 @media (min-width: 768px) and (max-width: 1452px) {
   // .step{
   //   margin-top: 8vw;
@@ -212,7 +223,7 @@ onUnmounted(()=>{
 }
 @media screen and (max-width: 768px) {
   .step{
-    margin-top: 78px;
+    margin-top: 58px;
     &.scaling-and-polishing,&.fillings{
       margin-top: 80px;
     }

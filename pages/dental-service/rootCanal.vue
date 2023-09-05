@@ -524,7 +524,8 @@ const processData = {
 .process{
   margin-top: -170px;
 }
-@media only screen and (max-width: 760px) {
+
+@media only screen and (max-width: 768px) {
   .stageTopLine{
     margin-top: 80px;
   }

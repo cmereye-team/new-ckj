@@ -70,7 +70,7 @@ const reasonData = {
 }
 
 const issueData = {
-  title: '智慧齒可能導致的口腔問題',
+  title: '智慧齒可能導致的口腔問題:',
   imgUrl: 'https://static.cmereye.com/imgs/2023/08/35b763276aa6ecb5.jpg',
   issueLists: [
     '由於智慧齒生長位置較後，難以清潔，容易積聚牙菌膜，引致蛀牙',

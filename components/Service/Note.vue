@@ -23,7 +23,10 @@ defineProps({
     <div :class="['note',noteData.pageName]">
       <div class="note-title" v-if="pageName === 'periodontal'">
         <div class="note-title-in periodontal">{{noteData.title}}</div>
-        <div class="note-title-icon periodontal">?</div>
+        <div class="note-title-icon periodontal">
+          <SvgQuestionMark />
+          <!-- ??? -->
+        </div>
       </div>
       <div class="note-title" v-else>
         <div class="note-title-icon">
@@ -72,13 +75,14 @@ defineProps({
       margin: 0 auto 24px;
       width: max-content;
       &.periodontal{
-        font-family: cursive;
-        font-size: 250px;
-        opacity: .2;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
-        top: 60%;
+        transform: translateX(-50%) scale(.8);
+        top: -10px;
+        svg{
+          width: 100%;
+          height: 100%;
+        }
       }
     }
     &-in{
@@ -186,8 +190,10 @@ defineProps({
         margin: 0 auto;
         transform: scale(.6);
         &.periodontal{
-          font-size: 150px;
-          top: 40%;
+          // font-size: 150px;
+          // top: 40%;
+          top: -30%;
+          transform: translateX(-50%) scale(.6);
         }
       }
       &-in{

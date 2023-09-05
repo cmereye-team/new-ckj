@@ -363,7 +363,19 @@ const getWindowWidth = () => {
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {
-
+  .frequency {
+    &-in {
+      &-lists {
+        .listsIn{
+          margin: 0 30px;
+          padding: 0 30px 50px;
+          .name{
+            font-size: 45px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 760px) {

@@ -429,7 +429,7 @@ const conditionData = {
       font-size: 30px;
       font-weight: 500;
       line-height: 160%; /* 48px */
-      letter-spacing: 6.6px
+      letter-spacing: 6.6px;
     }
   }
   &-text{
@@ -538,18 +538,34 @@ const conditionData = {
   padding: 176px 0 60px;
 }
 @media (min-width: 768px) and (max-width: 1452px) {
+  // .notice {
+  //   &-in {
+  //     .box {
+  //       .box-in {
+  //         font-size: 18px;
+  //         padding: 0 4vw;
+  //       }
+  //     }
+  //   }
+  // }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
   .notice {
-    &-in {
-      .box {
-        .box-in {
-          font-size: 18px;
-          padding: 0 4vw;
+    &-list{
+      &-in{
+        flex: 1;
+        padding: 0 30px;
+      }
+      .box{
+        &>div{
+          &:nth-of-type(2) {
+            font-size: 30px;
+          }
         }
       }
     }
   }
 }
-
 @media only screen and (max-width: 760px) {
   .notice {
     margin: 80px auto 0;
@@ -624,6 +640,7 @@ const conditionData = {
     &-lists{
       margin-top: 80px;
       flex-direction: column;
+      align-items: center;
       padding: 0 50px;
       &-in{
         &>div:last-child{

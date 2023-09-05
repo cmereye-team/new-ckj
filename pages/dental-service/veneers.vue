@@ -430,7 +430,7 @@ const handleLineCur = (_value:number) =>{
         margin-top: 67px;
         margin-bottom: -100px;
         &-in{
-          padding: 30px 40px 40px;
+          padding: 30px 40px 60px;
           box-sizing: border-box;
           flex-direction: column;
           &-l{
