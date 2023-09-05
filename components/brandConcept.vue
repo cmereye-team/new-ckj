@@ -140,15 +140,44 @@
   }   
 }
 
-@media (min-width: 768px) and (max-width: 1452px) {
+@media (min-width: 768px) and (max-width: 1465px) {
+  .index-brandConcept {
+    &-c{
+      padding: 0 30px;
+      &-in{
+        .context{
+          margin-right: 50px;
+          
+        }
+        .image{
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
   .index-brandConcept {
     &-c{
       &-in{
         .context{
-          margin-right: 50px;
-        }
-        .image{
-          width: 50%;
+          &>div{
+            &:nth-of-type(1){
+              font-size: 32px;
+            }
+            &:nth-of-type(2){
+              span{
+                display: block;
+                width: max-content;
+                padding: 5px 15px;
+                font-size: 2.6vw;
+                letter-spacing: 3px;
+              }
+            }
+            &:nth-of-type(3){
+              font-size: 16px;
+            }
+          }
         }
       }
     }
@@ -167,6 +196,9 @@
         .context{
           width: 100%;
           margin-right: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           &>div{
             &:nth-of-type(1){
               position: absolute;
@@ -186,6 +218,8 @@
             &:nth-of-type(2){
               margin-top: 30px;
               span{
+                display: block;
+                width: max-content;
                 padding: 5px 8px;
                 font-size: 18.798px;
                 letter-spacing: 2.632px;

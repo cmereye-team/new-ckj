@@ -307,11 +307,11 @@ const dateLists=[
   }
 ]
 
-const getColor = (_idx?: number) => {
+const getColor = (_idx?: String) => {
   let _color = '#FF6096'
-  if(_idx === 0){
+  if(_idx === '102'){
     _color = '#089CFE'
-  }else if(_idx === 1){
+  }else if(_idx === '103'){
     _color = '#FECB02'
   }
   return _color
@@ -417,21 +417,21 @@ const onSlideChange = (swiper:any) => {
                 }">
                 <div class="bus-in-btn" @click="closeAddress">
                   <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                    <path d="M31.2188 2.14209L2.12404 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M2.12305 2.14209L31.2178 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M31.2188 2.14209L2.12404 31.2368" :stroke="getColor(addressItem.id)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M2.12305 2.14209L31.2178 31.2368" :stroke="getColor(addressItem.id)" stroke-width="3" stroke-linecap="round"/>
                   </svg>
                 </div>
                 <div class="bus-in-name">{{$t(addressItem.name)}}</div>
                 <div class="bus-in-title">{{$t('contactUs.traffic_route')}}</div>
                 <div class="bus-in-content">
-                  <div><SvgBus :color="getColor(addressIndex)" /></div>
+                  <div><SvgBus :color="getColor(addressItem.id)" /></div>
                   <div>
                     <p>{{$t('contactUs.bus_route')}}</p>
                     <p>{{$t(addressItem.busRoutes)}}</p>
                   </div>
                 </div>
                 <div class="bus-in-railway">
-                  <div><SvgRailway :color="getColor(addressIndex)" /></div>
+                  <div><SvgRailway :color="getColor(addressItem.id)" /></div>
                   <div>
                     <p>{{$t('contactUs.metro_lines')}}</p>
                     <p>{{$t(addressItem.metroRoutes)}}</p>
@@ -498,21 +498,21 @@ const onSlideChange = (swiper:any) => {
                 }">
                 <div class="bus-in-btn" @click="closeAddress">
                   <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-                    <path d="M31.2188 2.14209L2.12404 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M2.12305 2.14209L31.2178 31.2368" :stroke="getColor(addressIndex)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M31.2188 2.14209L2.12404 31.2368" :stroke="getColor(addressItem.id)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M2.12305 2.14209L31.2178 31.2368" :stroke="getColor(addressItem.id)" stroke-width="3" stroke-linecap="round"/>
                   </svg>
                 </div>
                 <div class="bus-in-name">{{$t(addressItem.name)}}</div>
                 <div class="bus-in-title">{{$t('contactUs.traffic_route')}}</div>
                 <div class="bus-in-content">
-                  <div><SvgBus :color="getColor(addressIndex)" /></div>
+                  <div><SvgBus :color="getColor(addressItem.id)" /></div>
                   <div>
                     <p>{{$t('contactUs.bus_route')}}</p>
                     <p>{{$t(addressItem.busRoutes)}}</p>
                   </div>
                 </div>
                 <div class="bus-in-railway">
-                  <div><SvgRailway :color="getColor(addressIndex)" /></div>
+                  <div><SvgRailway :color="getColor(addressItem.id)" /></div>
                   <div>
                     <p>{{$t('contactUs.metro_lines')}}</p>
                     <p>{{$t(addressItem.metroRoutes)}}</p>
@@ -540,28 +540,6 @@ const onSlideChange = (swiper:any) => {
           <PageSwiperPointLine :latestNewsNum="allAddressLists[appState.areaTabAct].length" :latestNewsCurrent="addressCurrent" @changeLineCur="handleLineCur"></PageSwiperPointLine>
         </div>
       </div>
-      <!-- <div class="address">
-        <div class="address-in" v-for="(addressItem,addressIndex) in allAddressLists[appState.areaTabAct]" :key="addressIndex">
-          <h3>{{$t(addressItem.name)}}</h3>
-          <div class="content">
-            <span>{{$t('contactUs.hospital_address')}}：{{$t(addressItem.address)}}</span>
-            <span>{{$t('contactUs.hours_of_Operation')}}：{{$t(addressItem.time)}}</span>
-            <span>{{$t('contactUs.check_the_phone')}}：{{addressItem.phone}}</span>
-          </div>
-          <span class="showIcon" @click="handleAddress(addressItem.id)">{{$t('contactUs.traffic_route')}}:</span>
-          <div class="route" v-show="currentAddress === addressItem.id ">
-            <span>{{$t('contactUs.bus_route')}}</span>
-            <span>{{$t(addressItem.busRoutes)}}</span>
-            <span>{{$t('contactUs.metro_lines')}}</span>
-            <span>{{$t(addressItem.metroRoutes)}}</span>
-          </div>
-          <div class="mapBtn">
-            <a :href="addressItem.baiduMap" target="_blank">
-              <div class="mapBtn-in">{{$t('contactUs.baidu_map')}}</div>
-            </a>
-          </div>
-        </div>
-      </div> -->
     </div>
 </template>
 
@@ -572,7 +550,6 @@ const onSlideChange = (swiper:any) => {
   max-width: 1650px; 
   margin: 0 auto;
   position: relative;
-  // overflow: hidden;
   &-t{
     .title{
       text-align: center;
@@ -998,6 +975,7 @@ const onSlideChange = (swiper:any) => {
             }
             &-content,&-railway{
               display: flex;
+              width: 100%;
               &>div{
                 text-align: left;
                 &:first-child{
@@ -1081,13 +1059,15 @@ const onSlideChange = (swiper:any) => {
       margin-top: 50px;
       &-in{
         padding: 0 23px 75px;
-        min-width: 545px;
         &.isA{
           width: 60%;
         }
         &.isB{
           width: 60%;
           margin-left: 20%;
+        }
+        &-rightBox{
+          bottom: 160px;
         }
       }
     }

@@ -19,18 +19,6 @@ const servicesCardPageData = {
   contextIn: 'components.service.card.contextIn'
 }
 
-// let windowWidth = ref(1920)
-
-// onMounted(()=>{
-//   getWindowWidth()
-//   window.addEventListener('resize',getWindowWidth)
-// })
-
-// const getWindowWidth = () => {
-//   windowWidth.value = window.innerWidth
-//   // console.log(windowWidth)
-// }
-
 const openServiceCar = ref(false)
 
 
@@ -40,7 +28,6 @@ const openServiceCar = ref(false)
 <template>
   <div :class="{'index-dentalServices':true}">
     <div :class="['index-dentalServices-in']">
-      <!-- {{$t(servicesCardPageData.dentalServicesTitleIn)}} -->
       <div class="index-dentalServices-in-t">
         <div class="title">{{$t(servicesCardPageData.title)}}</div>
         <div class="context">
@@ -49,26 +36,6 @@ const openServiceCar = ref(false)
       </div>    
 
       <div :class="{'servicesCard':true,'isMenu': isMenu,'pcServices':true}">
-        <!-- <div>
-          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(0,5)" :key="index">
-            <nuxt-link :to="item.link">
-              <div class="servicesCard-in-image">
-                <img :src="item.imgUrl" alt="">
-                <div class="servicesCard-in-name">{{$t(item.name)}}</div>
-              </div>
-            </nuxt-link>
-          </div>
-        </div>
-        <div>
-          <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(5,10)" :key="index">
-            <nuxt-link :to="item.link">
-              <div class="servicesCard-in-image">
-                <img :src="item.imgUrl" alt="">
-                <div class="servicesCard-in-name">{{$t(item.name)}}</div>
-              </div>
-            </nuxt-link>
-          </div>
-        </div> -->
         <div>
           <div class="servicesCard-in" v-for="(item,index) in servicesCardLists" :key="index">
             <nuxt-link :to="item.link">
@@ -84,7 +51,6 @@ const openServiceCar = ref(false)
               <img src="https://static.cmereye.com/imgs/2023/07/19208b63eaa5ed13.png" alt="">
             </div>
           </div>
-          
       </div>
       <div class="mbServices">
         <div class="servicesCard-in" v-for="(item,index) in servicesCardLists.slice(0,openServiceCar?15:4)" :key="index">
@@ -126,7 +92,7 @@ const openServiceCar = ref(false)
         font-size: 35px;
         font-style: normal;
         font-weight: 800;
-        line-height: 120%; /* 50.826px */
+        line-height: 120%; 
         letter-spacing: 7.942px;
       }
       .context{
@@ -139,7 +105,7 @@ const openServiceCar = ref(false)
           font-size: 19px;
           font-style: normal;
           font-weight: 500;
-          line-height: 160%; /* 25.6px */
+          line-height: 160%; 
           letter-spacing: 3.8px;
         }
       }
@@ -309,19 +275,28 @@ const openServiceCar = ref(false)
   .index-dentalServices{
     padding: 150px 0 0;
     &-in{
+      &-t{
+        .title{
+          padding-right: 20px;
+          font-size: 28px;
+          letter-spacing: 6px;
+        }
+        .context{
+          flex: 1;
+          margin-left: 30px;
+        }
+      }
       .servicesCard{
         &-in{
-            &-roundBox{
-              &>div{
-                padding-bottom: 10%;
-              }
+          &-roundBox{
+            &>div{
+              padding-bottom: 10%;
             }
-            &-name{
-              font-size: 16px;
-              margin-top: 10px;
-              // height: 60px;
-  //             line-height: 60px;
-            }
+          }
+          &-name{
+            font-size: 16px;
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -437,6 +412,7 @@ const openServiceCar = ref(false)
         position: relative;
         transition: all .3s;
         overflow: hidden;
+        width: 100%;
         &-b{
           position: absolute;
           bottom: 0;

@@ -246,7 +246,7 @@ const handleMenu = async (_data:any) => {
       }
       div{
         width: max-content;
-        animation: topAnim 14s linear infinite;
+        animation: topAnim 30s linear infinite;
         position: absolute;
       }
     }
@@ -668,6 +668,8 @@ const handleMenu = async (_data:any) => {
                   transform: none;
                   padding-top: 0;
                   width: 100%;
+                  display: flex;
+                  justify-content: center;
                   &-border{
                     border: none;
                     .serviceCard{
@@ -745,12 +747,4 @@ const handleMenu = async (_data:any) => {
     }
   }
 }
-// @keyframes topAnim {
-//   0%{
-//     transform: translateX(100%);
-//   }
-//   100%{
-//     transform: translateX(-100%);
-//   }
-// }
 </style>

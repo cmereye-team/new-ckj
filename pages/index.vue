@@ -22,23 +22,6 @@ useHead({
   ],
 })
 
-// const caseSharingLists = [
-//   {
-//     name: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.name',
-//     skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.skill',
-//     text: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.text',
-//     context: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.context',
-//     imgUrl: 'https://static.cmereye.com/imgs/2023/06/72a1864e2021e804.jpg'
-//   },
-//   {
-//     name: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.name',
-//     skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.skill',
-//     text: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.text',
-//     context: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.context',
-//     imgUrl: 'https://static.cmereye.com/imgs/2023/06/f1fab4a43cdea943.jpg'
-//   },
-// ]
-
 const caseSharingLists = [
   {
     name: '陳先生',
@@ -46,7 +29,7 @@ const caseSharingLists = [
     skill: '根管治療(杜牙根)療程',
     text: '蛀咗牙自己都唔知，直到有一日真係牙痛先怕！原本以為要剝牙，後來牙醫建議杜牙根，成個治療過程都好快，最緊要可以保留到原來嘅牙齒！',
     context: '安心、舒服、無痛',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/6ab95a25307312f7.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/09/c34f6213cbf44734.jpg'
   },
   {
     name: 'Jenny',
@@ -54,7 +37,7 @@ const caseSharingLists = [
     skill: '矯齒(箍牙)療程',
     text: '從前唔整齊嘅牙齒令到我冇自信，經過兩年既箍牙歷程，真係令成個面容改變咗好多！最重要係牙醫手勢非常專業，價錢亦都好合理！',
     context: '唔再怕同人合照喇!',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/63c72a9ef3f3b012.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/09/f9e68a6ad6288012.jpg'
   },
   {
     name: '黃太太',
@@ -62,7 +45,7 @@ const caseSharingLists = [
     skill: '局部牙托療程',
     text: '年紀大脫落咗幾隻牙齒，食野既時候好唔方便。朋友介紹嚟咗愛康健做局部牙托，調整咗整個牙齒咬合！同埋佢哋對老人家好有耐心，而家定期都會返去檢查清潔排靚牙！',
     context: '食野依家都唔洗就住啦！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/fe9b36a7c8630009.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/09/b7666c0ec05d65df.jpg'
   },
   {
     name: '鄧小朋友',
@@ -70,7 +53,7 @@ const caseSharingLists = [
     skill: '乳齒補牙療程',
     text: '記得有次突然間牙痛，媽咪好快帶咗我去睇牙醫。醫生同護士姐姐幫我醫好咗牙痛，同埋話加咗保護層係我牙齒度！仲教我點樣刷牙可以再保護好啲牙齒添。',
     context: '多謝醫生姑娘醫好咗我牙痛！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/c2f121d9716db4e0.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/09/e2733fae4fbb98f5.jpg'
   },
   {
     name: 'Jessica',
@@ -78,7 +61,7 @@ const caseSharingLists = [
     skill: '瓷牙貼面療程',
     text: '因為平時工作成日要影相出鏡同埋直播，一直都好想擁有好似明星般既笑容。最後揀愛康健做牙貼面，療程後仲會貼心跟進，非常專業同窩心，親民價格！信心推薦！',
     context: '依家我都擁有明星白 一樣既牙齒！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/c42e077fb429391e.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/09/95c4b24fb25100bc.jpg'
   },
   {
     name: 'Zed',
@@ -86,7 +69,7 @@ const caseSharingLists = [
     skill: '藍光美白療程',
     text: '由同事介紹下嚟咗愛康健做藍光美白牙齒，醫生專業價錢親民，最緊要唔會Hard sell。而家上深圳都會去順便做埋轉美白。',
     context: '美白效果好，價錢親民！',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/07/a97eada0eb747a44.jpg'
+    imgUrl: 'https://static.cmereye.com/imgs/2023/09/981c39b6410de474.jpg'
   },
 ]
 
@@ -229,7 +212,6 @@ onUnmounted(()=>{
 
 <template>
   <div>
-  <!-- <div class="bigPageCon"> -->
     <!-- <PageHeader />  -->
     <div class="indexPage">
       <div class="index-banner">
@@ -315,7 +297,7 @@ onUnmounted(()=>{
                 }"
                 :navigation="true"
                 :speed="3000"
-                :slidesPerView="8.5"
+                :slidesPerView="windowWidth / 226"
                 @swiper="setDoctorTeamSwiperRef"
               >
                 <SwiperSlide class="doctorTeamSwiperBox-slide" v-for="(doctorItem,doctorIndex) in doctorLists_cs[appState.areaTabAct].slice(0,22)" :key="doctorIndex" >
@@ -326,16 +308,6 @@ onUnmounted(()=>{
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <!-- <div class="btn-prev" @click="handleSwiperBtn('Prev')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
-                  <path d="M14.1221 3L3.00012 14.7073L14.1221 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="btn-next" @click="handleSwiperBtn('Next')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
-                  <path d="M3 3L14.122 14.7073L3 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div> -->
             </div>
             <div class="c-in-44" v-if="doctorLists_cs[appState.areaTabAct].length > 22">
               <Swiper
@@ -350,7 +322,7 @@ onUnmounted(()=>{
                 }"
                 :navigation="true"
                 :speed="3000"
-                :slidesPerView="8.5"
+                :slidesPerView="windowWidth / 226"
                 @swiper="setDoctorTeamSwiperRef44"
                 
               >
@@ -362,16 +334,6 @@ onUnmounted(()=>{
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <!-- <div class="btn-prev" @click="handleSwiperBtn44('Prev')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
-                  <path d="M14.1221 3L3.00012 14.7073L14.1221 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="btn-next" @click="handleSwiperBtn44('Next')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="30" viewBox="0 0 17 30" fill="none">
-                  <path d="M3 3L14.122 14.7073L3 27" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div> -->
             </div>
           </div>
           <div class="c-in" v-else>
@@ -536,8 +498,6 @@ onUnmounted(()=>{
       <!-- 聯絡我們 -->
       <ContactUs />
     </div>
-    <!-- <PageFooter /> -->
-    <!-- <PageNavbar /> -->
   </div>
 </template>
 
@@ -659,36 +619,6 @@ svg:hover path{
   }
   .bannerSwiper{
     width: 100%;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // z-index: 1;
-    // opacity: 0;
-    // position: relative;
-    // overflow: hidden;
-    // -webkit-mask-image: radial-gradient( circle farthest-corner at 100% 50%, #000 60%, transparent 90% );
-    // -webkit-mask-repeat: no-repeat;
-    // -webkit-mask-size: 200% 100%;
-    // -webkit-mask-position: -100% 0;
-    // transition-property: -webkit-mask-position;
-    // transition-property: mask-position;
-    // transition-property: mask-position, -webkit-mask-position;
-    // transition-duration: 5s;
-    // transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
-    // transition: all 5s;
-    // &.act{
-      // animation: bannerAnim 3s;
-      // animation-fill-mode: both;
-      // z-index: 2;
-      // mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-      // opacity: 1;
-      // -webkit-mask-image: radial-gradient( circle farthest-corner at 50% 300%, #000 60%, transparent 90% );
-      // -webkit-mask-size: 100% 100%;
-      // -webkit-mask-position: 50% -100%;
-      // transition-property: mask-position, -webkit-mask-position;
-      // transition-duration: 5s;
-      // transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
-    // }
     &-in{
       width: 100%;
       position: relative;
@@ -711,9 +641,6 @@ svg:hover path{
 }
 @keyframes bannerAnim {
   0%{
-    // opacity: 0;
-    // z-index: 1;
-    // transform: translateZ(-5px);
     -webkit-mask-image: radial-gradient( circle farthest-corner at 100% 0%, #000 60%, transparent 90% );
     -webkit-mask-size: 200% 100%;
     -webkit-mask-position: -100% 0;
@@ -722,10 +649,6 @@ svg:hover path{
     transition-timing-function: cubic-bezier(0.3, 0.1, 0.1, 1);
   }
   100%{
-    // opacity: 1;
-    // z-index: 2;
-    // mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
-    // transform: translateZ(0px);
     -webkit-mask-image: radial-gradient( circle farthest-corner at 100% 0%, #000 60%, transparent 90% );
   }
 }
@@ -770,27 +693,10 @@ svg:hover path{
       right: 0;
       bottom: 10px;
     }
-    // &::before{
-    //   content: '';
-    //   position: absolute;
-    //   background: url(https://static.cmereye.com/imgs/2023/07/05652c3c60088f99.png) no-repeat;
-    //   left: 50px;
-    //   width: 434px;
-    //   height: 100px;
-    // }
-    // &::after{
-    //   content: '';
-    //   position: absolute;
-    //   background: url(https://static.cmereye.com/imgs/2023/07/6016ba854dc4f4e3.png) no-repeat;
-    //   right: 300px;
-    //   width: 279px;
-    //   height: 149px;
-    // }
   }
   &-c{
     width: 100%;
     max-width: 1800px;
-    // padding: 0 60px;
     margin: 85px auto 0;
     position: relative;
     &::before{
@@ -1229,7 +1135,7 @@ svg:hover path{
           position: relative;
           z-index: 1;
           border-radius: 50%;
-          border: 3px solid var(--topic-color);
+          // border: 3px solid var(--topic-color);
           overflow: hidden;
           img{
             width: 100%;
@@ -1330,6 +1236,23 @@ svg:hover path{
   }
 }
 @media (min-width: 768px) and (max-width: 1452px) {
+  .index-caseSharing{
+
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .index-caseSharing{
+    &-title{
+      &::after,&::before{
+        display: none;
+      }
+    }
+    .bgIcon{
+      &.bgIcon_1{
+        display: none;
+      }
+    }
+  }
 }
 @media screen and (min-width: 1920px) {
   .index-banner{
@@ -1552,7 +1475,7 @@ svg:hover path{
             transform: translateX(-50%);
             width: max-content;
             max-width: 100%;
-            border: 2px solid var(--topic-color);
+            // border: 2px solid var(--topic-color);
             margin: 0 auto;
             &::after{
               width: 10px;
