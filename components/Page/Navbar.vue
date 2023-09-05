@@ -103,20 +103,20 @@ let mbQDCodeBool = ref(false)
       </div>
     </div>
     <div class="navbar-content-mb">
-      <nuxt-link  id="navMbTel" :to="'tel: 6912 2011'" class="mb-in mb-in-1">
+      <nuxt-link  id="navMbTel" :to="'tel: 6912 2011'" class="mbcc-boxInAA mbcc-boxInAA-1">
 
       </nuxt-link>
-      <nuxt-link id="navMbWhatsapp" :to="'https://api.whatsapp.com/send/?phone=85269122011'" target="_blank" class="mb-in mb-in-2">
+      <nuxt-link id="navMbWhatsapp" :to="'https://api.whatsapp.com/send/?phone=85269122011'" target="_blank" class="mbcc-boxInAA mbcc-boxInAA-2">
 
       </nuxt-link>
-      <div class="mb-in mb-in-3" @click="handleNavFormNav">
+      <div class="mbcc-boxInAA mbcc-boxInAA-3" @click="handleNavFormNav">
         <img src="https://static.cmereye.com/imgs/2023/07/04ad2f53c65e2fb5.png" alt="">
         <span>馬上預約</span>
       </div>
-      <div id="navMbWeChat" class="mb-in mb-in-4" @click="mbQDCodeBool = true">
+      <div id="navMbWeChat" class="mbcc-boxInAA mbcc-boxInAA-4" @click="mbQDCodeBool = true">
 
       </div>
-      <nuxt-link id="navMbFacebook" to="https://www.facebook.com/ckjdental.hk/"  target="_blank" class="mb-in mb-in-5">
+      <nuxt-link id="navMbFacebook" to="https://www.facebook.com/ckjdental.hk/"  target="_blank" class="mbcc-boxInAA mbcc-boxInAA-5">
 
       </nuxt-link>
       <div class="toTop" @click="toPageTop">
@@ -316,7 +316,7 @@ let mbQDCodeBool = ref(false)
     &-mb{
       display: block;
       width: 100%;
-      height: 60px;
+      height: auto;
       background: #FFF;
       box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.25);
       position: fixed;
@@ -325,9 +325,11 @@ let mbQDCodeBool = ref(false)
       display: flex;
       justify-content: center;
       padding: 0 10px;
-      .mb-in{
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+      .mbcc-boxInAA{
         flex: 1;
-        height: 100%;
+        height: 60px;
         &-1{
           background: url(https://static.cmereye.com/imgs/2023/07/ac801f63f6e35840.png) no-repeat;
           background-position: center center;

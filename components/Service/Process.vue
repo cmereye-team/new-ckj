@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
+
 defineProps({
   processData:{
     type: Object,
@@ -50,6 +51,13 @@ const getWindowWidth = () => {
     clipPathFont.value = 10
   }
 }
+
+const changePathLeft = () =>{
+  let _arr = [0,14,45]
+  
+  return _arr[processTabsActive.value]
+}
+
 onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize',getWindowWidth)
@@ -76,12 +84,18 @@ onMounted(() => {
             {{processTabItem}}
           </div>
         </div>
-        <div :class="['process-tabs-in',pageName]" :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%)`}">
+        <div :class="['process-tabs-in',pageName]" v-if="pageName === 'periodontal' && windowWidth<768" :style="{'clip-path': `circle(${16}px at calc((100% / ${processData.tabs.length} - ${[0,13,45][processTabsActive]}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%)`}">
           <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
             {{processTabItem}}
           </div>
         </div>
-        <div class="process-tabs-line" :style="{left: `calc((100% / ${processData.tabs.length} - 46px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}%)`}"></div>
+        <div :class="['process-tabs-in',pageName]" v-else :style="{'clip-path': `circle(${clipPathWidth}px at calc((100% / ${processData.tabs.length} - ${clipPathLeft}px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}% + ${(5 - processData.tabs[processTabsActive].length) * clipPathFont}px) 50%)`}">
+          <div :class="{'active': processTabsActive === processTabIndex}" @click="handleProcessTabs(processTabIndex)" v-for="(processTabItem,processTabIndex) in processData.tabs" :key="processTabIndex">
+            {{processTabItem}}
+          </div>
+        </div>
+        <div class="process-tabs-line" v-if="pageName === 'periodontal' && windowWidth<768" :style="{left: processTabsActive === 2 ? `calc((100% / ${processData.tabs.length}) / 2 + ${processTabsActive * (100 / processData.tabs.length - 2)}%)` : `calc((100% / ${processData.tabs.length}) / 2 + ${processTabsActive * (100 / processData.tabs.length)}%)`}"></div>
+        <div class="process-tabs-line" v-else :style="{left: `calc((100% / ${processData.tabs.length} - 46px) / 2 + ${processTabsActive * (100 / processData.tabs.length)}%)`}"></div>
       </div>
       <div class="process-step pageCon">
         <Swiper
@@ -249,6 +263,13 @@ onMounted(() => {
           padding: 15px 0;
           letter-spacing: 3px;
           font-size: 15px;
+        }
+        &.periodontal{
+          div{
+            flex: auto;
+            letter-spacing: 0;
+            font-size: 14px;
+          }
         }
       }
     }

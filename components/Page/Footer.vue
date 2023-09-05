@@ -442,6 +442,8 @@ const toLinks = async (_data:any) =>{
 }
 @media screen and (max-width: 768px) {
   .footerPage{
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     .toTop{
       display: none;
       right: 20px;
