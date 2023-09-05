@@ -204,6 +204,12 @@ const openServiceCar = ref(false)
           width: 100%;
           height: 100%;
         }
+        .router-link-active{
+          .servicesCard-in-roundBox{
+            background: #fff;
+            box-shadow: 0 0 64px rgba(4, 9, 21, 0.13);
+          }
+        }
         &-roundBox{
           width: 100%;
           height: 0;
@@ -379,6 +385,12 @@ const openServiceCar = ref(false)
           margin-right: 0;
           justify-content: space-between;
           margin-bottom: 27px;
+          .router-link-active{
+            .servicesCard-in-image{
+              background: #fff;
+              box-shadow: 0 0 64px rgba(4, 9, 21, 0.13);
+            }
+          }
           &-image{
             width: 130px;
             height: 130px;

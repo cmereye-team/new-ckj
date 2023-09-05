@@ -134,6 +134,8 @@ const servicesCardLists = serviceLists
 
 let menuIsOpen = ref(false)
 
+const route:any = useRoute()
+console.log(route.href);
 const router = useRouter()
 const handleMenu = async (_data:any) => {
   const loading = ElLoading.service({
@@ -150,6 +152,8 @@ const handleMenu = async (_data:any) => {
     // location.href = _data.link
   }
 }
+
+
 </script>
 
 <template>
@@ -158,7 +162,7 @@ const handleMenu = async (_data:any) => {
       <div class="headerPage-in-t">
         <div>
           <span>7.06~ 成功種牙或矯齒即送專業洗牙服務1次!（※名額有限）</span>
-          <span>7.06~ 金屬矯正牙箍即減￥2000!!</span>  
+          <span>7.06~ 金屬矯正牙箍即減￥2000!!</span>
         </div>
       </div>
       <div class="headerPage-in-c" :class="{openMenu: menuIsOpen}">
@@ -168,10 +172,8 @@ const handleMenu = async (_data:any) => {
           </div>
           <div class="menu">
             <div v-for="(item,index) in menuLists" :key="index">
-              <div @click="handleMenu(item)">
-                <div class="enName">{{item.enName}}</div>
-                <div class="name">{{$t(item.name)}}</div>
-              </div>
+              <div class="enName" @click="handleMenu(item)">{{item.enName}}</div>
+              <div class="name" @click="handleMenu(item)">{{$t(item.name)}}</div>
               <div class="menu-child" v-if="item.child.length && !item.link.includes('/dental-service')">
                 <div class="menu-child-border">
                   <div class="menu-child-in" v-for="(childItem,childIndex) in item.child" :key="childIndex" @click="handleMenu(childItem)">
@@ -182,7 +184,7 @@ const handleMenu = async (_data:any) => {
               <div class="menu-child" v-if="item.link.includes('/dental-service')">
                 <div class="menu-child-border">
                   <div class="serviceCard">
-                    <div class="serviceCard-in" v-for="(service,serviceIndex) in servicesCardLists" :key="serviceIndex" @click="handleMenu(service)">
+                    <div :class="{'serviceCard-in':true, carActive: route.href === service.link}" v-for="(service,serviceIndex) in servicesCardLists" :key="serviceIndex" @click="handleMenu(service)">
                       <div class="serviceBox">
                         <img :src="service.imgUrl" alt="">
                         <div>{{$t(service.name)}}</div>
@@ -343,6 +345,12 @@ const handleMenu = async (_data:any) => {
                     width: 33.333%;
                     display: flex;
                     justify-content: center;
+                    &.carActive{
+                      .serviceBox{
+                        background: #fff;
+                        box-shadow: 0 0 20px rgba(4, 9, 21, 0.3);
+                      }
+                    }
                     .serviceBox{
                       margin-bottom: 20px;
                       width: 87px;
@@ -365,7 +373,7 @@ const handleMenu = async (_data:any) => {
                         font-style: normal;
                         font-weight: 400;
                         line-height: 160%; /* 19.2px */
-                        letter-spacing: 3px;
+                        letter-spacing: 0px;
                         margin: 4px 0 7px;
                         white-space: nowrap;
                         position: relative;
@@ -384,6 +392,7 @@ const handleMenu = async (_data:any) => {
                           position: absolute;
                           font-weight: bold;
                           top: 25%;
+                          margin-left: 3px;
                         }
                       }
                     }
