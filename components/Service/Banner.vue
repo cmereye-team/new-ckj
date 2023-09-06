@@ -302,15 +302,8 @@ defineProps({
           span{
             font-size: 14px;
             letter-spacing: 1.4px;
-            // min-width: auto;
-            &:first-child{
-              &::after{
-                // width: calc(100% - 140px);
-              }
-            }
             &:last-child{
               margin-top: -2%;
-              // margin-left: 140px;
             }
           }
         }

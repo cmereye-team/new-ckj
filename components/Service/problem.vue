@@ -61,10 +61,8 @@ const handleChange = (val: string[]) => {
         <el-collapse-item :name="problemIndex"  v-for="(problemItem,problemIndex) in props.problemData.lists" :key="problemIndex">
           <template #title>
             <div class="problem-in-title">
-              <!-- <div>Q</div> -->
               <div :contenteditable="false">{{$t(problemItem.Q)}}</div>
               <div>
-                <!-- <img src="@/assets/images/icon_9.png" alt=""> -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <circle cx="10" cy="10" r="10" fill="white"/>
                   <path d="M5 10H14" stroke="#FC1682" stroke-width="2" stroke-linecap="round"/>
@@ -74,7 +72,6 @@ const handleChange = (val: string[]) => {
             </div>
           </template>
           <div class="problem-in-context">
-            <!-- <span>A</span> -->
             <span>{{$t(problemItem.A)}}</span>
           </div>
         </el-collapse-item>
@@ -137,7 +134,6 @@ const handleChange = (val: string[]) => {
       &>div:nth-of-type(2){
         display: none;
       }
-      
     }
     &-context{
       margin-top: 34px;
@@ -212,12 +208,6 @@ const handleChange = (val: string[]) => {
     }
     &.children-dentistry{
       max-width: 1360px;
-      // .problem-in-title{
-      //   &>div:nth-of-type(1){
-      //     text-align: left;
-      //   }
-      // }
-      
       :deep(.el-collapse-item){
         width: calc((100% - 12.66%) / 2);
       }
@@ -228,8 +218,15 @@ const handleChange = (val: string[]) => {
     }
   }
 }
-
-@media (min-width: 768px) and (max-width: 1452px) {}
+@media (min-width: 768px) and (max-width: 1452px) {
+  .problem{
+    &-titleType2{
+      img{
+        width: calc(100% / 3);
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .problem{
     margin-top: 10px;
@@ -241,7 +238,6 @@ const handleChange = (val: string[]) => {
   }
     &-titleType2{
       img{
-        // width: calc(100% / 3);
         width: calc((100% - 146px) / 2);
         &:nth-of-type(1){
           margin-bottom: 60px;
@@ -272,7 +268,6 @@ const handleChange = (val: string[]) => {
           display: block;
           margin-right: 7px;
         }
-        
       }
       &-context{
         margin-top: -15px;
@@ -326,8 +321,6 @@ const handleChange = (val: string[]) => {
         }
       }
     }
-    
   }
-  
 }
 </style>

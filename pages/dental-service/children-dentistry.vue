@@ -22,8 +22,8 @@ const bannerData = {
   img: 'https://static.cmereye.com/imgs/2023/08/9a147138319763f0.jpg',
   mbImg: 'https://static.cmereye.com/static/ckjnewsite/img/banner/14.jpg',
   gif: 'https://static.cmereye.com/imgs/2023/08/0edc8793314c4da3.gif',
-  text1: '#回歸自然微笑 恢復咀嚼功能',
-  text2: '牙齒更加整齊、美觀、自信、舒適',
+  text1: '#關注口腔健康 從定期檢查開始',
+  text2: '立即預約檢查 展開護牙行動',
   tabNavName: 'pages.dental-service.children-dentistry.introduce.tabNavName'
 }
 
@@ -269,11 +269,6 @@ const handleSkillTab = (_idx:number) => {
 }
 .faq{
   margin-top: 120px;
-  // &-title{
-  //   img{
-       
-  //   }
-  // }
   &-in{
     position: relative;
     &-content{
@@ -286,7 +281,7 @@ const handleSkillTab = (_idx:number) => {
       .contentIn{
         position: absolute;
         z-index: 2;
-        width: calc((331 / 1381) * 100%);
+        width: calc((344 / 1381) * 100%);
         &:nth-of-type(1){
           top: calc((125 / 1381) * 100%);
           left: 50%;
@@ -303,7 +298,7 @@ const handleSkillTab = (_idx:number) => {
           transform: translateX(25%);
         }
         &:nth-of-type(4){
-          top: calc((640 / 1381) * 100%);
+          top: calc((621 / 1381) * 100%);
           left: 50%;
           transform: translateX(-50%);
           span{
@@ -320,7 +315,7 @@ const handleSkillTab = (_idx:number) => {
           top: 50%;
           transform: translate(-50%,-50%);
           color: #FFF;
-          font-size: 3.8vw;
+          font-size: 50px;
           font-weight: 500;
           line-height: 110%;
           max-width: calc((100 / 331) * 100%);
@@ -612,19 +607,50 @@ const handleSkillTab = (_idx:number) => {
     }
   }
 }
-@media only screen and (min-width: 1381px) {
+@media (min-width: 768px) and (max-width: 1200px) {
+  .note{
+    &-lists{
+      .listsIn{
+        &>div{
+          span{
+            font-size: 1.3vw;
+            inset: 15%;
+            letter-spacing: .2em;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .skill{
+    overflow: hidden;
+    &-title{
+      &-in{
+        font-size: 3vw;
+      }
+    }
+  }
+  .note{
+    .mascot{
+      width: 15%;
+      right: 5%;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1381px) {
   .faq{
     &-in{
       &-content{
         .contentIn{
           &:nth-of-type(1){
-            top: calc((160 / 1381) * 100%);
+            top: calc((80 / 1381) * 100%);
           }
           &:nth-of-type(4){
-            top: calc((600 / 1381) * 100%);
+            top: calc((680 / 1381) * 100%);
           }
           span{
-            font-size: 50px;
+            font-size: 3.6vw;
           }
         }
       }
@@ -633,21 +659,6 @@ const handleSkillTab = (_idx:number) => {
 }
 @media only screen and (max-width: 768px) {
 .faq{
-  // margin-top: 90px;
-  // &-in{
-  //   flex-direction: column;
-  //   margin-top: 28px;
-  //   &>div{
-  //     font-size: 26px;
-  //     height: 67.8px;
-  //     line-height: 67.8px;
-  //     margin: 0 30px;
-  //     &:not(:last-child){
-  //       margin-right: 30px;
-  //       margin-bottom: 13.2px;
-  //     }
-  //   }
-  // }
   margin-top: 0;
   &-title{
     width: 100%;
@@ -690,7 +701,7 @@ const handleSkillTab = (_idx:number) => {
           }
         }
         span{
-          font-size: 17.5px;
+          font-size: 4vw;
         }
       }
       .icon_1{
@@ -740,7 +751,7 @@ const handleSkillTab = (_idx:number) => {
       &>div{
         flex: auto;
         letter-spacing: 3px;
-        font-size: 15px;
+        font-size: 3vw;
         // width: calc(100% / 3);
         padding: 0 10px;
         height: 22px;
@@ -808,15 +819,19 @@ const handleSkillTab = (_idx:number) => {
     .listsIn{
       padding: 0 35px;
       &>div{
-        font-size: 12px;
-        line-height: 18px;
-        letter-spacing: 1.2px;
+        font-size: 3vw;
+        line-height: 4vw;
+        letter-spacing: 0.02em;
+        img{
+          margin: 0 auto;
+        }
         span{
-          inset: auto;
-          top: 60px;
-          left: 50px;
-          right: 50px;
-          bottom: auto;
+          // inset: auto;
+          // top: 60px;
+          // left: 50px;
+          // right: 50px;
+          // bottom: auto;
+          inset: 13vw;
         }
       }
       &:first-child{

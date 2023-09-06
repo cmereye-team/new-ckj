@@ -611,6 +611,17 @@ onBeforeUnmount(()=>{
         }
       }
     }
+    @media (min-width: 768px) and (max-width: 1280px) {
+      .introduce{
+        &-in{
+          &-titleType2{
+            img{
+              width: calc(100% / 3);
+            }
+          }
+        }
+      }
+    }
     @media (min-width: 768px) and (max-width: 1452px) {
       .tabNav{
         font-size: 1.5vw;
